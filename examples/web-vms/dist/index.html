@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>View My Virtual Machines</title>
+    <script src="index.bundle.js"></script>
+  </head>
+  <body>
+    <div>
+      <form action="javascript:ShowVms()">
+        <label>Credentials</label>
+        <input name="username" type="text" placeholder="Access Key" id="accessKey" required autocomplete="current-password"/>
+        <input name="password" type="password" placeholder="Secret Key" id="secretKey" required autocomplete="current-password"/>
+        <select name="region" id="region">
+          <option value="eu-west-2">eu-west-2</option>
+          <option value="us-east-2">us-east-2</option>
+          <option value="us-west-1">us-west-1</option>
+          <option value="ap-northeast-1">ap-northeast-1</option>
+          <option value="cloudgouv-eu-west-1">cloudgouv-eu-west-1</option>
+        </select>
+        <input type="submit" value="Show Virtual Machines" id="submit"/>
+      </form>
+    </div>
+    <div id="result">
+    </div>
+  </body>
+</html>

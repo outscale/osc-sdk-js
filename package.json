@@ -1,0 +1,27 @@
+{
+  "name": "outscale-api",
+  "version": "0.1.0",
+  "description": "OpenAPI client for outscale-api",
+  "author": "OpenAPI-Generator",
+  "module": "./dist/esm/index.js",
+  "typings": "./dist/esm/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build-esm": "tsc -p tsconfig.json",
+    "build-cjs": "tsc -p tsconfig-cjs.json",
+    "build": "npm run build-esm && npm run build-cjs",
+    "prepublish": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^3.0"
+  },
+  "publishConfig": {
+    "registry": "https://github.com/outscale/osc-sdk-js"
+  },
+  "dependencies": {
+    "aws4fetch": "github:outscale-dev/aws4fetch"
+  }
+}
