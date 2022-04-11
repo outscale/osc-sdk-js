@@ -1,0 +1,63 @@
+name: pull-request
+
+on:
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  pull-requests: write
+  contents: write
+    
+jobs:
+  reuse-test:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Reuse specification test
+        run: make reuse-test
+  examples-test:
+    environment: eu-west-2
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.3.0
+      - name: make nvm available
+        run: |
+          sudo cp ~/.nvm/nvm.sh /usr/local/bin/nvm
+          sudo chmod +x /usr/local/bin/nvm
+      - name: Example tests
+        env:
+          OSC_ACCESS_KEY: ${{ secrets.OSC_ACCESS_KEY }}
+          OSC_SECRET_KEY: ${{ secrets.OSC_SECRET_KEY }}
+          OSC_REGION: ${{ secrets.OSC_REGION }}
+        run: make examples-test
+  regeneration-test:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.3.0
+      - name: make nvm available
+        run: |
+          sudo cp ~/.nvm/nvm.sh /usr/local/bin/nvm
+          sudo chmod +x /usr/local/bin/nvm
+      - name: SDK re-generation test
+        run: make regen-test
+  dependabot-auto-merge:
+    needs: [reuse-test, examples-test, regeneration-test]
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    steps:
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v1.1.1
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Auto-merge
+        run: gh pr merge --auto --rebase "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

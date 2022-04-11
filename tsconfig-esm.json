@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "target": "es6",
+    "declaration": true,
+    "esModuleInterop": true,
+    "outDir": "./dist/esm",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node"
+  },
+  "include": [
+    "./src"
+  ],
+  "lib": [
+    "es6",
+    "dom"
+  ]
+}
