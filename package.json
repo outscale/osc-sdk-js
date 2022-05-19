@@ -16,7 +16,7 @@
     "prepublish": "npm run build"
   },
   "devDependencies": {
-    "typescript": "^3.0"
+    "typescript": "^4.6"
   },
   "publishConfig": {
     "registry": "https://github.com/outscale/osc-sdk-js"
