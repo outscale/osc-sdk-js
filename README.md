@@ -19,6 +19,7 @@ See [examples](examples/) folder to jump straight into the code!
 # Building from sources
 
 ```
+nvm install
 npm install --local
 npm run build
 ```
