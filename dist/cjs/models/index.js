@@ -472,6 +472,8 @@ __exportStar(require("./UpdateApiAccessRuleRequest"), exports);
 __exportStar(require("./UpdateApiAccessRuleResponse"), exports);
 __exportStar(require("./UpdateCaRequest"), exports);
 __exportStar(require("./UpdateCaResponse"), exports);
+__exportStar(require("./UpdateDirectLinkInterfaceRequest"), exports);
+__exportStar(require("./UpdateDirectLinkInterfaceResponse"), exports);
 __exportStar(require("./UpdateFlexibleGpuRequest"), exports);
 __exportStar(require("./UpdateFlexibleGpuResponse"), exports);
 __exportStar(require("./UpdateImageRequest"), exports);

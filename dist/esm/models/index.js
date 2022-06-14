@@ -456,6 +456,8 @@ export * from './UpdateApiAccessRuleRequest';
 export * from './UpdateApiAccessRuleResponse';
 export * from './UpdateCaRequest';
 export * from './UpdateCaResponse';
+export * from './UpdateDirectLinkInterfaceRequest';
+export * from './UpdateDirectLinkInterfaceResponse';
 export * from './UpdateFlexibleGpuRequest';
 export * from './UpdateFlexibleGpuResponse';
 export * from './UpdateImageRequest';
