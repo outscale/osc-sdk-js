@@ -26,7 +26,8 @@ osc-generate: osc-api/outscale.yaml
 	rm -rf .sdk || true
 	mkdir .sdk
 	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) generate -i /sdk/osc-api/outscale.yaml -g typescript-fetch -c /sdk/gen.yml -o /sdk/.sdk --additional-properties=npmVersion=$(SDK_VERSION)
-	# Set default user agent including sdk version using reproductible sed.
+	# Set sdk version using reproductible sed.
+	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) sed -i "s/\"version\".*/\"version\": \"$(SDK_VERSION)\",/" /sdk/package.json
 	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) chown -R $(USER_ID).$(GROUP_ID) /sdk/.sdk
 	mv .sdk/src ./
 	@echo SDK generated
