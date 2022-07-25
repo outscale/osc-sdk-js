@@ -19,9 +19,6 @@
   "devDependencies": {
     "typescript": "^4.7"
   },
-  "publishConfig": {
-    "registry": "https://github.com/outscale/osc-sdk-js"
-  },
   "dependencies": {
     "aws4fetch": "github:outscale-dev/aws4fetch"
   }
