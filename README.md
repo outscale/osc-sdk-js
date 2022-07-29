@@ -6,16 +6,14 @@ This SDK provides a TypeScript/JavaScript client that utilizes [Fetch API](https
 
 # How to use this SDK ?
 
-Install with npm:
+Install using npm:
 ```
-npm install --save github:outscale/osc-sdk-js
+npm install -save outscale-api
 ```
 
-Or directly add `outscale-api` to your `package.json`:
+Alternativly, you can directly use github:
 ```
-  "dependencies": {
-    "outscale-api": "github:outscale/osc-sdk-js",
-  }
+npm install --save github:outscale/osc-sdk-js
 ```
 
 See [examples](examples/) folder to jump straight into the code!
