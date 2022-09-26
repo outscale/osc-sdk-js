@@ -1,6 +1,6 @@
 {
   "name": "outscale-api",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "OpenAPI client for outscale-api",
   "author": "Outscale SAS",
   "license": "BSD-3-Clause",
