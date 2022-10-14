@@ -10,6 +10,10 @@ async function getVolumes(accessKey: string, secretKey: string, region: string):
             secretAccessKey: secretKey,
             service: "api",
             region: region,
+        },
+        // You can change the User-Agent like that
+        headers: {
+            "User-Agent": "node-volumes"
         }
     });
     const readParameters : osc.ReadVolumesOperationRequest = {
