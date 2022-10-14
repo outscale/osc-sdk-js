@@ -62,7 +62,16 @@ export class AwsV4Signer {
 }
 
 export class Configuration {
-    constructor(private configuration: ConfigurationParameters = {}) {}
+    constructor(private configuration: ConfigurationParameters = {}) {
+        if (typeof this.configuration.headers === "undefined") {
+            this.configuration.headers = {}
+        }
+
+        const headers = this.configuration.headers
+        if (!("User-Agent" in headers)) {
+            headers["User-Agent"] = "osc-sdk-js/0.4.0"
+        }
+    }
 
     set config(configuration: Configuration) {
         this.configuration = configuration;

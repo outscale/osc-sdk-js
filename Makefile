@@ -30,6 +30,9 @@ osc-generate: osc-api/outscale.yaml
 	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) sed -i "s/\"version\".*/\"version\": \"$(SDK_VERSION)\",/" /sdk/package.json
 	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) chown -R $(USER_ID).$(GROUP_ID) /sdk/.sdk
 	mv .sdk/src ./
+	(cd src && git apply ../.osc-patches/*)
+	# Set User-agent version
+	sed -i "s/##SDK_VERSION##/$(SDK_VERSION)/" src/runtime.ts
 	@echo SDK generated
 	@echo testing SDK build...
 	@source ~/.nvm/nvm.sh; \
