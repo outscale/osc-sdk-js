@@ -69,7 +69,7 @@ export class Configuration {
 
         const headers = this.configuration.headers
         if (!("User-Agent" in headers)) {
-            headers["User-Agent"] = "osc-sdk-js/0.4.0"
+            headers["User-Agent"] = "osc-sdk-js/0.5.0"
         }
     }
 
