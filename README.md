@@ -2,7 +2,9 @@
 
 Welcome to Outscale SDK for [typescript](https://www.typescriptlang.org/)/[javascript](https://en.wikipedia.org/wiki/JavaScript).
 
-This SDK provides a TypeScript/JavaScript client that utilizes [Fetch API](https://fetch.spec.whatwg.org/). 
+This SDK is generated to interact with [Outscale API service](https://docs.outscale.com/api) only (based on [openapi description](https://github.com/outscale/osc-api)).
+
+This SDK provides a TypeScript/JavaScript client that utilizes [Fetch API](https://fetch.spec.whatwg.org/).
 
 # How to use this SDK ?
 
