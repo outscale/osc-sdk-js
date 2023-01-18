@@ -1,3 +1,5 @@
+[![Project Graduated](https://docs.outscale.com/fr/userguide/_images/Project-Graduated-green.svg)](https://docs.outscale.com/en/userguide/Open-Source-Projects.html)
+
 # Outscale SDK for TypeScript/JavaScript
 
 Welcome to Outscale SDK for [typescript](https://www.typescriptlang.org/)/[javascript](https://en.wikipedia.org/wiki/JavaScript).
