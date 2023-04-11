@@ -41,5 +41,7 @@ export * from './TagApi';
 export * from './TaskApi';
 export * from './VirtualGatewayApi';
 export * from './VmApi';
+export * from './VmGroupApi';
+export * from './VmTemplateApi';
 export * from './VolumeApi';
 export * from './VpnConnectionApi';

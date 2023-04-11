@@ -57,5 +57,7 @@ __exportStar(require("./TagApi"), exports);
 __exportStar(require("./TaskApi"), exports);
 __exportStar(require("./VirtualGatewayApi"), exports);
 __exportStar(require("./VmApi"), exports);
+__exportStar(require("./VmGroupApi"), exports);
+__exportStar(require("./VmTemplateApi"), exports);
 __exportStar(require("./VolumeApi"), exports);
 __exportStar(require("./VpnConnectionApi"), exports);
