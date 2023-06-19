@@ -55,6 +55,7 @@ __exportStar(require("./SubnetApi"), exports);
 __exportStar(require("./SubregionApi"), exports);
 __exportStar(require("./TagApi"), exports);
 __exportStar(require("./TaskApi"), exports);
+__exportStar(require("./UserApi"), exports);
 __exportStar(require("./VirtualGatewayApi"), exports);
 __exportStar(require("./VmApi"), exports);
 __exportStar(require("./VmGroupApi"), exports);
