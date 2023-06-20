@@ -39,6 +39,7 @@ export * from './SubnetApi';
 export * from './SubregionApi';
 export * from './TagApi';
 export * from './TaskApi';
+export * from './UserApi';
 export * from './VirtualGatewayApi';
 export * from './VmApi';
 export * from './VmGroupApi';
