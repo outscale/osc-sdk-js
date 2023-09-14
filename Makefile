@@ -85,6 +85,24 @@ example-web-vms:
 	echo "npm install..."; \
 	npm install --local --install-links
 
+.PHONY: example-node-create-volumes
+example-node-create-volumes:
+	@echo testing examples/node-create-volume example...
+	@source ~/.nvm/nvm.sh; \
+	cd examples/node-create-volume; \
+	echo "nvm version:"; \
+	nvm --version; \
+	echo "nvm install..."; \
+	nvm install; \
+	echo "nvm use..."; \
+	nvm use; \
+	echo "npm version:"; \
+	npm version; \
+	echo "npm install..."; \
+	npm install --local --install-links; \
+	echo "running node example..."; \
+	node --trace-warnings ./src/index.js
+
 .PHONY: example-node-volumes
 example-node-volumes:
 	@echo testing examples/node-volumes example...
