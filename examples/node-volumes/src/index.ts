@@ -2,9 +2,9 @@ import * as workaroundCrypto from "crypto";
 global.crypto = workaroundCrypto.webcrypto;
 import * as osc from "outscale-api";
 
-async function getVolumes(accessKey: string, secretKey: string, region: string): Promise<Array<osc.Volume> | string> {
+async function getVolumes(accessKey: string, secretKey: string, region: string, endpoint: string|undefined): Promise<Array<osc.Volume> | string> {
     let config = new osc.Configuration({
-        basePath: "https://api." + region + ".outscale.com/api/v1",
+        basePath: endpoint == undefined ? "https://api." + region + ".outscale.com/api/v1" : endpoint,
         awsV4SignParameters: {
             accessKeyId: accessKey,
             secretAccessKey: secretKey,
@@ -68,7 +68,9 @@ async function main() {
         process.exit(1);
     }
 
-    const result = await getVolumes(accessKey, secretKey, region);
+    const endpoint = process.env.OSC_ENDPOINT_API;
+
+    const result = await getVolumes(accessKey, secretKey, region, endpoint);
 /*        .catch((reason: any) => {
             return "Promise error 2";
         });*/
