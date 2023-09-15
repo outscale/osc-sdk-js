@@ -27,6 +27,9 @@ jobs:
         run: |
           sudo cp ~/.nvm/nvm.sh /usr/local/bin/nvm
           sudo chmod +x /usr/local/bin/nvm
+      - name: Local Tests
+        run: |
+          ./local_tests.sh
       - name: Example tests
         env:
           OSC_ACCESS_KEY: ${{ secrets.OSC_ACCESS_KEY }}
