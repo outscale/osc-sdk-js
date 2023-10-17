@@ -1,8 +1,6 @@
-import * as workaroundCrypto from "crypto";
-global.crypto = workaroundCrypto.webcrypto;
 import * as osc from "outscale-api";
 
-async function getVolumes(accessKey: string, secretKey: string, region: string, endpoint: string|undefined): Promise<Array<osc.Volume> | string> {
+async function getVolumes(accessKey: string, secretKey: string, region: string, endpoint: string | undefined): Promise<Array<osc.Volume> | string> {
     let config = new osc.Configuration({
         basePath: endpoint == undefined ? "https://api." + region + ".outscale.com/api/v1" : endpoint,
         awsV4SignParameters: {
@@ -16,7 +14,7 @@ async function getVolumes(accessKey: string, secretKey: string, region: string, 
             "User-Agent": "node-volumes"
         }
     });
-    const readParameters : osc.ReadVolumesOperationRequest = {
+    const readParameters: osc.ReadVolumesOperationRequest = {
         readVolumesRequest: {}
     };
 
@@ -33,7 +31,7 @@ async function getVolumes(accessKey: string, secretKey: string, region: string, 
                 return "listing suceeded but it seems you have no volumes";
             }
             return result.volumes;
-        }, (err_: any) => { 
+        }, (err_: any) => {
             return "bad credential or region?";
         });
 }
@@ -71,9 +69,9 @@ async function main() {
     const endpoint = process.env.OSC_ENDPOINT_API;
 
     const result = await getVolumes(accessKey, secretKey, region, endpoint);
-/*        .catch((reason: any) => {
-            return "Promise error 2";
-        });*/
+    /*        .catch((reason: any) => {
+                return "Promise error 2";
+            });*/
     if (typeof result === "string") {
         console.error("error: " + result);
         process.exit(1);

@@ -1,8 +1,7 @@
-import * as workaroundCrypto from "crypto";
-global.crypto = workaroundCrypto.webcrypto;
 import * as osc from "outscale-api";
 
-async function createVolume(accessKey: string, secretKey: string, region: string, endpoint: string|undefined): Promise<osc.Volume | string> {
+
+async function createVolume(accessKey: string, secretKey: string, region: string, endpoint: string | undefined): Promise<osc.Volume | string> {
     let config = new osc.Configuration({
         basePath: endpoint == undefined ? "https://api." + region + ".outscale.com/api/v1" : endpoint,
         awsV4SignParameters: {
@@ -17,8 +16,11 @@ async function createVolume(accessKey: string, secretKey: string, region: string
         }
     });
 
-    const createParameters : osc.CreateVolumeOperationRequest = {
-        createVolumeRequest: {subregionName: "eu-west-2a"}
+    const createParameters: osc.CreateVolumeOperationRequest = {
+        createVolumeRequest: {
+            subregionName: "eu-west-2a",
+            size: 4
+        }
     };
 
     const api = new osc.VolumeApi(config)
@@ -30,8 +32,8 @@ async function createVolume(accessKey: string, secretKey: string, region: string
             if (typeof result === "string") {
                 return result;
             } else if (result.volume == undefined) {
-		return "result.volume is undefined for undefined reasons";
-	    }
+                return "result.volume is undefined for undefined reasons";
+            }
             return result.volume;
         }, (err_: any) => {
             return "bad credential or region?";
@@ -69,9 +71,9 @@ async function main() {
     const endpoint = process.env.OSC_ENDPOINT_API;
 
     const result = await createVolume(accessKey, secretKey, region, endpoint);
-/*        .catch((reason: any) => {
-            return "Promise error 2";
-        });*/
+    /*        .catch((reason: any) => {
+                return "Promise error 2";
+            });*/
     if (typeof result === "string") {
         console.error("error: " + result);
         process.exit(1);

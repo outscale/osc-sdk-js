@@ -76,10 +76,10 @@ example-web-vms:
 	cd examples/web-vms; \
 	echo "nvm --version:"; \
 	nvm --version; \
-	echo "installing nvm..."; \
-	nvm install; \
-	echo "using nvm..."; \
-	nvm use; \
+	echo "nvm install..."; \
+	nvm install 20.5.1; \
+	echo "nvm use..."; \
+	nvm use 20.5.1; \
 	echo "npm version:"; \
 	npm version; \
 	echo "npm install..."; \
@@ -93,9 +93,9 @@ example-node-create-volumes:
 	echo "nvm version:"; \
 	nvm --version; \
 	echo "nvm install..."; \
-	nvm install; \
+	nvm install 20.5.1; \
 	echo "nvm use..."; \
-	nvm use; \
+	nvm use 20.5.1; \
 	echo "npm version:"; \
 	npm version; \
 	echo "npm install..."; \
@@ -111,9 +111,9 @@ example-node-volumes:
 	echo "nvm version:"; \
 	nvm --version; \
 	echo "nvm install..."; \
-	nvm install; \
+	nvm install 20.5.1; \
 	echo "nvm use..."; \
-	nvm use; \
+	nvm use 20.5.1; \
 	echo "npm version:"; \
 	npm version; \
 	echo "npm install..."; \
