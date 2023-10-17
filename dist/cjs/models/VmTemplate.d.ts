@@ -91,7 +91,7 @@ export declare const VmTemplateCpuPerformanceEnum: {
     readonly High: "high";
     readonly Highest: "highest";
 };
-export declare type VmTemplateCpuPerformanceEnum = typeof VmTemplateCpuPerformanceEnum[keyof typeof VmTemplateCpuPerformanceEnum];
+export type VmTemplateCpuPerformanceEnum = typeof VmTemplateCpuPerformanceEnum[keyof typeof VmTemplateCpuPerformanceEnum];
 export declare function VmTemplateFromJSON(json: any): VmTemplate;
 export declare function VmTemplateFromJSONTyped(json: any, ignoreDiscriminator: boolean): VmTemplate;
 export declare function VmTemplateToJSON(value?: VmTemplate | null): any;

@@ -89,24 +89,24 @@ export declare const COLLECTION_FORMATS: {
     tsv: string;
     pipes: string;
 };
-export declare type FetchAPI = WindowOrWorkerGlobalScope['fetch'];
-export declare type Json = any;
-export declare type HTTPMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE' | 'OPTIONS' | 'HEAD';
-export declare type HTTPHeaders = {
+export type FetchAPI = WindowOrWorkerGlobalScope['fetch'];
+export type Json = any;
+export type HTTPMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE' | 'OPTIONS' | 'HEAD';
+export type HTTPHeaders = {
     [key: string]: string;
 };
-export declare type HTTPQuery = {
+export type HTTPQuery = {
     [key: string]: string | number | null | boolean | Array<string | number | null | boolean> | HTTPQuery;
 };
-export declare type HTTPBody = Json | FormData | URLSearchParams;
-export declare type HTTPRequestInit = {
+export type HTTPBody = Json | FormData | URLSearchParams;
+export type HTTPRequestInit = {
     headers?: HTTPHeaders;
     method: HTTPMethod;
     credentials?: RequestCredentials;
     body?: HTTPBody;
 };
-export declare type ModelPropertyNaming = 'camelCase' | 'snake_case' | 'PascalCase' | 'original';
-export declare type InitOverideFunction = (requestContext: {
+export type ModelPropertyNaming = 'camelCase' | 'snake_case' | 'PascalCase' | 'original';
+export type InitOverideFunction = (requestContext: {
     init: HTTPRequestInit;
     context: RequestOpts;
 }) => Promise<RequestInit>;

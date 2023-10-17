@@ -79,7 +79,7 @@ export declare const CreateVmGroupRequestPositioningStrategyEnum: {
     readonly NoStrategy: "no-strategy";
     readonly Repulse: "repulse";
 };
-export declare type CreateVmGroupRequestPositioningStrategyEnum = typeof CreateVmGroupRequestPositioningStrategyEnum[keyof typeof CreateVmGroupRequestPositioningStrategyEnum];
+export type CreateVmGroupRequestPositioningStrategyEnum = typeof CreateVmGroupRequestPositioningStrategyEnum[keyof typeof CreateVmGroupRequestPositioningStrategyEnum];
 export declare function CreateVmGroupRequestFromJSON(json: any): CreateVmGroupRequest;
 export declare function CreateVmGroupRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateVmGroupRequest;
 export declare function CreateVmGroupRequestToJSON(value?: CreateVmGroupRequest | null): any;
