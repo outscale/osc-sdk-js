@@ -97,7 +97,7 @@ export declare const VmGroupPositioningStrategyEnum: {
     readonly NoStrategy: "no-strategy";
     readonly Repulse: "repulse";
 };
-export declare type VmGroupPositioningStrategyEnum = typeof VmGroupPositioningStrategyEnum[keyof typeof VmGroupPositioningStrategyEnum];
+export type VmGroupPositioningStrategyEnum = typeof VmGroupPositioningStrategyEnum[keyof typeof VmGroupPositioningStrategyEnum];
 /**
  * @export
  */
@@ -109,7 +109,7 @@ export declare const VmGroupStateEnum: {
     readonly ScalingDown: "scaling down";
     readonly ScalingUp: "scaling up";
 };
-export declare type VmGroupStateEnum = typeof VmGroupStateEnum[keyof typeof VmGroupStateEnum];
+export type VmGroupStateEnum = typeof VmGroupStateEnum[keyof typeof VmGroupStateEnum];
 export declare function VmGroupFromJSON(json: any): VmGroup;
 export declare function VmGroupFromJSONTyped(json: any, ignoreDiscriminator: boolean): VmGroup;
 export declare function VmGroupToJSON(value?: VmGroup | null): any;

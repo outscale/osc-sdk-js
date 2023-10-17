@@ -40,7 +40,7 @@ export interface UpdateDirectLinkInterfaceRequest {
 export declare const UpdateDirectLinkInterfaceRequestMtuEnum: {
     readonly NUMBER_1500: 1500;
 };
-export declare type UpdateDirectLinkInterfaceRequestMtuEnum = typeof UpdateDirectLinkInterfaceRequestMtuEnum[keyof typeof UpdateDirectLinkInterfaceRequestMtuEnum];
+export type UpdateDirectLinkInterfaceRequestMtuEnum = typeof UpdateDirectLinkInterfaceRequestMtuEnum[keyof typeof UpdateDirectLinkInterfaceRequestMtuEnum];
 export declare function UpdateDirectLinkInterfaceRequestFromJSON(json: any): UpdateDirectLinkInterfaceRequest;
 export declare function UpdateDirectLinkInterfaceRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateDirectLinkInterfaceRequest;
 export declare function UpdateDirectLinkInterfaceRequestToJSON(value?: UpdateDirectLinkInterfaceRequest | null): any;

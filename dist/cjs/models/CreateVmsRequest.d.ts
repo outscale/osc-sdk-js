@@ -154,7 +154,7 @@ export declare const CreateVmsRequestPerformanceEnum: {
     readonly High: "high";
     readonly Highest: "highest";
 };
-export declare type CreateVmsRequestPerformanceEnum = typeof CreateVmsRequestPerformanceEnum[keyof typeof CreateVmsRequestPerformanceEnum];
+export type CreateVmsRequestPerformanceEnum = typeof CreateVmsRequestPerformanceEnum[keyof typeof CreateVmsRequestPerformanceEnum];
 export declare function CreateVmsRequestFromJSON(json: any): CreateVmsRequest;
 export declare function CreateVmsRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateVmsRequest;
 export declare function CreateVmsRequestToJSON(value?: CreateVmsRequest | null): any;

@@ -48,7 +48,7 @@ export declare const CatalogsStateEnum: {
     readonly Current: "CURRENT";
     readonly Obsolete: "OBSOLETE";
 };
-export declare type CatalogsStateEnum = typeof CatalogsStateEnum[keyof typeof CatalogsStateEnum];
+export type CatalogsStateEnum = typeof CatalogsStateEnum[keyof typeof CatalogsStateEnum];
 export declare function CatalogsFromJSON(json: any): Catalogs;
 export declare function CatalogsFromJSONTyped(json: any, ignoreDiscriminator: boolean): Catalogs;
 export declare function CatalogsToJSON(value?: Catalogs | null): any;

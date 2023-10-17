@@ -104,7 +104,7 @@ export declare const UpdateVmRequestPerformanceEnum: {
     readonly High: "high";
     readonly Highest: "highest";
 };
-export declare type UpdateVmRequestPerformanceEnum = typeof UpdateVmRequestPerformanceEnum[keyof typeof UpdateVmRequestPerformanceEnum];
+export type UpdateVmRequestPerformanceEnum = typeof UpdateVmRequestPerformanceEnum[keyof typeof UpdateVmRequestPerformanceEnum];
 export declare function UpdateVmRequestFromJSON(json: any): UpdateVmRequest;
 export declare function UpdateVmRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateVmRequest;
 export declare function UpdateVmRequestToJSON(value?: UpdateVmRequest | null): any;
