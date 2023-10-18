@@ -66,7 +66,7 @@ reuse-test:
 	docker run --rm --volume $(PWD):/data fsfe/reuse:0.11.1 lint
 
 .PHONY: examples-test
-examples-test: example-web-vms example-node-volumes
+examples-test: example-web-vms example-node-volumes example-node-create-volumes
 	@echo examples are OK
 
 .PHONY: example-web-vms
@@ -101,7 +101,7 @@ example-node-create-volumes:
 	echo "npm install..."; \
 	npm install --local --install-links; \
 	echo "running node example..."; \
-	node --trace-warnings ./src/index.js
+	node --trace-warnings ./src/index.js > /dev/null
 
 .PHONY: example-node-volumes
 example-node-volumes:

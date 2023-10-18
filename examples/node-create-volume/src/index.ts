@@ -18,7 +18,7 @@ async function createVolume(accessKey: string, secretKey: string, region: string
 
     const createParameters: osc.CreateVolumeOperationRequest = {
         createVolumeRequest: {
-            subregionName: "eu-west-2a",
+            subregionName: region + "a",
             size: 4
         }
     };
