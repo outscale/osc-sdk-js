@@ -1,3 +1,7 @@
+# 0.12.0
+
+ - SDK update for Outscale API v1.28.5
+
 # 0.11.0
 
  - Use upstream aws4fetch [#43](https://github.com/outscale/osc-sdk-js/pull/43)
