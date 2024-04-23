@@ -1,8 +1,8 @@
 /**
  * 3DS OUTSCALE API
- * Welcome to the OUTSCALE API documentation.<br /> The OUTSCALE API enables you to manage your resources in the OUTSCALE Cloud. This documentation describes the different actions available along with code examples.<br /><br /> Throttling: To protect against overloads, the number of identical requests allowed in a given time period is limited.<br /> Brute force: To protect against brute force attacks, the number of failed authentication attempts in a given time period is limited.<br /><br /> You can learn more about errors returned by the API in the dedicated [errors page](api/errors).<br /><br /> Note that the OUTSCALE Cloud is compatible with Amazon Web Services (AWS) APIs, but there are [differences in resource names](https://docs.outscale.com/en/userguide/OUTSCALE-APIs-Reference.html) between AWS and the OUTSCALE API.<br /> You can also manage your resources using the [Cockpit](https://docs.outscale.com/en/userguide/About-Cockpit.html) web interface.<br /><br /> An OpenAPI description of the OUTSCALE API is also available in this [GitHub repository](https://github.com/outscale/osc-api).<br /> # Authentication Schemes ### Access Key/Secret Key The main way to authenticate your requests to the OUTSCALE API is to use an access key and a secret key.<br /> The mechanism behind this is based on AWS Signature Version 4, whose technical implementation details are described in [Signature of API Requests](https://docs.outscale.com/en/userguide/Signature-of-API-Requests.html).<br /><br /> In practice, the way to specify your access key and secret key depends on the tool or SDK you want to use to interact with the API.<br />  > For example, if you use OSC CLI: > 1. You need to create an **~/.osc/config.json** file to specify your access key, secret key, and the Region of your account. > 2. You then specify the `--profile` option when executing OSC CLI commands. >  > For more information, see [Installing and Configuring OSC CLI](https://docs.outscale.com/en/userguide/Installing-and-Configuring-OSC-CLI.html).  See the code samples in each section of this documentation for specific examples in different programming languages.<br /> For more information about access keys, see [About Access Keys](https://docs.outscale.com/en/userguide/About-Access-Keys.html). ### Login/Password For certain API actions, you can also use basic authentication with the login (email address) and password of your TINA account.<br /> This is useful only in special circumstances, for example if you do not know your access key/secret key and want to retrieve them programmatically.<br /> In most cases, however, you can use the Cockpit web interface to retrieve them.<br />  > For example, if you use OSC CLI: > 1. You need to create an **~/.osc/config.json** file to specify the Region of your account, but you leave the access key value and secret key value empty (`&quot;&quot;`). > 2. You then specify the `--profile`, `--authentication-method`, `--login`, and `--password` options when executing OSC CLI commands.  See the code samples in each section of this documentation for specific examples in different programming languages. ### No Authentication A few API actions do not require any authentication. They are indicated as such in this documentation.<br /> ### Other Security Mechanisms In parallel with the authentication schemes, you can add other security mechanisms to your OUTSCALE account, for example to restrict API requests by IP or other criteria.<br /> For more information, see [Managing Your API Accesses](https://docs.outscale.com/en/userguide/Managing-Your-API-Accesses.html).
+ * Welcome to the OUTSCALE API documentation.<br /> The OUTSCALE API enables you to manage your resources in the OUTSCALE Cloud. This documentation describes the different actions available along with code examples.<br /><br /> Throttling: To protect against overloads, the number of identical requests allowed in a given time period is limited.<br /> Brute force: To protect against brute force attacks, the number of failed authentication attempts in a given time period is limited.<br /><br /> Note that the OUTSCALE Cloud is compatible with Amazon Web Services (AWS) APIs, but there are [differences in resource names](https://docs.outscale.com/en/userguide/OUTSCALE-APIs-Reference.html) between AWS and the OUTSCALE API.<br /> You can also manage your resources using the [Cockpit](https://docs.outscale.com/en/userguide/About-Cockpit.html) web interface.<br /><br /> An OpenAPI description of the OUTSCALE API is also available in this [GitHub repository](https://github.com/outscale/osc-api).<br /> # Authentication Schemes ### Access Key/Secret Key The main way to authenticate your requests to the OUTSCALE API is to use an access key and a secret key.<br /> The mechanism behind this is based on AWS Signature Version 4, whose technical implementation details are described in [Signature of API Requests](https://docs.outscale.com/en/userguide/Signature-of-API-Requests.html).<br /><br /> In practice, the way to specify your access key and secret key depends on the tool or SDK you want to use to interact with the API.<br />  > For example, if you use OSC CLI: > 1. You need to create an **~/.osc/config.json** file to specify your access key, secret key, and the Region of your account. > 2. You then specify the `--profile` option when executing OSC CLI commands. >  > For more information, see [Installing and Configuring OSC CLI](https://docs.outscale.com/en/userguide/Installing-and-Configuring-OSC-CLI.html).  See the code samples in each section of this documentation for specific examples in different programming languages.<br /> For more information about access keys, see [About Access Keys](https://docs.outscale.com/en/userguide/About-Access-Keys.html).  > If you try to sign requests with an invalid access key four times in a row, further authentication attempts will be prevented for 1 minute. This lockout time increases 1 minute every four failed attempts, for up to 10 minutes.  ### Login/Password For certain API actions, you can also use basic authentication with the login (email address) and password of your TINA account.<br /> This is useful only in special circumstances, for example if you do not know your access key/secret key and want to retrieve them programmatically.<br /> In most cases, however, you can use the Cockpit web interface to retrieve them.<br />  > For example, if you use OSC CLI: > 1. You need to create an **~/.osc/config.json** file to specify the Region of your account, but you leave the access key value and secret key value empty (`&quot;&quot;`). > 2. You then specify the `--profile`, `--authentication-method`, `--login`, and `--password` options when executing OSC CLI commands.  See the code samples in each section of this documentation for specific examples in different programming languages.  > If you try to sign requests with an invalid password four times in a row, further authentication attempts will be prevented for 1 minute. This lockout time increases 1 minute every four failed attempts, for up to 10 minutes.  ### No Authentication A few API actions do not require any authentication. They are indicated as such in this documentation.<br /> ### Other Security Mechanisms In parallel with the authentication schemes, you can add other security mechanisms to your OUTSCALE account, for example to restrict API requests by IP or other criteria.<br /> For more information, see [Managing Your API Accesses](https://docs.outscale.com/en/userguide/Managing-Your-API-Accesses.html).<br /> # Error Codes Reference You can learn more about errors returned by the API in the dedicated [errors page](api-errors.html).
  *
- * The version of the OpenAPI document: 1.28.7
+ * The version of the OpenAPI document: 1.29.3
  * Contact: support@outscale.com
  *
  * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreatePolicyRequest, CreatePolicyResponse, CreatePolicyVersionRequest, CreatePolicyVersionResponse, DeletePolicyRequest, DeletePolicyResponse, DeletePolicyVersionRequest, DeletePolicyVersionResponse, LinkPolicyRequest, LinkPolicyResponse, ReadLinkedPoliciesRequest, ReadLinkedPoliciesResponse, ReadPoliciesRequest, ReadPoliciesResponse, ReadPolicyRequest, ReadPolicyResponse, ReadPolicyVersionRequest, ReadPolicyVersionResponse, ReadPolicyVersionsRequest, ReadPolicyVersionsResponse, SetDefaultPolicyVersionRequest, SetDefaultPolicyVersionResponse, UnlinkPolicyRequest, UnlinkPolicyResponse } from '../models';
+import { CreatePolicyRequest, CreatePolicyResponse, CreatePolicyVersionRequest, CreatePolicyVersionResponse, DeletePolicyRequest, DeletePolicyResponse, DeletePolicyVersionRequest, DeletePolicyVersionResponse, DeleteUserGroupPolicyRequest, DeleteUserGroupPolicyResponse, LinkManagedPolicyToUserGroupRequest, LinkManagedPolicyToUserGroupResponse, LinkPolicyRequest, LinkPolicyResponse, PutUserGroupPolicyRequest, PutUserGroupPolicyResponse, ReadLinkedPoliciesRequest, ReadLinkedPoliciesResponse, ReadManagedPoliciesLinkedToUserGroupRequest, ReadManagedPoliciesLinkedToUserGroupResponse, ReadPoliciesRequest, ReadPoliciesResponse, ReadPolicyRequest, ReadPolicyResponse, ReadPolicyVersionRequest, ReadPolicyVersionResponse, ReadPolicyVersionsRequest, ReadPolicyVersionsResponse, ReadUserGroupPoliciesRequest, ReadUserGroupPoliciesResponse, ReadUserGroupPolicyRequest, ReadUserGroupPolicyResponse, SetDefaultPolicyVersionRequest, SetDefaultPolicyVersionResponse, UnlinkManagedPolicyFromUserGroupRequest, UnlinkManagedPolicyFromUserGroupResponse, UnlinkPolicyRequest, UnlinkPolicyResponse } from '../models';
 export interface CreatePolicyOperationRequest {
     createPolicyRequest?: CreatePolicyRequest;
 }
@@ -23,11 +23,23 @@ export interface DeletePolicyOperationRequest {
 export interface DeletePolicyVersionOperationRequest {
     deletePolicyVersionRequest?: DeletePolicyVersionRequest;
 }
+export interface DeleteUserGroupPolicyOperationRequest {
+    deleteUserGroupPolicyRequest?: DeleteUserGroupPolicyRequest;
+}
+export interface LinkManagedPolicyToUserGroupOperationRequest {
+    linkManagedPolicyToUserGroupRequest?: LinkManagedPolicyToUserGroupRequest;
+}
 export interface LinkPolicyOperationRequest {
     linkPolicyRequest?: LinkPolicyRequest;
 }
+export interface PutUserGroupPolicyOperationRequest {
+    putUserGroupPolicyRequest?: PutUserGroupPolicyRequest;
+}
 export interface ReadLinkedPoliciesOperationRequest {
     readLinkedPoliciesRequest?: ReadLinkedPoliciesRequest;
+}
+export interface ReadManagedPoliciesLinkedToUserGroupOperationRequest {
+    readManagedPoliciesLinkedToUserGroupRequest?: ReadManagedPoliciesLinkedToUserGroupRequest;
 }
 export interface ReadPoliciesOperationRequest {
     readPoliciesRequest?: ReadPoliciesRequest;
@@ -41,8 +53,17 @@ export interface ReadPolicyVersionOperationRequest {
 export interface ReadPolicyVersionsOperationRequest {
     readPolicyVersionsRequest?: ReadPolicyVersionsRequest;
 }
+export interface ReadUserGroupPoliciesOperationRequest {
+    readUserGroupPoliciesRequest?: ReadUserGroupPoliciesRequest;
+}
+export interface ReadUserGroupPolicyOperationRequest {
+    readUserGroupPolicyRequest?: ReadUserGroupPolicyRequest;
+}
 export interface SetDefaultPolicyVersionOperationRequest {
     setDefaultPolicyVersionRequest?: SetDefaultPolicyVersionRequest;
+}
+export interface UnlinkManagedPolicyFromUserGroupOperationRequest {
+    unlinkManagedPolicyFromUserGroupRequest?: UnlinkManagedPolicyFromUserGroupRequest;
 }
 export interface UnlinkPolicyOperationRequest {
     unlinkPolicyRequest?: UnlinkPolicyRequest;
@@ -100,6 +121,28 @@ export interface PolicyApiInterface {
     deletePolicyVersion(requestParameters: DeletePolicyVersionOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<DeletePolicyVersionResponse>;
     /**
      *
+     * @param {DeleteUserGroupPolicyRequest} [deleteUserGroupPolicyRequest]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PolicyApiInterface
+     */
+    deleteUserGroupPolicyRaw(requestParameters: DeleteUserGroupPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<DeleteUserGroupPolicyResponse>>;
+    /**
+     */
+    deleteUserGroupPolicy(requestParameters: DeleteUserGroupPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<DeleteUserGroupPolicyResponse>;
+    /**
+     *
+     * @param {LinkManagedPolicyToUserGroupRequest} [linkManagedPolicyToUserGroupRequest]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PolicyApiInterface
+     */
+    linkManagedPolicyToUserGroupRaw(requestParameters: LinkManagedPolicyToUserGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<LinkManagedPolicyToUserGroupResponse>>;
+    /**
+     */
+    linkManagedPolicyToUserGroup(requestParameters: LinkManagedPolicyToUserGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<LinkManagedPolicyToUserGroupResponse>;
+    /**
+     *
      * @param {LinkPolicyRequest} [linkPolicyRequest]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -111,6 +154,17 @@ export interface PolicyApiInterface {
     linkPolicy(requestParameters: LinkPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<LinkPolicyResponse>;
     /**
      *
+     * @param {PutUserGroupPolicyRequest} [putUserGroupPolicyRequest]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PolicyApiInterface
+     */
+    putUserGroupPolicyRaw(requestParameters: PutUserGroupPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<PutUserGroupPolicyResponse>>;
+    /**
+     */
+    putUserGroupPolicy(requestParameters: PutUserGroupPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<PutUserGroupPolicyResponse>;
+    /**
+     *
      * @param {ReadLinkedPoliciesRequest} [readLinkedPoliciesRequest]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -120,6 +174,17 @@ export interface PolicyApiInterface {
     /**
      */
     readLinkedPolicies(requestParameters: ReadLinkedPoliciesOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<ReadLinkedPoliciesResponse>;
+    /**
+     *
+     * @param {ReadManagedPoliciesLinkedToUserGroupRequest} [readManagedPoliciesLinkedToUserGroupRequest]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PolicyApiInterface
+     */
+    readManagedPoliciesLinkedToUserGroupRaw(requestParameters: ReadManagedPoliciesLinkedToUserGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<ReadManagedPoliciesLinkedToUserGroupResponse>>;
+    /**
+     */
+    readManagedPoliciesLinkedToUserGroup(requestParameters: ReadManagedPoliciesLinkedToUserGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<ReadManagedPoliciesLinkedToUserGroupResponse>;
     /**
      *
      * @param {ReadPoliciesRequest} [readPoliciesRequest]
@@ -166,6 +231,28 @@ export interface PolicyApiInterface {
     readPolicyVersions(requestParameters: ReadPolicyVersionsOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<ReadPolicyVersionsResponse>;
     /**
      *
+     * @param {ReadUserGroupPoliciesRequest} [readUserGroupPoliciesRequest]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PolicyApiInterface
+     */
+    readUserGroupPoliciesRaw(requestParameters: ReadUserGroupPoliciesOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<ReadUserGroupPoliciesResponse>>;
+    /**
+     */
+    readUserGroupPolicies(requestParameters: ReadUserGroupPoliciesOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<ReadUserGroupPoliciesResponse>;
+    /**
+     *
+     * @param {ReadUserGroupPolicyRequest} [readUserGroupPolicyRequest]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PolicyApiInterface
+     */
+    readUserGroupPolicyRaw(requestParameters: ReadUserGroupPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<ReadUserGroupPolicyResponse>>;
+    /**
+     */
+    readUserGroupPolicy(requestParameters: ReadUserGroupPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<ReadUserGroupPolicyResponse>;
+    /**
+     *
      * @param {SetDefaultPolicyVersionRequest} [setDefaultPolicyVersionRequest]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -175,6 +262,17 @@ export interface PolicyApiInterface {
     /**
      */
     setDefaultPolicyVersion(requestParameters: SetDefaultPolicyVersionOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<SetDefaultPolicyVersionResponse>;
+    /**
+     *
+     * @param {UnlinkManagedPolicyFromUserGroupRequest} [unlinkManagedPolicyFromUserGroupRequest]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PolicyApiInterface
+     */
+    unlinkManagedPolicyFromUserGroupRaw(requestParameters: UnlinkManagedPolicyFromUserGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<UnlinkManagedPolicyFromUserGroupResponse>>;
+    /**
+     */
+    unlinkManagedPolicyFromUserGroup(requestParameters: UnlinkManagedPolicyFromUserGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<UnlinkManagedPolicyFromUserGroupResponse>;
     /**
      *
      * @param {UnlinkPolicyRequest} [unlinkPolicyRequest]
@@ -217,16 +315,40 @@ export declare class PolicyApi extends runtime.BaseAPI implements PolicyApiInter
     deletePolicyVersion(requestParameters?: DeletePolicyVersionOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<DeletePolicyVersionResponse>;
     /**
      */
+    deleteUserGroupPolicyRaw(requestParameters: DeleteUserGroupPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<DeleteUserGroupPolicyResponse>>;
+    /**
+     */
+    deleteUserGroupPolicy(requestParameters?: DeleteUserGroupPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<DeleteUserGroupPolicyResponse>;
+    /**
+     */
+    linkManagedPolicyToUserGroupRaw(requestParameters: LinkManagedPolicyToUserGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<LinkManagedPolicyToUserGroupResponse>>;
+    /**
+     */
+    linkManagedPolicyToUserGroup(requestParameters?: LinkManagedPolicyToUserGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<LinkManagedPolicyToUserGroupResponse>;
+    /**
+     */
     linkPolicyRaw(requestParameters: LinkPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<LinkPolicyResponse>>;
     /**
      */
     linkPolicy(requestParameters?: LinkPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<LinkPolicyResponse>;
     /**
      */
+    putUserGroupPolicyRaw(requestParameters: PutUserGroupPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<PutUserGroupPolicyResponse>>;
+    /**
+     */
+    putUserGroupPolicy(requestParameters?: PutUserGroupPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<PutUserGroupPolicyResponse>;
+    /**
+     */
     readLinkedPoliciesRaw(requestParameters: ReadLinkedPoliciesOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<ReadLinkedPoliciesResponse>>;
     /**
      */
     readLinkedPolicies(requestParameters?: ReadLinkedPoliciesOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<ReadLinkedPoliciesResponse>;
+    /**
+     */
+    readManagedPoliciesLinkedToUserGroupRaw(requestParameters: ReadManagedPoliciesLinkedToUserGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<ReadManagedPoliciesLinkedToUserGroupResponse>>;
+    /**
+     */
+    readManagedPoliciesLinkedToUserGroup(requestParameters?: ReadManagedPoliciesLinkedToUserGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<ReadManagedPoliciesLinkedToUserGroupResponse>;
     /**
      */
     readPoliciesRaw(requestParameters: ReadPoliciesOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<ReadPoliciesResponse>>;
@@ -253,10 +375,28 @@ export declare class PolicyApi extends runtime.BaseAPI implements PolicyApiInter
     readPolicyVersions(requestParameters?: ReadPolicyVersionsOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<ReadPolicyVersionsResponse>;
     /**
      */
+    readUserGroupPoliciesRaw(requestParameters: ReadUserGroupPoliciesOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<ReadUserGroupPoliciesResponse>>;
+    /**
+     */
+    readUserGroupPolicies(requestParameters?: ReadUserGroupPoliciesOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<ReadUserGroupPoliciesResponse>;
+    /**
+     */
+    readUserGroupPolicyRaw(requestParameters: ReadUserGroupPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<ReadUserGroupPolicyResponse>>;
+    /**
+     */
+    readUserGroupPolicy(requestParameters?: ReadUserGroupPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<ReadUserGroupPolicyResponse>;
+    /**
+     */
     setDefaultPolicyVersionRaw(requestParameters: SetDefaultPolicyVersionOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<SetDefaultPolicyVersionResponse>>;
     /**
      */
     setDefaultPolicyVersion(requestParameters?: SetDefaultPolicyVersionOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<SetDefaultPolicyVersionResponse>;
+    /**
+     */
+    unlinkManagedPolicyFromUserGroupRaw(requestParameters: UnlinkManagedPolicyFromUserGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<UnlinkManagedPolicyFromUserGroupResponse>>;
+    /**
+     */
+    unlinkManagedPolicyFromUserGroup(requestParameters?: UnlinkManagedPolicyFromUserGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<UnlinkManagedPolicyFromUserGroupResponse>;
     /**
      */
     unlinkPolicyRaw(requestParameters: UnlinkPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverideFunction): Promise<runtime.ApiResponse<UnlinkPolicyResponse>>;
