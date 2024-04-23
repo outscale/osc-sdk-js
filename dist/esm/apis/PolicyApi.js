@@ -2,9 +2,9 @@
 /* eslint-disable */
 /**
  * 3DS OUTSCALE API
- * Welcome to the OUTSCALE API documentation.<br /> The OUTSCALE API enables you to manage your resources in the OUTSCALE Cloud. This documentation describes the different actions available along with code examples.<br /><br /> Throttling: To protect against overloads, the number of identical requests allowed in a given time period is limited.<br /> Brute force: To protect against brute force attacks, the number of failed authentication attempts in a given time period is limited.<br /><br /> You can learn more about errors returned by the API in the dedicated [errors page](api/errors).<br /><br /> Note that the OUTSCALE Cloud is compatible with Amazon Web Services (AWS) APIs, but there are [differences in resource names](https://docs.outscale.com/en/userguide/OUTSCALE-APIs-Reference.html) between AWS and the OUTSCALE API.<br /> You can also manage your resources using the [Cockpit](https://docs.outscale.com/en/userguide/About-Cockpit.html) web interface.<br /><br /> An OpenAPI description of the OUTSCALE API is also available in this [GitHub repository](https://github.com/outscale/osc-api).<br /> # Authentication Schemes ### Access Key/Secret Key The main way to authenticate your requests to the OUTSCALE API is to use an access key and a secret key.<br /> The mechanism behind this is based on AWS Signature Version 4, whose technical implementation details are described in [Signature of API Requests](https://docs.outscale.com/en/userguide/Signature-of-API-Requests.html).<br /><br /> In practice, the way to specify your access key and secret key depends on the tool or SDK you want to use to interact with the API.<br />  > For example, if you use OSC CLI: > 1. You need to create an **~/.osc/config.json** file to specify your access key, secret key, and the Region of your account. > 2. You then specify the `--profile` option when executing OSC CLI commands. >  > For more information, see [Installing and Configuring OSC CLI](https://docs.outscale.com/en/userguide/Installing-and-Configuring-OSC-CLI.html).  See the code samples in each section of this documentation for specific examples in different programming languages.<br /> For more information about access keys, see [About Access Keys](https://docs.outscale.com/en/userguide/About-Access-Keys.html). ### Login/Password For certain API actions, you can also use basic authentication with the login (email address) and password of your TINA account.<br /> This is useful only in special circumstances, for example if you do not know your access key/secret key and want to retrieve them programmatically.<br /> In most cases, however, you can use the Cockpit web interface to retrieve them.<br />  > For example, if you use OSC CLI: > 1. You need to create an **~/.osc/config.json** file to specify the Region of your account, but you leave the access key value and secret key value empty (`&quot;&quot;`). > 2. You then specify the `--profile`, `--authentication-method`, `--login`, and `--password` options when executing OSC CLI commands.  See the code samples in each section of this documentation for specific examples in different programming languages. ### No Authentication A few API actions do not require any authentication. They are indicated as such in this documentation.<br /> ### Other Security Mechanisms In parallel with the authentication schemes, you can add other security mechanisms to your OUTSCALE account, for example to restrict API requests by IP or other criteria.<br /> For more information, see [Managing Your API Accesses](https://docs.outscale.com/en/userguide/Managing-Your-API-Accesses.html).
+ * Welcome to the OUTSCALE API documentation.<br /> The OUTSCALE API enables you to manage your resources in the OUTSCALE Cloud. This documentation describes the different actions available along with code examples.<br /><br /> Throttling: To protect against overloads, the number of identical requests allowed in a given time period is limited.<br /> Brute force: To protect against brute force attacks, the number of failed authentication attempts in a given time period is limited.<br /><br /> Note that the OUTSCALE Cloud is compatible with Amazon Web Services (AWS) APIs, but there are [differences in resource names](https://docs.outscale.com/en/userguide/OUTSCALE-APIs-Reference.html) between AWS and the OUTSCALE API.<br /> You can also manage your resources using the [Cockpit](https://docs.outscale.com/en/userguide/About-Cockpit.html) web interface.<br /><br /> An OpenAPI description of the OUTSCALE API is also available in this [GitHub repository](https://github.com/outscale/osc-api).<br /> # Authentication Schemes ### Access Key/Secret Key The main way to authenticate your requests to the OUTSCALE API is to use an access key and a secret key.<br /> The mechanism behind this is based on AWS Signature Version 4, whose technical implementation details are described in [Signature of API Requests](https://docs.outscale.com/en/userguide/Signature-of-API-Requests.html).<br /><br /> In practice, the way to specify your access key and secret key depends on the tool or SDK you want to use to interact with the API.<br />  > For example, if you use OSC CLI: > 1. You need to create an **~/.osc/config.json** file to specify your access key, secret key, and the Region of your account. > 2. You then specify the `--profile` option when executing OSC CLI commands. >  > For more information, see [Installing and Configuring OSC CLI](https://docs.outscale.com/en/userguide/Installing-and-Configuring-OSC-CLI.html).  See the code samples in each section of this documentation for specific examples in different programming languages.<br /> For more information about access keys, see [About Access Keys](https://docs.outscale.com/en/userguide/About-Access-Keys.html).  > If you try to sign requests with an invalid access key four times in a row, further authentication attempts will be prevented for 1 minute. This lockout time increases 1 minute every four failed attempts, for up to 10 minutes.  ### Login/Password For certain API actions, you can also use basic authentication with the login (email address) and password of your TINA account.<br /> This is useful only in special circumstances, for example if you do not know your access key/secret key and want to retrieve them programmatically.<br /> In most cases, however, you can use the Cockpit web interface to retrieve them.<br />  > For example, if you use OSC CLI: > 1. You need to create an **~/.osc/config.json** file to specify the Region of your account, but you leave the access key value and secret key value empty (`&quot;&quot;`). > 2. You then specify the `--profile`, `--authentication-method`, `--login`, and `--password` options when executing OSC CLI commands.  See the code samples in each section of this documentation for specific examples in different programming languages.  > If you try to sign requests with an invalid password four times in a row, further authentication attempts will be prevented for 1 minute. This lockout time increases 1 minute every four failed attempts, for up to 10 minutes.  ### No Authentication A few API actions do not require any authentication. They are indicated as such in this documentation.<br /> ### Other Security Mechanisms In parallel with the authentication schemes, you can add other security mechanisms to your OUTSCALE account, for example to restrict API requests by IP or other criteria.<br /> For more information, see [Managing Your API Accesses](https://docs.outscale.com/en/userguide/Managing-Your-API-Accesses.html).<br /> # Error Codes Reference You can learn more about errors returned by the API in the dedicated [errors page](api-errors.html).
  *
- * The version of the OpenAPI document: 1.28.7
+ * The version of the OpenAPI document: 1.29.3
  * Contact: support@outscale.com
  *
  * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
@@ -21,7 +21,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import * as runtime from '../runtime';
-import { CreatePolicyRequestToJSON, CreatePolicyResponseFromJSON, CreatePolicyVersionRequestToJSON, CreatePolicyVersionResponseFromJSON, DeletePolicyRequestToJSON, DeletePolicyResponseFromJSON, DeletePolicyVersionRequestToJSON, DeletePolicyVersionResponseFromJSON, LinkPolicyRequestToJSON, LinkPolicyResponseFromJSON, ReadLinkedPoliciesRequestToJSON, ReadLinkedPoliciesResponseFromJSON, ReadPoliciesRequestToJSON, ReadPoliciesResponseFromJSON, ReadPolicyRequestToJSON, ReadPolicyResponseFromJSON, ReadPolicyVersionRequestToJSON, ReadPolicyVersionResponseFromJSON, ReadPolicyVersionsRequestToJSON, ReadPolicyVersionsResponseFromJSON, SetDefaultPolicyVersionRequestToJSON, SetDefaultPolicyVersionResponseFromJSON, UnlinkPolicyRequestToJSON, UnlinkPolicyResponseFromJSON, } from '../models';
+import { CreatePolicyRequestToJSON, CreatePolicyResponseFromJSON, CreatePolicyVersionRequestToJSON, CreatePolicyVersionResponseFromJSON, DeletePolicyRequestToJSON, DeletePolicyResponseFromJSON, DeletePolicyVersionRequestToJSON, DeletePolicyVersionResponseFromJSON, DeleteUserGroupPolicyRequestToJSON, DeleteUserGroupPolicyResponseFromJSON, LinkManagedPolicyToUserGroupRequestToJSON, LinkManagedPolicyToUserGroupResponseFromJSON, LinkPolicyRequestToJSON, LinkPolicyResponseFromJSON, PutUserGroupPolicyRequestToJSON, PutUserGroupPolicyResponseFromJSON, ReadLinkedPoliciesRequestToJSON, ReadLinkedPoliciesResponseFromJSON, ReadManagedPoliciesLinkedToUserGroupRequestToJSON, ReadManagedPoliciesLinkedToUserGroupResponseFromJSON, ReadPoliciesRequestToJSON, ReadPoliciesResponseFromJSON, ReadPolicyRequestToJSON, ReadPolicyResponseFromJSON, ReadPolicyVersionRequestToJSON, ReadPolicyVersionResponseFromJSON, ReadPolicyVersionsRequestToJSON, ReadPolicyVersionsResponseFromJSON, ReadUserGroupPoliciesRequestToJSON, ReadUserGroupPoliciesResponseFromJSON, ReadUserGroupPolicyRequestToJSON, ReadUserGroupPolicyResponseFromJSON, SetDefaultPolicyVersionRequestToJSON, SetDefaultPolicyVersionResponseFromJSON, UnlinkManagedPolicyFromUserGroupRequestToJSON, UnlinkManagedPolicyFromUserGroupResponseFromJSON, UnlinkPolicyRequestToJSON, UnlinkPolicyResponseFromJSON, } from '../models';
 /**
  *
  */
@@ -184,6 +184,84 @@ export class PolicyApi extends runtime.BaseAPI {
     }
     /**
      */
+    deleteUserGroupPolicyRaw(requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const queryParameters = {};
+            const headerParameters = {};
+            headerParameters['Content-Type'] = 'application/json';
+            if (this.configuration && this.configuration.apiKey) {
+                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+            }
+            const body = DeleteUserGroupPolicyRequestToJSON(requestParameters.deleteUserGroupPolicyRequest);
+            const request = {
+                path: `/DeleteUserGroupPolicy`,
+                method: 'POST',
+                headers: headerParameters,
+                query: queryParameters,
+                body: body,
+            };
+            if (this.configuration && this.configuration.awsV4SignerParameters) {
+                const SignUrl = this.configuration.basePath + request.path;
+                const SignBody = JSON.stringify(request.body);
+                const signer = new runtime.AwsV4Signer(this.configuration.awsV4SignerParameters);
+                const signResult = yield signer.sign('POST', SignUrl, headerParameters, SignBody);
+                //request.url = signResult.url;
+                //request.method = signResult.method;
+                request.headers = signResult.headers;
+            }
+            const response = yield this.request(request, initOverrides);
+            return new runtime.JSONApiResponse(response, (jsonValue) => DeleteUserGroupPolicyResponseFromJSON(jsonValue));
+        });
+    }
+    /**
+     */
+    deleteUserGroupPolicy(requestParameters = {}, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.deleteUserGroupPolicyRaw(requestParameters, initOverrides);
+            return yield response.value();
+        });
+    }
+    /**
+     */
+    linkManagedPolicyToUserGroupRaw(requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const queryParameters = {};
+            const headerParameters = {};
+            headerParameters['Content-Type'] = 'application/json';
+            if (this.configuration && this.configuration.apiKey) {
+                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+            }
+            const body = LinkManagedPolicyToUserGroupRequestToJSON(requestParameters.linkManagedPolicyToUserGroupRequest);
+            const request = {
+                path: `/LinkManagedPolicyToUserGroup`,
+                method: 'POST',
+                headers: headerParameters,
+                query: queryParameters,
+                body: body,
+            };
+            if (this.configuration && this.configuration.awsV4SignerParameters) {
+                const SignUrl = this.configuration.basePath + request.path;
+                const SignBody = JSON.stringify(request.body);
+                const signer = new runtime.AwsV4Signer(this.configuration.awsV4SignerParameters);
+                const signResult = yield signer.sign('POST', SignUrl, headerParameters, SignBody);
+                //request.url = signResult.url;
+                //request.method = signResult.method;
+                request.headers = signResult.headers;
+            }
+            const response = yield this.request(request, initOverrides);
+            return new runtime.JSONApiResponse(response, (jsonValue) => LinkManagedPolicyToUserGroupResponseFromJSON(jsonValue));
+        });
+    }
+    /**
+     */
+    linkManagedPolicyToUserGroup(requestParameters = {}, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.linkManagedPolicyToUserGroupRaw(requestParameters, initOverrides);
+            return yield response.value();
+        });
+    }
+    /**
+     */
     linkPolicyRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
@@ -223,6 +301,45 @@ export class PolicyApi extends runtime.BaseAPI {
     }
     /**
      */
+    putUserGroupPolicyRaw(requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const queryParameters = {};
+            const headerParameters = {};
+            headerParameters['Content-Type'] = 'application/json';
+            if (this.configuration && this.configuration.apiKey) {
+                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+            }
+            const body = PutUserGroupPolicyRequestToJSON(requestParameters.putUserGroupPolicyRequest);
+            const request = {
+                path: `/PutUserGroupPolicy`,
+                method: 'POST',
+                headers: headerParameters,
+                query: queryParameters,
+                body: body,
+            };
+            if (this.configuration && this.configuration.awsV4SignerParameters) {
+                const SignUrl = this.configuration.basePath + request.path;
+                const SignBody = JSON.stringify(request.body);
+                const signer = new runtime.AwsV4Signer(this.configuration.awsV4SignerParameters);
+                const signResult = yield signer.sign('POST', SignUrl, headerParameters, SignBody);
+                //request.url = signResult.url;
+                //request.method = signResult.method;
+                request.headers = signResult.headers;
+            }
+            const response = yield this.request(request, initOverrides);
+            return new runtime.JSONApiResponse(response, (jsonValue) => PutUserGroupPolicyResponseFromJSON(jsonValue));
+        });
+    }
+    /**
+     */
+    putUserGroupPolicy(requestParameters = {}, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.putUserGroupPolicyRaw(requestParameters, initOverrides);
+            return yield response.value();
+        });
+    }
+    /**
+     */
     readLinkedPoliciesRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
@@ -257,6 +374,45 @@ export class PolicyApi extends runtime.BaseAPI {
     readLinkedPolicies(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const response = yield this.readLinkedPoliciesRaw(requestParameters, initOverrides);
+            return yield response.value();
+        });
+    }
+    /**
+     */
+    readManagedPoliciesLinkedToUserGroupRaw(requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const queryParameters = {};
+            const headerParameters = {};
+            headerParameters['Content-Type'] = 'application/json';
+            if (this.configuration && this.configuration.apiKey) {
+                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+            }
+            const body = ReadManagedPoliciesLinkedToUserGroupRequestToJSON(requestParameters.readManagedPoliciesLinkedToUserGroupRequest);
+            const request = {
+                path: `/ReadManagedPoliciesLinkedToUserGroup`,
+                method: 'POST',
+                headers: headerParameters,
+                query: queryParameters,
+                body: body,
+            };
+            if (this.configuration && this.configuration.awsV4SignerParameters) {
+                const SignUrl = this.configuration.basePath + request.path;
+                const SignBody = JSON.stringify(request.body);
+                const signer = new runtime.AwsV4Signer(this.configuration.awsV4SignerParameters);
+                const signResult = yield signer.sign('POST', SignUrl, headerParameters, SignBody);
+                //request.url = signResult.url;
+                //request.method = signResult.method;
+                request.headers = signResult.headers;
+            }
+            const response = yield this.request(request, initOverrides);
+            return new runtime.JSONApiResponse(response, (jsonValue) => ReadManagedPoliciesLinkedToUserGroupResponseFromJSON(jsonValue));
+        });
+    }
+    /**
+     */
+    readManagedPoliciesLinkedToUserGroup(requestParameters = {}, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.readManagedPoliciesLinkedToUserGroupRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
@@ -418,6 +574,84 @@ export class PolicyApi extends runtime.BaseAPI {
     }
     /**
      */
+    readUserGroupPoliciesRaw(requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const queryParameters = {};
+            const headerParameters = {};
+            headerParameters['Content-Type'] = 'application/json';
+            if (this.configuration && this.configuration.apiKey) {
+                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+            }
+            const body = ReadUserGroupPoliciesRequestToJSON(requestParameters.readUserGroupPoliciesRequest);
+            const request = {
+                path: `/ReadUserGroupPolicies`,
+                method: 'POST',
+                headers: headerParameters,
+                query: queryParameters,
+                body: body,
+            };
+            if (this.configuration && this.configuration.awsV4SignerParameters) {
+                const SignUrl = this.configuration.basePath + request.path;
+                const SignBody = JSON.stringify(request.body);
+                const signer = new runtime.AwsV4Signer(this.configuration.awsV4SignerParameters);
+                const signResult = yield signer.sign('POST', SignUrl, headerParameters, SignBody);
+                //request.url = signResult.url;
+                //request.method = signResult.method;
+                request.headers = signResult.headers;
+            }
+            const response = yield this.request(request, initOverrides);
+            return new runtime.JSONApiResponse(response, (jsonValue) => ReadUserGroupPoliciesResponseFromJSON(jsonValue));
+        });
+    }
+    /**
+     */
+    readUserGroupPolicies(requestParameters = {}, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.readUserGroupPoliciesRaw(requestParameters, initOverrides);
+            return yield response.value();
+        });
+    }
+    /**
+     */
+    readUserGroupPolicyRaw(requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const queryParameters = {};
+            const headerParameters = {};
+            headerParameters['Content-Type'] = 'application/json';
+            if (this.configuration && this.configuration.apiKey) {
+                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+            }
+            const body = ReadUserGroupPolicyRequestToJSON(requestParameters.readUserGroupPolicyRequest);
+            const request = {
+                path: `/ReadUserGroupPolicy`,
+                method: 'POST',
+                headers: headerParameters,
+                query: queryParameters,
+                body: body,
+            };
+            if (this.configuration && this.configuration.awsV4SignerParameters) {
+                const SignUrl = this.configuration.basePath + request.path;
+                const SignBody = JSON.stringify(request.body);
+                const signer = new runtime.AwsV4Signer(this.configuration.awsV4SignerParameters);
+                const signResult = yield signer.sign('POST', SignUrl, headerParameters, SignBody);
+                //request.url = signResult.url;
+                //request.method = signResult.method;
+                request.headers = signResult.headers;
+            }
+            const response = yield this.request(request, initOverrides);
+            return new runtime.JSONApiResponse(response, (jsonValue) => ReadUserGroupPolicyResponseFromJSON(jsonValue));
+        });
+    }
+    /**
+     */
+    readUserGroupPolicy(requestParameters = {}, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.readUserGroupPolicyRaw(requestParameters, initOverrides);
+            return yield response.value();
+        });
+    }
+    /**
+     */
     setDefaultPolicyVersionRaw(requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const queryParameters = {};
@@ -452,6 +686,45 @@ export class PolicyApi extends runtime.BaseAPI {
     setDefaultPolicyVersion(requestParameters = {}, initOverrides) {
         return __awaiter(this, void 0, void 0, function* () {
             const response = yield this.setDefaultPolicyVersionRaw(requestParameters, initOverrides);
+            return yield response.value();
+        });
+    }
+    /**
+     */
+    unlinkManagedPolicyFromUserGroupRaw(requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const queryParameters = {};
+            const headerParameters = {};
+            headerParameters['Content-Type'] = 'application/json';
+            if (this.configuration && this.configuration.apiKey) {
+                headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // ApiKeyAuth authentication
+            }
+            const body = UnlinkManagedPolicyFromUserGroupRequestToJSON(requestParameters.unlinkManagedPolicyFromUserGroupRequest);
+            const request = {
+                path: `/UnlinkManagedPolicyFromUserGroup`,
+                method: 'POST',
+                headers: headerParameters,
+                query: queryParameters,
+                body: body,
+            };
+            if (this.configuration && this.configuration.awsV4SignerParameters) {
+                const SignUrl = this.configuration.basePath + request.path;
+                const SignBody = JSON.stringify(request.body);
+                const signer = new runtime.AwsV4Signer(this.configuration.awsV4SignerParameters);
+                const signResult = yield signer.sign('POST', SignUrl, headerParameters, SignBody);
+                //request.url = signResult.url;
+                //request.method = signResult.method;
+                request.headers = signResult.headers;
+            }
+            const response = yield this.request(request, initOverrides);
+            return new runtime.JSONApiResponse(response, (jsonValue) => UnlinkManagedPolicyFromUserGroupResponseFromJSON(jsonValue));
+        });
+    }
+    /**
+     */
+    unlinkManagedPolicyFromUserGroup(requestParameters = {}, initOverrides) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.unlinkManagedPolicyFromUserGroupRaw(requestParameters, initOverrides);
             return yield response.value();
         });
     }
