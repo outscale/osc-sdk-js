@@ -66,7 +66,7 @@ reuse-test:
 	docker run --rm --volume $(PWD):/data fsfe/reuse:0.11.1 lint
 
 .PHONY: examples-test
-examples-test: example-web-vms example-node-volumes example-node-create-volumes
+examples-test: example-web-vms example-node-create-volumes example-node-volumes 
 	@echo examples are OK
 
 .PHONY: example-web-vms
