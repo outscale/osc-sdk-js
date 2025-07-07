@@ -17,4 +17,5 @@ jobs:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN_OSC_SDK_JS }}
       run: |
         echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+        npm run build
         npm publish

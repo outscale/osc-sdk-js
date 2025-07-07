@@ -1,0 +1,59 @@
+diff --git a/src/runtime.ts b/src/runtime.ts
+index 9a1fb577..9dca7bbb 100644
+--- a/src/runtime.ts
++++ b/src/runtime.ts
+@@ -71,6 +71,11 @@ export class Configuration {
+         if (!("User-Agent" in headers)) {
+             headers["User-Agent"] = "osc-sdk-js/##SDK_VERSION##"
+         }
++
++        if (typeof this.configuration.middleware === "undefined") {
++            const rm = new RetryMiddleware();
++            this.configuration.middleware = [rm]
++        }
+     }
+ 
+     set config(configuration: Configuration) {
+@@ -401,9 +406,41 @@ export class BlobApiResponse {
+ }
+ 
+ export class TextApiResponse {
+-    constructor(public raw: Response) {}
++    constructor(public raw: Response) { }
+ 
+     async value(): Promise<string> {
+         return await this.raw.text();
+     };
+ }
++
++class RetryMiddleware implements Middleware {
++    private async retry(fetch: FetchAPI, url: string, init: RequestInit, attempt: number): Promise<void | Response> {
++        const response = await fetch(url, init);
++        if (!response.ok && this.retryOn(response, 0)) {
++            await new Promise(f => setTimeout(f, 1000 * Math.pow(2, attempt) + 3000 * Math.random()));
++            return await this.retry(fetch, url, init, attempt + 1);
++        } else {
++            return response;
++        }
++    }
++
++    private retryOn(res: Response, attempt: number): boolean {
++        if (attempt > 3) {
++            return false;
++        }
++
++        return res.status == 409
++            || res.status == 429
++            || (res.status >= 500 && res.status < 600);
++    }
++
++    async post(context: ResponseContext): Promise<void | Response> {
++        const { response, init, url, fetch } = context;
++
++        if (!response.ok && this.retryOn(response, 0)) {
++            return await this.retry(fetch, url, init, 1);
++        } else {
++            return response;
++        }
++    }
++}
