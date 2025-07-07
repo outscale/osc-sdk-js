@@ -13,7 +13,7 @@
  */
 
 
-import { AwsV4Signer as AwsV4SignerLib }  from "aws4fetch";
+import { AwsV4Signer as AwsV4SignerLib } from "aws4fetch";
 
 export const BASE_PATH = "https://api.eu-west-2.outscale.com/api/v1".replace(/\/+$/, "");
 
@@ -39,8 +39,8 @@ export interface AwsV4SignerParameters {
 }
 
 export class AwsV4Signer {
-    constructor(private configuration: AwsV4SignerParameters) {}
-    async sign(method: string, url: string, headers: HTTPHeaders, body: any): Promise<{url: URL, headers: HTTPHeaders}> {
+    constructor(private configuration: AwsV4SignerParameters) { }
+    async sign(method: string, url: string, headers: HTTPHeaders, body: any): Promise<{ url: URL, headers: HTTPHeaders }> {
         const signer = new AwsV4SignerLib({
             method: method,
             url: url,
@@ -57,7 +57,7 @@ export class AwsV4Signer {
         for (const [key, value] of signResult.headers.entries()) {
             newHeaders[key] = value;
         }
-        return {url: signResult.url, headers: newHeaders};
+        return { url: signResult.url, headers: newHeaders };
     }
 }
 
@@ -70,6 +70,11 @@ export class Configuration {
         const headers = this.configuration.headers
         if (!("User-Agent" in headers)) {
             headers["User-Agent"] = "osc-sdk-js/0.19.0"
+        }
+
+        if (typeof this.configuration.middleware === "undefined") {
+            const rm = new RetryMiddleware();
+            this.configuration.middleware = [rm]
         }
     }
 
@@ -203,8 +208,8 @@ export class BaseAPI {
             ...overridedInit,
             body:
                 isFormData(overridedInit.body) ||
-                overridedInit.body instanceof URLSearchParams ||
-                isBlob(overridedInit.body)
+                    overridedInit.body instanceof URLSearchParams ||
+                    isBlob(overridedInit.body)
                     ? overridedInit.body
                     : JSON.stringify(overridedInit.body),
         };
@@ -330,10 +335,10 @@ export function querystring(params: HTTPQuery, prefix: string = ''): string {
 }
 
 export function mapValues(data: any, fn: (item: any) => any) {
-  return Object.keys(data).reduce(
-    (acc, key) => ({ ...acc, [key]: fn(data[key]) }),
-    {}
-  );
+    return Object.keys(data).reduce(
+        (acc, key) => ({ ...acc, [key]: fn(data[key]) }),
+        {}
+    );
 }
 
 export function canConsumeForm(consumes: Consume[]): boolean {
@@ -377,7 +382,7 @@ export interface ResponseTransformer<T> {
 }
 
 export class JSONApiResponse<T> {
-    constructor(public raw: Response, private transformer: ResponseTransformer<T> = (jsonValue: any) => jsonValue) {}
+    constructor(public raw: Response, private transformer: ResponseTransformer<T> = (jsonValue: any) => jsonValue) { }
 
     async value(): Promise<T> {
         return this.transformer(await this.raw.json());
@@ -385,7 +390,7 @@ export class JSONApiResponse<T> {
 }
 
 export class VoidApiResponse {
-    constructor(public raw: Response) {}
+    constructor(public raw: Response) { }
 
     async value(): Promise<void> {
         return undefined;
@@ -393,7 +398,7 @@ export class VoidApiResponse {
 }
 
 export class BlobApiResponse {
-    constructor(public raw: Response) {}
+    constructor(public raw: Response) { }
 
     async value(): Promise<Blob> {
         return await this.raw.blob();
@@ -401,9 +406,41 @@ export class BlobApiResponse {
 }
 
 export class TextApiResponse {
-    constructor(public raw: Response) {}
+    constructor(public raw: Response) { }
 
     async value(): Promise<string> {
         return await this.raw.text();
     };
+}
+
+class RetryMiddleware implements Middleware {
+    private async retry(fetch: FetchAPI, url: string, init: RequestInit, attempt: number): Promise<void | Response> {
+        const response = await fetch(url, init);
+        if (!response.ok && this.retryOn(response, 0)) {
+            await new Promise(f => setTimeout(f, 1000 * Math.pow(2, attempt) + 3000 * Math.random()));
+            return await this.retry(fetch, url, init, attempt + 1);
+        } else {
+            return response;
+        }
+    }
+
+    private retryOn(res: Response, attempt: number): boolean {
+        if (attempt > 3) {
+            return false;
+        }
+
+        return res.status == 409
+            || res.status == 429
+            || (res.status >= 500 && res.status < 600);
+    }
+
+    async post(context: ResponseContext): Promise<void | Response> {
+        const { response, init, url, fetch } = context;
+
+        if (!response.ok && this.retryOn(response, 0)) {
+            return await this.retry(fetch, url, init, 1);
+        } else {
+            return response;
+        }
+    }
 }
