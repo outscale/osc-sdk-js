@@ -15,6 +15,6 @@
     "outscale-api": "file:../.."
   },
   "devDependencies": {
-    "@types/node": "18.x"
+    "@types/node": "22.x"
   }
 }
