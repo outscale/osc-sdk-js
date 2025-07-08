@@ -29,23 +29,12 @@ osc-generate: osc-api/outscale.yaml
 	# Set sdk version using reproductible sed.
 	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) sed -i "s/\"version\".*/\"version\": \"$(SDK_VERSION)\",/" /sdk/package.json
 	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) chown -R $(USER_ID).$(GROUP_ID) /sdk/.sdk
-	mv .sdk/src ./
-	(cd src && git apply ../.osc-patches/*)
+	mv .sdk/src ./packages/osc-sdk-js
+	(cd packages/osc-sdk-js/src && git apply ../../../.osc-patches/*)
 	# Set User-agent version
-	sed -i "s/##SDK_VERSION##/$(SDK_VERSION)/" src/runtime.ts
-	@echo SDK generated
-	@echo testing SDK build...
-	@source ~/.nvm/nvm.sh; \
-	echo "nvm --version:"; \
-	nvm --version; \
-	echo "nvm install..."; \
-	nvm install; \
-	echo "nvm use..."; \
-	nvm use; \
-	echo "npm version..."; \
-	npm version; \
-	echo "npm install..."; \
-	npm install --local
+	sed -i "s/##SDK_VERSION##/$(SDK_VERSION)/" packages/osc-sdk-js/src/runtime.ts
+	# Run tests
+	@make examples-test
 
 osc-api/outscale.yaml:
 	@echo getting osc-api description...
@@ -54,7 +43,7 @@ osc-api/outscale.yaml:
 .PHONY: clean
 clean:
 	@echo cleaning build artifacts...
-	rm -rf .sdk osc-api src node_modules dist || true
+	rm -rf .sdk osc-api packages/osc-sdk-js/src node_modules dist || true
 
 .PHONY: test
 test: reuse-test examples-test regen-test
@@ -71,63 +60,26 @@ examples-test: example-web-vms example-node-create-volumes example-node-volumes
 
 .PHONY: example-web-vms
 example-web-vms:
+	@bun run --filter "osc-sdk-js-vm-web-example" build
 	@echo testing examples/web-vms example...
-	@source ~/.nvm/nvm.sh; \
-	cd examples/web-vms; \
-	echo "nvm --version:"; \
-	nvm --version; \
-	echo "nvm install..."; \
-	nvm install 20.5.1; \
-	echo "nvm use..."; \
-	nvm use 20.5.1; \
-	echo "npm version:"; \
-	npm version; \
-	echo "npm install..."; \
-	npm install --local --install-links
 
 .PHONY: example-node-create-volumes
 example-node-create-volumes:
+	@bun run --filter "osc-sdk-js-volume-create-node-example" run
 	@echo testing examples/node-create-volume example...
-	@source ~/.nvm/nvm.sh; \
-	cd examples/node-create-volume; \
-	echo "nvm version:"; \
-	nvm --version; \
-	echo "nvm install..."; \
-	nvm install 20.5.1; \
-	echo "nvm use..."; \
-	nvm use 20.5.1; \
-	echo "npm version:"; \
-	npm version; \
-	echo "npm install..."; \
-	npm install --local --install-links; \
-	echo "running node example..."; \
-	node --trace-warnings ./src/index.js > /dev/null
 
 .PHONY: example-node-volumes
 example-node-volumes:
+	@bun run --filter "osc-sdk-js-volumes-node-example" run
 	@echo testing examples/node-volumes example...
-	@source ~/.nvm/nvm.sh; \
-	cd examples/node-volumes; \
-	echo "nvm version:"; \
-	nvm --version; \
-	echo "nvm install..."; \
-	nvm install 20.5.1; \
-	echo "nvm use..."; \
-	nvm use 20.5.1; \
-	echo "npm version:"; \
-	npm version; \
-	echo "npm install..."; \
-	npm install --local --install-links; \
-	echo "running node example..."; \
-	node ./src/index.js > /dev/null
 
 # try to regen, should not have any difference
 .PHONY: regen-test
 regen-test: gen
 	@echo SDK regeneration test...
-	git add src dist
-	git diff --cached -s --exit-code
-	git diff -s --exit-code
+	git add packages/osc-sdk-js/src
+	git diff --cached --exit-code
+	git diff --exit-code
 
 # Used by bot to auto-release
 # GH_TOKEN and SSH_PRIVATE_KEY are needed

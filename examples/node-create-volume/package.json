@@ -2,17 +2,16 @@
   "name": "osc-sdk-js-volume-create-node-example",
   "version": "0.1.0",
   "description": "Example of using osc-sdk-js and virtual volumes",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc",
-    "prepare": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "bun build ./src/index.ts --outdir ./dist",
+    "run": "bun run ./src/index.ts"
   },
   "author": "Outscale SAS",
   "license": "BSD-3-Clause",
   "dependencies": {
-    "outscale-api": "file:../.."
+    "outscale-api": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "18.x"
