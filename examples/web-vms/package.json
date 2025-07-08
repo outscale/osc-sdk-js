@@ -5,6 +5,7 @@
   "author": "Outscale SAS",
   "license": "BSD-3-Clause",
   "main": "./dist/index.js",
+  "private": true,
   "scripts": {
     "build": "bun build --entrypoint ./src/index.html --outdir=./dist",
     "run": "bun ./src/index.html",

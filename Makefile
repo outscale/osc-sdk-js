@@ -33,8 +33,6 @@ osc-generate: osc-api/outscale.yaml
 	(cd packages/osc-sdk-js/src && git apply ../../../.osc-patches/*)
 	# Set User-agent version
 	sed -i "s/##SDK_VERSION##/$(SDK_VERSION)/" packages/osc-sdk-js/src/runtime.ts
-	# Run tests
-	@make examples-test
 
 osc-api/outscale.yaml:
 	@echo getting osc-api description...
@@ -59,19 +57,22 @@ examples-test: example-web-vms example-node-create-volumes example-node-volumes
 	@echo examples are OK
 
 .PHONY: example-web-vms
-example-web-vms:
+example-web-vms: packages/osc-sdk-js/dist/index.js
 	@bun run --filter "osc-sdk-js-vm-web-example" build
 	@echo testing examples/web-vms example...
 
 .PHONY: example-node-create-volumes
-example-node-create-volumes:
+example-node-create-volumes: packages/osc-sdk-js/dist/index.js
 	@bun run --filter "osc-sdk-js-volume-create-node-example" run
 	@echo testing examples/node-create-volume example...
 
 .PHONY: example-node-volumes
-example-node-volumes:
+example-node-volumes: packages/osc-sdk-js/dist/index.js
 	@bun run --filter "osc-sdk-js-volumes-node-example" run
 	@echo testing examples/node-volumes example...
+
+packages/osc-sdk-js/dist/index.js: $(shell find packages/osc-sdk-js/src -name '*.ts')
+	@bun --filter "outscale-api" build
 
 # try to regen, should not have any difference
 .PHONY: regen-test

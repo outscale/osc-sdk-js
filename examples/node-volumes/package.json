@@ -4,6 +4,7 @@
   "description": "Example of using osc-sdk-js and virtual volumes",
   "main": "./dist/index.js",
   "type": "module",
+  "private": true,
   "scripts": {
     "build": "bun build src/index.ts --outdir ./dist",
     "run": "bun run src/index.ts"

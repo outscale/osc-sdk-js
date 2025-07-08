@@ -16,17 +16,13 @@ jobs:
       - name: Reuse specification test
         run: make reuse-test
   examples-test:
-    environment: eu-west-2
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20.5.1
-      - name: make nvm available
+      - uses: oven-sh/setup-bun@v2
+      - name: Install deps
         run: |
-          sudo cp ~/.nvm/nvm.sh /usr/local/bin/nvm
-          sudo chmod +x /usr/local/bin/nvm
+          bun install --frozen-lockfile
       - name: Local Tests
         run: |
           ./local_tests.sh
@@ -40,13 +36,9 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20.5.1
-      - name: make nvm available
-        run: |
-          sudo cp ~/.nvm/nvm.sh /usr/local/bin/nvm
-          sudo chmod +x /usr/local/bin/nvm
+      - uses: oven-sh/setup-bun@v2
+      - name: Install deps
+        run: bun install --frozen-lockfile
       - name: SDK re-generation test
         run: make regen-test
   dependabot-auto-merge:

@@ -14,13 +14,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20.5.1
-      - name: make nvm available
-        run: |
-          sudo cp ~/.nvm/nvm.sh /usr/local/bin/nvm
-          sudo chmod +x /usr/local/bin/nvm
+      - uses: oven-sh/setup-bun@v2
+      - name: Install deps
+        run: bun install --frozen-lockfile
       - name: Write Outscale API version to use
         run: echo "${{ github.event.inputs.api_version }}" > api_version
       - name: check for release duplicate
