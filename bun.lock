@@ -1,0 +1,62 @@
+{
+  "lockfileVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "osc-sdk-js",
+    },
+    "examples/node-create-volume": {
+      "name": "osc-sdk-js-volume-create-node-example",
+      "version": "0.1.0",
+      "dependencies": {
+        "outscale-api": "workspace:*",
+      },
+      "devDependencies": {
+        "@types/node": "18.x",
+      },
+    },
+    "examples/node-volumes": {
+      "name": "osc-sdk-js-volumes-node-example",
+      "version": "0.1.0",
+      "dependencies": {
+        "outscale-api": "workspace:*",
+      },
+      "devDependencies": {
+        "@types/node": "18.x",
+      },
+    },
+    "examples/web-vms": {
+      "name": "osc-sdk-js-vm-web-example",
+      "version": "0.1.0",
+      "dependencies": {
+        "outscale-api": "workspace:*",
+      },
+    },
+    "packages/osc-sdk-js": {
+      "name": "outscale-api",
+      "version": "0.19.0",
+      "dependencies": {
+        "aws4fetch": "^1.0.13",
+      },
+      "devDependencies": {
+        "typescript": "^4.7",
+      },
+    },
+  },
+  "packages": {
+    "@types/node": ["@types/node@18.19.115", "", { "dependencies": { "undici-types": "~5.26.4" } }, "sha512-kNrFiTgG4a9JAn1LMQeLOv3MvXIPokzXziohMrMsvpYgLpdEt/mMiVYc4sGKtDfyxM5gIDF4VgrPRyCw4fHOYg=="],
+
+    "aws4fetch": ["aws4fetch@1.0.20", "", {}, "sha512-/djoAN709iY65ETD6LKCtyyEI04XIBP5xVvfmNxsEP0uJB5tyaGBztSryRr4HqMStr9R06PisQE7m9zDTXKu6g=="],
+
+    "osc-sdk-js-vm-web-example": ["osc-sdk-js-vm-web-example@workspace:examples/web-vms"],
+
+    "osc-sdk-js-volume-create-node-example": ["osc-sdk-js-volume-create-node-example@workspace:examples/node-create-volume"],
+
+    "osc-sdk-js-volumes-node-example": ["osc-sdk-js-volumes-node-example@workspace:examples/node-volumes"],
+
+    "outscale-api": ["outscale-api@workspace:packages/osc-sdk-js"],
+
+    "typescript": ["typescript@4.9.5", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g=="],
+
+    "undici-types": ["undici-types@5.26.5", "", {}, "sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA=="],
+  }
+}

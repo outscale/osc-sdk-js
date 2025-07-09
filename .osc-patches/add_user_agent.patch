@@ -1,7 +1,7 @@
-diff --git a/src/runtime.ts b/src/runtime.ts
+diff --git a/packages/osc-sdk-js/src/runtime.ts b/package/osc-sdk-js/src/runtime.ts
 index 9465d6f..fe19573 100644
---- a/src/runtime.ts
-+++ b/src/runtime.ts
+--- a/packages/osc-sdk-js/src/runtime.ts
++++ b/packages/osc-sdk-js/src/runtime.ts
 @@ -62,7 +62,16 @@ export class AwsV4Signer {
  }
  
