@@ -22,7 +22,7 @@ echo "$new_sdk_version" > $root/sdk_version
 new_api_version=$(cat $root/api_version)
 release_notes="# $new_sdk_version
 
- - SDK update for Outscale API v$new_api_version
+ - SDK update for Outscale API $new_api_version
 
 "
 echo "$release_notes$(cat $root/changelog.md)" > $root/changelog.md
@@ -37,4 +37,4 @@ git config user.email "opensource+bot@outscale.com"
 for f in src dist; do
     git add $f || true
 done
-git commit -asm "osc-sdk-js v$new_sdk_version"
+git commit -asm "🔖 release: osc-sdk-js v$new_sdk_version"
