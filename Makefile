@@ -50,6 +50,8 @@ osc-generate: osc-api/outscale.yaml
 osc-api/outscale.yaml:
 	@echo getting osc-api description...
 	git clone https://github.com/outscale/osc-api-deploy.git osc-api && cd osc-api && git checkout -b $(API_VERSION) $(API_VERSION)
+	sed -i "s/operationId: DisableOutscaleLoginForUsers/operationId: DisableOutscaleLoginForUsersZz/g" osc-api/outscale.yaml
+	sed -i "s/operationId: EnableOutscaleLoginForUsers/operationId: EnableOutscaleLoginForUsersZz/g" osc-api/outscale.yaml
 
 .PHONY: clean
 clean:
