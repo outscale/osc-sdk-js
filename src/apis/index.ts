@@ -13,6 +13,7 @@ export * from './DhcpOptionApi';
 export * from './DirectLinkApi';
 export * from './DirectLinkInterfaceApi';
 export * from './FlexibleGpuApi';
+export * from './IdentityProviderApi';
 export * from './ImageApi';
 export * from './InternetServiceApi';
 export * from './KeypairApi';
