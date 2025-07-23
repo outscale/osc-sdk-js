@@ -29,6 +29,7 @@ __exportStar(require("./DhcpOptionApi"), exports);
 __exportStar(require("./DirectLinkApi"), exports);
 __exportStar(require("./DirectLinkInterfaceApi"), exports);
 __exportStar(require("./FlexibleGpuApi"), exports);
+__exportStar(require("./IdentityProviderApi"), exports);
 __exportStar(require("./ImageApi"), exports);
 __exportStar(require("./InternetServiceApi"), exports);
 __exportStar(require("./KeypairApi"), exports);
