@@ -17,7 +17,7 @@
     "prepublish": "npm run build"
   },
   "devDependencies": {
-    "typescript": "^4.7"
+    "typescript": "^5.8"
   },
   "dependencies": {
     "aws4fetch": "^1.0.13"
