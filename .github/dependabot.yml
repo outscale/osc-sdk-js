@@ -7,3 +7,5 @@ updates:
     target-branch: "main"
     schedule:
       interval: "daily"
+    commit-message:
+      prefix: "⬆️ deps: "
