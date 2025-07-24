@@ -34,7 +34,7 @@ make gen
 # setup git && commit
 git config user.name "Outscale Bot"
 git config user.email "opensource+bot@outscale.com"
-for f in src dist; do
+for f in src dist .osc-api; do
     git add $f || true
 done
 git commit -asm "🔖 release: osc-sdk-js v$new_sdk_version"

@@ -1,0 +1,84 @@
+---
+components:
+  schemas:
+    AccessKey:
+      properties:
+        CreationDate:
+          format: datetime
+        ExpirationDate:
+          format: datetime
+        LastModificationDate:
+          format: datetime
+    AccessKeySecretKey:
+      properties:
+        CreationDate:
+          format: datetime
+        ExpirationDate:
+          format: datetime
+        LastModificationDate:
+          format: datetime
+    CreateAccessKeyRequest:
+      properties:
+        ExpirationDate:
+          format: datetime
+    UpdateAccessKeyRequest:
+      properties:
+        ExpirationDate:
+          format: datetime
+    ConsumptionEntry:
+      properties:
+        FromDate:
+          format: datetime
+        ToDate:
+          format: datetime
+    ReadConsumptionAccountRequest:
+      properties:
+        FromDate:
+          format: datetime
+        ToDate:
+          format: datetime
+    Snapshot:
+      properties:
+        CreationDate:
+          format: datetime
+    Vm:
+      properties:
+        CreationDate:
+          format: datetime
+    VmGroup:
+      properties:
+        CreationDate:
+          format: datetime
+    Volume:
+      properties:
+        CreationDate:
+          format: datetime
+    VgwTelemetry:
+      properties:
+        LastStateChangeDate:
+          format: datetime
+    BsuCreated:
+      properties:
+        LinkDate:
+          format: date
+    FiltersApiLog:
+      properties:
+        QueryDateAfter:
+          format: date
+        QueryDateBefore:
+          format: date
+    Image:
+      properties:
+        CreationDate:
+          format: date
+    Log:
+      properties:
+        QueryDate:
+          format: date
+paths:
+  "/EnableOutscaleLoginForUsers":
+    post:
+      operationId: EnableOutscaleLoginForUsersZz
+  "/DisableOutscaleLoginForUsers":
+    post:
+      operationId: DisableOutscaleLoginForUsersZz
