@@ -27,6 +27,16 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: make release-check-duplicate
+      - name: download oapi spec
+        run: |
+          curl -O --retry 5 https://raw.githubusercontent.com/outscale/osc-api/refs/tags/${{ inputs.api_version }}/outscale.yaml
+      - name: patch oapi spec
+        uses: outscale/osc-api-deploy/hacks-and-check@8abf97e5a8b49dbd12401cb843afa435de4e061c #TODO: change to main before merging
+        with:
+          no-oneof: yes
+          patch: ./.osc-api/outscale.patch.yaml
+          input: ./outscale.yaml
+          output: ./.osc-api/outscale.yaml
       - name: auto-generate release
         run: make release-build
       - name: push release branch
