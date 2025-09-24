@@ -1,0 +1,22 @@
+name: Publish on NPM
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    environment: publish
+    steps:
+    - uses: actions/checkout@v5
+    - uses: actions/setup-node@v5
+      with:
+        node-version: '20'
+        registry-url: 'https://registry.npmjs.org'
+    
+    - run: npm publish
