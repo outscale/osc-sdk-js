@@ -21,11 +21,11 @@ openapi-generator-help:
 	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) config-help -g typescript-fetch
 
 .PHONY: osc-generate
-osc-generate: osc-api/outscale.yaml
+osc-generate:
 	@echo start generating SDK...
 	rm -rf .sdk || true
 	mkdir .sdk
-	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) generate -i /sdk/osc-api/outscale.yaml -g typescript-fetch -c /sdk/gen.yml -o /sdk/.sdk --additional-properties=npmVersion=$(SDK_VERSION)
+	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) generate -i /sdk/.osc-api/outscale.yaml -g typescript-fetch -c /sdk/gen.yml -o /sdk/.sdk --additional-properties=npmVersion=$(SDK_VERSION)
 	# Set sdk version using reproductible sed.
 	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) sed -i "s/\"version\".*/\"version\": \"$(SDK_VERSION)\",/" /sdk/package.json
 	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) chown -R $(USER_ID).$(GROUP_ID) /sdk/.sdk
@@ -46,12 +46,6 @@ osc-generate: osc-api/outscale.yaml
 	npm version; \
 	echo "npm install..."; \
 	npm install --local
-
-osc-api/outscale.yaml:
-	@echo getting osc-api description...
-	git clone https://github.com/outscale/osc-api-deploy.git osc-api && cd osc-api && git checkout -b $(API_VERSION) $(API_VERSION)
-	sed -i "s/operationId: DisableOutscaleLoginForUsers/operationId: DisableOutscaleLoginForUsersZz/g" osc-api/outscale.yaml
-	sed -i "s/operationId: EnableOutscaleLoginForUsers/operationId: EnableOutscaleLoginForUsersZz/g" osc-api/outscale.yaml
 
 .PHONY: clean
 clean:
