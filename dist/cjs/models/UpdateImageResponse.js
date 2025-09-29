@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateImageResponseToJSON = exports.UpdateImageResponseFromJSONTyped = exports.UpdateImageResponseFromJSON = void 0;
+exports.UpdateImageResponseFromJSON = UpdateImageResponseFromJSON;
+exports.UpdateImageResponseFromJSONTyped = UpdateImageResponseFromJSONTyped;
+exports.UpdateImageResponseToJSON = UpdateImageResponseToJSON;
 const runtime_1 = require("../runtime");
 const Image_1 = require("./Image");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function UpdateImageResponseFromJSON(json) {
     return UpdateImageResponseFromJSONTyped(json, false);
 }
-exports.UpdateImageResponseFromJSON = UpdateImageResponseFromJSON;
 function UpdateImageResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function UpdateImageResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.UpdateImageResponseFromJSONTyped = UpdateImageResponseFromJSONTyped;
 function UpdateImageResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UpdateImageResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.UpdateImageResponseToJSON = UpdateImageResponseToJSON;

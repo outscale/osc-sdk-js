@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadVolumesResponseToJSON = exports.ReadVolumesResponseFromJSONTyped = exports.ReadVolumesResponseFromJSON = void 0;
+exports.ReadVolumesResponseFromJSON = ReadVolumesResponseFromJSON;
+exports.ReadVolumesResponseFromJSONTyped = ReadVolumesResponseFromJSONTyped;
+exports.ReadVolumesResponseToJSON = ReadVolumesResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Volume_1 = require("./Volume");
 function ReadVolumesResponseFromJSON(json) {
     return ReadVolumesResponseFromJSONTyped(json, false);
 }
-exports.ReadVolumesResponseFromJSON = ReadVolumesResponseFromJSON;
 function ReadVolumesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadVolumesResponseFromJSONTyped(json, ignoreDiscriminator) {
         'volumes': !(0, runtime_1.exists)(json, 'Volumes') ? undefined : (json['Volumes'].map(Volume_1.VolumeFromJSON)),
     };
 }
-exports.ReadVolumesResponseFromJSONTyped = ReadVolumesResponseFromJSONTyped;
 function ReadVolumesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadVolumesResponseToJSON(value) {
         'Volumes': value.volumes === undefined ? undefined : (value.volumes.map(Volume_1.VolumeToJSON)),
     };
 }
-exports.ReadVolumesResponseToJSON = ReadVolumesResponseToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersQuotaToJSON = exports.FiltersQuotaFromJSONTyped = exports.FiltersQuotaFromJSON = void 0;
+exports.FiltersQuotaFromJSON = FiltersQuotaFromJSON;
+exports.FiltersQuotaFromJSONTyped = FiltersQuotaFromJSONTyped;
+exports.FiltersQuotaToJSON = FiltersQuotaToJSON;
 const runtime_1 = require("../runtime");
 function FiltersQuotaFromJSON(json) {
     return FiltersQuotaFromJSONTyped(json, false);
 }
-exports.FiltersQuotaFromJSON = FiltersQuotaFromJSON;
 function FiltersQuotaFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function FiltersQuotaFromJSONTyped(json, ignoreDiscriminator) {
         'shortDescriptions': !(0, runtime_1.exists)(json, 'ShortDescriptions') ? undefined : json['ShortDescriptions'],
     };
 }
-exports.FiltersQuotaFromJSONTyped = FiltersQuotaFromJSONTyped;
 function FiltersQuotaToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function FiltersQuotaToJSON(value) {
         'ShortDescriptions': value.shortDescriptions,
     };
 }
-exports.FiltersQuotaToJSON = FiltersQuotaToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StopVmsRequestToJSON = exports.StopVmsRequestFromJSONTyped = exports.StopVmsRequestFromJSON = void 0;
+exports.StopVmsRequestFromJSON = StopVmsRequestFromJSON;
+exports.StopVmsRequestFromJSONTyped = StopVmsRequestFromJSONTyped;
+exports.StopVmsRequestToJSON = StopVmsRequestToJSON;
 const runtime_1 = require("../runtime");
 function StopVmsRequestFromJSON(json) {
     return StopVmsRequestFromJSONTyped(json, false);
 }
-exports.StopVmsRequestFromJSON = StopVmsRequestFromJSON;
 function StopVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function StopVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vmIds': json['VmIds'],
     };
 }
-exports.StopVmsRequestFromJSONTyped = StopVmsRequestFromJSONTyped;
 function StopVmsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function StopVmsRequestToJSON(value) {
         'VmIds': value.vmIds,
     };
 }
-exports.StopVmsRequestToJSON = StopVmsRequestToJSON;

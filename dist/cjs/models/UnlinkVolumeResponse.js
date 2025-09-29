@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnlinkVolumeResponseToJSON = exports.UnlinkVolumeResponseFromJSONTyped = exports.UnlinkVolumeResponseFromJSON = void 0;
+exports.UnlinkVolumeResponseFromJSON = UnlinkVolumeResponseFromJSON;
+exports.UnlinkVolumeResponseFromJSONTyped = UnlinkVolumeResponseFromJSONTyped;
+exports.UnlinkVolumeResponseToJSON = UnlinkVolumeResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function UnlinkVolumeResponseFromJSON(json) {
     return UnlinkVolumeResponseFromJSONTyped(json, false);
 }
-exports.UnlinkVolumeResponseFromJSON = UnlinkVolumeResponseFromJSON;
 function UnlinkVolumeResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function UnlinkVolumeResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.UnlinkVolumeResponseFromJSONTyped = UnlinkVolumeResponseFromJSONTyped;
 function UnlinkVolumeResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function UnlinkVolumeResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.UnlinkVolumeResponseToJSON = UnlinkVolumeResponseToJSON;

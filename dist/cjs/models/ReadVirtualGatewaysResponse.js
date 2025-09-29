@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadVirtualGatewaysResponseToJSON = exports.ReadVirtualGatewaysResponseFromJSONTyped = exports.ReadVirtualGatewaysResponseFromJSON = void 0;
+exports.ReadVirtualGatewaysResponseFromJSON = ReadVirtualGatewaysResponseFromJSON;
+exports.ReadVirtualGatewaysResponseFromJSONTyped = ReadVirtualGatewaysResponseFromJSONTyped;
+exports.ReadVirtualGatewaysResponseToJSON = ReadVirtualGatewaysResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const VirtualGateway_1 = require("./VirtualGateway");
 function ReadVirtualGatewaysResponseFromJSON(json) {
     return ReadVirtualGatewaysResponseFromJSONTyped(json, false);
 }
-exports.ReadVirtualGatewaysResponseFromJSON = ReadVirtualGatewaysResponseFromJSON;
 function ReadVirtualGatewaysResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadVirtualGatewaysResponseFromJSONTyped(json, ignoreDiscriminator) {
         'virtualGateways': !(0, runtime_1.exists)(json, 'VirtualGateways') ? undefined : (json['VirtualGateways'].map(VirtualGateway_1.VirtualGatewayFromJSON)),
     };
 }
-exports.ReadVirtualGatewaysResponseFromJSONTyped = ReadVirtualGatewaysResponseFromJSONTyped;
 function ReadVirtualGatewaysResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadVirtualGatewaysResponseToJSON(value) {
         'VirtualGateways': value.virtualGateways === undefined ? undefined : (value.virtualGateways.map(VirtualGateway_1.VirtualGatewayToJSON)),
     };
 }
-exports.ReadVirtualGatewaysResponseToJSON = ReadVirtualGatewaysResponseToJSON;

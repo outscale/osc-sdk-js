@@ -61,8 +61,8 @@ export class LoadBalancerApi extends runtime.BaseAPI {
     /**
      * Creates a load balancer.<br /> The load balancer is created with a unique Domain Name Service (DNS) name. It receives the incoming traffic and routes it to its registered virtual machines (VMs).<br /> By default, this action creates an Internet-facing load balancer, resolving to public IPs. To create an internal load balancer in a Net, resolving to private IPs, use the `LoadBalancerType` parameter.<br /> You must specify either the `Subnets` or the `SubregionNames` parameters.<br /><br /> For more information, see [About Load Balancers](https://docs.outscale.com/en/userguide/About-Load-Balancers.html).
      */
-    createLoadBalancer(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createLoadBalancer() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createLoadBalancerRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class LoadBalancerApi extends runtime.BaseAPI {
     /**
      * Adds one or more tags to the specified load balancers.<br /> If a tag with the same key already exists for the load balancer, the tag value is replaced.<br /><br /> For more information, see [About Tags](https://docs.outscale.com/en/userguide/About-Tags.html).
      */
-    createLoadBalancerTags(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createLoadBalancerTags() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createLoadBalancerTagsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class LoadBalancerApi extends runtime.BaseAPI {
     /**
      * Deletes a specified load balancer.
      */
-    deleteLoadBalancer(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteLoadBalancer() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteLoadBalancerRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -184,8 +184,8 @@ export class LoadBalancerApi extends runtime.BaseAPI {
     /**
      * Deletes one or more tags from the specified load balancers.
      */
-    deleteLoadBalancerTags(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteLoadBalancerTags() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteLoadBalancerTagsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -225,8 +225,8 @@ export class LoadBalancerApi extends runtime.BaseAPI {
     /**
      * > [WARNING]<br /> > Deprecated: This call is deprecated and will be removed.<br />  Deregisters a specified virtual machine (VM) from a load balancer.
      */
-    deregisterVmsInLoadBalancer(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deregisterVmsInLoadBalancer() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deregisterVmsInLoadBalancerRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -266,8 +266,8 @@ export class LoadBalancerApi extends runtime.BaseAPI {
     /**
      * Attaches one or more virtual machines (VMs) to a specified load balancer. You need to specify at least the `BackendIps` or the `BackendVmIds` parameter.<br /> The VMs can be in different Subnets and different Subregions than the load balancer, as long as the VMs and load balancers are all in the public Cloud or all in the same Net. It may take a little time for a VM to be registered with the load balancer. Once the VM is registered with a load balancer, it receives traffic and requests from this load balancer and is called a backend VM.
      */
-    linkLoadBalancerBackendMachines(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    linkLoadBalancerBackendMachines() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.linkLoadBalancerBackendMachinesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -307,8 +307,8 @@ export class LoadBalancerApi extends runtime.BaseAPI {
     /**
      * Lists the tags associated with one or more specified load balancers.
      */
-    readLoadBalancerTags(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readLoadBalancerTags() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readLoadBalancerTagsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -348,8 +348,8 @@ export class LoadBalancerApi extends runtime.BaseAPI {
     /**
      * Lists one or more load balancers and their attributes.
      */
-    readLoadBalancers(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readLoadBalancers() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readLoadBalancersRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -389,8 +389,8 @@ export class LoadBalancerApi extends runtime.BaseAPI {
     /**
      * Lists the state of one or more backend virtual machines (VMs) registered with a specified load balancer.
      */
-    readVmsHealth(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readVmsHealth() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readVmsHealthRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -430,8 +430,8 @@ export class LoadBalancerApi extends runtime.BaseAPI {
     /**
      * > [WARNING]<br /> > Deprecated: This call is deprecated and will be removed.<br />  Registers one or more virtual machines (VMs) with a specified load balancer.<br /> The VMs can be in different Subnets and different Subregions than the load balancer, as long as the VMs and load balancers are all in the public Cloud or all in the same Net. It may take a little time for a VM to be registered with the load balancer. Once the VM is registered with a load balancer, it receives traffic and requests from this load balancer and is called a backend VM.
      */
-    registerVmsInLoadBalancer(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    registerVmsInLoadBalancer() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.registerVmsInLoadBalancerRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -471,8 +471,8 @@ export class LoadBalancerApi extends runtime.BaseAPI {
     /**
      * Detaches one or more backend virtual machines (VMs) from a load balancer. You need to specify at least the `BackendIps` or the `BackendVmIds` parameter.
      */
-    unlinkLoadBalancerBackendMachines(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    unlinkLoadBalancerBackendMachines() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.unlinkLoadBalancerBackendMachinesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -512,8 +512,8 @@ export class LoadBalancerApi extends runtime.BaseAPI {
     /**
      * Modifies the specified attribute of a load balancer. You can specify only one attribute at a time.<br /><br />  You can set a new SSL certificate to an SSL or HTTPS listener of a load balancer.<br /> This certificate replaces any certificate used on the same load balancer and port.<br /><br />  You can also replace the currently enabled policy for the load balancer with another one.<br /> If the `PolicyNames` parameter is empty, the currently enabled policy is disabled.
      */
-    updateLoadBalancer(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateLoadBalancer() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateLoadBalancerRaw(requestParameters, initOverrides);
             return yield response.value();
         });

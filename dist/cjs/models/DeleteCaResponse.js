@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteCaResponseToJSON = exports.DeleteCaResponseFromJSONTyped = exports.DeleteCaResponseFromJSON = void 0;
+exports.DeleteCaResponseFromJSON = DeleteCaResponseFromJSON;
+exports.DeleteCaResponseFromJSONTyped = DeleteCaResponseFromJSONTyped;
+exports.DeleteCaResponseToJSON = DeleteCaResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteCaResponseFromJSON(json) {
     return DeleteCaResponseFromJSONTyped(json, false);
 }
-exports.DeleteCaResponseFromJSON = DeleteCaResponseFromJSON;
 function DeleteCaResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteCaResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteCaResponseFromJSONTyped = DeleteCaResponseFromJSONTyped;
 function DeleteCaResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteCaResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteCaResponseToJSON = DeleteCaResponseToJSON;

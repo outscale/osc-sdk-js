@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteAccessKeyResponseToJSON = exports.DeleteAccessKeyResponseFromJSONTyped = exports.DeleteAccessKeyResponseFromJSON = void 0;
+exports.DeleteAccessKeyResponseFromJSON = DeleteAccessKeyResponseFromJSON;
+exports.DeleteAccessKeyResponseFromJSONTyped = DeleteAccessKeyResponseFromJSONTyped;
+exports.DeleteAccessKeyResponseToJSON = DeleteAccessKeyResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteAccessKeyResponseFromJSON(json) {
     return DeleteAccessKeyResponseFromJSONTyped(json, false);
 }
-exports.DeleteAccessKeyResponseFromJSON = DeleteAccessKeyResponseFromJSON;
 function DeleteAccessKeyResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteAccessKeyResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteAccessKeyResponseFromJSONTyped = DeleteAccessKeyResponseFromJSONTyped;
 function DeleteAccessKeyResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteAccessKeyResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteAccessKeyResponseToJSON = DeleteAccessKeyResponseToJSON;

@@ -58,8 +58,8 @@ export class LocationApi extends runtime.BaseAPI {
     /**
      * Lists the locations, corresponding to datacenters, where you can set up a DirectLink.<br /><br /> For more information, see [About DirectLink](https://docs.outscale.com/en/userguide/About-DirectLink.html).
      */
-    readLocations(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readLocations() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readLocationsRaw(requestParameters, initOverrides);
             return yield response.value();
         });

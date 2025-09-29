@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ErrorResponseToJSON = exports.ErrorResponseFromJSONTyped = exports.ErrorResponseFromJSON = void 0;
+exports.ErrorResponseFromJSON = ErrorResponseFromJSON;
+exports.ErrorResponseFromJSONTyped = ErrorResponseFromJSONTyped;
+exports.ErrorResponseToJSON = ErrorResponseToJSON;
 const runtime_1 = require("../runtime");
 const Errors_1 = require("./Errors");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ErrorResponseFromJSON(json) {
     return ErrorResponseFromJSONTyped(json, false);
 }
-exports.ErrorResponseFromJSON = ErrorResponseFromJSON;
 function ErrorResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function ErrorResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ErrorResponseFromJSONTyped = ErrorResponseFromJSONTyped;
 function ErrorResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ErrorResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ErrorResponseToJSON = ErrorResponseToJSON;

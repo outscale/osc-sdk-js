@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadCatalogResponseToJSON = exports.ReadCatalogResponseFromJSONTyped = exports.ReadCatalogResponseFromJSON = void 0;
+exports.ReadCatalogResponseFromJSON = ReadCatalogResponseFromJSON;
+exports.ReadCatalogResponseFromJSONTyped = ReadCatalogResponseFromJSONTyped;
+exports.ReadCatalogResponseToJSON = ReadCatalogResponseToJSON;
 const runtime_1 = require("../runtime");
 const Catalog_1 = require("./Catalog");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadCatalogResponseFromJSON(json) {
     return ReadCatalogResponseFromJSONTyped(json, false);
 }
-exports.ReadCatalogResponseFromJSON = ReadCatalogResponseFromJSON;
 function ReadCatalogResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function ReadCatalogResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadCatalogResponseFromJSONTyped = ReadCatalogResponseFromJSONTyped;
 function ReadCatalogResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ReadCatalogResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadCatalogResponseToJSON = ReadCatalogResponseToJSON;

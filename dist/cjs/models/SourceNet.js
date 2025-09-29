@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SourceNetToJSON = exports.SourceNetFromJSONTyped = exports.SourceNetFromJSON = void 0;
+exports.SourceNetFromJSON = SourceNetFromJSON;
+exports.SourceNetFromJSONTyped = SourceNetFromJSONTyped;
+exports.SourceNetToJSON = SourceNetToJSON;
 const runtime_1 = require("../runtime");
 function SourceNetFromJSON(json) {
     return SourceNetFromJSONTyped(json, false);
 }
-exports.SourceNetFromJSON = SourceNetFromJSON;
 function SourceNetFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function SourceNetFromJSONTyped(json, ignoreDiscriminator) {
         'netId': !(0, runtime_1.exists)(json, 'NetId') ? undefined : json['NetId'],
     };
 }
-exports.SourceNetFromJSONTyped = SourceNetFromJSONTyped;
 function SourceNetToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function SourceNetToJSON(value) {
         'NetId': value.netId,
     };
 }
-exports.SourceNetToJSON = SourceNetToJSON;

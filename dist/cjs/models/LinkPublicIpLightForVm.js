@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkPublicIpLightForVmToJSON = exports.LinkPublicIpLightForVmFromJSONTyped = exports.LinkPublicIpLightForVmFromJSON = void 0;
+exports.LinkPublicIpLightForVmFromJSON = LinkPublicIpLightForVmFromJSON;
+exports.LinkPublicIpLightForVmFromJSONTyped = LinkPublicIpLightForVmFromJSONTyped;
+exports.LinkPublicIpLightForVmToJSON = LinkPublicIpLightForVmToJSON;
 const runtime_1 = require("../runtime");
 function LinkPublicIpLightForVmFromJSON(json) {
     return LinkPublicIpLightForVmFromJSONTyped(json, false);
 }
-exports.LinkPublicIpLightForVmFromJSON = LinkPublicIpLightForVmFromJSON;
 function LinkPublicIpLightForVmFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function LinkPublicIpLightForVmFromJSONTyped(json, ignoreDiscriminator) {
         'publicIpAccountId': !(0, runtime_1.exists)(json, 'PublicIpAccountId') ? undefined : json['PublicIpAccountId'],
     };
 }
-exports.LinkPublicIpLightForVmFromJSONTyped = LinkPublicIpLightForVmFromJSONTyped;
 function LinkPublicIpLightForVmToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function LinkPublicIpLightForVmToJSON(value) {
         'PublicIpAccountId': value.publicIpAccountId,
     };
 }
-exports.LinkPublicIpLightForVmToJSON = LinkPublicIpLightForVmToJSON;

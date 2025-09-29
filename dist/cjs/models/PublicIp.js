@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PublicIpToJSON = exports.PublicIpFromJSONTyped = exports.PublicIpFromJSON = void 0;
+exports.PublicIpFromJSON = PublicIpFromJSON;
+exports.PublicIpFromJSONTyped = PublicIpFromJSONTyped;
+exports.PublicIpToJSON = PublicIpToJSON;
 const runtime_1 = require("../runtime");
 const ResourceTag_1 = require("./ResourceTag");
 function PublicIpFromJSON(json) {
     return PublicIpFromJSONTyped(json, false);
 }
-exports.PublicIpFromJSON = PublicIpFromJSON;
 function PublicIpFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -35,7 +36,6 @@ function PublicIpFromJSONTyped(json, ignoreDiscriminator) {
         'vmId': !(0, runtime_1.exists)(json, 'VmId') ? undefined : json['VmId'],
     };
 }
-exports.PublicIpFromJSONTyped = PublicIpFromJSONTyped;
 function PublicIpToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -54,4 +54,3 @@ function PublicIpToJSON(value) {
         'VmId': value.vmId,
     };
 }
-exports.PublicIpToJSON = PublicIpToJSON;

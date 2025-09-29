@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteVmGroupRequestToJSON = exports.DeleteVmGroupRequestFromJSONTyped = exports.DeleteVmGroupRequestFromJSON = void 0;
+exports.DeleteVmGroupRequestFromJSON = DeleteVmGroupRequestFromJSON;
+exports.DeleteVmGroupRequestFromJSONTyped = DeleteVmGroupRequestFromJSONTyped;
+exports.DeleteVmGroupRequestToJSON = DeleteVmGroupRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteVmGroupRequestFromJSON(json) {
     return DeleteVmGroupRequestFromJSONTyped(json, false);
 }
-exports.DeleteVmGroupRequestFromJSON = DeleteVmGroupRequestFromJSON;
 function DeleteVmGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteVmGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vmGroupId': json['VmGroupId'],
     };
 }
-exports.DeleteVmGroupRequestFromJSONTyped = DeleteVmGroupRequestFromJSONTyped;
 function DeleteVmGroupRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteVmGroupRequestToJSON(value) {
         'VmGroupId': value.vmGroupId,
     };
 }
-exports.DeleteVmGroupRequestToJSON = DeleteVmGroupRequestToJSON;

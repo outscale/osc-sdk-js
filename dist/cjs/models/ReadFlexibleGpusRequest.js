@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadFlexibleGpusRequestToJSON = exports.ReadFlexibleGpusRequestFromJSONTyped = exports.ReadFlexibleGpusRequestFromJSON = void 0;
+exports.ReadFlexibleGpusRequestFromJSON = ReadFlexibleGpusRequestFromJSON;
+exports.ReadFlexibleGpusRequestFromJSONTyped = ReadFlexibleGpusRequestFromJSONTyped;
+exports.ReadFlexibleGpusRequestToJSON = ReadFlexibleGpusRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersFlexibleGpu_1 = require("./FiltersFlexibleGpu");
 function ReadFlexibleGpusRequestFromJSON(json) {
     return ReadFlexibleGpusRequestFromJSONTyped(json, false);
 }
-exports.ReadFlexibleGpusRequestFromJSON = ReadFlexibleGpusRequestFromJSON;
 function ReadFlexibleGpusRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function ReadFlexibleGpusRequestFromJSONTyped(json, ignoreDiscriminator) {
         'filters': !(0, runtime_1.exists)(json, 'Filters') ? undefined : (0, FiltersFlexibleGpu_1.FiltersFlexibleGpuFromJSON)(json['Filters']),
     };
 }
-exports.ReadFlexibleGpusRequestFromJSONTyped = ReadFlexibleGpusRequestFromJSONTyped;
 function ReadFlexibleGpusRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function ReadFlexibleGpusRequestToJSON(value) {
         'Filters': (0, FiltersFlexibleGpu_1.FiltersFlexibleGpuToJSON)(value.filters),
     };
 }
-exports.ReadFlexibleGpusRequestToJSON = ReadFlexibleGpusRequestToJSON;

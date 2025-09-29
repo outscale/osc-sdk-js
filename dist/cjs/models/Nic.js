@@ -13,7 +13,9 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NicToJSON = exports.NicFromJSONTyped = exports.NicFromJSON = void 0;
+exports.NicFromJSON = NicFromJSON;
+exports.NicFromJSONTyped = NicFromJSONTyped;
+exports.NicToJSON = NicToJSON;
 const runtime_1 = require("../runtime");
 const LinkNic_1 = require("./LinkNic");
 const LinkPublicIp_1 = require("./LinkPublicIp");
@@ -23,7 +25,6 @@ const SecurityGroupLight_1 = require("./SecurityGroupLight");
 function NicFromJSON(json) {
     return NicFromJSONTyped(json, false);
 }
-exports.NicFromJSON = NicFromJSON;
 function NicFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -46,7 +47,6 @@ function NicFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
     };
 }
-exports.NicFromJSONTyped = NicFromJSONTyped;
 function NicToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -72,4 +72,3 @@ function NicToJSON(value) {
         'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
     };
 }
-exports.NicToJSON = NicToJSON;

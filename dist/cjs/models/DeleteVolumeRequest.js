@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteVolumeRequestToJSON = exports.DeleteVolumeRequestFromJSONTyped = exports.DeleteVolumeRequestFromJSON = void 0;
+exports.DeleteVolumeRequestFromJSON = DeleteVolumeRequestFromJSON;
+exports.DeleteVolumeRequestFromJSONTyped = DeleteVolumeRequestFromJSONTyped;
+exports.DeleteVolumeRequestToJSON = DeleteVolumeRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteVolumeRequestFromJSON(json) {
     return DeleteVolumeRequestFromJSONTyped(json, false);
 }
-exports.DeleteVolumeRequestFromJSON = DeleteVolumeRequestFromJSON;
 function DeleteVolumeRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteVolumeRequestFromJSONTyped(json, ignoreDiscriminator) {
         'volumeId': json['VolumeId'],
     };
 }
-exports.DeleteVolumeRequestFromJSONTyped = DeleteVolumeRequestFromJSONTyped;
 function DeleteVolumeRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteVolumeRequestToJSON(value) {
         'VolumeId': value.volumeId,
     };
 }
-exports.DeleteVolumeRequestToJSON = DeleteVolumeRequestToJSON;

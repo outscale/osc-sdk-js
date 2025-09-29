@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateDirectLinkRequestToJSON = exports.CreateDirectLinkRequestFromJSONTyped = exports.CreateDirectLinkRequestFromJSON = void 0;
+exports.CreateDirectLinkRequestFromJSON = CreateDirectLinkRequestFromJSON;
+exports.CreateDirectLinkRequestFromJSONTyped = CreateDirectLinkRequestFromJSONTyped;
+exports.CreateDirectLinkRequestToJSON = CreateDirectLinkRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateDirectLinkRequestFromJSON(json) {
     return CreateDirectLinkRequestFromJSONTyped(json, false);
 }
-exports.CreateDirectLinkRequestFromJSON = CreateDirectLinkRequestFromJSON;
 function CreateDirectLinkRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateDirectLinkRequestFromJSONTyped(json, ignoreDiscriminator) {
         'location': json['Location'],
     };
 }
-exports.CreateDirectLinkRequestFromJSONTyped = CreateDirectLinkRequestFromJSONTyped;
 function CreateDirectLinkRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function CreateDirectLinkRequestToJSON(value) {
         'Location': value.location,
     };
 }
-exports.CreateDirectLinkRequestToJSON = CreateDirectLinkRequestToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadAdminPasswordResponseToJSON = exports.ReadAdminPasswordResponseFromJSONTyped = exports.ReadAdminPasswordResponseFromJSON = void 0;
+exports.ReadAdminPasswordResponseFromJSON = ReadAdminPasswordResponseFromJSON;
+exports.ReadAdminPasswordResponseFromJSONTyped = ReadAdminPasswordResponseFromJSONTyped;
+exports.ReadAdminPasswordResponseToJSON = ReadAdminPasswordResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadAdminPasswordResponseFromJSON(json) {
     return ReadAdminPasswordResponseFromJSONTyped(json, false);
 }
-exports.ReadAdminPasswordResponseFromJSON = ReadAdminPasswordResponseFromJSON;
 function ReadAdminPasswordResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function ReadAdminPasswordResponseFromJSONTyped(json, ignoreDiscriminator) {
         'vmId': !(0, runtime_1.exists)(json, 'VmId') ? undefined : json['VmId'],
     };
 }
-exports.ReadAdminPasswordResponseFromJSONTyped = ReadAdminPasswordResponseFromJSONTyped;
 function ReadAdminPasswordResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function ReadAdminPasswordResponseToJSON(value) {
         'VmId': value.vmId,
     };
 }
-exports.ReadAdminPasswordResponseToJSON = ReadAdminPasswordResponseToJSON;

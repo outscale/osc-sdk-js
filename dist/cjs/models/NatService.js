@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NatServiceToJSON = exports.NatServiceFromJSONTyped = exports.NatServiceFromJSON = void 0;
+exports.NatServiceFromJSON = NatServiceFromJSON;
+exports.NatServiceFromJSONTyped = NatServiceFromJSONTyped;
+exports.NatServiceToJSON = NatServiceToJSON;
 const runtime_1 = require("../runtime");
 const PublicIpLight_1 = require("./PublicIpLight");
 const ResourceTag_1 = require("./ResourceTag");
 function NatServiceFromJSON(json) {
     return NatServiceFromJSONTyped(json, false);
 }
-exports.NatServiceFromJSON = NatServiceFromJSON;
 function NatServiceFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -35,7 +36,6 @@ function NatServiceFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
     };
 }
-exports.NatServiceFromJSONTyped = NatServiceFromJSONTyped;
 function NatServiceToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +53,3 @@ function NatServiceToJSON(value) {
         'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
     };
 }
-exports.NatServiceToJSON = NatServiceToJSON;

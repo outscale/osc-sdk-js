@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersUserGroupToJSON = exports.FiltersUserGroupFromJSONTyped = exports.FiltersUserGroupFromJSON = void 0;
+exports.FiltersUserGroupFromJSON = FiltersUserGroupFromJSON;
+exports.FiltersUserGroupFromJSONTyped = FiltersUserGroupFromJSONTyped;
+exports.FiltersUserGroupToJSON = FiltersUserGroupToJSON;
 const runtime_1 = require("../runtime");
 function FiltersUserGroupFromJSON(json) {
     return FiltersUserGroupFromJSONTyped(json, false);
 }
-exports.FiltersUserGroupFromJSON = FiltersUserGroupFromJSON;
 function FiltersUserGroupFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function FiltersUserGroupFromJSONTyped(json, ignoreDiscriminator) {
         'userGroupIds': !(0, runtime_1.exists)(json, 'UserGroupIds') ? undefined : json['UserGroupIds'],
     };
 }
-exports.FiltersUserGroupFromJSONTyped = FiltersUserGroupFromJSONTyped;
 function FiltersUserGroupToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function FiltersUserGroupToJSON(value) {
         'UserGroupIds': value.userGroupIds,
     };
 }
-exports.FiltersUserGroupToJSON = FiltersUserGroupToJSON;

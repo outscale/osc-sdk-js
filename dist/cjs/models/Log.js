@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LogToJSON = exports.LogFromJSONTyped = exports.LogFromJSON = void 0;
+exports.LogFromJSON = LogFromJSON;
+exports.LogFromJSONTyped = LogFromJSONTyped;
+exports.LogToJSON = LogToJSON;
 const runtime_1 = require("../runtime");
 function LogFromJSON(json) {
     return LogFromJSONTyped(json, false);
 }
-exports.LogFromJSON = LogFromJSON;
 function LogFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -42,7 +43,6 @@ function LogFromJSONTyped(json, ignoreDiscriminator) {
         'responseStatusCode': !(0, runtime_1.exists)(json, 'ResponseStatusCode') ? undefined : json['ResponseStatusCode'],
     };
 }
-exports.LogFromJSONTyped = LogFromJSONTyped;
 function LogToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -69,4 +69,3 @@ function LogToJSON(value) {
         'ResponseStatusCode': value.responseStatusCode,
     };
 }
-exports.LogToJSON = LogToJSON;

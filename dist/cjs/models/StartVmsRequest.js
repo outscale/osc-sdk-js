@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StartVmsRequestToJSON = exports.StartVmsRequestFromJSONTyped = exports.StartVmsRequestFromJSON = void 0;
+exports.StartVmsRequestFromJSON = StartVmsRequestFromJSON;
+exports.StartVmsRequestFromJSONTyped = StartVmsRequestFromJSONTyped;
+exports.StartVmsRequestToJSON = StartVmsRequestToJSON;
 const runtime_1 = require("../runtime");
 function StartVmsRequestFromJSON(json) {
     return StartVmsRequestFromJSONTyped(json, false);
 }
-exports.StartVmsRequestFromJSON = StartVmsRequestFromJSON;
 function StartVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function StartVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vmIds': json['VmIds'],
     };
 }
-exports.StartVmsRequestFromJSONTyped = StartVmsRequestFromJSONTyped;
 function StartVmsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function StartVmsRequestToJSON(value) {
         'VmIds': value.vmIds,
     };
 }
-exports.StartVmsRequestToJSON = StartVmsRequestToJSON;

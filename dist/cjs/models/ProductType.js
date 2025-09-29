@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProductTypeToJSON = exports.ProductTypeFromJSONTyped = exports.ProductTypeFromJSON = void 0;
+exports.ProductTypeFromJSON = ProductTypeFromJSON;
+exports.ProductTypeFromJSONTyped = ProductTypeFromJSONTyped;
+exports.ProductTypeToJSON = ProductTypeToJSON;
 const runtime_1 = require("../runtime");
 function ProductTypeFromJSON(json) {
     return ProductTypeFromJSONTyped(json, false);
 }
-exports.ProductTypeFromJSON = ProductTypeFromJSON;
 function ProductTypeFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function ProductTypeFromJSONTyped(json, ignoreDiscriminator) {
         'vendor': !(0, runtime_1.exists)(json, 'Vendor') ? undefined : json['Vendor'],
     };
 }
-exports.ProductTypeFromJSONTyped = ProductTypeFromJSONTyped;
 function ProductTypeToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ProductTypeToJSON(value) {
         'Vendor': value.vendor,
     };
 }
-exports.ProductTypeToJSON = ProductTypeToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateNetRequestToJSON = exports.UpdateNetRequestFromJSONTyped = exports.UpdateNetRequestFromJSON = void 0;
+exports.UpdateNetRequestFromJSON = UpdateNetRequestFromJSON;
+exports.UpdateNetRequestFromJSONTyped = UpdateNetRequestFromJSONTyped;
+exports.UpdateNetRequestToJSON = UpdateNetRequestToJSON;
 const runtime_1 = require("../runtime");
 function UpdateNetRequestFromJSON(json) {
     return UpdateNetRequestFromJSONTyped(json, false);
 }
-exports.UpdateNetRequestFromJSON = UpdateNetRequestFromJSON;
 function UpdateNetRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function UpdateNetRequestFromJSONTyped(json, ignoreDiscriminator) {
         'netId': json['NetId'],
     };
 }
-exports.UpdateNetRequestFromJSONTyped = UpdateNetRequestFromJSONTyped;
 function UpdateNetRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UpdateNetRequestToJSON(value) {
         'NetId': value.netId,
     };
 }
-exports.UpdateNetRequestToJSON = UpdateNetRequestToJSON;

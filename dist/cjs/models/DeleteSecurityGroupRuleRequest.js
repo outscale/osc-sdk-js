@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteSecurityGroupRuleRequestToJSON = exports.DeleteSecurityGroupRuleRequestFromJSONTyped = exports.DeleteSecurityGroupRuleRequestFromJSON = void 0;
+exports.DeleteSecurityGroupRuleRequestFromJSON = DeleteSecurityGroupRuleRequestFromJSON;
+exports.DeleteSecurityGroupRuleRequestFromJSONTyped = DeleteSecurityGroupRuleRequestFromJSONTyped;
+exports.DeleteSecurityGroupRuleRequestToJSON = DeleteSecurityGroupRuleRequestToJSON;
 const runtime_1 = require("../runtime");
 const SecurityGroupRule_1 = require("./SecurityGroupRule");
 function DeleteSecurityGroupRuleRequestFromJSON(json) {
     return DeleteSecurityGroupRuleRequestFromJSONTyped(json, false);
 }
-exports.DeleteSecurityGroupRuleRequestFromJSON = DeleteSecurityGroupRuleRequestFromJSON;
 function DeleteSecurityGroupRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -37,7 +38,6 @@ function DeleteSecurityGroupRuleRequestFromJSONTyped(json, ignoreDiscriminator) 
         'toPortRange': !(0, runtime_1.exists)(json, 'ToPortRange') ? undefined : json['ToPortRange'],
     };
 }
-exports.DeleteSecurityGroupRuleRequestFromJSONTyped = DeleteSecurityGroupRuleRequestFromJSONTyped;
 function DeleteSecurityGroupRuleRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -58,4 +58,3 @@ function DeleteSecurityGroupRuleRequestToJSON(value) {
         'ToPortRange': value.toPortRange,
     };
 }
-exports.DeleteSecurityGroupRuleRequestToJSON = DeleteSecurityGroupRuleRequestToJSON;

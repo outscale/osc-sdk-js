@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadDirectLinkInterfacesResponseToJSON = exports.ReadDirectLinkInterfacesResponseFromJSONTyped = exports.ReadDirectLinkInterfacesResponseFromJSON = void 0;
+exports.ReadDirectLinkInterfacesResponseFromJSON = ReadDirectLinkInterfacesResponseFromJSON;
+exports.ReadDirectLinkInterfacesResponseFromJSONTyped = ReadDirectLinkInterfacesResponseFromJSONTyped;
+exports.ReadDirectLinkInterfacesResponseToJSON = ReadDirectLinkInterfacesResponseToJSON;
 const runtime_1 = require("../runtime");
 const DirectLinkInterfaces_1 = require("./DirectLinkInterfaces");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadDirectLinkInterfacesResponseFromJSON(json) {
     return ReadDirectLinkInterfacesResponseFromJSONTyped(json, false);
 }
-exports.ReadDirectLinkInterfacesResponseFromJSON = ReadDirectLinkInterfacesResponseFromJSON;
 function ReadDirectLinkInterfacesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadDirectLinkInterfacesResponseFromJSONTyped(json, ignoreDiscriminator
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadDirectLinkInterfacesResponseFromJSONTyped = ReadDirectLinkInterfacesResponseFromJSONTyped;
 function ReadDirectLinkInterfacesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadDirectLinkInterfacesResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadDirectLinkInterfacesResponseToJSON = ReadDirectLinkInterfacesResponseToJSON;

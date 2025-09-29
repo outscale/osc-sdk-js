@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateSnapshotResponseToJSON = exports.CreateSnapshotResponseFromJSONTyped = exports.CreateSnapshotResponseFromJSON = void 0;
+exports.CreateSnapshotResponseFromJSON = CreateSnapshotResponseFromJSON;
+exports.CreateSnapshotResponseFromJSONTyped = CreateSnapshotResponseFromJSONTyped;
+exports.CreateSnapshotResponseToJSON = CreateSnapshotResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Snapshot_1 = require("./Snapshot");
 function CreateSnapshotResponseFromJSON(json) {
     return CreateSnapshotResponseFromJSONTyped(json, false);
 }
-exports.CreateSnapshotResponseFromJSON = CreateSnapshotResponseFromJSON;
 function CreateSnapshotResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateSnapshotResponseFromJSONTyped(json, ignoreDiscriminator) {
         'snapshot': !(0, runtime_1.exists)(json, 'Snapshot') ? undefined : (0, Snapshot_1.SnapshotFromJSON)(json['Snapshot']),
     };
 }
-exports.CreateSnapshotResponseFromJSONTyped = CreateSnapshotResponseFromJSONTyped;
 function CreateSnapshotResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateSnapshotResponseToJSON(value) {
         'Snapshot': (0, Snapshot_1.SnapshotToJSON)(value.snapshot),
     };
 }
-exports.CreateSnapshotResponseToJSON = CreateSnapshotResponseToJSON;

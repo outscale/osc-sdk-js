@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePolicyVersionRequestToJSON = exports.CreatePolicyVersionRequestFromJSONTyped = exports.CreatePolicyVersionRequestFromJSON = void 0;
+exports.CreatePolicyVersionRequestFromJSON = CreatePolicyVersionRequestFromJSON;
+exports.CreatePolicyVersionRequestFromJSONTyped = CreatePolicyVersionRequestFromJSONTyped;
+exports.CreatePolicyVersionRequestToJSON = CreatePolicyVersionRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreatePolicyVersionRequestFromJSON(json) {
     return CreatePolicyVersionRequestFromJSONTyped(json, false);
 }
-exports.CreatePolicyVersionRequestFromJSON = CreatePolicyVersionRequestFromJSON;
 function CreatePolicyVersionRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function CreatePolicyVersionRequestFromJSONTyped(json, ignoreDiscriminator) {
         'setAsDefault': !(0, runtime_1.exists)(json, 'SetAsDefault') ? undefined : json['SetAsDefault'],
     };
 }
-exports.CreatePolicyVersionRequestFromJSONTyped = CreatePolicyVersionRequestFromJSONTyped;
 function CreatePolicyVersionRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreatePolicyVersionRequestToJSON(value) {
         'SetAsDefault': value.setAsDefault,
     };
 }
-exports.CreatePolicyVersionRequestToJSON = CreatePolicyVersionRequestToJSON;

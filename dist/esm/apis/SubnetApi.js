@@ -61,8 +61,8 @@ export class SubnetApi extends runtime.BaseAPI {
     /**
      * Creates a Subnet in an existing Net.<br /> To create a Subnet in a Net, you have to provide the ID of the Net and the IP range for the Subnet (its network range). Once the Subnet is created, you cannot modify its IP range.<br /><br /> For more information, see [About Nets](https://docs.outscale.com/en/userguide/About-Nets.html).
      */
-    createSubnet(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createSubnet() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createSubnetRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class SubnetApi extends runtime.BaseAPI {
     /**
      * Deletes a specified Subnet.<br /> Before deleting the Subnet, you need to delete all resources associated with the Subnet:<br /><br />  * Virtual machines (VMs)<br /> * Network Interface Cards (NICs)<br /> * NAT services<br /> * Load balancers
      */
-    deleteSubnet(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteSubnet() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteSubnetRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class SubnetApi extends runtime.BaseAPI {
     /**
      * Lists one or more of your Subnets.<br /> If you do not specify any Subnet ID, this action describes all of your Subnets.
      */
-    readSubnets(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readSubnets() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readSubnetsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -184,8 +184,8 @@ export class SubnetApi extends runtime.BaseAPI {
     /**
      * Modifies the specified attribute of a Subnet.
      */
-    updateSubnet(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateSubnet() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateSubnetRaw(requestParameters, initOverrides);
             return yield response.value();
         });

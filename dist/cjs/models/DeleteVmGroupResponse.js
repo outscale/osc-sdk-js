@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteVmGroupResponseToJSON = exports.DeleteVmGroupResponseFromJSONTyped = exports.DeleteVmGroupResponseFromJSON = void 0;
+exports.DeleteVmGroupResponseFromJSON = DeleteVmGroupResponseFromJSON;
+exports.DeleteVmGroupResponseFromJSONTyped = DeleteVmGroupResponseFromJSONTyped;
+exports.DeleteVmGroupResponseToJSON = DeleteVmGroupResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteVmGroupResponseFromJSON(json) {
     return DeleteVmGroupResponseFromJSONTyped(json, false);
 }
-exports.DeleteVmGroupResponseFromJSON = DeleteVmGroupResponseFromJSON;
 function DeleteVmGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteVmGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteVmGroupResponseFromJSONTyped = DeleteVmGroupResponseFromJSONTyped;
 function DeleteVmGroupResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteVmGroupResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteVmGroupResponseToJSON = DeleteVmGroupResponseToJSON;

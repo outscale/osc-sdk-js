@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteKeypairResponseToJSON = exports.DeleteKeypairResponseFromJSONTyped = exports.DeleteKeypairResponseFromJSON = void 0;
+exports.DeleteKeypairResponseFromJSON = DeleteKeypairResponseFromJSON;
+exports.DeleteKeypairResponseFromJSONTyped = DeleteKeypairResponseFromJSONTyped;
+exports.DeleteKeypairResponseToJSON = DeleteKeypairResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteKeypairResponseFromJSON(json) {
     return DeleteKeypairResponseFromJSONTyped(json, false);
 }
-exports.DeleteKeypairResponseFromJSON = DeleteKeypairResponseFromJSON;
 function DeleteKeypairResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteKeypairResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteKeypairResponseFromJSONTyped = DeleteKeypairResponseFromJSONTyped;
 function DeleteKeypairResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteKeypairResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteKeypairResponseToJSON = DeleteKeypairResponseToJSON;

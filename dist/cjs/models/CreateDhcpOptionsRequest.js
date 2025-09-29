@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateDhcpOptionsRequestToJSON = exports.CreateDhcpOptionsRequestFromJSONTyped = exports.CreateDhcpOptionsRequestFromJSON = void 0;
+exports.CreateDhcpOptionsRequestFromJSON = CreateDhcpOptionsRequestFromJSON;
+exports.CreateDhcpOptionsRequestFromJSONTyped = CreateDhcpOptionsRequestFromJSONTyped;
+exports.CreateDhcpOptionsRequestToJSON = CreateDhcpOptionsRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateDhcpOptionsRequestFromJSON(json) {
     return CreateDhcpOptionsRequestFromJSONTyped(json, false);
 }
-exports.CreateDhcpOptionsRequestFromJSON = CreateDhcpOptionsRequestFromJSON;
 function CreateDhcpOptionsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function CreateDhcpOptionsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'ntpServers': !(0, runtime_1.exists)(json, 'NtpServers') ? undefined : json['NtpServers'],
     };
 }
-exports.CreateDhcpOptionsRequestFromJSONTyped = CreateDhcpOptionsRequestFromJSONTyped;
 function CreateDhcpOptionsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function CreateDhcpOptionsRequestToJSON(value) {
         'NtpServers': value.ntpServers,
     };
 }
-exports.CreateDhcpOptionsRequestToJSON = CreateDhcpOptionsRequestToJSON;

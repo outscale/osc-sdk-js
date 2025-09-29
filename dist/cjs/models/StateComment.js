@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StateCommentToJSON = exports.StateCommentFromJSONTyped = exports.StateCommentFromJSON = void 0;
+exports.StateCommentFromJSON = StateCommentFromJSON;
+exports.StateCommentFromJSONTyped = StateCommentFromJSONTyped;
+exports.StateCommentToJSON = StateCommentToJSON;
 const runtime_1 = require("../runtime");
 function StateCommentFromJSON(json) {
     return StateCommentFromJSONTyped(json, false);
 }
-exports.StateCommentFromJSON = StateCommentFromJSON;
 function StateCommentFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function StateCommentFromJSONTyped(json, ignoreDiscriminator) {
         'stateMessage': !(0, runtime_1.exists)(json, 'StateMessage') ? undefined : json['StateMessage'],
     };
 }
-exports.StateCommentFromJSONTyped = StateCommentFromJSONTyped;
 function StateCommentToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function StateCommentToJSON(value) {
         'StateMessage': value.stateMessage,
     };
 }
-exports.StateCommentToJSON = StateCommentToJSON;

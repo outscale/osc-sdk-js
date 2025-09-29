@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SnapshotExportTaskToJSON = exports.SnapshotExportTaskFromJSONTyped = exports.SnapshotExportTaskFromJSON = void 0;
+exports.SnapshotExportTaskFromJSON = SnapshotExportTaskFromJSON;
+exports.SnapshotExportTaskFromJSONTyped = SnapshotExportTaskFromJSONTyped;
+exports.SnapshotExportTaskToJSON = SnapshotExportTaskToJSON;
 const runtime_1 = require("../runtime");
 const OsuExportSnapshotExportTask_1 = require("./OsuExportSnapshotExportTask");
 const ResourceTag_1 = require("./ResourceTag");
 function SnapshotExportTaskFromJSON(json) {
     return SnapshotExportTaskFromJSONTyped(json, false);
 }
-exports.SnapshotExportTaskFromJSON = SnapshotExportTaskFromJSON;
 function SnapshotExportTaskFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -35,7 +36,6 @@ function SnapshotExportTaskFromJSONTyped(json, ignoreDiscriminator) {
         'taskId': !(0, runtime_1.exists)(json, 'TaskId') ? undefined : json['TaskId'],
     };
 }
-exports.SnapshotExportTaskFromJSONTyped = SnapshotExportTaskFromJSONTyped;
 function SnapshotExportTaskToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +53,3 @@ function SnapshotExportTaskToJSON(value) {
         'TaskId': value.taskId,
     };
 }
-exports.SnapshotExportTaskToJSON = SnapshotExportTaskToJSON;

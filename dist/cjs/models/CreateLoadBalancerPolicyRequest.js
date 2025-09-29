@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateLoadBalancerPolicyRequestToJSON = exports.CreateLoadBalancerPolicyRequestFromJSONTyped = exports.CreateLoadBalancerPolicyRequestFromJSON = void 0;
+exports.CreateLoadBalancerPolicyRequestFromJSON = CreateLoadBalancerPolicyRequestFromJSON;
+exports.CreateLoadBalancerPolicyRequestFromJSONTyped = CreateLoadBalancerPolicyRequestFromJSONTyped;
+exports.CreateLoadBalancerPolicyRequestToJSON = CreateLoadBalancerPolicyRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateLoadBalancerPolicyRequestFromJSON(json) {
     return CreateLoadBalancerPolicyRequestFromJSONTyped(json, false);
 }
-exports.CreateLoadBalancerPolicyRequestFromJSON = CreateLoadBalancerPolicyRequestFromJSON;
 function CreateLoadBalancerPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -32,7 +33,6 @@ function CreateLoadBalancerPolicyRequestFromJSONTyped(json, ignoreDiscriminator)
         'policyType': json['PolicyType'],
     };
 }
-exports.CreateLoadBalancerPolicyRequestFromJSONTyped = CreateLoadBalancerPolicyRequestFromJSONTyped;
 function CreateLoadBalancerPolicyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function CreateLoadBalancerPolicyRequestToJSON(value) {
         'PolicyType': value.policyType,
     };
 }
-exports.CreateLoadBalancerPolicyRequestToJSON = CreateLoadBalancerPolicyRequestToJSON;

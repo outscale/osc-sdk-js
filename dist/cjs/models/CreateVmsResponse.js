@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateVmsResponseToJSON = exports.CreateVmsResponseFromJSONTyped = exports.CreateVmsResponseFromJSON = void 0;
+exports.CreateVmsResponseFromJSON = CreateVmsResponseFromJSON;
+exports.CreateVmsResponseFromJSONTyped = CreateVmsResponseFromJSONTyped;
+exports.CreateVmsResponseToJSON = CreateVmsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Vm_1 = require("./Vm");
 function CreateVmsResponseFromJSON(json) {
     return CreateVmsResponseFromJSONTyped(json, false);
 }
-exports.CreateVmsResponseFromJSON = CreateVmsResponseFromJSON;
 function CreateVmsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateVmsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'vms': !(0, runtime_1.exists)(json, 'Vms') ? undefined : (json['Vms'].map(Vm_1.VmFromJSON)),
     };
 }
-exports.CreateVmsResponseFromJSONTyped = CreateVmsResponseFromJSONTyped;
 function CreateVmsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateVmsResponseToJSON(value) {
         'Vms': value.vms === undefined ? undefined : (value.vms.map(Vm_1.VmToJSON)),
     };
 }
-exports.CreateVmsResponseToJSON = CreateVmsResponseToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteNetAccessPointResponseToJSON = exports.DeleteNetAccessPointResponseFromJSONTyped = exports.DeleteNetAccessPointResponseFromJSON = void 0;
+exports.DeleteNetAccessPointResponseFromJSON = DeleteNetAccessPointResponseFromJSON;
+exports.DeleteNetAccessPointResponseFromJSONTyped = DeleteNetAccessPointResponseFromJSONTyped;
+exports.DeleteNetAccessPointResponseToJSON = DeleteNetAccessPointResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteNetAccessPointResponseFromJSON(json) {
     return DeleteNetAccessPointResponseFromJSONTyped(json, false);
 }
-exports.DeleteNetAccessPointResponseFromJSON = DeleteNetAccessPointResponseFromJSON;
 function DeleteNetAccessPointResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteNetAccessPointResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteNetAccessPointResponseFromJSONTyped = DeleteNetAccessPointResponseFromJSONTyped;
 function DeleteNetAccessPointResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteNetAccessPointResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteNetAccessPointResponseToJSON = DeleteNetAccessPointResponseToJSON;

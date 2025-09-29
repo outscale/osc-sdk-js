@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateVmGroupRequestToJSON = exports.UpdateVmGroupRequestFromJSONTyped = exports.UpdateVmGroupRequestFromJSON = void 0;
+exports.UpdateVmGroupRequestFromJSON = UpdateVmGroupRequestFromJSON;
+exports.UpdateVmGroupRequestFromJSONTyped = UpdateVmGroupRequestFromJSONTyped;
+exports.UpdateVmGroupRequestToJSON = UpdateVmGroupRequestToJSON;
 const runtime_1 = require("../runtime");
 const ResourceTag_1 = require("./ResourceTag");
 function UpdateVmGroupRequestFromJSON(json) {
     return UpdateVmGroupRequestFromJSONTyped(json, false);
 }
-exports.UpdateVmGroupRequestFromJSON = UpdateVmGroupRequestFromJSON;
 function UpdateVmGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function UpdateVmGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vmTemplateId': !(0, runtime_1.exists)(json, 'VmTemplateId') ? undefined : json['VmTemplateId'],
     };
 }
-exports.UpdateVmGroupRequestFromJSONTyped = UpdateVmGroupRequestFromJSONTyped;
 function UpdateVmGroupRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -50,4 +50,3 @@ function UpdateVmGroupRequestToJSON(value) {
         'VmTemplateId': value.vmTemplateId,
     };
 }
-exports.UpdateVmGroupRequestToJSON = UpdateVmGroupRequestToJSON;

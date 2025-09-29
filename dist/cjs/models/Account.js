@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AccountToJSON = exports.AccountFromJSONTyped = exports.AccountFromJSON = void 0;
+exports.AccountFromJSON = AccountFromJSON;
+exports.AccountFromJSONTyped = AccountFromJSONTyped;
+exports.AccountToJSON = AccountToJSON;
 const runtime_1 = require("../runtime");
 function AccountFromJSON(json) {
     return AccountFromJSONTyped(json, false);
 }
-exports.AccountFromJSON = AccountFromJSON;
 function AccountFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -42,7 +43,6 @@ function AccountFromJSONTyped(json, ignoreDiscriminator) {
         'zipCode': !(0, runtime_1.exists)(json, 'ZipCode') ? undefined : json['ZipCode'],
     };
 }
-exports.AccountFromJSONTyped = AccountFromJSONTyped;
 function AccountToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -69,4 +69,3 @@ function AccountToJSON(value) {
         'ZipCode': value.zipCode,
     };
 }
-exports.AccountToJSON = AccountToJSON;

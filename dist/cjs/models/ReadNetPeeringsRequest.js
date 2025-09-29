@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadNetPeeringsRequestToJSON = exports.ReadNetPeeringsRequestFromJSONTyped = exports.ReadNetPeeringsRequestFromJSON = void 0;
+exports.ReadNetPeeringsRequestFromJSON = ReadNetPeeringsRequestFromJSON;
+exports.ReadNetPeeringsRequestFromJSONTyped = ReadNetPeeringsRequestFromJSONTyped;
+exports.ReadNetPeeringsRequestToJSON = ReadNetPeeringsRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersNetPeering_1 = require("./FiltersNetPeering");
 function ReadNetPeeringsRequestFromJSON(json) {
     return ReadNetPeeringsRequestFromJSONTyped(json, false);
 }
-exports.ReadNetPeeringsRequestFromJSON = ReadNetPeeringsRequestFromJSON;
 function ReadNetPeeringsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadNetPeeringsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadNetPeeringsRequestFromJSONTyped = ReadNetPeeringsRequestFromJSONTyped;
 function ReadNetPeeringsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadNetPeeringsRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadNetPeeringsRequestToJSON = ReadNetPeeringsRequestToJSON;

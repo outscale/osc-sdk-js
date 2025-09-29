@@ -61,8 +61,8 @@ export class SnapshotApi extends runtime.BaseAPI {
     /**
      * Creates a snapshot. Snapshots are point-in-time images of a volume that you can use to back up your data or to create replicas of this volume.<br /> You can use this method in three different ways: * **Creating from a volume**: You create a snapshot from one of your volumes.<br /> * **Copying a snapshot**: You copy an existing snapshot. The source snapshot can be one of your own snapshots, or a snapshot owned by another account that has granted you permission via the [UpdateSnapshot](#updatesnapshot) method.<br /> * **Importing from a bucket**: You import a snapshot located in an OUTSCALE Object Storage (OOS) bucket. First, the owner of the source snapshot must export it to a bucket by using the [CreateSnapshotExportTask](#createsnapshotexporttask) method. Then, they must grant you permission to read the snapshot via a pre-signed URL. For more information, see [Creating a Pre-Signed URL](https://docs.outscale.com/en/userguide/Creating-a-Pre-Signed-URL.html).  **[NOTE]**<br /> In case of excessive use of the snapshot creation feature on the same volume over a short period of time, 3DS OUTSCALE reserves the right to temporarily block the feature.  For more information, see [About Snapshots](https://docs.outscale.com/en/userguide/About-Snapshots.html).
      */
-    createSnapshot(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createSnapshot() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createSnapshotRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class SnapshotApi extends runtime.BaseAPI {
     /**
      * Exports a snapshot to an OUTSCALE Object Storage (OOS) bucket that belongs to you. This action enables you to create a backup of your snapshot.<br /><br /> You can share this snapshot with others accounts by granting permission to read it via pre-signed URLs. For more information, see [Creating a Pre-Signed URL](https://docs.outscale.com/en/userguide/Creating-a-Pre-Signed-URL.html).<br /><br /> For more information, see [About Snapshots](https://docs.outscale.com/en/userguide/About-Snapshots.html).
      */
-    createSnapshotExportTask(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createSnapshotExportTask() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createSnapshotExportTaskRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class SnapshotApi extends runtime.BaseAPI {
     /**
      * Deletes a specified snapshot.<br /> You cannot delete a snapshot that is currently used by an OUTSCALE machine image (OMI). To do so, you first need to delete the corresponding OMI. For more information, see the [DeleteImage](#deleteimage) method.
      */
-    deleteSnapshot(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteSnapshot() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteSnapshotRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -184,8 +184,8 @@ export class SnapshotApi extends runtime.BaseAPI {
     /**
      * Lists one or more snapshot export tasks.
      */
-    readSnapshotExportTasks(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readSnapshotExportTasks() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readSnapshotExportTasksRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -225,8 +225,8 @@ export class SnapshotApi extends runtime.BaseAPI {
     /**
      * Lists one or more snapshots that are available to you and the permissions to create volumes from them.
      */
-    readSnapshots(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readSnapshots() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readSnapshotsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -266,8 +266,8 @@ export class SnapshotApi extends runtime.BaseAPI {
     /**
      * Modifies the permissions for a specified snapshot.<br /> You must specify either the `Additions` or the `Removals` parameter.<br /> After sharing a snapshot with an account, the other account can create a copy of it that they own. For more information about copying snapshots, see [CreateSnapshot](#createsnapshot).
      */
-    updateSnapshot(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateSnapshot() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateSnapshotRaw(requestParameters, initOverrides);
             return yield response.value();
         });

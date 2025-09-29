@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateVmTemplateRequestToJSON = exports.CreateVmTemplateRequestFromJSONTyped = exports.CreateVmTemplateRequestFromJSON = exports.CreateVmTemplateRequestCpuPerformanceEnum = void 0;
+exports.CreateVmTemplateRequestCpuPerformanceEnum = void 0;
+exports.CreateVmTemplateRequestFromJSON = CreateVmTemplateRequestFromJSON;
+exports.CreateVmTemplateRequestFromJSONTyped = CreateVmTemplateRequestFromJSONTyped;
+exports.CreateVmTemplateRequestToJSON = CreateVmTemplateRequestToJSON;
 const runtime_1 = require("../runtime");
 const ResourceTag_1 = require("./ResourceTag");
 /**
@@ -27,7 +30,6 @@ exports.CreateVmTemplateRequestCpuPerformanceEnum = {
 function CreateVmTemplateRequestFromJSON(json) {
     return CreateVmTemplateRequestFromJSONTyped(json, false);
 }
-exports.CreateVmTemplateRequestFromJSON = CreateVmTemplateRequestFromJSON;
 function CreateVmTemplateRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -45,7 +47,6 @@ function CreateVmTemplateRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vmTemplateName': json['VmTemplateName'],
     };
 }
-exports.CreateVmTemplateRequestFromJSONTyped = CreateVmTemplateRequestFromJSONTyped;
 function CreateVmTemplateRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -66,4 +67,3 @@ function CreateVmTemplateRequestToJSON(value) {
         'VmTemplateName': value.vmTemplateName,
     };
 }
-exports.CreateVmTemplateRequestToJSON = CreateVmTemplateRequestToJSON;

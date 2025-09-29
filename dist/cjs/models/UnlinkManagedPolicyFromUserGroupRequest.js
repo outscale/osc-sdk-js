@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnlinkManagedPolicyFromUserGroupRequestToJSON = exports.UnlinkManagedPolicyFromUserGroupRequestFromJSONTyped = exports.UnlinkManagedPolicyFromUserGroupRequestFromJSON = void 0;
+exports.UnlinkManagedPolicyFromUserGroupRequestFromJSON = UnlinkManagedPolicyFromUserGroupRequestFromJSON;
+exports.UnlinkManagedPolicyFromUserGroupRequestFromJSONTyped = UnlinkManagedPolicyFromUserGroupRequestFromJSONTyped;
+exports.UnlinkManagedPolicyFromUserGroupRequestToJSON = UnlinkManagedPolicyFromUserGroupRequestToJSON;
 const runtime_1 = require("../runtime");
 function UnlinkManagedPolicyFromUserGroupRequestFromJSON(json) {
     return UnlinkManagedPolicyFromUserGroupRequestFromJSONTyped(json, false);
 }
-exports.UnlinkManagedPolicyFromUserGroupRequestFromJSON = UnlinkManagedPolicyFromUserGroupRequestFromJSON;
 function UnlinkManagedPolicyFromUserGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function UnlinkManagedPolicyFromUserGroupRequestFromJSONTyped(json, ignoreDiscri
         'userGroupName': json['UserGroupName'],
     };
 }
-exports.UnlinkManagedPolicyFromUserGroupRequestFromJSONTyped = UnlinkManagedPolicyFromUserGroupRequestFromJSONTyped;
 function UnlinkManagedPolicyFromUserGroupRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UnlinkManagedPolicyFromUserGroupRequestToJSON(value) {
         'UserGroupName': value.userGroupName,
     };
 }
-exports.UnlinkManagedPolicyFromUserGroupRequestToJSON = UnlinkManagedPolicyFromUserGroupRequestToJSON;

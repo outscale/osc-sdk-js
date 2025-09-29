@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadQuotasResponseToJSON = exports.ReadQuotasResponseFromJSONTyped = exports.ReadQuotasResponseFromJSON = void 0;
+exports.ReadQuotasResponseFromJSON = ReadQuotasResponseFromJSON;
+exports.ReadQuotasResponseFromJSONTyped = ReadQuotasResponseFromJSONTyped;
+exports.ReadQuotasResponseToJSON = ReadQuotasResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const QuotaTypes_1 = require("./QuotaTypes");
 function ReadQuotasResponseFromJSON(json) {
     return ReadQuotasResponseFromJSONTyped(json, false);
 }
-exports.ReadQuotasResponseFromJSON = ReadQuotasResponseFromJSON;
 function ReadQuotasResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadQuotasResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadQuotasResponseFromJSONTyped = ReadQuotasResponseFromJSONTyped;
 function ReadQuotasResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadQuotasResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadQuotasResponseToJSON = ReadQuotasResponseToJSON;

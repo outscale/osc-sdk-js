@@ -58,8 +58,8 @@ export class RegionApi extends runtime.BaseAPI {
     /**
      * Lists one or more Regions of the OUTSCALE Cloud.<br /><br /> For more information, see [About Regions and Subregions](https://docs.outscale.com/en/userguide/About-Regions-and-Subregions.html).
      */
-    readRegions(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readRegions() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readRegionsRaw(requestParameters, initOverrides);
             return yield response.value();
         });

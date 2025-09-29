@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NetToVirtualGatewayLinkToJSON = exports.NetToVirtualGatewayLinkFromJSONTyped = exports.NetToVirtualGatewayLinkFromJSON = void 0;
+exports.NetToVirtualGatewayLinkFromJSON = NetToVirtualGatewayLinkFromJSON;
+exports.NetToVirtualGatewayLinkFromJSONTyped = NetToVirtualGatewayLinkFromJSONTyped;
+exports.NetToVirtualGatewayLinkToJSON = NetToVirtualGatewayLinkToJSON;
 const runtime_1 = require("../runtime");
 function NetToVirtualGatewayLinkFromJSON(json) {
     return NetToVirtualGatewayLinkFromJSONTyped(json, false);
 }
-exports.NetToVirtualGatewayLinkFromJSON = NetToVirtualGatewayLinkFromJSON;
 function NetToVirtualGatewayLinkFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function NetToVirtualGatewayLinkFromJSONTyped(json, ignoreDiscriminator) {
         'state': !(0, runtime_1.exists)(json, 'State') ? undefined : json['State'],
     };
 }
-exports.NetToVirtualGatewayLinkFromJSONTyped = NetToVirtualGatewayLinkFromJSONTyped;
 function NetToVirtualGatewayLinkToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function NetToVirtualGatewayLinkToJSON(value) {
         'State': value.state,
     };
 }
-exports.NetToVirtualGatewayLinkToJSON = NetToVirtualGatewayLinkToJSON;

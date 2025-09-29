@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadNatServicesRequestToJSON = exports.ReadNatServicesRequestFromJSONTyped = exports.ReadNatServicesRequestFromJSON = void 0;
+exports.ReadNatServicesRequestFromJSON = ReadNatServicesRequestFromJSON;
+exports.ReadNatServicesRequestFromJSONTyped = ReadNatServicesRequestFromJSONTyped;
+exports.ReadNatServicesRequestToJSON = ReadNatServicesRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersNatService_1 = require("./FiltersNatService");
 function ReadNatServicesRequestFromJSON(json) {
     return ReadNatServicesRequestFromJSONTyped(json, false);
 }
-exports.ReadNatServicesRequestFromJSON = ReadNatServicesRequestFromJSON;
 function ReadNatServicesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadNatServicesRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadNatServicesRequestFromJSONTyped = ReadNatServicesRequestFromJSONTyped;
 function ReadNatServicesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadNatServicesRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadNatServicesRequestToJSON = ReadNatServicesRequestToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeregisterVmsInLoadBalancerRequestToJSON = exports.DeregisterVmsInLoadBalancerRequestFromJSONTyped = exports.DeregisterVmsInLoadBalancerRequestFromJSON = void 0;
+exports.DeregisterVmsInLoadBalancerRequestFromJSON = DeregisterVmsInLoadBalancerRequestFromJSON;
+exports.DeregisterVmsInLoadBalancerRequestFromJSONTyped = DeregisterVmsInLoadBalancerRequestFromJSONTyped;
+exports.DeregisterVmsInLoadBalancerRequestToJSON = DeregisterVmsInLoadBalancerRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeregisterVmsInLoadBalancerRequestFromJSON(json) {
     return DeregisterVmsInLoadBalancerRequestFromJSONTyped(json, false);
 }
-exports.DeregisterVmsInLoadBalancerRequestFromJSON = DeregisterVmsInLoadBalancerRequestFromJSON;
 function DeregisterVmsInLoadBalancerRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function DeregisterVmsInLoadBalancerRequestFromJSONTyped(json, ignoreDiscriminat
         'loadBalancerName': json['LoadBalancerName'],
     };
 }
-exports.DeregisterVmsInLoadBalancerRequestFromJSONTyped = DeregisterVmsInLoadBalancerRequestFromJSONTyped;
 function DeregisterVmsInLoadBalancerRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function DeregisterVmsInLoadBalancerRequestToJSON(value) {
         'LoadBalancerName': value.loadBalancerName,
     };
 }
-exports.DeregisterVmsInLoadBalancerRequestToJSON = DeregisterVmsInLoadBalancerRequestToJSON;

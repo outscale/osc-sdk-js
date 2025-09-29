@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateServerCertificateRequestToJSON = exports.UpdateServerCertificateRequestFromJSONTyped = exports.UpdateServerCertificateRequestFromJSON = void 0;
+exports.UpdateServerCertificateRequestFromJSON = UpdateServerCertificateRequestFromJSON;
+exports.UpdateServerCertificateRequestFromJSONTyped = UpdateServerCertificateRequestFromJSONTyped;
+exports.UpdateServerCertificateRequestToJSON = UpdateServerCertificateRequestToJSON;
 const runtime_1 = require("../runtime");
 function UpdateServerCertificateRequestFromJSON(json) {
     return UpdateServerCertificateRequestFromJSONTyped(json, false);
 }
-exports.UpdateServerCertificateRequestFromJSON = UpdateServerCertificateRequestFromJSON;
 function UpdateServerCertificateRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function UpdateServerCertificateRequestFromJSONTyped(json, ignoreDiscriminator) 
         'newPath': !(0, runtime_1.exists)(json, 'NewPath') ? undefined : json['NewPath'],
     };
 }
-exports.UpdateServerCertificateRequestFromJSONTyped = UpdateServerCertificateRequestFromJSONTyped;
 function UpdateServerCertificateRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function UpdateServerCertificateRequestToJSON(value) {
         'NewPath': value.newPath,
     };
 }
-exports.UpdateServerCertificateRequestToJSON = UpdateServerCertificateRequestToJSON;

@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateFlexibleGpuResponseToJSON = exports.CreateFlexibleGpuResponseFromJSONTyped = exports.CreateFlexibleGpuResponseFromJSON = void 0;
+exports.CreateFlexibleGpuResponseFromJSON = CreateFlexibleGpuResponseFromJSON;
+exports.CreateFlexibleGpuResponseFromJSONTyped = CreateFlexibleGpuResponseFromJSONTyped;
+exports.CreateFlexibleGpuResponseToJSON = CreateFlexibleGpuResponseToJSON;
 const runtime_1 = require("../runtime");
 const FlexibleGpu_1 = require("./FlexibleGpu");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function CreateFlexibleGpuResponseFromJSON(json) {
     return CreateFlexibleGpuResponseFromJSONTyped(json, false);
 }
-exports.CreateFlexibleGpuResponseFromJSON = CreateFlexibleGpuResponseFromJSON;
 function CreateFlexibleGpuResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateFlexibleGpuResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CreateFlexibleGpuResponseFromJSONTyped = CreateFlexibleGpuResponseFromJSONTyped;
 function CreateFlexibleGpuResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateFlexibleGpuResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CreateFlexibleGpuResponseToJSON = CreateFlexibleGpuResponseToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkPolicyResponseToJSON = exports.LinkPolicyResponseFromJSONTyped = exports.LinkPolicyResponseFromJSON = void 0;
+exports.LinkPolicyResponseFromJSON = LinkPolicyResponseFromJSON;
+exports.LinkPolicyResponseFromJSONTyped = LinkPolicyResponseFromJSONTyped;
+exports.LinkPolicyResponseToJSON = LinkPolicyResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function LinkPolicyResponseFromJSON(json) {
     return LinkPolicyResponseFromJSONTyped(json, false);
 }
-exports.LinkPolicyResponseFromJSON = LinkPolicyResponseFromJSON;
 function LinkPolicyResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function LinkPolicyResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.LinkPolicyResponseFromJSONTyped = LinkPolicyResponseFromJSONTyped;
 function LinkPolicyResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function LinkPolicyResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.LinkPolicyResponseToJSON = LinkPolicyResponseToJSON;

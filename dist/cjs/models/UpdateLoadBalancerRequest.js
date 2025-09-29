@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateLoadBalancerRequestToJSON = exports.UpdateLoadBalancerRequestFromJSONTyped = exports.UpdateLoadBalancerRequestFromJSON = void 0;
+exports.UpdateLoadBalancerRequestFromJSON = UpdateLoadBalancerRequestFromJSON;
+exports.UpdateLoadBalancerRequestFromJSONTyped = UpdateLoadBalancerRequestFromJSONTyped;
+exports.UpdateLoadBalancerRequestToJSON = UpdateLoadBalancerRequestToJSON;
 const runtime_1 = require("../runtime");
 const AccessLog_1 = require("./AccessLog");
 const HealthCheck_1 = require("./HealthCheck");
 function UpdateLoadBalancerRequestFromJSON(json) {
     return UpdateLoadBalancerRequestFromJSONTyped(json, false);
 }
-exports.UpdateLoadBalancerRequestFromJSON = UpdateLoadBalancerRequestFromJSON;
 function UpdateLoadBalancerRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -38,7 +39,6 @@ function UpdateLoadBalancerRequestFromJSONTyped(json, ignoreDiscriminator) {
         'serverCertificateId': !(0, runtime_1.exists)(json, 'ServerCertificateId') ? undefined : json['ServerCertificateId'],
     };
 }
-exports.UpdateLoadBalancerRequestFromJSONTyped = UpdateLoadBalancerRequestFromJSONTyped;
 function UpdateLoadBalancerRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -59,4 +59,3 @@ function UpdateLoadBalancerRequestToJSON(value) {
         'ServerCertificateId': value.serverCertificateId,
     };
 }
-exports.UpdateLoadBalancerRequestToJSON = UpdateLoadBalancerRequestToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadUserGroupsPerUserRequestToJSON = exports.ReadUserGroupsPerUserRequestFromJSONTyped = exports.ReadUserGroupsPerUserRequestFromJSON = void 0;
+exports.ReadUserGroupsPerUserRequestFromJSON = ReadUserGroupsPerUserRequestFromJSON;
+exports.ReadUserGroupsPerUserRequestFromJSONTyped = ReadUserGroupsPerUserRequestFromJSONTyped;
+exports.ReadUserGroupsPerUserRequestToJSON = ReadUserGroupsPerUserRequestToJSON;
 const runtime_1 = require("../runtime");
 function ReadUserGroupsPerUserRequestFromJSON(json) {
     return ReadUserGroupsPerUserRequestFromJSONTyped(json, false);
 }
-exports.ReadUserGroupsPerUserRequestFromJSON = ReadUserGroupsPerUserRequestFromJSON;
 function ReadUserGroupsPerUserRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function ReadUserGroupsPerUserRequestFromJSONTyped(json, ignoreDiscriminator) {
         'userPath': !(0, runtime_1.exists)(json, 'UserPath') ? undefined : json['UserPath'],
     };
 }
-exports.ReadUserGroupsPerUserRequestFromJSONTyped = ReadUserGroupsPerUserRequestFromJSONTyped;
 function ReadUserGroupsPerUserRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ReadUserGroupsPerUserRequestToJSON(value) {
         'UserPath': value.userPath,
     };
 }
-exports.ReadUserGroupsPerUserRequestToJSON = ReadUserGroupsPerUserRequestToJSON;

@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadNatServicesResponseToJSON = exports.ReadNatServicesResponseFromJSONTyped = exports.ReadNatServicesResponseFromJSON = void 0;
+exports.ReadNatServicesResponseFromJSON = ReadNatServicesResponseFromJSON;
+exports.ReadNatServicesResponseFromJSONTyped = ReadNatServicesResponseFromJSONTyped;
+exports.ReadNatServicesResponseToJSON = ReadNatServicesResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const NatService_1 = require("./NatService");
 function ReadNatServicesResponseFromJSON(json) {
     return ReadNatServicesResponseFromJSONTyped(json, false);
 }
-exports.ReadNatServicesResponseFromJSON = ReadNatServicesResponseFromJSON;
 function ReadNatServicesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadNatServicesResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadNatServicesResponseFromJSONTyped = ReadNatServicesResponseFromJSONTyped;
 function ReadNatServicesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadNatServicesResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadNatServicesResponseToJSON = ReadNatServicesResponseToJSON;

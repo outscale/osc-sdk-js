@@ -28,13 +28,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -87,8 +97,8 @@ class SecurityGroupApi extends runtime.BaseAPI {
     /**
      * Creates a security group.<br /> This action creates a security group either in the public Cloud or in a specified Net. By default, a default security group for use in the public Cloud and a default security group for use in a Net are created.<br /> When launching a virtual machine (VM), if no security group is explicitly specified, the appropriate default security group is assigned to the VM. Default security groups include a default rule granting VMs network access to each other.<br /> When creating a security group, you specify a name. Two security groups for use in the public Cloud or for use in a Net cannot have the same name.<br /> You can have up to 500 security groups in the public Cloud. You can create up to 500 security groups per Net.<br /> To add or remove rules, use the [CreateSecurityGroupRule](#createsecuritygrouprule) method.<br /><br /> For more information, see [About Security Groups](https://docs.outscale.com/en/userguide/About-Security-Groups.html).
      */
-    createSecurityGroup(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createSecurityGroup() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createSecurityGroupRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -128,8 +138,8 @@ class SecurityGroupApi extends runtime.BaseAPI {
     /**
      * Deletes a specified security group.<br /> You can specify either the name of the security group or its ID.<br /> This action fails if the specified group is associated with a virtual machine (VM) or referenced by another security group.
      */
-    deleteSecurityGroup(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteSecurityGroup() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteSecurityGroupRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -169,8 +179,8 @@ class SecurityGroupApi extends runtime.BaseAPI {
     /**
      * Lists one or more security groups.<br /> You can specify either the name of the security groups or their IDs.
      */
-    readSecurityGroups(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readSecurityGroups() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readSecurityGroupsRaw(requestParameters, initOverrides);
             return yield response.value();
         });

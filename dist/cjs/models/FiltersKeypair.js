@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersKeypairToJSON = exports.FiltersKeypairFromJSONTyped = exports.FiltersKeypairFromJSON = void 0;
+exports.FiltersKeypairFromJSON = FiltersKeypairFromJSON;
+exports.FiltersKeypairFromJSONTyped = FiltersKeypairFromJSONTyped;
+exports.FiltersKeypairToJSON = FiltersKeypairToJSON;
 const runtime_1 = require("../runtime");
 function FiltersKeypairFromJSON(json) {
     return FiltersKeypairFromJSONTyped(json, false);
 }
-exports.FiltersKeypairFromJSON = FiltersKeypairFromJSON;
 function FiltersKeypairFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function FiltersKeypairFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersKeypairFromJSONTyped = FiltersKeypairFromJSONTyped;
 function FiltersKeypairToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function FiltersKeypairToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersKeypairToJSON = FiltersKeypairToJSON;

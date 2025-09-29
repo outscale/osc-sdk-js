@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateSubnetRequestToJSON = exports.CreateSubnetRequestFromJSONTyped = exports.CreateSubnetRequestFromJSON = void 0;
+exports.CreateSubnetRequestFromJSON = CreateSubnetRequestFromJSON;
+exports.CreateSubnetRequestFromJSONTyped = CreateSubnetRequestFromJSONTyped;
+exports.CreateSubnetRequestToJSON = CreateSubnetRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateSubnetRequestFromJSON(json) {
     return CreateSubnetRequestFromJSONTyped(json, false);
 }
-exports.CreateSubnetRequestFromJSON = CreateSubnetRequestFromJSON;
 function CreateSubnetRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateSubnetRequestFromJSONTyped(json, ignoreDiscriminator) {
         'subregionName': !(0, runtime_1.exists)(json, 'SubregionName') ? undefined : json['SubregionName'],
     };
 }
-exports.CreateSubnetRequestFromJSONTyped = CreateSubnetRequestFromJSONTyped;
 function CreateSubnetRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function CreateSubnetRequestToJSON(value) {
         'SubregionName': value.subregionName,
     };
 }
-exports.CreateSubnetRequestToJSON = CreateSubnetRequestToJSON;

@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateLoadBalancerRequestToJSON = exports.CreateLoadBalancerRequestFromJSONTyped = exports.CreateLoadBalancerRequestFromJSON = void 0;
+exports.CreateLoadBalancerRequestFromJSON = CreateLoadBalancerRequestFromJSON;
+exports.CreateLoadBalancerRequestFromJSONTyped = CreateLoadBalancerRequestFromJSONTyped;
+exports.CreateLoadBalancerRequestToJSON = CreateLoadBalancerRequestToJSON;
 const runtime_1 = require("../runtime");
 const ListenerForCreation_1 = require("./ListenerForCreation");
 const ResourceTag_1 = require("./ResourceTag");
 function CreateLoadBalancerRequestFromJSON(json) {
     return CreateLoadBalancerRequestFromJSONTyped(json, false);
 }
-exports.CreateLoadBalancerRequestFromJSON = CreateLoadBalancerRequestFromJSON;
 function CreateLoadBalancerRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -37,7 +38,6 @@ function CreateLoadBalancerRequestFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
     };
 }
-exports.CreateLoadBalancerRequestFromJSONTyped = CreateLoadBalancerRequestFromJSONTyped;
 function CreateLoadBalancerRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -57,4 +57,3 @@ function CreateLoadBalancerRequestToJSON(value) {
         'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
     };
 }
-exports.CreateLoadBalancerRequestToJSON = CreateLoadBalancerRequestToJSON;

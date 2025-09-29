@@ -61,8 +61,8 @@ export class DirectLinkInterfaceApi extends runtime.BaseAPI {
     /**
      * Creates a DirectLink interface.<br /> DirectLink interfaces enable you to reach one of your Nets through a virtual gateway.<br /><br /> For more information, see [About DirectLink](https://docs.outscale.com/en/userguide/About-DirectLink.html).
      */
-    createDirectLinkInterface(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createDirectLinkInterface() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createDirectLinkInterfaceRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class DirectLinkInterfaceApi extends runtime.BaseAPI {
     /**
      * Deletes a specified DirectLink interface.
      */
-    deleteDirectLinkInterface(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteDirectLinkInterface() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteDirectLinkInterfaceRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class DirectLinkInterfaceApi extends runtime.BaseAPI {
     /**
      * Lists one or more of your DirectLink interfaces.
      */
-    readDirectLinkInterfaces(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readDirectLinkInterfaces() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readDirectLinkInterfacesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -184,8 +184,8 @@ export class DirectLinkInterfaceApi extends runtime.BaseAPI {
     /**
      * Modifies the maximum transmission unit (MTU) of a DirectLink interface.
      */
-    updateDirectLinkInterface(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateDirectLinkInterface() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateDirectLinkInterfaceRaw(requestParameters, initOverrides);
             return yield response.value();
         });

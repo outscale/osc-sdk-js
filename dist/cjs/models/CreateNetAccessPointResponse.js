@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateNetAccessPointResponseToJSON = exports.CreateNetAccessPointResponseFromJSONTyped = exports.CreateNetAccessPointResponseFromJSON = void 0;
+exports.CreateNetAccessPointResponseFromJSON = CreateNetAccessPointResponseFromJSON;
+exports.CreateNetAccessPointResponseFromJSONTyped = CreateNetAccessPointResponseFromJSONTyped;
+exports.CreateNetAccessPointResponseToJSON = CreateNetAccessPointResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const NetAccessPoint_1 = require("./NetAccessPoint");
 function CreateNetAccessPointResponseFromJSON(json) {
     return CreateNetAccessPointResponseFromJSONTyped(json, false);
 }
-exports.CreateNetAccessPointResponseFromJSON = CreateNetAccessPointResponseFromJSON;
 function CreateNetAccessPointResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateNetAccessPointResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CreateNetAccessPointResponseFromJSONTyped = CreateNetAccessPointResponseFromJSONTyped;
 function CreateNetAccessPointResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateNetAccessPointResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CreateNetAccessPointResponseToJSON = CreateNetAccessPointResponseToJSON;

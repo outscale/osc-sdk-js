@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadEntitiesLinkedToPolicyResponseToJSON = exports.ReadEntitiesLinkedToPolicyResponseFromJSONTyped = exports.ReadEntitiesLinkedToPolicyResponseFromJSON = void 0;
+exports.ReadEntitiesLinkedToPolicyResponseFromJSON = ReadEntitiesLinkedToPolicyResponseFromJSON;
+exports.ReadEntitiesLinkedToPolicyResponseFromJSONTyped = ReadEntitiesLinkedToPolicyResponseFromJSONTyped;
+exports.ReadEntitiesLinkedToPolicyResponseToJSON = ReadEntitiesLinkedToPolicyResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const PolicyEntities_1 = require("./PolicyEntities");
 function ReadEntitiesLinkedToPolicyResponseFromJSON(json) {
     return ReadEntitiesLinkedToPolicyResponseFromJSONTyped(json, false);
 }
-exports.ReadEntitiesLinkedToPolicyResponseFromJSON = ReadEntitiesLinkedToPolicyResponseFromJSON;
 function ReadEntitiesLinkedToPolicyResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function ReadEntitiesLinkedToPolicyResponseFromJSONTyped(json, ignoreDiscriminat
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadEntitiesLinkedToPolicyResponseFromJSONTyped = ReadEntitiesLinkedToPolicyResponseFromJSONTyped;
 function ReadEntitiesLinkedToPolicyResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ReadEntitiesLinkedToPolicyResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadEntitiesLinkedToPolicyResponseToJSON = ReadEntitiesLinkedToPolicyResponseToJSON;

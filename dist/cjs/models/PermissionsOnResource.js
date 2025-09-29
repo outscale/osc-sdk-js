@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PermissionsOnResourceToJSON = exports.PermissionsOnResourceFromJSONTyped = exports.PermissionsOnResourceFromJSON = void 0;
+exports.PermissionsOnResourceFromJSON = PermissionsOnResourceFromJSON;
+exports.PermissionsOnResourceFromJSONTyped = PermissionsOnResourceFromJSONTyped;
+exports.PermissionsOnResourceToJSON = PermissionsOnResourceToJSON;
 const runtime_1 = require("../runtime");
 function PermissionsOnResourceFromJSON(json) {
     return PermissionsOnResourceFromJSONTyped(json, false);
 }
-exports.PermissionsOnResourceFromJSON = PermissionsOnResourceFromJSON;
 function PermissionsOnResourceFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function PermissionsOnResourceFromJSONTyped(json, ignoreDiscriminator) {
         'globalPermission': !(0, runtime_1.exists)(json, 'GlobalPermission') ? undefined : json['GlobalPermission'],
     };
 }
-exports.PermissionsOnResourceFromJSONTyped = PermissionsOnResourceFromJSONTyped;
 function PermissionsOnResourceToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function PermissionsOnResourceToJSON(value) {
         'GlobalPermission': value.globalPermission,
     };
 }
-exports.PermissionsOnResourceToJSON = PermissionsOnResourceToJSON;

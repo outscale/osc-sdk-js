@@ -61,8 +61,8 @@ export class IdentityProviderApi extends runtime.BaseAPI {
     /**
      * Disables the possibility of logging in using the Outscale credentials of your root account when identity federation is activated.
      */
-    disableOutscaleLogin(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    disableOutscaleLogin() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.disableOutscaleLoginRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class IdentityProviderApi extends runtime.BaseAPI {
     /**
      * Disables the possibility of logging in using the Outscale credentials of your EIM users when identity federation is activated.
      */
-    disableOutscaleLoginForUsersZz(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    disableOutscaleLoginForUsersZz() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.disableOutscaleLoginForUsersZzRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class IdentityProviderApi extends runtime.BaseAPI {
     /**
      * Disables the possibility for one or more specific users to log in using their Outscale credentials when identity federation is activated.
      */
-    disableOutscaleLoginPerUsers(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    disableOutscaleLoginPerUsers() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.disableOutscaleLoginPerUsersRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -184,8 +184,8 @@ export class IdentityProviderApi extends runtime.BaseAPI {
     /**
      * Enables the possibility of logging in using the Outscale credentials of your root account when identity federation is activated.
      */
-    enableOutscaleLogin(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    enableOutscaleLogin() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.enableOutscaleLoginRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -225,8 +225,8 @@ export class IdentityProviderApi extends runtime.BaseAPI {
     /**
      * Enables the possibility for all your EIM users to log in using their Outscale credentials when identity federation is activated.
      */
-    enableOutscaleLoginForUsersZz(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    enableOutscaleLoginForUsersZz() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.enableOutscaleLoginForUsersZzRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -266,8 +266,8 @@ export class IdentityProviderApi extends runtime.BaseAPI {
     /**
      * Enables the possibility for one or more specific users to log in using their Outscale credentials when identity federation is activated.
      */
-    enableOutscaleLoginPerUsers(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    enableOutscaleLoginPerUsers() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.enableOutscaleLoginPerUsersRaw(requestParameters, initOverrides);
             return yield response.value();
         });

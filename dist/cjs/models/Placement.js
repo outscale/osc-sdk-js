@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PlacementToJSON = exports.PlacementFromJSONTyped = exports.PlacementFromJSON = void 0;
+exports.PlacementFromJSON = PlacementFromJSON;
+exports.PlacementFromJSONTyped = PlacementFromJSONTyped;
+exports.PlacementToJSON = PlacementToJSON;
 const runtime_1 = require("../runtime");
 function PlacementFromJSON(json) {
     return PlacementFromJSONTyped(json, false);
 }
-exports.PlacementFromJSON = PlacementFromJSON;
 function PlacementFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function PlacementFromJSONTyped(json, ignoreDiscriminator) {
         'tenancy': !(0, runtime_1.exists)(json, 'Tenancy') ? undefined : json['Tenancy'],
     };
 }
-exports.PlacementFromJSONTyped = PlacementFromJSONTyped;
 function PlacementToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function PlacementToJSON(value) {
         'Tenancy': value.tenancy,
     };
 }
-exports.PlacementToJSON = PlacementToJSON;

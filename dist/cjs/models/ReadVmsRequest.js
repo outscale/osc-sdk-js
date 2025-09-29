@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadVmsRequestToJSON = exports.ReadVmsRequestFromJSONTyped = exports.ReadVmsRequestFromJSON = void 0;
+exports.ReadVmsRequestFromJSON = ReadVmsRequestFromJSON;
+exports.ReadVmsRequestFromJSONTyped = ReadVmsRequestFromJSONTyped;
+exports.ReadVmsRequestToJSON = ReadVmsRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersVm_1 = require("./FiltersVm");
 function ReadVmsRequestFromJSON(json) {
     return ReadVmsRequestFromJSONTyped(json, false);
 }
-exports.ReadVmsRequestFromJSON = ReadVmsRequestFromJSON;
 function ReadVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadVmsRequestFromJSONTyped = ReadVmsRequestFromJSONTyped;
 function ReadVmsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadVmsRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadVmsRequestToJSON = ReadVmsRequestToJSON;

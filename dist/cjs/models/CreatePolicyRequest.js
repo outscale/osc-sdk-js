@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePolicyRequestToJSON = exports.CreatePolicyRequestFromJSONTyped = exports.CreatePolicyRequestFromJSON = void 0;
+exports.CreatePolicyRequestFromJSON = CreatePolicyRequestFromJSON;
+exports.CreatePolicyRequestFromJSONTyped = CreatePolicyRequestFromJSONTyped;
+exports.CreatePolicyRequestToJSON = CreatePolicyRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreatePolicyRequestFromJSON(json) {
     return CreatePolicyRequestFromJSONTyped(json, false);
 }
-exports.CreatePolicyRequestFromJSON = CreatePolicyRequestFromJSON;
 function CreatePolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function CreatePolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
         'policyName': json['PolicyName'],
     };
 }
-exports.CreatePolicyRequestFromJSONTyped = CreatePolicyRequestFromJSONTyped;
 function CreatePolicyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function CreatePolicyRequestToJSON(value) {
         'PolicyName': value.policyName,
     };
 }
-exports.CreatePolicyRequestToJSON = CreatePolicyRequestToJSON;

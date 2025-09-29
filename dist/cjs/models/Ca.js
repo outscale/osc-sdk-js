@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CaToJSON = exports.CaFromJSONTyped = exports.CaFromJSON = void 0;
+exports.CaFromJSON = CaFromJSON;
+exports.CaFromJSONTyped = CaFromJSONTyped;
+exports.CaToJSON = CaToJSON;
 const runtime_1 = require("../runtime");
 function CaFromJSON(json) {
     return CaFromJSONTyped(json, false);
 }
-exports.CaFromJSON = CaFromJSON;
 function CaFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function CaFromJSONTyped(json, ignoreDiscriminator) {
         'description': !(0, runtime_1.exists)(json, 'Description') ? undefined : json['Description'],
     };
 }
-exports.CaFromJSONTyped = CaFromJSONTyped;
 function CaToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CaToJSON(value) {
         'Description': value.description,
     };
 }
-exports.CaToJSON = CaToJSON;

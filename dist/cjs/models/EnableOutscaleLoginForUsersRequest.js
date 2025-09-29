@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EnableOutscaleLoginForUsersRequestToJSON = exports.EnableOutscaleLoginForUsersRequestFromJSONTyped = exports.EnableOutscaleLoginForUsersRequestFromJSON = void 0;
+exports.EnableOutscaleLoginForUsersRequestFromJSON = EnableOutscaleLoginForUsersRequestFromJSON;
+exports.EnableOutscaleLoginForUsersRequestFromJSONTyped = EnableOutscaleLoginForUsersRequestFromJSONTyped;
+exports.EnableOutscaleLoginForUsersRequestToJSON = EnableOutscaleLoginForUsersRequestToJSON;
 const runtime_1 = require("../runtime");
 function EnableOutscaleLoginForUsersRequestFromJSON(json) {
     return EnableOutscaleLoginForUsersRequestFromJSONTyped(json, false);
 }
-exports.EnableOutscaleLoginForUsersRequestFromJSON = EnableOutscaleLoginForUsersRequestFromJSON;
 function EnableOutscaleLoginForUsersRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function EnableOutscaleLoginForUsersRequestFromJSONTyped(json, ignoreDiscriminat
         'dryRun': !(0, runtime_1.exists)(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.EnableOutscaleLoginForUsersRequestFromJSONTyped = EnableOutscaleLoginForUsersRequestFromJSONTyped;
 function EnableOutscaleLoginForUsersRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function EnableOutscaleLoginForUsersRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.EnableOutscaleLoginForUsersRequestToJSON = EnableOutscaleLoginForUsersRequestToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserToJSON = exports.UserFromJSONTyped = exports.UserFromJSON = void 0;
+exports.UserFromJSON = UserFromJSON;
+exports.UserFromJSONTyped = UserFromJSONTyped;
+exports.UserToJSON = UserToJSON;
 const runtime_1 = require("../runtime");
 function UserFromJSON(json) {
     return UserFromJSONTyped(json, false);
 }
-exports.UserFromJSON = UserFromJSON;
 function UserFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function UserFromJSONTyped(json, ignoreDiscriminator) {
         'userName': !(0, runtime_1.exists)(json, 'UserName') ? undefined : json['UserName'],
     };
 }
-exports.UserFromJSONTyped = UserFromJSONTyped;
 function UserToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function UserToJSON(value) {
         'UserName': value.userName,
     };
 }
-exports.UserToJSON = UserToJSON;

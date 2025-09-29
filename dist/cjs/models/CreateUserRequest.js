@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateUserRequestToJSON = exports.CreateUserRequestFromJSONTyped = exports.CreateUserRequestFromJSON = void 0;
+exports.CreateUserRequestFromJSON = CreateUserRequestFromJSON;
+exports.CreateUserRequestFromJSONTyped = CreateUserRequestFromJSONTyped;
+exports.CreateUserRequestToJSON = CreateUserRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateUserRequestFromJSON(json) {
     return CreateUserRequestFromJSONTyped(json, false);
 }
-exports.CreateUserRequestFromJSON = CreateUserRequestFromJSON;
 function CreateUserRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateUserRequestFromJSONTyped(json, ignoreDiscriminator) {
         'userName': json['UserName'],
     };
 }
-exports.CreateUserRequestFromJSONTyped = CreateUserRequestFromJSONTyped;
 function CreateUserRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function CreateUserRequestToJSON(value) {
         'UserName': value.userName,
     };
 }
-exports.CreateUserRequestToJSON = CreateUserRequestToJSON;

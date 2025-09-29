@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadRouteTablesResponseToJSON = exports.ReadRouteTablesResponseFromJSONTyped = exports.ReadRouteTablesResponseFromJSON = void 0;
+exports.ReadRouteTablesResponseFromJSON = ReadRouteTablesResponseFromJSON;
+exports.ReadRouteTablesResponseFromJSONTyped = ReadRouteTablesResponseFromJSONTyped;
+exports.ReadRouteTablesResponseToJSON = ReadRouteTablesResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const RouteTable_1 = require("./RouteTable");
 function ReadRouteTablesResponseFromJSON(json) {
     return ReadRouteTablesResponseFromJSONTyped(json, false);
 }
-exports.ReadRouteTablesResponseFromJSON = ReadRouteTablesResponseFromJSON;
 function ReadRouteTablesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadRouteTablesResponseFromJSONTyped(json, ignoreDiscriminator) {
         'routeTables': !(0, runtime_1.exists)(json, 'RouteTables') ? undefined : (json['RouteTables'].map(RouteTable_1.RouteTableFromJSON)),
     };
 }
-exports.ReadRouteTablesResponseFromJSONTyped = ReadRouteTablesResponseFromJSONTyped;
 function ReadRouteTablesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadRouteTablesResponseToJSON(value) {
         'RouteTables': value.routeTables === undefined ? undefined : (value.routeTables.map(RouteTable_1.RouteTableToJSON)),
     };
 }
-exports.ReadRouteTablesResponseToJSON = ReadRouteTablesResponseToJSON;

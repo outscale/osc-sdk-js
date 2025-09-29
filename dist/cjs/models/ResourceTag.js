@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ResourceTagToJSON = exports.ResourceTagFromJSONTyped = exports.ResourceTagFromJSON = void 0;
+exports.ResourceTagFromJSON = ResourceTagFromJSON;
+exports.ResourceTagFromJSONTyped = ResourceTagFromJSONTyped;
+exports.ResourceTagToJSON = ResourceTagToJSON;
 function ResourceTagFromJSON(json) {
     return ResourceTagFromJSONTyped(json, false);
 }
-exports.ResourceTagFromJSON = ResourceTagFromJSON;
 function ResourceTagFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function ResourceTagFromJSONTyped(json, ignoreDiscriminator) {
         'value': json['Value'],
     };
 }
-exports.ResourceTagFromJSONTyped = ResourceTagFromJSONTyped;
 function ResourceTagToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function ResourceTagToJSON(value) {
         'Value': value.value,
     };
 }
-exports.ResourceTagToJSON = ResourceTagToJSON;

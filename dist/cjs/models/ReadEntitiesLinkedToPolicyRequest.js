@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadEntitiesLinkedToPolicyRequestToJSON = exports.ReadEntitiesLinkedToPolicyRequestFromJSONTyped = exports.ReadEntitiesLinkedToPolicyRequestFromJSON = exports.ReadEntitiesLinkedToPolicyRequestEntitiesTypeEnum = void 0;
+exports.ReadEntitiesLinkedToPolicyRequestEntitiesTypeEnum = void 0;
+exports.ReadEntitiesLinkedToPolicyRequestFromJSON = ReadEntitiesLinkedToPolicyRequestFromJSON;
+exports.ReadEntitiesLinkedToPolicyRequestFromJSONTyped = ReadEntitiesLinkedToPolicyRequestFromJSONTyped;
+exports.ReadEntitiesLinkedToPolicyRequestToJSON = ReadEntitiesLinkedToPolicyRequestToJSON;
 const runtime_1 = require("../runtime");
 /**
  * @export
@@ -26,7 +29,6 @@ exports.ReadEntitiesLinkedToPolicyRequestEntitiesTypeEnum = {
 function ReadEntitiesLinkedToPolicyRequestFromJSON(json) {
     return ReadEntitiesLinkedToPolicyRequestFromJSONTyped(json, false);
 }
-exports.ReadEntitiesLinkedToPolicyRequestFromJSON = ReadEntitiesLinkedToPolicyRequestFromJSON;
 function ReadEntitiesLinkedToPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -38,7 +40,6 @@ function ReadEntitiesLinkedToPolicyRequestFromJSONTyped(json, ignoreDiscriminato
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadEntitiesLinkedToPolicyRequestFromJSONTyped = ReadEntitiesLinkedToPolicyRequestFromJSONTyped;
 function ReadEntitiesLinkedToPolicyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +54,3 @@ function ReadEntitiesLinkedToPolicyRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadEntitiesLinkedToPolicyRequestToJSON = ReadEntitiesLinkedToPolicyRequestToJSON;

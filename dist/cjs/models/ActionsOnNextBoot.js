@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ActionsOnNextBootToJSON = exports.ActionsOnNextBootFromJSONTyped = exports.ActionsOnNextBootFromJSON = void 0;
+exports.ActionsOnNextBootFromJSON = ActionsOnNextBootFromJSON;
+exports.ActionsOnNextBootFromJSONTyped = ActionsOnNextBootFromJSONTyped;
+exports.ActionsOnNextBootToJSON = ActionsOnNextBootToJSON;
 const runtime_1 = require("../runtime");
 const SecureBootAction_1 = require("./SecureBootAction");
 function ActionsOnNextBootFromJSON(json) {
     return ActionsOnNextBootFromJSONTyped(json, false);
 }
-exports.ActionsOnNextBootFromJSON = ActionsOnNextBootFromJSON;
 function ActionsOnNextBootFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function ActionsOnNextBootFromJSONTyped(json, ignoreDiscriminator) {
         'secureBoot': !(0, runtime_1.exists)(json, 'SecureBoot') ? undefined : (0, SecureBootAction_1.SecureBootActionFromJSON)(json['SecureBoot']),
     };
 }
-exports.ActionsOnNextBootFromJSONTyped = ActionsOnNextBootFromJSONTyped;
 function ActionsOnNextBootToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function ActionsOnNextBootToJSON(value) {
         'SecureBoot': (0, SecureBootAction_1.SecureBootActionToJSON)(value.secureBoot),
     };
 }
-exports.ActionsOnNextBootToJSON = ActionsOnNextBootToJSON;

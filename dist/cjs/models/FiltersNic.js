@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersNicToJSON = exports.FiltersNicFromJSONTyped = exports.FiltersNicFromJSON = void 0;
+exports.FiltersNicFromJSON = FiltersNicFromJSON;
+exports.FiltersNicFromJSONTyped = FiltersNicFromJSONTyped;
+exports.FiltersNicToJSON = FiltersNicToJSON;
 const runtime_1 = require("../runtime");
 function FiltersNicFromJSON(json) {
     return FiltersNicFromJSONTyped(json, false);
 }
-exports.FiltersNicFromJSON = FiltersNicFromJSON;
 function FiltersNicFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -55,7 +56,6 @@ function FiltersNicFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersNicFromJSONTyped = FiltersNicFromJSONTyped;
 function FiltersNicToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -95,4 +95,3 @@ function FiltersNicToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersNicToJSON = FiltersNicToJSON;

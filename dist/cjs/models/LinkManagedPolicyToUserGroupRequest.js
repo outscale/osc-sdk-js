@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkManagedPolicyToUserGroupRequestToJSON = exports.LinkManagedPolicyToUserGroupRequestFromJSONTyped = exports.LinkManagedPolicyToUserGroupRequestFromJSON = void 0;
+exports.LinkManagedPolicyToUserGroupRequestFromJSON = LinkManagedPolicyToUserGroupRequestFromJSON;
+exports.LinkManagedPolicyToUserGroupRequestFromJSONTyped = LinkManagedPolicyToUserGroupRequestFromJSONTyped;
+exports.LinkManagedPolicyToUserGroupRequestToJSON = LinkManagedPolicyToUserGroupRequestToJSON;
 const runtime_1 = require("../runtime");
 function LinkManagedPolicyToUserGroupRequestFromJSON(json) {
     return LinkManagedPolicyToUserGroupRequestFromJSONTyped(json, false);
 }
-exports.LinkManagedPolicyToUserGroupRequestFromJSON = LinkManagedPolicyToUserGroupRequestFromJSON;
 function LinkManagedPolicyToUserGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function LinkManagedPolicyToUserGroupRequestFromJSONTyped(json, ignoreDiscrimina
         'userGroupName': json['UserGroupName'],
     };
 }
-exports.LinkManagedPolicyToUserGroupRequestFromJSONTyped = LinkManagedPolicyToUserGroupRequestFromJSONTyped;
 function LinkManagedPolicyToUserGroupRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function LinkManagedPolicyToUserGroupRequestToJSON(value) {
         'UserGroupName': value.userGroupName,
     };
 }
-exports.LinkManagedPolicyToUserGroupRequestToJSON = LinkManagedPolicyToUserGroupRequestToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteVpnConnectionRouteResponseToJSON = exports.DeleteVpnConnectionRouteResponseFromJSONTyped = exports.DeleteVpnConnectionRouteResponseFromJSON = void 0;
+exports.DeleteVpnConnectionRouteResponseFromJSON = DeleteVpnConnectionRouteResponseFromJSON;
+exports.DeleteVpnConnectionRouteResponseFromJSONTyped = DeleteVpnConnectionRouteResponseFromJSONTyped;
+exports.DeleteVpnConnectionRouteResponseToJSON = DeleteVpnConnectionRouteResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteVpnConnectionRouteResponseFromJSON(json) {
     return DeleteVpnConnectionRouteResponseFromJSONTyped(json, false);
 }
-exports.DeleteVpnConnectionRouteResponseFromJSON = DeleteVpnConnectionRouteResponseFromJSON;
 function DeleteVpnConnectionRouteResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteVpnConnectionRouteResponseFromJSONTyped(json, ignoreDiscriminator
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteVpnConnectionRouteResponseFromJSONTyped = DeleteVpnConnectionRouteResponseFromJSONTyped;
 function DeleteVpnConnectionRouteResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteVpnConnectionRouteResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteVpnConnectionRouteResponseToJSON = DeleteVpnConnectionRouteResponseToJSON;

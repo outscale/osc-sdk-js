@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnlinkLoadBalancerBackendMachinesRequestToJSON = exports.UnlinkLoadBalancerBackendMachinesRequestFromJSONTyped = exports.UnlinkLoadBalancerBackendMachinesRequestFromJSON = void 0;
+exports.UnlinkLoadBalancerBackendMachinesRequestFromJSON = UnlinkLoadBalancerBackendMachinesRequestFromJSON;
+exports.UnlinkLoadBalancerBackendMachinesRequestFromJSONTyped = UnlinkLoadBalancerBackendMachinesRequestFromJSONTyped;
+exports.UnlinkLoadBalancerBackendMachinesRequestToJSON = UnlinkLoadBalancerBackendMachinesRequestToJSON;
 const runtime_1 = require("../runtime");
 function UnlinkLoadBalancerBackendMachinesRequestFromJSON(json) {
     return UnlinkLoadBalancerBackendMachinesRequestFromJSONTyped(json, false);
 }
-exports.UnlinkLoadBalancerBackendMachinesRequestFromJSON = UnlinkLoadBalancerBackendMachinesRequestFromJSON;
 function UnlinkLoadBalancerBackendMachinesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function UnlinkLoadBalancerBackendMachinesRequestFromJSONTyped(json, ignoreDiscr
         'loadBalancerName': json['LoadBalancerName'],
     };
 }
-exports.UnlinkLoadBalancerBackendMachinesRequestFromJSONTyped = UnlinkLoadBalancerBackendMachinesRequestFromJSONTyped;
 function UnlinkLoadBalancerBackendMachinesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function UnlinkLoadBalancerBackendMachinesRequestToJSON(value) {
         'LoadBalancerName': value.loadBalancerName,
     };
 }
-exports.UnlinkLoadBalancerBackendMachinesRequestToJSON = UnlinkLoadBalancerBackendMachinesRequestToJSON;

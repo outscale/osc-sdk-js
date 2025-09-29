@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OsuApiKeyToJSON = exports.OsuApiKeyFromJSONTyped = exports.OsuApiKeyFromJSON = void 0;
+exports.OsuApiKeyFromJSON = OsuApiKeyFromJSON;
+exports.OsuApiKeyFromJSONTyped = OsuApiKeyFromJSONTyped;
+exports.OsuApiKeyToJSON = OsuApiKeyToJSON;
 const runtime_1 = require("../runtime");
 function OsuApiKeyFromJSON(json) {
     return OsuApiKeyFromJSONTyped(json, false);
 }
-exports.OsuApiKeyFromJSON = OsuApiKeyFromJSON;
 function OsuApiKeyFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function OsuApiKeyFromJSONTyped(json, ignoreDiscriminator) {
         'secretKey': !(0, runtime_1.exists)(json, 'SecretKey') ? undefined : json['SecretKey'],
     };
 }
-exports.OsuApiKeyFromJSONTyped = OsuApiKeyFromJSONTyped;
 function OsuApiKeyToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function OsuApiKeyToJSON(value) {
         'SecretKey': value.secretKey,
     };
 }
-exports.OsuApiKeyToJSON = OsuApiKeyToJSON;

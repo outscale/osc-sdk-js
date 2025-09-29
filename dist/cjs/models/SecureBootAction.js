@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SecureBootActionToJSON = exports.SecureBootActionFromJSONTyped = exports.SecureBootActionFromJSON = exports.SecureBootAction = void 0;
+exports.SecureBootAction = void 0;
+exports.SecureBootActionFromJSON = SecureBootActionFromJSON;
+exports.SecureBootActionFromJSONTyped = SecureBootActionFromJSONTyped;
+exports.SecureBootActionToJSON = SecureBootActionToJSON;
 /**
  * One action to perform on the next boot of the VM. For more information, see [About Secure Boot](https://docs.outscale.com/en/userguide/About-Secure-Boot.html#_secure_boot_actions).
  * @export
@@ -27,12 +30,9 @@ exports.SecureBootAction = {
 function SecureBootActionFromJSON(json) {
     return SecureBootActionFromJSONTyped(json, false);
 }
-exports.SecureBootActionFromJSON = SecureBootActionFromJSON;
 function SecureBootActionFromJSONTyped(json, ignoreDiscriminator) {
     return json;
 }
-exports.SecureBootActionFromJSONTyped = SecureBootActionFromJSONTyped;
 function SecureBootActionToJSON(value) {
     return value;
 }
-exports.SecureBootActionToJSON = SecureBootActionToJSON;

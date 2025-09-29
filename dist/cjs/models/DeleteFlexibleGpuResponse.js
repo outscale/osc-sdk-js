@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteFlexibleGpuResponseToJSON = exports.DeleteFlexibleGpuResponseFromJSONTyped = exports.DeleteFlexibleGpuResponseFromJSON = void 0;
+exports.DeleteFlexibleGpuResponseFromJSON = DeleteFlexibleGpuResponseFromJSON;
+exports.DeleteFlexibleGpuResponseFromJSONTyped = DeleteFlexibleGpuResponseFromJSONTyped;
+exports.DeleteFlexibleGpuResponseToJSON = DeleteFlexibleGpuResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteFlexibleGpuResponseFromJSON(json) {
     return DeleteFlexibleGpuResponseFromJSONTyped(json, false);
 }
-exports.DeleteFlexibleGpuResponseFromJSON = DeleteFlexibleGpuResponseFromJSON;
 function DeleteFlexibleGpuResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteFlexibleGpuResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteFlexibleGpuResponseFromJSONTyped = DeleteFlexibleGpuResponseFromJSONTyped;
 function DeleteFlexibleGpuResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteFlexibleGpuResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteFlexibleGpuResponseToJSON = DeleteFlexibleGpuResponseToJSON;

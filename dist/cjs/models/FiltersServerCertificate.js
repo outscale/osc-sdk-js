@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersServerCertificateToJSON = exports.FiltersServerCertificateFromJSONTyped = exports.FiltersServerCertificateFromJSON = void 0;
+exports.FiltersServerCertificateFromJSON = FiltersServerCertificateFromJSON;
+exports.FiltersServerCertificateFromJSONTyped = FiltersServerCertificateFromJSONTyped;
+exports.FiltersServerCertificateToJSON = FiltersServerCertificateToJSON;
 const runtime_1 = require("../runtime");
 function FiltersServerCertificateFromJSON(json) {
     return FiltersServerCertificateFromJSONTyped(json, false);
 }
-exports.FiltersServerCertificateFromJSON = FiltersServerCertificateFromJSON;
 function FiltersServerCertificateFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function FiltersServerCertificateFromJSONTyped(json, ignoreDiscriminator) {
         'paths': !(0, runtime_1.exists)(json, 'Paths') ? undefined : json['Paths'],
     };
 }
-exports.FiltersServerCertificateFromJSONTyped = FiltersServerCertificateFromJSONTyped;
 function FiltersServerCertificateToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function FiltersServerCertificateToJSON(value) {
         'Paths': value.paths,
     };
 }
-exports.FiltersServerCertificateToJSON = FiltersServerCertificateToJSON;

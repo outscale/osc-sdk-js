@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateTagsResponseToJSON = exports.CreateTagsResponseFromJSONTyped = exports.CreateTagsResponseFromJSON = void 0;
+exports.CreateTagsResponseFromJSON = CreateTagsResponseFromJSON;
+exports.CreateTagsResponseFromJSONTyped = CreateTagsResponseFromJSONTyped;
+exports.CreateTagsResponseToJSON = CreateTagsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function CreateTagsResponseFromJSON(json) {
     return CreateTagsResponseFromJSONTyped(json, false);
 }
-exports.CreateTagsResponseFromJSON = CreateTagsResponseFromJSON;
 function CreateTagsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function CreateTagsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CreateTagsResponseFromJSONTyped = CreateTagsResponseFromJSONTyped;
 function CreateTagsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function CreateTagsResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CreateTagsResponseToJSON = CreateTagsResponseToJSON;

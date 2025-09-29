@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadVmTemplatesRequestToJSON = exports.ReadVmTemplatesRequestFromJSONTyped = exports.ReadVmTemplatesRequestFromJSON = void 0;
+exports.ReadVmTemplatesRequestFromJSON = ReadVmTemplatesRequestFromJSON;
+exports.ReadVmTemplatesRequestFromJSONTyped = ReadVmTemplatesRequestFromJSONTyped;
+exports.ReadVmTemplatesRequestToJSON = ReadVmTemplatesRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersVmTemplate_1 = require("./FiltersVmTemplate");
 function ReadVmTemplatesRequestFromJSON(json) {
     return ReadVmTemplatesRequestFromJSONTyped(json, false);
 }
-exports.ReadVmTemplatesRequestFromJSON = ReadVmTemplatesRequestFromJSON;
 function ReadVmTemplatesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function ReadVmTemplatesRequestFromJSONTyped(json, ignoreDiscriminator) {
         'filters': !(0, runtime_1.exists)(json, 'Filters') ? undefined : (0, FiltersVmTemplate_1.FiltersVmTemplateFromJSON)(json['Filters']),
     };
 }
-exports.ReadVmTemplatesRequestFromJSONTyped = ReadVmTemplatesRequestFromJSONTyped;
 function ReadVmTemplatesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function ReadVmTemplatesRequestToJSON(value) {
         'Filters': (0, FiltersVmTemplate_1.FiltersVmTemplateToJSON)(value.filters),
     };
 }
-exports.ReadVmTemplatesRequestToJSON = ReadVmTemplatesRequestToJSON;

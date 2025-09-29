@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteUserGroupRequestToJSON = exports.DeleteUserGroupRequestFromJSONTyped = exports.DeleteUserGroupRequestFromJSON = void 0;
+exports.DeleteUserGroupRequestFromJSON = DeleteUserGroupRequestFromJSON;
+exports.DeleteUserGroupRequestFromJSONTyped = DeleteUserGroupRequestFromJSONTyped;
+exports.DeleteUserGroupRequestToJSON = DeleteUserGroupRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteUserGroupRequestFromJSON(json) {
     return DeleteUserGroupRequestFromJSONTyped(json, false);
 }
-exports.DeleteUserGroupRequestFromJSON = DeleteUserGroupRequestFromJSON;
 function DeleteUserGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function DeleteUserGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
         'userGroupName': json['UserGroupName'],
     };
 }
-exports.DeleteUserGroupRequestFromJSONTyped = DeleteUserGroupRequestFromJSONTyped;
 function DeleteUserGroupRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function DeleteUserGroupRequestToJSON(value) {
         'UserGroupName': value.userGroupName,
     };
 }
-exports.DeleteUserGroupRequestToJSON = DeleteUserGroupRequestToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NetToJSON = exports.NetFromJSONTyped = exports.NetFromJSON = void 0;
+exports.NetFromJSON = NetFromJSON;
+exports.NetFromJSONTyped = NetFromJSONTyped;
+exports.NetToJSON = NetToJSON;
 const runtime_1 = require("../runtime");
 const ResourceTag_1 = require("./ResourceTag");
 function NetFromJSON(json) {
     return NetFromJSONTyped(json, false);
 }
-exports.NetFromJSON = NetFromJSON;
 function NetFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function NetFromJSONTyped(json, ignoreDiscriminator) {
         'tenancy': !(0, runtime_1.exists)(json, 'Tenancy') ? undefined : json['Tenancy'],
     };
 }
-exports.NetFromJSONTyped = NetFromJSONTyped;
 function NetToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -50,4 +50,3 @@ function NetToJSON(value) {
         'Tenancy': value.tenancy,
     };
 }
-exports.NetToJSON = NetToJSON;

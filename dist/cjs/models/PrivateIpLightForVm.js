@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PrivateIpLightForVmToJSON = exports.PrivateIpLightForVmFromJSONTyped = exports.PrivateIpLightForVmFromJSON = void 0;
+exports.PrivateIpLightForVmFromJSON = PrivateIpLightForVmFromJSON;
+exports.PrivateIpLightForVmFromJSONTyped = PrivateIpLightForVmFromJSONTyped;
+exports.PrivateIpLightForVmToJSON = PrivateIpLightForVmToJSON;
 const runtime_1 = require("../runtime");
 const LinkPublicIpLightForVm_1 = require("./LinkPublicIpLightForVm");
 function PrivateIpLightForVmFromJSON(json) {
     return PrivateIpLightForVmFromJSONTyped(json, false);
 }
-exports.PrivateIpLightForVmFromJSON = PrivateIpLightForVmFromJSON;
 function PrivateIpLightForVmFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function PrivateIpLightForVmFromJSONTyped(json, ignoreDiscriminator) {
         'privateIp': !(0, runtime_1.exists)(json, 'PrivateIp') ? undefined : json['PrivateIp'],
     };
 }
-exports.PrivateIpLightForVmFromJSONTyped = PrivateIpLightForVmFromJSONTyped;
 function PrivateIpLightForVmToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function PrivateIpLightForVmToJSON(value) {
         'PrivateIp': value.privateIp,
     };
 }
-exports.PrivateIpLightForVmToJSON = PrivateIpLightForVmToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteVmTemplateResponseToJSON = exports.DeleteVmTemplateResponseFromJSONTyped = exports.DeleteVmTemplateResponseFromJSON = void 0;
+exports.DeleteVmTemplateResponseFromJSON = DeleteVmTemplateResponseFromJSON;
+exports.DeleteVmTemplateResponseFromJSONTyped = DeleteVmTemplateResponseFromJSONTyped;
+exports.DeleteVmTemplateResponseToJSON = DeleteVmTemplateResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteVmTemplateResponseFromJSON(json) {
     return DeleteVmTemplateResponseFromJSONTyped(json, false);
 }
-exports.DeleteVmTemplateResponseFromJSON = DeleteVmTemplateResponseFromJSON;
 function DeleteVmTemplateResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteVmTemplateResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteVmTemplateResponseFromJSONTyped = DeleteVmTemplateResponseFromJSONTyped;
 function DeleteVmTemplateResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteVmTemplateResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteVmTemplateResponseToJSON = DeleteVmTemplateResponseToJSON;

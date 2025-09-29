@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateListenerRuleRequestToJSON = exports.UpdateListenerRuleRequestFromJSONTyped = exports.UpdateListenerRuleRequestFromJSON = void 0;
+exports.UpdateListenerRuleRequestFromJSON = UpdateListenerRuleRequestFromJSON;
+exports.UpdateListenerRuleRequestFromJSONTyped = UpdateListenerRuleRequestFromJSONTyped;
+exports.UpdateListenerRuleRequestToJSON = UpdateListenerRuleRequestToJSON;
 const runtime_1 = require("../runtime");
 function UpdateListenerRuleRequestFromJSON(json) {
     return UpdateListenerRuleRequestFromJSONTyped(json, false);
 }
-exports.UpdateListenerRuleRequestFromJSON = UpdateListenerRuleRequestFromJSON;
 function UpdateListenerRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function UpdateListenerRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
         'pathPattern': !(0, runtime_1.exists)(json, 'PathPattern') ? undefined : json['PathPattern'],
     };
 }
-exports.UpdateListenerRuleRequestFromJSONTyped = UpdateListenerRuleRequestFromJSONTyped;
 function UpdateListenerRuleRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function UpdateListenerRuleRequestToJSON(value) {
         'PathPattern': value.pathPattern,
     };
 }
-exports.UpdateListenerRuleRequestToJSON = UpdateListenerRuleRequestToJSON;

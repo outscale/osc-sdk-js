@@ -13,7 +13,9 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VpnConnectionToJSON = exports.VpnConnectionFromJSONTyped = exports.VpnConnectionFromJSON = void 0;
+exports.VpnConnectionFromJSON = VpnConnectionFromJSON;
+exports.VpnConnectionFromJSONTyped = VpnConnectionFromJSONTyped;
+exports.VpnConnectionToJSON = VpnConnectionToJSON;
 const runtime_1 = require("../runtime");
 const ResourceTag_1 = require("./ResourceTag");
 const RouteLight_1 = require("./RouteLight");
@@ -22,7 +24,6 @@ const VpnOptions_1 = require("./VpnOptions");
 function VpnConnectionFromJSON(json) {
     return VpnConnectionFromJSONTyped(json, false);
 }
-exports.VpnConnectionFromJSON = VpnConnectionFromJSON;
 function VpnConnectionFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -41,7 +42,6 @@ function VpnConnectionFromJSONTyped(json, ignoreDiscriminator) {
         'vpnOptions': !(0, runtime_1.exists)(json, 'VpnOptions') ? undefined : (0, VpnOptions_1.VpnOptionsFromJSON)(json['VpnOptions']),
     };
 }
-exports.VpnConnectionFromJSONTyped = VpnConnectionFromJSONTyped;
 function VpnConnectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -63,4 +63,3 @@ function VpnConnectionToJSON(value) {
         'VpnOptions': (0, VpnOptions_1.VpnOptionsToJSON)(value.vpnOptions),
     };
 }
-exports.VpnConnectionToJSON = VpnConnectionToJSON;

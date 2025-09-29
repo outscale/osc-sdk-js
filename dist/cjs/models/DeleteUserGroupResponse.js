@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteUserGroupResponseToJSON = exports.DeleteUserGroupResponseFromJSONTyped = exports.DeleteUserGroupResponseFromJSON = void 0;
+exports.DeleteUserGroupResponseFromJSON = DeleteUserGroupResponseFromJSON;
+exports.DeleteUserGroupResponseFromJSONTyped = DeleteUserGroupResponseFromJSONTyped;
+exports.DeleteUserGroupResponseToJSON = DeleteUserGroupResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteUserGroupResponseFromJSON(json) {
     return DeleteUserGroupResponseFromJSONTyped(json, false);
 }
-exports.DeleteUserGroupResponseFromJSON = DeleteUserGroupResponseFromJSON;
 function DeleteUserGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteUserGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteUserGroupResponseFromJSONTyped = DeleteUserGroupResponseFromJSONTyped;
 function DeleteUserGroupResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteUserGroupResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteUserGroupResponseToJSON = DeleteUserGroupResponseToJSON;

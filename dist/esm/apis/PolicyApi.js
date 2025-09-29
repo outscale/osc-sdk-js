@@ -61,8 +61,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Creates a managed policy to apply to a user.<br /> This action creates a policy version and sets v1 as the default one.
      */
-    createPolicy(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createPolicy() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createPolicyRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Creates a version of a specified managed policy.<br /> A managed policy can have up to five versions.
      */
-    createPolicyVersion(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createPolicyVersion() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createPolicyVersionRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Deletes a managed policy.<br /> Before deleting a managed policy, you must unlink all users linked to it and delete all the versions of the policy, except the default one, using the `DeletePolicyVersion` method.
      */
-    deletePolicy(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deletePolicy() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deletePolicyRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -184,8 +184,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Deletes a specified version of a managed policy, if it is not set as the default one.
      */
-    deletePolicyVersion(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deletePolicyVersion() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deletePolicyVersionRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -225,8 +225,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Deletes a specified inline policy from a specific group.
      */
-    deleteUserGroupPolicy(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteUserGroupPolicy() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteUserGroupPolicyRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -266,8 +266,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Deletes a specified inline policy from a specific user.
      */
-    deleteUserPolicy(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteUserPolicy() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteUserPolicyRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -307,8 +307,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Links a managed policy to a specific group. This policy applies to all the users contained in this group.
      */
-    linkManagedPolicyToUserGroup(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    linkManagedPolicyToUserGroup() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.linkManagedPolicyToUserGroupRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -348,8 +348,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Links a managed policy to a specific user.
      */
-    linkPolicy(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    linkPolicy() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.linkPolicyRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -389,8 +389,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Creates or updates an inline policy included in a specified group.<br /> The policy is automatically applied to all the users of the group after its creation.
      */
-    putUserGroupPolicy(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    putUserGroupPolicy() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.putUserGroupPolicyRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -430,8 +430,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Creates or updates an inline policy included in a specified user.<br /> The policy is automatically applied to the user after its creation.
      */
-    putUserPolicy(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    putUserPolicy() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.putUserPolicyRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -471,8 +471,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Lists all entities (account, users, or user groups) linked to a specific managed policy.
      */
-    readEntitiesLinkedToPolicy(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readEntitiesLinkedToPolicy() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readEntitiesLinkedToPolicyRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -512,8 +512,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Lists the managed policies linked to a specified user.
      */
-    readLinkedPolicies(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readLinkedPolicies() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readLinkedPoliciesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -553,8 +553,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Lists the managed policies linked to a specified group.
      */
-    readManagedPoliciesLinkedToUserGroup(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readManagedPoliciesLinkedToUserGroup() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readManagedPoliciesLinkedToUserGroupRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -594,8 +594,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Lists all the managed policies available for your account.
      */
-    readPolicies(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readPolicies() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readPoliciesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -635,8 +635,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Lists information about a specified managed policy.
      */
-    readPolicy(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readPolicy() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readPolicyRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -676,8 +676,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Lists information about a specified version of a managed policy.
      */
-    readPolicyVersion(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readPolicyVersion() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readPolicyVersionRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -717,8 +717,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Lists information about all the policy versions of a specified managed policy.
      */
-    readPolicyVersions(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readPolicyVersions() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readPolicyVersionsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -758,8 +758,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Lists the names of the inline policies embedded in a specific group.
      */
-    readUserGroupPolicies(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readUserGroupPolicies() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readUserGroupPoliciesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -799,8 +799,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Returns information about an inline policy included in a specified group.
      */
-    readUserGroupPolicy(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readUserGroupPolicy() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readUserGroupPolicyRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -840,8 +840,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Lists the names of inline policies included in a specified user.
      */
-    readUserPolicies(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readUserPolicies() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readUserPoliciesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -881,8 +881,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Returns information about an inline policy included in a specified user.
      */
-    readUserPolicy(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readUserPolicy() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readUserPolicyRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -922,8 +922,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Sets a specified version of a managed policy as the default (operative) one.<br /> You can modify the default version of a policy at any time.
      */
-    setDefaultPolicyVersion(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    setDefaultPolicyVersion() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.setDefaultPolicyVersionRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -963,8 +963,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Unlinks a managed policy from a specific group.
      */
-    unlinkManagedPolicyFromUserGroup(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    unlinkManagedPolicyFromUserGroup() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.unlinkManagedPolicyFromUserGroupRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -1004,8 +1004,8 @@ export class PolicyApi extends runtime.BaseAPI {
     /**
      * Removes a managed policy from a specific user.
      */
-    unlinkPolicy(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    unlinkPolicy() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.unlinkPolicyRaw(requestParameters, initOverrides);
             return yield response.value();
         });

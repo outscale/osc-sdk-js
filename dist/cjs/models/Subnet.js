@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SubnetToJSON = exports.SubnetFromJSONTyped = exports.SubnetFromJSON = void 0;
+exports.SubnetFromJSON = SubnetFromJSON;
+exports.SubnetFromJSONTyped = SubnetFromJSONTyped;
+exports.SubnetToJSON = SubnetToJSON;
 const runtime_1 = require("../runtime");
 const ResourceTag_1 = require("./ResourceTag");
 function SubnetFromJSON(json) {
     return SubnetFromJSONTyped(json, false);
 }
-exports.SubnetFromJSON = SubnetFromJSON;
 function SubnetFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -35,7 +36,6 @@ function SubnetFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
     };
 }
-exports.SubnetFromJSONTyped = SubnetFromJSONTyped;
 function SubnetToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -54,4 +54,3 @@ function SubnetToJSON(value) {
         'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
     };
 }
-exports.SubnetToJSON = SubnetToJSON;

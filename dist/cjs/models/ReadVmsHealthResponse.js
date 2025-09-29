@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadVmsHealthResponseToJSON = exports.ReadVmsHealthResponseFromJSONTyped = exports.ReadVmsHealthResponseFromJSON = void 0;
+exports.ReadVmsHealthResponseFromJSON = ReadVmsHealthResponseFromJSON;
+exports.ReadVmsHealthResponseFromJSONTyped = ReadVmsHealthResponseFromJSONTyped;
+exports.ReadVmsHealthResponseToJSON = ReadVmsHealthResponseToJSON;
 const runtime_1 = require("../runtime");
 const BackendVmHealth_1 = require("./BackendVmHealth");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadVmsHealthResponseFromJSON(json) {
     return ReadVmsHealthResponseFromJSONTyped(json, false);
 }
-exports.ReadVmsHealthResponseFromJSON = ReadVmsHealthResponseFromJSON;
 function ReadVmsHealthResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function ReadVmsHealthResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadVmsHealthResponseFromJSONTyped = ReadVmsHealthResponseFromJSONTyped;
 function ReadVmsHealthResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ReadVmsHealthResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadVmsHealthResponseToJSON = ReadVmsHealthResponseToJSON;

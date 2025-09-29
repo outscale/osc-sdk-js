@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadImageExportTasksRequestToJSON = exports.ReadImageExportTasksRequestFromJSONTyped = exports.ReadImageExportTasksRequestFromJSON = void 0;
+exports.ReadImageExportTasksRequestFromJSON = ReadImageExportTasksRequestFromJSON;
+exports.ReadImageExportTasksRequestFromJSONTyped = ReadImageExportTasksRequestFromJSONTyped;
+exports.ReadImageExportTasksRequestToJSON = ReadImageExportTasksRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersExportTask_1 = require("./FiltersExportTask");
 function ReadImageExportTasksRequestFromJSON(json) {
     return ReadImageExportTasksRequestFromJSONTyped(json, false);
 }
-exports.ReadImageExportTasksRequestFromJSON = ReadImageExportTasksRequestFromJSON;
 function ReadImageExportTasksRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadImageExportTasksRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadImageExportTasksRequestFromJSONTyped = ReadImageExportTasksRequestFromJSONTyped;
 function ReadImageExportTasksRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadImageExportTasksRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadImageExportTasksRequestToJSON = ReadImageExportTasksRequestToJSON;

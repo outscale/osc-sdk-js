@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateServerCertificateRequestToJSON = exports.CreateServerCertificateRequestFromJSONTyped = exports.CreateServerCertificateRequestFromJSON = void 0;
+exports.CreateServerCertificateRequestFromJSON = CreateServerCertificateRequestFromJSON;
+exports.CreateServerCertificateRequestFromJSONTyped = CreateServerCertificateRequestFromJSONTyped;
+exports.CreateServerCertificateRequestToJSON = CreateServerCertificateRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateServerCertificateRequestFromJSON(json) {
     return CreateServerCertificateRequestFromJSONTyped(json, false);
 }
-exports.CreateServerCertificateRequestFromJSON = CreateServerCertificateRequestFromJSON;
 function CreateServerCertificateRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -32,7 +33,6 @@ function CreateServerCertificateRequestFromJSONTyped(json, ignoreDiscriminator) 
         'privateKey': json['PrivateKey'],
     };
 }
-exports.CreateServerCertificateRequestFromJSONTyped = CreateServerCertificateRequestFromJSONTyped;
 function CreateServerCertificateRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function CreateServerCertificateRequestToJSON(value) {
         'PrivateKey': value.privateKey,
     };
 }
-exports.CreateServerCertificateRequestToJSON = CreateServerCertificateRequestToJSON;

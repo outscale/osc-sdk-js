@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkInternetServiceRequestToJSON = exports.LinkInternetServiceRequestFromJSONTyped = exports.LinkInternetServiceRequestFromJSON = void 0;
+exports.LinkInternetServiceRequestFromJSON = LinkInternetServiceRequestFromJSON;
+exports.LinkInternetServiceRequestFromJSONTyped = LinkInternetServiceRequestFromJSONTyped;
+exports.LinkInternetServiceRequestToJSON = LinkInternetServiceRequestToJSON;
 const runtime_1 = require("../runtime");
 function LinkInternetServiceRequestFromJSON(json) {
     return LinkInternetServiceRequestFromJSONTyped(json, false);
 }
-exports.LinkInternetServiceRequestFromJSON = LinkInternetServiceRequestFromJSON;
 function LinkInternetServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function LinkInternetServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
         'netId': json['NetId'],
     };
 }
-exports.LinkInternetServiceRequestFromJSONTyped = LinkInternetServiceRequestFromJSONTyped;
 function LinkInternetServiceRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function LinkInternetServiceRequestToJSON(value) {
         'NetId': value.netId,
     };
 }
-exports.LinkInternetServiceRequestToJSON = LinkInternetServiceRequestToJSON;

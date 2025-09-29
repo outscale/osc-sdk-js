@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ClientGatewayToJSON = exports.ClientGatewayFromJSONTyped = exports.ClientGatewayFromJSON = void 0;
+exports.ClientGatewayFromJSON = ClientGatewayFromJSON;
+exports.ClientGatewayFromJSONTyped = ClientGatewayFromJSONTyped;
+exports.ClientGatewayToJSON = ClientGatewayToJSON;
 const runtime_1 = require("../runtime");
 const ResourceTag_1 = require("./ResourceTag");
 function ClientGatewayFromJSON(json) {
     return ClientGatewayFromJSONTyped(json, false);
 }
-exports.ClientGatewayFromJSON = ClientGatewayFromJSON;
 function ClientGatewayFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function ClientGatewayFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
     };
 }
-exports.ClientGatewayFromJSONTyped = ClientGatewayFromJSONTyped;
 function ClientGatewayToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -50,4 +50,3 @@ function ClientGatewayToJSON(value) {
         'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
     };
 }
-exports.ClientGatewayToJSON = ClientGatewayToJSON;

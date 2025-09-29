@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckAuthenticationRequestToJSON = exports.CheckAuthenticationRequestFromJSONTyped = exports.CheckAuthenticationRequestFromJSON = void 0;
+exports.CheckAuthenticationRequestFromJSON = CheckAuthenticationRequestFromJSON;
+exports.CheckAuthenticationRequestFromJSONTyped = CheckAuthenticationRequestFromJSONTyped;
+exports.CheckAuthenticationRequestToJSON = CheckAuthenticationRequestToJSON;
 const runtime_1 = require("../runtime");
 function CheckAuthenticationRequestFromJSON(json) {
     return CheckAuthenticationRequestFromJSONTyped(json, false);
 }
-exports.CheckAuthenticationRequestFromJSON = CheckAuthenticationRequestFromJSON;
 function CheckAuthenticationRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function CheckAuthenticationRequestFromJSONTyped(json, ignoreDiscriminator) {
         'password': json['Password'],
     };
 }
-exports.CheckAuthenticationRequestFromJSONTyped = CheckAuthenticationRequestFromJSONTyped;
 function CheckAuthenticationRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CheckAuthenticationRequestToJSON(value) {
         'Password': value.password,
     };
 }
-exports.CheckAuthenticationRequestToJSON = CheckAuthenticationRequestToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersVmsStateToJSON = exports.FiltersVmsStateFromJSONTyped = exports.FiltersVmsStateFromJSON = void 0;
+exports.FiltersVmsStateFromJSON = FiltersVmsStateFromJSON;
+exports.FiltersVmsStateFromJSONTyped = FiltersVmsStateFromJSONTyped;
+exports.FiltersVmsStateToJSON = FiltersVmsStateToJSON;
 const runtime_1 = require("../runtime");
 function FiltersVmsStateFromJSON(json) {
     return FiltersVmsStateFromJSONTyped(json, false);
 }
-exports.FiltersVmsStateFromJSON = FiltersVmsStateFromJSON;
 function FiltersVmsStateFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function FiltersVmsStateFromJSONTyped(json, ignoreDiscriminator) {
         'vmStates': !(0, runtime_1.exists)(json, 'VmStates') ? undefined : json['VmStates'],
     };
 }
-exports.FiltersVmsStateFromJSONTyped = FiltersVmsStateFromJSONTyped;
 function FiltersVmsStateToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function FiltersVmsStateToJSON(value) {
         'VmStates': value.vmStates,
     };
 }
-exports.FiltersVmsStateToJSON = FiltersVmsStateToJSON;

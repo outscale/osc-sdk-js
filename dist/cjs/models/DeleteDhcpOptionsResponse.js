@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteDhcpOptionsResponseToJSON = exports.DeleteDhcpOptionsResponseFromJSONTyped = exports.DeleteDhcpOptionsResponseFromJSON = void 0;
+exports.DeleteDhcpOptionsResponseFromJSON = DeleteDhcpOptionsResponseFromJSON;
+exports.DeleteDhcpOptionsResponseFromJSONTyped = DeleteDhcpOptionsResponseFromJSONTyped;
+exports.DeleteDhcpOptionsResponseToJSON = DeleteDhcpOptionsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteDhcpOptionsResponseFromJSON(json) {
     return DeleteDhcpOptionsResponseFromJSONTyped(json, false);
 }
-exports.DeleteDhcpOptionsResponseFromJSON = DeleteDhcpOptionsResponseFromJSON;
 function DeleteDhcpOptionsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteDhcpOptionsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteDhcpOptionsResponseFromJSONTyped = DeleteDhcpOptionsResponseFromJSONTyped;
 function DeleteDhcpOptionsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteDhcpOptionsResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteDhcpOptionsResponseToJSON = DeleteDhcpOptionsResponseToJSON;

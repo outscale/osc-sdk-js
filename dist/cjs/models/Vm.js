@@ -13,7 +13,9 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VmToJSON = exports.VmFromJSONTyped = exports.VmFromJSON = void 0;
+exports.VmFromJSON = VmFromJSON;
+exports.VmFromJSONTyped = VmFromJSONTyped;
+exports.VmToJSON = VmToJSON;
 const runtime_1 = require("../runtime");
 const ActionsOnNextBoot_1 = require("./ActionsOnNextBoot");
 const BlockDeviceMappingCreated_1 = require("./BlockDeviceMappingCreated");
@@ -25,7 +27,6 @@ const SecurityGroupLight_1 = require("./SecurityGroupLight");
 function VmFromJSON(json) {
     return VmFromJSONTyped(json, false);
 }
-exports.VmFromJSON = VmFromJSON;
 function VmFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -69,7 +70,6 @@ function VmFromJSONTyped(json, ignoreDiscriminator) {
         'vmType': !(0, runtime_1.exists)(json, 'VmType') ? undefined : json['VmType'],
     };
 }
-exports.VmFromJSONTyped = VmFromJSONTyped;
 function VmToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -116,4 +116,3 @@ function VmToJSON(value) {
         'VmType': value.vmType,
     };
 }
-exports.VmToJSON = VmToJSON;

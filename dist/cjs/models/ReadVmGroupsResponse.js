@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadVmGroupsResponseToJSON = exports.ReadVmGroupsResponseFromJSONTyped = exports.ReadVmGroupsResponseFromJSON = void 0;
+exports.ReadVmGroupsResponseFromJSON = ReadVmGroupsResponseFromJSON;
+exports.ReadVmGroupsResponseFromJSONTyped = ReadVmGroupsResponseFromJSONTyped;
+exports.ReadVmGroupsResponseToJSON = ReadVmGroupsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const VmGroup_1 = require("./VmGroup");
 function ReadVmGroupsResponseFromJSON(json) {
     return ReadVmGroupsResponseFromJSONTyped(json, false);
 }
-exports.ReadVmGroupsResponseFromJSON = ReadVmGroupsResponseFromJSON;
 function ReadVmGroupsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function ReadVmGroupsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'vmGroups': !(0, runtime_1.exists)(json, 'VmGroups') ? undefined : (json['VmGroups'].map(VmGroup_1.VmGroupFromJSON)),
     };
 }
-exports.ReadVmGroupsResponseFromJSONTyped = ReadVmGroupsResponseFromJSONTyped;
 function ReadVmGroupsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ReadVmGroupsResponseToJSON(value) {
         'VmGroups': value.vmGroups === undefined ? undefined : (value.vmGroups.map(VmGroup_1.VmGroupToJSON)),
     };
 }
-exports.ReadVmGroupsResponseToJSON = ReadVmGroupsResponseToJSON;

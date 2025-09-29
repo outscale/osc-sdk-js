@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DisableOutscaleLoginPerUsersResponseToJSON = exports.DisableOutscaleLoginPerUsersResponseFromJSONTyped = exports.DisableOutscaleLoginPerUsersResponseFromJSON = void 0;
+exports.DisableOutscaleLoginPerUsersResponseFromJSON = DisableOutscaleLoginPerUsersResponseFromJSON;
+exports.DisableOutscaleLoginPerUsersResponseFromJSONTyped = DisableOutscaleLoginPerUsersResponseFromJSONTyped;
+exports.DisableOutscaleLoginPerUsersResponseToJSON = DisableOutscaleLoginPerUsersResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DisableOutscaleLoginPerUsersResponseFromJSON(json) {
     return DisableOutscaleLoginPerUsersResponseFromJSONTyped(json, false);
 }
-exports.DisableOutscaleLoginPerUsersResponseFromJSON = DisableOutscaleLoginPerUsersResponseFromJSON;
 function DisableOutscaleLoginPerUsersResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DisableOutscaleLoginPerUsersResponseFromJSONTyped(json, ignoreDiscrimin
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DisableOutscaleLoginPerUsersResponseFromJSONTyped = DisableOutscaleLoginPerUsersResponseFromJSONTyped;
 function DisableOutscaleLoginPerUsersResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DisableOutscaleLoginPerUsersResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DisableOutscaleLoginPerUsersResponseToJSON = DisableOutscaleLoginPerUsersResponseToJSON;

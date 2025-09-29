@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateVmRequestToJSON = exports.UpdateVmRequestFromJSONTyped = exports.UpdateVmRequestFromJSON = exports.UpdateVmRequestPerformanceEnum = void 0;
+exports.UpdateVmRequestPerformanceEnum = void 0;
+exports.UpdateVmRequestFromJSON = UpdateVmRequestFromJSON;
+exports.UpdateVmRequestFromJSONTyped = UpdateVmRequestFromJSONTyped;
+exports.UpdateVmRequestToJSON = UpdateVmRequestToJSON;
 const runtime_1 = require("../runtime");
 const ActionsOnNextBoot_1 = require("./ActionsOnNextBoot");
 const BlockDeviceMappingVmUpdate_1 = require("./BlockDeviceMappingVmUpdate");
@@ -28,7 +31,6 @@ exports.UpdateVmRequestPerformanceEnum = {
 function UpdateVmRequestFromJSON(json) {
     return UpdateVmRequestFromJSONTyped(json, false);
 }
-exports.UpdateVmRequestFromJSON = UpdateVmRequestFromJSON;
 function UpdateVmRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -50,7 +52,6 @@ function UpdateVmRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vmType': !(0, runtime_1.exists)(json, 'VmType') ? undefined : json['VmType'],
     };
 }
-exports.UpdateVmRequestFromJSONTyped = UpdateVmRequestFromJSONTyped;
 function UpdateVmRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -75,4 +76,3 @@ function UpdateVmRequestToJSON(value) {
         'VmType': value.vmType,
     };
 }
-exports.UpdateVmRequestToJSON = UpdateVmRequestToJSON;

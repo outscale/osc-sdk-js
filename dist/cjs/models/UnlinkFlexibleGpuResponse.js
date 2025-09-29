@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnlinkFlexibleGpuResponseToJSON = exports.UnlinkFlexibleGpuResponseFromJSONTyped = exports.UnlinkFlexibleGpuResponseFromJSON = void 0;
+exports.UnlinkFlexibleGpuResponseFromJSON = UnlinkFlexibleGpuResponseFromJSON;
+exports.UnlinkFlexibleGpuResponseFromJSONTyped = UnlinkFlexibleGpuResponseFromJSONTyped;
+exports.UnlinkFlexibleGpuResponseToJSON = UnlinkFlexibleGpuResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function UnlinkFlexibleGpuResponseFromJSON(json) {
     return UnlinkFlexibleGpuResponseFromJSONTyped(json, false);
 }
-exports.UnlinkFlexibleGpuResponseFromJSON = UnlinkFlexibleGpuResponseFromJSON;
 function UnlinkFlexibleGpuResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function UnlinkFlexibleGpuResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.UnlinkFlexibleGpuResponseFromJSONTyped = UnlinkFlexibleGpuResponseFromJSONTyped;
 function UnlinkFlexibleGpuResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function UnlinkFlexibleGpuResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.UnlinkFlexibleGpuResponseToJSON = UnlinkFlexibleGpuResponseToJSON;

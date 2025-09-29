@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkNicResponseToJSON = exports.LinkNicResponseFromJSONTyped = exports.LinkNicResponseFromJSON = void 0;
+exports.LinkNicResponseFromJSON = LinkNicResponseFromJSON;
+exports.LinkNicResponseFromJSONTyped = LinkNicResponseFromJSONTyped;
+exports.LinkNicResponseToJSON = LinkNicResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function LinkNicResponseFromJSON(json) {
     return LinkNicResponseFromJSONTyped(json, false);
 }
-exports.LinkNicResponseFromJSON = LinkNicResponseFromJSON;
 function LinkNicResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function LinkNicResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.LinkNicResponseFromJSONTyped = LinkNicResponseFromJSONTyped;
 function LinkNicResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function LinkNicResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.LinkNicResponseToJSON = LinkNicResponseToJSON;

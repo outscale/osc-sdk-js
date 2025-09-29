@@ -61,8 +61,8 @@ export class ServerCertificateApi extends runtime.BaseAPI {
     /**
      * Creates a server certificate and its matching private key.<br /><br /> These elements can be used with other services (for example, to configure SSL termination on load balancers).<br /><br /> You can also specify the chain of intermediate certification authorities if your certificate is not directly signed by a root one. You can specify multiple intermediate certification authorities in the `CertificateChain` parameter. To do so, concatenate all certificates in the correct order (the first certificate must be the authority of your certificate, the second must be the authority of the first one, and so on).<br /><br /> The private key must be a RSA key in PKCS1 form. To check this, open the PEM file and ensure its header reads as follows: BEGIN RSA PRIVATE KEY.<br /><br /> [IMPORTANT]<br /><br /> This private key must not be protected by a password or a passphrase.<br /><br /> For more information, see [About Server Certificates in EIM](https://docs.outscale.com/en/userguide/About-Server-Certificates-in-EIM.html).
      */
-    createServerCertificate(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createServerCertificate() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createServerCertificateRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class ServerCertificateApi extends runtime.BaseAPI {
     /**
      * Deletes a specified server certificate.
      */
-    deleteServerCertificate(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteServerCertificate() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteServerCertificateRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class ServerCertificateApi extends runtime.BaseAPI {
     /**
      * Lists your server certificates.
      */
-    readServerCertificates(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readServerCertificates() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readServerCertificatesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -184,8 +184,8 @@ export class ServerCertificateApi extends runtime.BaseAPI {
     /**
      * Modifies the name and/or the path of a specified server certificate.
      */
-    updateServerCertificate(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateServerCertificate() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateServerCertificateRaw(requestParameters, initOverrides);
             return yield response.value();
         });

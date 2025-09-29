@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnlinkPublicIpRequestToJSON = exports.UnlinkPublicIpRequestFromJSONTyped = exports.UnlinkPublicIpRequestFromJSON = void 0;
+exports.UnlinkPublicIpRequestFromJSON = UnlinkPublicIpRequestFromJSON;
+exports.UnlinkPublicIpRequestFromJSONTyped = UnlinkPublicIpRequestFromJSONTyped;
+exports.UnlinkPublicIpRequestToJSON = UnlinkPublicIpRequestToJSON;
 const runtime_1 = require("../runtime");
 function UnlinkPublicIpRequestFromJSON(json) {
     return UnlinkPublicIpRequestFromJSONTyped(json, false);
 }
-exports.UnlinkPublicIpRequestFromJSON = UnlinkPublicIpRequestFromJSON;
 function UnlinkPublicIpRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function UnlinkPublicIpRequestFromJSONTyped(json, ignoreDiscriminator) {
         'publicIp': !(0, runtime_1.exists)(json, 'PublicIp') ? undefined : json['PublicIp'],
     };
 }
-exports.UnlinkPublicIpRequestFromJSONTyped = UnlinkPublicIpRequestFromJSONTyped;
 function UnlinkPublicIpRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UnlinkPublicIpRequestToJSON(value) {
         'PublicIp': value.publicIp,
     };
 }
-exports.UnlinkPublicIpRequestToJSON = UnlinkPublicIpRequestToJSON;

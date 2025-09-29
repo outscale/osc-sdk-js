@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AddUserToUserGroupRequestToJSON = exports.AddUserToUserGroupRequestFromJSONTyped = exports.AddUserToUserGroupRequestFromJSON = void 0;
+exports.AddUserToUserGroupRequestFromJSON = AddUserToUserGroupRequestFromJSON;
+exports.AddUserToUserGroupRequestFromJSONTyped = AddUserToUserGroupRequestFromJSONTyped;
+exports.AddUserToUserGroupRequestToJSON = AddUserToUserGroupRequestToJSON;
 const runtime_1 = require("../runtime");
 function AddUserToUserGroupRequestFromJSON(json) {
     return AddUserToUserGroupRequestFromJSONTyped(json, false);
 }
-exports.AddUserToUserGroupRequestFromJSON = AddUserToUserGroupRequestFromJSON;
 function AddUserToUserGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function AddUserToUserGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
         'userPath': !(0, runtime_1.exists)(json, 'UserPath') ? undefined : json['UserPath'],
     };
 }
-exports.AddUserToUserGroupRequestFromJSONTyped = AddUserToUserGroupRequestFromJSONTyped;
 function AddUserToUserGroupRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function AddUserToUserGroupRequestToJSON(value) {
         'UserPath': value.userPath,
     };
 }
-exports.AddUserToUserGroupRequestToJSON = AddUserToUserGroupRequestToJSON;

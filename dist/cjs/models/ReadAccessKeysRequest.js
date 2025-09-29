@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadAccessKeysRequestToJSON = exports.ReadAccessKeysRequestFromJSONTyped = exports.ReadAccessKeysRequestFromJSON = void 0;
+exports.ReadAccessKeysRequestFromJSON = ReadAccessKeysRequestFromJSON;
+exports.ReadAccessKeysRequestFromJSONTyped = ReadAccessKeysRequestFromJSONTyped;
+exports.ReadAccessKeysRequestToJSON = ReadAccessKeysRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersAccessKeys_1 = require("./FiltersAccessKeys");
 function ReadAccessKeysRequestFromJSON(json) {
     return ReadAccessKeysRequestFromJSONTyped(json, false);
 }
-exports.ReadAccessKeysRequestFromJSON = ReadAccessKeysRequestFromJSON;
 function ReadAccessKeysRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadAccessKeysRequestFromJSONTyped(json, ignoreDiscriminator) {
         'userName': !(0, runtime_1.exists)(json, 'UserName') ? undefined : json['UserName'],
     };
 }
-exports.ReadAccessKeysRequestFromJSONTyped = ReadAccessKeysRequestFromJSONTyped;
 function ReadAccessKeysRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadAccessKeysRequestToJSON(value) {
         'UserName': value.userName,
     };
 }
-exports.ReadAccessKeysRequestToJSON = ReadAccessKeysRequestToJSON;

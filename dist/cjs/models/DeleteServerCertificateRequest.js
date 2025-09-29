@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteServerCertificateRequestToJSON = exports.DeleteServerCertificateRequestFromJSONTyped = exports.DeleteServerCertificateRequestFromJSON = void 0;
+exports.DeleteServerCertificateRequestFromJSON = DeleteServerCertificateRequestFromJSON;
+exports.DeleteServerCertificateRequestFromJSONTyped = DeleteServerCertificateRequestFromJSONTyped;
+exports.DeleteServerCertificateRequestToJSON = DeleteServerCertificateRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteServerCertificateRequestFromJSON(json) {
     return DeleteServerCertificateRequestFromJSONTyped(json, false);
 }
-exports.DeleteServerCertificateRequestFromJSON = DeleteServerCertificateRequestFromJSON;
 function DeleteServerCertificateRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteServerCertificateRequestFromJSONTyped(json, ignoreDiscriminator) 
         'name': json['Name'],
     };
 }
-exports.DeleteServerCertificateRequestFromJSONTyped = DeleteServerCertificateRequestFromJSONTyped;
 function DeleteServerCertificateRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteServerCertificateRequestToJSON(value) {
         'Name': value.name,
     };
 }
-exports.DeleteServerCertificateRequestToJSON = DeleteServerCertificateRequestToJSON;

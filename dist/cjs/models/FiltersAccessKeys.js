@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersAccessKeysToJSON = exports.FiltersAccessKeysFromJSONTyped = exports.FiltersAccessKeysFromJSON = void 0;
+exports.FiltersAccessKeysFromJSON = FiltersAccessKeysFromJSON;
+exports.FiltersAccessKeysFromJSONTyped = FiltersAccessKeysFromJSONTyped;
+exports.FiltersAccessKeysToJSON = FiltersAccessKeysToJSON;
 const runtime_1 = require("../runtime");
 function FiltersAccessKeysFromJSON(json) {
     return FiltersAccessKeysFromJSONTyped(json, false);
 }
-exports.FiltersAccessKeysFromJSON = FiltersAccessKeysFromJSON;
 function FiltersAccessKeysFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function FiltersAccessKeysFromJSONTyped(json, ignoreDiscriminator) {
         'states': !(0, runtime_1.exists)(json, 'States') ? undefined : json['States'],
     };
 }
-exports.FiltersAccessKeysFromJSONTyped = FiltersAccessKeysFromJSONTyped;
 function FiltersAccessKeysToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function FiltersAccessKeysToJSON(value) {
         'States': value.states,
     };
 }
-exports.FiltersAccessKeysToJSON = FiltersAccessKeysToJSON;

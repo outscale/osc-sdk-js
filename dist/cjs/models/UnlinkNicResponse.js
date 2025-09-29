@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnlinkNicResponseToJSON = exports.UnlinkNicResponseFromJSONTyped = exports.UnlinkNicResponseFromJSON = void 0;
+exports.UnlinkNicResponseFromJSON = UnlinkNicResponseFromJSON;
+exports.UnlinkNicResponseFromJSONTyped = UnlinkNicResponseFromJSONTyped;
+exports.UnlinkNicResponseToJSON = UnlinkNicResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function UnlinkNicResponseFromJSON(json) {
     return UnlinkNicResponseFromJSONTyped(json, false);
 }
-exports.UnlinkNicResponseFromJSON = UnlinkNicResponseFromJSON;
 function UnlinkNicResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function UnlinkNicResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.UnlinkNicResponseFromJSONTyped = UnlinkNicResponseFromJSONTyped;
 function UnlinkNicResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function UnlinkNicResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.UnlinkNicResponseToJSON = UnlinkNicResponseToJSON;

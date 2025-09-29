@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BsuToCreateToJSON = exports.BsuToCreateFromJSONTyped = exports.BsuToCreateFromJSON = void 0;
+exports.BsuToCreateFromJSON = BsuToCreateFromJSON;
+exports.BsuToCreateFromJSONTyped = BsuToCreateFromJSONTyped;
+exports.BsuToCreateToJSON = BsuToCreateToJSON;
 const runtime_1 = require("../runtime");
 function BsuToCreateFromJSON(json) {
     return BsuToCreateFromJSONTyped(json, false);
 }
-exports.BsuToCreateFromJSON = BsuToCreateFromJSON;
 function BsuToCreateFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function BsuToCreateFromJSONTyped(json, ignoreDiscriminator) {
         'volumeType': !(0, runtime_1.exists)(json, 'VolumeType') ? undefined : json['VolumeType'],
     };
 }
-exports.BsuToCreateFromJSONTyped = BsuToCreateFromJSONTyped;
 function BsuToCreateToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function BsuToCreateToJSON(value) {
         'VolumeType': value.volumeType,
     };
 }
-exports.BsuToCreateToJSON = BsuToCreateToJSON;

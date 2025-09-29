@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AccessKeySecretKeyToJSON = exports.AccessKeySecretKeyFromJSONTyped = exports.AccessKeySecretKeyFromJSON = void 0;
+exports.AccessKeySecretKeyFromJSON = AccessKeySecretKeyFromJSON;
+exports.AccessKeySecretKeyFromJSONTyped = AccessKeySecretKeyFromJSONTyped;
+exports.AccessKeySecretKeyToJSON = AccessKeySecretKeyToJSON;
 const runtime_1 = require("../runtime");
 function AccessKeySecretKeyFromJSON(json) {
     return AccessKeySecretKeyFromJSONTyped(json, false);
 }
-exports.AccessKeySecretKeyFromJSON = AccessKeySecretKeyFromJSON;
 function AccessKeySecretKeyFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function AccessKeySecretKeyFromJSONTyped(json, ignoreDiscriminator) {
         'tag': !(0, runtime_1.exists)(json, 'Tag') ? undefined : json['Tag'],
     };
 }
-exports.AccessKeySecretKeyFromJSONTyped = AccessKeySecretKeyFromJSONTyped;
 function AccessKeySecretKeyToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function AccessKeySecretKeyToJSON(value) {
         'Tag': value.tag,
     };
 }
-exports.AccessKeySecretKeyToJSON = AccessKeySecretKeyToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteServerCertificateResponseToJSON = exports.DeleteServerCertificateResponseFromJSONTyped = exports.DeleteServerCertificateResponseFromJSON = void 0;
+exports.DeleteServerCertificateResponseFromJSON = DeleteServerCertificateResponseFromJSON;
+exports.DeleteServerCertificateResponseFromJSONTyped = DeleteServerCertificateResponseFromJSONTyped;
+exports.DeleteServerCertificateResponseToJSON = DeleteServerCertificateResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteServerCertificateResponseFromJSON(json) {
     return DeleteServerCertificateResponseFromJSONTyped(json, false);
 }
-exports.DeleteServerCertificateResponseFromJSON = DeleteServerCertificateResponseFromJSON;
 function DeleteServerCertificateResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteServerCertificateResponseFromJSONTyped(json, ignoreDiscriminator)
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteServerCertificateResponseFromJSONTyped = DeleteServerCertificateResponseFromJSONTyped;
 function DeleteServerCertificateResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteServerCertificateResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteServerCertificateResponseToJSON = DeleteServerCertificateResponseToJSON;

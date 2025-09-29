@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkPrivateIpsRequestToJSON = exports.LinkPrivateIpsRequestFromJSONTyped = exports.LinkPrivateIpsRequestFromJSON = void 0;
+exports.LinkPrivateIpsRequestFromJSON = LinkPrivateIpsRequestFromJSON;
+exports.LinkPrivateIpsRequestFromJSONTyped = LinkPrivateIpsRequestFromJSONTyped;
+exports.LinkPrivateIpsRequestToJSON = LinkPrivateIpsRequestToJSON;
 const runtime_1 = require("../runtime");
 function LinkPrivateIpsRequestFromJSON(json) {
     return LinkPrivateIpsRequestFromJSONTyped(json, false);
 }
-exports.LinkPrivateIpsRequestFromJSON = LinkPrivateIpsRequestFromJSON;
 function LinkPrivateIpsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function LinkPrivateIpsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'secondaryPrivateIpCount': !(0, runtime_1.exists)(json, 'SecondaryPrivateIpCount') ? undefined : json['SecondaryPrivateIpCount'],
     };
 }
-exports.LinkPrivateIpsRequestFromJSONTyped = LinkPrivateIpsRequestFromJSONTyped;
 function LinkPrivateIpsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function LinkPrivateIpsRequestToJSON(value) {
         'SecondaryPrivateIpCount': value.secondaryPrivateIpCount,
     };
 }
-exports.LinkPrivateIpsRequestToJSON = LinkPrivateIpsRequestToJSON;

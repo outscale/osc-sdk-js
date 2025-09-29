@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadApiLogsRequestToJSON = exports.ReadApiLogsRequestFromJSONTyped = exports.ReadApiLogsRequestFromJSON = void 0;
+exports.ReadApiLogsRequestFromJSON = ReadApiLogsRequestFromJSON;
+exports.ReadApiLogsRequestFromJSONTyped = ReadApiLogsRequestFromJSONTyped;
+exports.ReadApiLogsRequestToJSON = ReadApiLogsRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersApiLog_1 = require("./FiltersApiLog");
 const With_1 = require("./With");
 function ReadApiLogsRequestFromJSON(json) {
     return ReadApiLogsRequestFromJSONTyped(json, false);
 }
-exports.ReadApiLogsRequestFromJSON = ReadApiLogsRequestFromJSON;
 function ReadApiLogsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function ReadApiLogsRequestFromJSONTyped(json, ignoreDiscriminator) {
         '_with': !(0, runtime_1.exists)(json, 'With') ? undefined : (0, With_1.WithFromJSON)(json['With']),
     };
 }
-exports.ReadApiLogsRequestFromJSONTyped = ReadApiLogsRequestFromJSONTyped;
 function ReadApiLogsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function ReadApiLogsRequestToJSON(value) {
         'With': (0, With_1.WithToJSON)(value._with),
     };
 }
-exports.ReadApiLogsRequestToJSON = ReadApiLogsRequestToJSON;

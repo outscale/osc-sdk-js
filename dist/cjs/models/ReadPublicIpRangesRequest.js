@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadPublicIpRangesRequestToJSON = exports.ReadPublicIpRangesRequestFromJSONTyped = exports.ReadPublicIpRangesRequestFromJSON = void 0;
+exports.ReadPublicIpRangesRequestFromJSON = ReadPublicIpRangesRequestFromJSON;
+exports.ReadPublicIpRangesRequestFromJSONTyped = ReadPublicIpRangesRequestFromJSONTyped;
+exports.ReadPublicIpRangesRequestToJSON = ReadPublicIpRangesRequestToJSON;
 const runtime_1 = require("../runtime");
 function ReadPublicIpRangesRequestFromJSON(json) {
     return ReadPublicIpRangesRequestFromJSONTyped(json, false);
 }
-exports.ReadPublicIpRangesRequestFromJSON = ReadPublicIpRangesRequestFromJSON;
 function ReadPublicIpRangesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function ReadPublicIpRangesRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadPublicIpRangesRequestFromJSONTyped = ReadPublicIpRangesRequestFromJSONTyped;
 function ReadPublicIpRangesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ReadPublicIpRangesRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadPublicIpRangesRequestToJSON = ReadPublicIpRangesRequestToJSON;

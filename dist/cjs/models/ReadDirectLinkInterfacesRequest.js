@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadDirectLinkInterfacesRequestToJSON = exports.ReadDirectLinkInterfacesRequestFromJSONTyped = exports.ReadDirectLinkInterfacesRequestFromJSON = void 0;
+exports.ReadDirectLinkInterfacesRequestFromJSON = ReadDirectLinkInterfacesRequestFromJSON;
+exports.ReadDirectLinkInterfacesRequestFromJSONTyped = ReadDirectLinkInterfacesRequestFromJSONTyped;
+exports.ReadDirectLinkInterfacesRequestToJSON = ReadDirectLinkInterfacesRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersDirectLinkInterface_1 = require("./FiltersDirectLinkInterface");
 function ReadDirectLinkInterfacesRequestFromJSON(json) {
     return ReadDirectLinkInterfacesRequestFromJSONTyped(json, false);
 }
-exports.ReadDirectLinkInterfacesRequestFromJSON = ReadDirectLinkInterfacesRequestFromJSON;
 function ReadDirectLinkInterfacesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadDirectLinkInterfacesRequestFromJSONTyped(json, ignoreDiscriminator)
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadDirectLinkInterfacesRequestFromJSONTyped = ReadDirectLinkInterfacesRequestFromJSONTyped;
 function ReadDirectLinkInterfacesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadDirectLinkInterfacesRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadDirectLinkInterfacesRequestToJSON = ReadDirectLinkInterfacesRequestToJSON;

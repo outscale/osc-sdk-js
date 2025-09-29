@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateNicResponseToJSON = exports.UpdateNicResponseFromJSONTyped = exports.UpdateNicResponseFromJSON = void 0;
+exports.UpdateNicResponseFromJSON = UpdateNicResponseFromJSON;
+exports.UpdateNicResponseFromJSONTyped = UpdateNicResponseFromJSONTyped;
+exports.UpdateNicResponseToJSON = UpdateNicResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Nic_1 = require("./Nic");
 function UpdateNicResponseFromJSON(json) {
     return UpdateNicResponseFromJSONTyped(json, false);
 }
-exports.UpdateNicResponseFromJSON = UpdateNicResponseFromJSON;
 function UpdateNicResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function UpdateNicResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.UpdateNicResponseFromJSONTyped = UpdateNicResponseFromJSONTyped;
 function UpdateNicResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UpdateNicResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.UpdateNicResponseToJSON = UpdateNicResponseToJSON;

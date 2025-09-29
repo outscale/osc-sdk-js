@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VmTypeToJSON = exports.VmTypeFromJSONTyped = exports.VmTypeFromJSON = void 0;
+exports.VmTypeFromJSON = VmTypeFromJSON;
+exports.VmTypeFromJSONTyped = VmTypeFromJSONTyped;
+exports.VmTypeToJSON = VmTypeToJSON;
 const runtime_1 = require("../runtime");
 function VmTypeFromJSON(json) {
     return VmTypeFromJSONTyped(json, false);
 }
-exports.VmTypeFromJSON = VmTypeFromJSON;
 function VmTypeFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -36,7 +37,6 @@ function VmTypeFromJSONTyped(json, ignoreDiscriminator) {
         'volumeSize': !(0, runtime_1.exists)(json, 'VolumeSize') ? undefined : json['VolumeSize'],
     };
 }
-exports.VmTypeFromJSONTyped = VmTypeFromJSONTyped;
 function VmTypeToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -57,4 +57,3 @@ function VmTypeToJSON(value) {
         'VolumeSize': value.volumeSize,
     };
 }
-exports.VmTypeToJSON = VmTypeToJSON;

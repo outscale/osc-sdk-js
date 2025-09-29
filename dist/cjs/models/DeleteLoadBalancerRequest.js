@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteLoadBalancerRequestToJSON = exports.DeleteLoadBalancerRequestFromJSONTyped = exports.DeleteLoadBalancerRequestFromJSON = void 0;
+exports.DeleteLoadBalancerRequestFromJSON = DeleteLoadBalancerRequestFromJSON;
+exports.DeleteLoadBalancerRequestFromJSONTyped = DeleteLoadBalancerRequestFromJSONTyped;
+exports.DeleteLoadBalancerRequestToJSON = DeleteLoadBalancerRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteLoadBalancerRequestFromJSON(json) {
     return DeleteLoadBalancerRequestFromJSONTyped(json, false);
 }
-exports.DeleteLoadBalancerRequestFromJSON = DeleteLoadBalancerRequestFromJSON;
 function DeleteLoadBalancerRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteLoadBalancerRequestFromJSONTyped(json, ignoreDiscriminator) {
         'loadBalancerName': json['LoadBalancerName'],
     };
 }
-exports.DeleteLoadBalancerRequestFromJSONTyped = DeleteLoadBalancerRequestFromJSONTyped;
 function DeleteLoadBalancerRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteLoadBalancerRequestToJSON(value) {
         'LoadBalancerName': value.loadBalancerName,
     };
 }
-exports.DeleteLoadBalancerRequestToJSON = DeleteLoadBalancerRequestToJSON;

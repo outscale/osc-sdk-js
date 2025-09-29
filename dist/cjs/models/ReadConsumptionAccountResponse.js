@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadConsumptionAccountResponseToJSON = exports.ReadConsumptionAccountResponseFromJSONTyped = exports.ReadConsumptionAccountResponseFromJSON = void 0;
+exports.ReadConsumptionAccountResponseFromJSON = ReadConsumptionAccountResponseFromJSON;
+exports.ReadConsumptionAccountResponseFromJSONTyped = ReadConsumptionAccountResponseFromJSONTyped;
+exports.ReadConsumptionAccountResponseToJSON = ReadConsumptionAccountResponseToJSON;
 const runtime_1 = require("../runtime");
 const ConsumptionEntry_1 = require("./ConsumptionEntry");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadConsumptionAccountResponseFromJSON(json) {
     return ReadConsumptionAccountResponseFromJSONTyped(json, false);
 }
-exports.ReadConsumptionAccountResponseFromJSON = ReadConsumptionAccountResponseFromJSON;
 function ReadConsumptionAccountResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadConsumptionAccountResponseFromJSONTyped(json, ignoreDiscriminator) 
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadConsumptionAccountResponseFromJSONTyped = ReadConsumptionAccountResponseFromJSONTyped;
 function ReadConsumptionAccountResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadConsumptionAccountResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadConsumptionAccountResponseToJSON = ReadConsumptionAccountResponseToJSON;

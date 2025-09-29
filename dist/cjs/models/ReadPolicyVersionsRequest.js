@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadPolicyVersionsRequestToJSON = exports.ReadPolicyVersionsRequestFromJSONTyped = exports.ReadPolicyVersionsRequestFromJSON = void 0;
+exports.ReadPolicyVersionsRequestFromJSON = ReadPolicyVersionsRequestFromJSON;
+exports.ReadPolicyVersionsRequestFromJSONTyped = ReadPolicyVersionsRequestFromJSONTyped;
+exports.ReadPolicyVersionsRequestToJSON = ReadPolicyVersionsRequestToJSON;
 const runtime_1 = require("../runtime");
 function ReadPolicyVersionsRequestFromJSON(json) {
     return ReadPolicyVersionsRequestFromJSONTyped(json, false);
 }
-exports.ReadPolicyVersionsRequestFromJSON = ReadPolicyVersionsRequestFromJSON;
 function ReadPolicyVersionsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function ReadPolicyVersionsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadPolicyVersionsRequestFromJSONTyped = ReadPolicyVersionsRequestFromJSONTyped;
 function ReadPolicyVersionsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ReadPolicyVersionsRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadPolicyVersionsRequestToJSON = ReadPolicyVersionsRequestToJSON;

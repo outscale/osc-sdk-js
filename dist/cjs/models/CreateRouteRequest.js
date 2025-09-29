@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateRouteRequestToJSON = exports.CreateRouteRequestFromJSONTyped = exports.CreateRouteRequestFromJSON = void 0;
+exports.CreateRouteRequestFromJSON = CreateRouteRequestFromJSON;
+exports.CreateRouteRequestFromJSONTyped = CreateRouteRequestFromJSONTyped;
+exports.CreateRouteRequestToJSON = CreateRouteRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateRouteRequestFromJSON(json) {
     return CreateRouteRequestFromJSONTyped(json, false);
 }
-exports.CreateRouteRequestFromJSON = CreateRouteRequestFromJSON;
 function CreateRouteRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -34,7 +35,6 @@ function CreateRouteRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vmId': !(0, runtime_1.exists)(json, 'VmId') ? undefined : json['VmId'],
     };
 }
-exports.CreateRouteRequestFromJSONTyped = CreateRouteRequestFromJSONTyped;
 function CreateRouteRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +53,3 @@ function CreateRouteRequestToJSON(value) {
         'VmId': value.vmId,
     };
 }
-exports.CreateRouteRequestToJSON = CreateRouteRequestToJSON;

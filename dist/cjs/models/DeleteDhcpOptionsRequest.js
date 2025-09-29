@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteDhcpOptionsRequestToJSON = exports.DeleteDhcpOptionsRequestFromJSONTyped = exports.DeleteDhcpOptionsRequestFromJSON = void 0;
+exports.DeleteDhcpOptionsRequestFromJSON = DeleteDhcpOptionsRequestFromJSON;
+exports.DeleteDhcpOptionsRequestFromJSONTyped = DeleteDhcpOptionsRequestFromJSONTyped;
+exports.DeleteDhcpOptionsRequestToJSON = DeleteDhcpOptionsRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteDhcpOptionsRequestFromJSON(json) {
     return DeleteDhcpOptionsRequestFromJSONTyped(json, false);
 }
-exports.DeleteDhcpOptionsRequestFromJSON = DeleteDhcpOptionsRequestFromJSON;
 function DeleteDhcpOptionsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteDhcpOptionsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'dryRun': !(0, runtime_1.exists)(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.DeleteDhcpOptionsRequestFromJSONTyped = DeleteDhcpOptionsRequestFromJSONTyped;
 function DeleteDhcpOptionsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteDhcpOptionsRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.DeleteDhcpOptionsRequestToJSON = DeleteDhcpOptionsRequestToJSON;

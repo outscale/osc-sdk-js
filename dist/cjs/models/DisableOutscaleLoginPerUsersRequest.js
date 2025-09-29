@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DisableOutscaleLoginPerUsersRequestToJSON = exports.DisableOutscaleLoginPerUsersRequestFromJSONTyped = exports.DisableOutscaleLoginPerUsersRequestFromJSON = void 0;
+exports.DisableOutscaleLoginPerUsersRequestFromJSON = DisableOutscaleLoginPerUsersRequestFromJSON;
+exports.DisableOutscaleLoginPerUsersRequestFromJSONTyped = DisableOutscaleLoginPerUsersRequestFromJSONTyped;
+exports.DisableOutscaleLoginPerUsersRequestToJSON = DisableOutscaleLoginPerUsersRequestToJSON;
 const runtime_1 = require("../runtime");
 function DisableOutscaleLoginPerUsersRequestFromJSON(json) {
     return DisableOutscaleLoginPerUsersRequestFromJSONTyped(json, false);
 }
-exports.DisableOutscaleLoginPerUsersRequestFromJSON = DisableOutscaleLoginPerUsersRequestFromJSON;
 function DisableOutscaleLoginPerUsersRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DisableOutscaleLoginPerUsersRequestFromJSONTyped(json, ignoreDiscrimina
         'userNames': !(0, runtime_1.exists)(json, 'UserNames') ? undefined : json['UserNames'],
     };
 }
-exports.DisableOutscaleLoginPerUsersRequestFromJSONTyped = DisableOutscaleLoginPerUsersRequestFromJSONTyped;
 function DisableOutscaleLoginPerUsersRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DisableOutscaleLoginPerUsersRequestToJSON(value) {
         'UserNames': value.userNames,
     };
 }
-exports.DisableOutscaleLoginPerUsersRequestToJSON = DisableOutscaleLoginPerUsersRequestToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkedPolicyToJSON = exports.LinkedPolicyFromJSONTyped = exports.LinkedPolicyFromJSON = void 0;
+exports.LinkedPolicyFromJSON = LinkedPolicyFromJSON;
+exports.LinkedPolicyFromJSONTyped = LinkedPolicyFromJSONTyped;
+exports.LinkedPolicyToJSON = LinkedPolicyToJSON;
 const runtime_1 = require("../runtime");
 function LinkedPolicyFromJSON(json) {
     return LinkedPolicyFromJSONTyped(json, false);
 }
-exports.LinkedPolicyFromJSON = LinkedPolicyFromJSON;
 function LinkedPolicyFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function LinkedPolicyFromJSONTyped(json, ignoreDiscriminator) {
         'policyName': !(0, runtime_1.exists)(json, 'PolicyName') ? undefined : json['PolicyName'],
     };
 }
-exports.LinkedPolicyFromJSONTyped = LinkedPolicyFromJSONTyped;
 function LinkedPolicyToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function LinkedPolicyToJSON(value) {
         'PolicyName': value.policyName,
     };
 }
-exports.LinkedPolicyToJSON = LinkedPolicyToJSON;

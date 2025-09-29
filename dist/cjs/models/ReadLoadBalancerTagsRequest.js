@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadLoadBalancerTagsRequestToJSON = exports.ReadLoadBalancerTagsRequestFromJSONTyped = exports.ReadLoadBalancerTagsRequestFromJSON = void 0;
+exports.ReadLoadBalancerTagsRequestFromJSON = ReadLoadBalancerTagsRequestFromJSON;
+exports.ReadLoadBalancerTagsRequestFromJSONTyped = ReadLoadBalancerTagsRequestFromJSONTyped;
+exports.ReadLoadBalancerTagsRequestToJSON = ReadLoadBalancerTagsRequestToJSON;
 const runtime_1 = require("../runtime");
 function ReadLoadBalancerTagsRequestFromJSON(json) {
     return ReadLoadBalancerTagsRequestFromJSONTyped(json, false);
 }
-exports.ReadLoadBalancerTagsRequestFromJSON = ReadLoadBalancerTagsRequestFromJSON;
 function ReadLoadBalancerTagsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function ReadLoadBalancerTagsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'loadBalancerNames': json['LoadBalancerNames'],
     };
 }
-exports.ReadLoadBalancerTagsRequestFromJSONTyped = ReadLoadBalancerTagsRequestFromJSONTyped;
 function ReadLoadBalancerTagsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function ReadLoadBalancerTagsRequestToJSON(value) {
         'LoadBalancerNames': value.loadBalancerNames,
     };
 }
-exports.ReadLoadBalancerTagsRequestToJSON = ReadLoadBalancerTagsRequestToJSON;

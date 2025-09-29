@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteImageResponseToJSON = exports.DeleteImageResponseFromJSONTyped = exports.DeleteImageResponseFromJSON = void 0;
+exports.DeleteImageResponseFromJSON = DeleteImageResponseFromJSON;
+exports.DeleteImageResponseFromJSONTyped = DeleteImageResponseFromJSONTyped;
+exports.DeleteImageResponseToJSON = DeleteImageResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteImageResponseFromJSON(json) {
     return DeleteImageResponseFromJSONTyped(json, false);
 }
-exports.DeleteImageResponseFromJSON = DeleteImageResponseFromJSON;
 function DeleteImageResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteImageResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteImageResponseFromJSONTyped = DeleteImageResponseFromJSONTyped;
 function DeleteImageResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteImageResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteImageResponseToJSON = DeleteImageResponseToJSON;

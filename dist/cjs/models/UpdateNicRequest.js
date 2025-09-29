@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateNicRequestToJSON = exports.UpdateNicRequestFromJSONTyped = exports.UpdateNicRequestFromJSON = void 0;
+exports.UpdateNicRequestFromJSON = UpdateNicRequestFromJSON;
+exports.UpdateNicRequestFromJSONTyped = UpdateNicRequestFromJSONTyped;
+exports.UpdateNicRequestToJSON = UpdateNicRequestToJSON;
 const runtime_1 = require("../runtime");
 const LinkNicToUpdate_1 = require("./LinkNicToUpdate");
 function UpdateNicRequestFromJSON(json) {
     return UpdateNicRequestFromJSONTyped(json, false);
 }
-exports.UpdateNicRequestFromJSON = UpdateNicRequestFromJSON;
 function UpdateNicRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -32,7 +33,6 @@ function UpdateNicRequestFromJSONTyped(json, ignoreDiscriminator) {
         'securityGroupIds': !(0, runtime_1.exists)(json, 'SecurityGroupIds') ? undefined : json['SecurityGroupIds'],
     };
 }
-exports.UpdateNicRequestFromJSONTyped = UpdateNicRequestFromJSONTyped;
 function UpdateNicRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -48,4 +48,3 @@ function UpdateNicRequestToJSON(value) {
         'SecurityGroupIds': value.securityGroupIds,
     };
 }
-exports.UpdateNicRequestToJSON = UpdateNicRequestToJSON;

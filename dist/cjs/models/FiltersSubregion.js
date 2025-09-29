@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersSubregionToJSON = exports.FiltersSubregionFromJSONTyped = exports.FiltersSubregionFromJSON = void 0;
+exports.FiltersSubregionFromJSON = FiltersSubregionFromJSON;
+exports.FiltersSubregionFromJSONTyped = FiltersSubregionFromJSONTyped;
+exports.FiltersSubregionToJSON = FiltersSubregionToJSON;
 const runtime_1 = require("../runtime");
 function FiltersSubregionFromJSON(json) {
     return FiltersSubregionFromJSONTyped(json, false);
 }
-exports.FiltersSubregionFromJSON = FiltersSubregionFromJSON;
 function FiltersSubregionFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function FiltersSubregionFromJSONTyped(json, ignoreDiscriminator) {
         'subregionNames': !(0, runtime_1.exists)(json, 'SubregionNames') ? undefined : json['SubregionNames'],
     };
 }
-exports.FiltersSubregionFromJSONTyped = FiltersSubregionFromJSONTyped;
 function FiltersSubregionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function FiltersSubregionToJSON(value) {
         'SubregionNames': value.subregionNames,
     };
 }
-exports.FiltersSubregionToJSON = FiltersSubregionToJSON;

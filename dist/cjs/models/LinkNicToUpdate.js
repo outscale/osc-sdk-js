@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkNicToUpdateToJSON = exports.LinkNicToUpdateFromJSONTyped = exports.LinkNicToUpdateFromJSON = void 0;
+exports.LinkNicToUpdateFromJSON = LinkNicToUpdateFromJSON;
+exports.LinkNicToUpdateFromJSONTyped = LinkNicToUpdateFromJSONTyped;
+exports.LinkNicToUpdateToJSON = LinkNicToUpdateToJSON;
 const runtime_1 = require("../runtime");
 function LinkNicToUpdateFromJSON(json) {
     return LinkNicToUpdateFromJSONTyped(json, false);
 }
-exports.LinkNicToUpdateFromJSON = LinkNicToUpdateFromJSON;
 function LinkNicToUpdateFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function LinkNicToUpdateFromJSONTyped(json, ignoreDiscriminator) {
         'linkNicId': !(0, runtime_1.exists)(json, 'LinkNicId') ? undefined : json['LinkNicId'],
     };
 }
-exports.LinkNicToUpdateFromJSONTyped = LinkNicToUpdateFromJSONTyped;
 function LinkNicToUpdateToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function LinkNicToUpdateToJSON(value) {
         'LinkNicId': value.linkNicId,
     };
 }
-exports.LinkNicToUpdateToJSON = LinkNicToUpdateToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateNetAccessPointRequestToJSON = exports.CreateNetAccessPointRequestFromJSONTyped = exports.CreateNetAccessPointRequestFromJSON = void 0;
+exports.CreateNetAccessPointRequestFromJSON = CreateNetAccessPointRequestFromJSON;
+exports.CreateNetAccessPointRequestFromJSONTyped = CreateNetAccessPointRequestFromJSONTyped;
+exports.CreateNetAccessPointRequestToJSON = CreateNetAccessPointRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateNetAccessPointRequestFromJSON(json) {
     return CreateNetAccessPointRequestFromJSONTyped(json, false);
 }
-exports.CreateNetAccessPointRequestFromJSON = CreateNetAccessPointRequestFromJSON;
 function CreateNetAccessPointRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateNetAccessPointRequestFromJSONTyped(json, ignoreDiscriminator) {
         'serviceName': json['ServiceName'],
     };
 }
-exports.CreateNetAccessPointRequestFromJSONTyped = CreateNetAccessPointRequestFromJSONTyped;
 function CreateNetAccessPointRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function CreateNetAccessPointRequestToJSON(value) {
         'ServiceName': value.serviceName,
     };
 }
-exports.CreateNetAccessPointRequestToJSON = CreateNetAccessPointRequestToJSON;

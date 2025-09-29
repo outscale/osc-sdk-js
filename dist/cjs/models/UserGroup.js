@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserGroupToJSON = exports.UserGroupFromJSONTyped = exports.UserGroupFromJSON = void 0;
+exports.UserGroupFromJSON = UserGroupFromJSON;
+exports.UserGroupFromJSONTyped = UserGroupFromJSONTyped;
+exports.UserGroupToJSON = UserGroupToJSON;
 const runtime_1 = require("../runtime");
 function UserGroupFromJSON(json) {
     return UserGroupFromJSONTyped(json, false);
 }
-exports.UserGroupFromJSON = UserGroupFromJSON;
 function UserGroupFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -32,7 +33,6 @@ function UserGroupFromJSONTyped(json, ignoreDiscriminator) {
         'userGroupId': !(0, runtime_1.exists)(json, 'UserGroupId') ? undefined : json['UserGroupId'],
     };
 }
-exports.UserGroupFromJSONTyped = UserGroupFromJSONTyped;
 function UserGroupToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function UserGroupToJSON(value) {
         'UserGroupId': value.userGroupId,
     };
 }
-exports.UserGroupToJSON = UserGroupToJSON;

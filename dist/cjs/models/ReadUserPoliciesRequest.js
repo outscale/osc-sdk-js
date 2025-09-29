@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadUserPoliciesRequestToJSON = exports.ReadUserPoliciesRequestFromJSONTyped = exports.ReadUserPoliciesRequestFromJSON = void 0;
+exports.ReadUserPoliciesRequestFromJSON = ReadUserPoliciesRequestFromJSON;
+exports.ReadUserPoliciesRequestFromJSONTyped = ReadUserPoliciesRequestFromJSONTyped;
+exports.ReadUserPoliciesRequestToJSON = ReadUserPoliciesRequestToJSON;
 const runtime_1 = require("../runtime");
 function ReadUserPoliciesRequestFromJSON(json) {
     return ReadUserPoliciesRequestFromJSONTyped(json, false);
 }
-exports.ReadUserPoliciesRequestFromJSON = ReadUserPoliciesRequestFromJSON;
 function ReadUserPoliciesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function ReadUserPoliciesRequestFromJSONTyped(json, ignoreDiscriminator) {
         'userName': json['UserName'],
     };
 }
-exports.ReadUserPoliciesRequestFromJSONTyped = ReadUserPoliciesRequestFromJSONTyped;
 function ReadUserPoliciesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function ReadUserPoliciesRequestToJSON(value) {
         'UserName': value.userName,
     };
 }
-exports.ReadUserPoliciesRequestToJSON = ReadUserPoliciesRequestToJSON;

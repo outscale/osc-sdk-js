@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateKeypairResponseToJSON = exports.CreateKeypairResponseFromJSONTyped = exports.CreateKeypairResponseFromJSON = void 0;
+exports.CreateKeypairResponseFromJSON = CreateKeypairResponseFromJSON;
+exports.CreateKeypairResponseFromJSONTyped = CreateKeypairResponseFromJSONTyped;
+exports.CreateKeypairResponseToJSON = CreateKeypairResponseToJSON;
 const runtime_1 = require("../runtime");
 const KeypairCreated_1 = require("./KeypairCreated");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function CreateKeypairResponseFromJSON(json) {
     return CreateKeypairResponseFromJSONTyped(json, false);
 }
-exports.CreateKeypairResponseFromJSON = CreateKeypairResponseFromJSON;
 function CreateKeypairResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateKeypairResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CreateKeypairResponseFromJSONTyped = CreateKeypairResponseFromJSONTyped;
 function CreateKeypairResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateKeypairResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CreateKeypairResponseToJSON = CreateKeypairResponseToJSON;

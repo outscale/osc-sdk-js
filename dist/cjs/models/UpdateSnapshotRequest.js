@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateSnapshotRequestToJSON = exports.UpdateSnapshotRequestFromJSONTyped = exports.UpdateSnapshotRequestFromJSON = void 0;
+exports.UpdateSnapshotRequestFromJSON = UpdateSnapshotRequestFromJSON;
+exports.UpdateSnapshotRequestFromJSONTyped = UpdateSnapshotRequestFromJSONTyped;
+exports.UpdateSnapshotRequestToJSON = UpdateSnapshotRequestToJSON;
 const runtime_1 = require("../runtime");
 const PermissionsOnResourceCreation_1 = require("./PermissionsOnResourceCreation");
 function UpdateSnapshotRequestFromJSON(json) {
     return UpdateSnapshotRequestFromJSONTyped(json, false);
 }
-exports.UpdateSnapshotRequestFromJSON = UpdateSnapshotRequestFromJSON;
 function UpdateSnapshotRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function UpdateSnapshotRequestFromJSONTyped(json, ignoreDiscriminator) {
         'snapshotId': json['SnapshotId'],
     };
 }
-exports.UpdateSnapshotRequestFromJSONTyped = UpdateSnapshotRequestFromJSONTyped;
 function UpdateSnapshotRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function UpdateSnapshotRequestToJSON(value) {
         'SnapshotId': value.snapshotId,
     };
 }
-exports.UpdateSnapshotRequestToJSON = UpdateSnapshotRequestToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteVmTemplateRequestToJSON = exports.DeleteVmTemplateRequestFromJSONTyped = exports.DeleteVmTemplateRequestFromJSON = void 0;
+exports.DeleteVmTemplateRequestFromJSON = DeleteVmTemplateRequestFromJSON;
+exports.DeleteVmTemplateRequestFromJSONTyped = DeleteVmTemplateRequestFromJSONTyped;
+exports.DeleteVmTemplateRequestToJSON = DeleteVmTemplateRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteVmTemplateRequestFromJSON(json) {
     return DeleteVmTemplateRequestFromJSONTyped(json, false);
 }
-exports.DeleteVmTemplateRequestFromJSON = DeleteVmTemplateRequestFromJSON;
 function DeleteVmTemplateRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteVmTemplateRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vmTemplateId': json['VmTemplateId'],
     };
 }
-exports.DeleteVmTemplateRequestFromJSONTyped = DeleteVmTemplateRequestFromJSONTyped;
 function DeleteVmTemplateRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteVmTemplateRequestToJSON(value) {
         'VmTemplateId': value.vmTemplateId,
     };
 }
-exports.DeleteVmTemplateRequestToJSON = DeleteVmTemplateRequestToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeletePublicIpResponseToJSON = exports.DeletePublicIpResponseFromJSONTyped = exports.DeletePublicIpResponseFromJSON = void 0;
+exports.DeletePublicIpResponseFromJSON = DeletePublicIpResponseFromJSON;
+exports.DeletePublicIpResponseFromJSONTyped = DeletePublicIpResponseFromJSONTyped;
+exports.DeletePublicIpResponseToJSON = DeletePublicIpResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeletePublicIpResponseFromJSON(json) {
     return DeletePublicIpResponseFromJSONTyped(json, false);
 }
-exports.DeletePublicIpResponseFromJSON = DeletePublicIpResponseFromJSON;
 function DeletePublicIpResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeletePublicIpResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeletePublicIpResponseFromJSONTyped = DeletePublicIpResponseFromJSONTyped;
 function DeletePublicIpResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeletePublicIpResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeletePublicIpResponseToJSON = DeletePublicIpResponseToJSON;

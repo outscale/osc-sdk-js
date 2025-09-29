@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersServiceToJSON = exports.FiltersServiceFromJSONTyped = exports.FiltersServiceFromJSON = void 0;
+exports.FiltersServiceFromJSON = FiltersServiceFromJSON;
+exports.FiltersServiceFromJSONTyped = FiltersServiceFromJSONTyped;
+exports.FiltersServiceToJSON = FiltersServiceToJSON;
 const runtime_1 = require("../runtime");
 function FiltersServiceFromJSON(json) {
     return FiltersServiceFromJSONTyped(json, false);
 }
-exports.FiltersServiceFromJSON = FiltersServiceFromJSON;
 function FiltersServiceFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function FiltersServiceFromJSONTyped(json, ignoreDiscriminator) {
         'serviceNames': !(0, runtime_1.exists)(json, 'ServiceNames') ? undefined : json['ServiceNames'],
     };
 }
-exports.FiltersServiceFromJSONTyped = FiltersServiceFromJSONTyped;
 function FiltersServiceToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function FiltersServiceToJSON(value) {
         'ServiceNames': value.serviceNames,
     };
 }
-exports.FiltersServiceToJSON = FiltersServiceToJSON;

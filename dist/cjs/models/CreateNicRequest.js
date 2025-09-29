@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateNicRequestToJSON = exports.CreateNicRequestFromJSONTyped = exports.CreateNicRequestFromJSON = void 0;
+exports.CreateNicRequestFromJSON = CreateNicRequestFromJSON;
+exports.CreateNicRequestFromJSONTyped = CreateNicRequestFromJSONTyped;
+exports.CreateNicRequestToJSON = CreateNicRequestToJSON;
 const runtime_1 = require("../runtime");
 const PrivateIpLight_1 = require("./PrivateIpLight");
 function CreateNicRequestFromJSON(json) {
     return CreateNicRequestFromJSONTyped(json, false);
 }
-exports.CreateNicRequestFromJSON = CreateNicRequestFromJSON;
 function CreateNicRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -32,7 +33,6 @@ function CreateNicRequestFromJSONTyped(json, ignoreDiscriminator) {
         'subnetId': json['SubnetId'],
     };
 }
-exports.CreateNicRequestFromJSONTyped = CreateNicRequestFromJSONTyped;
 function CreateNicRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -48,4 +48,3 @@ function CreateNicRequestToJSON(value) {
         'SubnetId': value.subnetId,
     };
 }
-exports.CreateNicRequestToJSON = CreateNicRequestToJSON;

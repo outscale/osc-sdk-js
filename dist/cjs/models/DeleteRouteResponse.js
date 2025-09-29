@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteRouteResponseToJSON = exports.DeleteRouteResponseFromJSONTyped = exports.DeleteRouteResponseFromJSON = void 0;
+exports.DeleteRouteResponseFromJSON = DeleteRouteResponseFromJSON;
+exports.DeleteRouteResponseFromJSONTyped = DeleteRouteResponseFromJSONTyped;
+exports.DeleteRouteResponseToJSON = DeleteRouteResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const RouteTable_1 = require("./RouteTable");
 function DeleteRouteResponseFromJSON(json) {
     return DeleteRouteResponseFromJSONTyped(json, false);
 }
-exports.DeleteRouteResponseFromJSON = DeleteRouteResponseFromJSON;
 function DeleteRouteResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function DeleteRouteResponseFromJSONTyped(json, ignoreDiscriminator) {
         'routeTable': !(0, runtime_1.exists)(json, 'RouteTable') ? undefined : (0, RouteTable_1.RouteTableFromJSON)(json['RouteTable']),
     };
 }
-exports.DeleteRouteResponseFromJSONTyped = DeleteRouteResponseFromJSONTyped;
 function DeleteRouteResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function DeleteRouteResponseToJSON(value) {
         'RouteTable': (0, RouteTable_1.RouteTableToJSON)(value.routeTable),
     };
 }
-exports.DeleteRouteResponseToJSON = DeleteRouteResponseToJSON;

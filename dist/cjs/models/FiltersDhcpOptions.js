@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersDhcpOptionsToJSON = exports.FiltersDhcpOptionsFromJSONTyped = exports.FiltersDhcpOptionsFromJSON = void 0;
+exports.FiltersDhcpOptionsFromJSON = FiltersDhcpOptionsFromJSON;
+exports.FiltersDhcpOptionsFromJSONTyped = FiltersDhcpOptionsFromJSONTyped;
+exports.FiltersDhcpOptionsToJSON = FiltersDhcpOptionsToJSON;
 const runtime_1 = require("../runtime");
 function FiltersDhcpOptionsFromJSON(json) {
     return FiltersDhcpOptionsFromJSONTyped(json, false);
 }
-exports.FiltersDhcpOptionsFromJSON = FiltersDhcpOptionsFromJSON;
 function FiltersDhcpOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -35,7 +36,6 @@ function FiltersDhcpOptionsFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersDhcpOptionsFromJSONTyped = FiltersDhcpOptionsFromJSONTyped;
 function FiltersDhcpOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +55,3 @@ function FiltersDhcpOptionsToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersDhcpOptionsToJSON = FiltersDhcpOptionsToJSON;

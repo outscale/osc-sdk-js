@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadDhcpOptionsRequestToJSON = exports.ReadDhcpOptionsRequestFromJSONTyped = exports.ReadDhcpOptionsRequestFromJSON = void 0;
+exports.ReadDhcpOptionsRequestFromJSON = ReadDhcpOptionsRequestFromJSON;
+exports.ReadDhcpOptionsRequestFromJSONTyped = ReadDhcpOptionsRequestFromJSONTyped;
+exports.ReadDhcpOptionsRequestToJSON = ReadDhcpOptionsRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersDhcpOptions_1 = require("./FiltersDhcpOptions");
 function ReadDhcpOptionsRequestFromJSON(json) {
     return ReadDhcpOptionsRequestFromJSONTyped(json, false);
 }
-exports.ReadDhcpOptionsRequestFromJSON = ReadDhcpOptionsRequestFromJSON;
 function ReadDhcpOptionsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadDhcpOptionsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadDhcpOptionsRequestFromJSONTyped = ReadDhcpOptionsRequestFromJSONTyped;
 function ReadDhcpOptionsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadDhcpOptionsRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadDhcpOptionsRequestToJSON = ReadDhcpOptionsRequestToJSON;

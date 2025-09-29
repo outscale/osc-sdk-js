@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RegisterVmsInLoadBalancerRequestToJSON = exports.RegisterVmsInLoadBalancerRequestFromJSONTyped = exports.RegisterVmsInLoadBalancerRequestFromJSON = void 0;
+exports.RegisterVmsInLoadBalancerRequestFromJSON = RegisterVmsInLoadBalancerRequestFromJSON;
+exports.RegisterVmsInLoadBalancerRequestFromJSONTyped = RegisterVmsInLoadBalancerRequestFromJSONTyped;
+exports.RegisterVmsInLoadBalancerRequestToJSON = RegisterVmsInLoadBalancerRequestToJSON;
 const runtime_1 = require("../runtime");
 function RegisterVmsInLoadBalancerRequestFromJSON(json) {
     return RegisterVmsInLoadBalancerRequestFromJSONTyped(json, false);
 }
-exports.RegisterVmsInLoadBalancerRequestFromJSON = RegisterVmsInLoadBalancerRequestFromJSON;
 function RegisterVmsInLoadBalancerRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function RegisterVmsInLoadBalancerRequestFromJSONTyped(json, ignoreDiscriminator
         'loadBalancerName': json['LoadBalancerName'],
     };
 }
-exports.RegisterVmsInLoadBalancerRequestFromJSONTyped = RegisterVmsInLoadBalancerRequestFromJSONTyped;
 function RegisterVmsInLoadBalancerRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function RegisterVmsInLoadBalancerRequestToJSON(value) {
         'LoadBalancerName': value.loadBalancerName,
     };
 }
-exports.RegisterVmsInLoadBalancerRequestToJSON = RegisterVmsInLoadBalancerRequestToJSON;

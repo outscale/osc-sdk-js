@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadUserGroupRequestToJSON = exports.ReadUserGroupRequestFromJSONTyped = exports.ReadUserGroupRequestFromJSON = void 0;
+exports.ReadUserGroupRequestFromJSON = ReadUserGroupRequestFromJSON;
+exports.ReadUserGroupRequestFromJSONTyped = ReadUserGroupRequestFromJSONTyped;
+exports.ReadUserGroupRequestToJSON = ReadUserGroupRequestToJSON;
 const runtime_1 = require("../runtime");
 function ReadUserGroupRequestFromJSON(json) {
     return ReadUserGroupRequestFromJSONTyped(json, false);
 }
-exports.ReadUserGroupRequestFromJSON = ReadUserGroupRequestFromJSON;
 function ReadUserGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function ReadUserGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
         'userGroupName': json['UserGroupName'],
     };
 }
-exports.ReadUserGroupRequestFromJSONTyped = ReadUserGroupRequestFromJSONTyped;
 function ReadUserGroupRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ReadUserGroupRequestToJSON(value) {
         'UserGroupName': value.userGroupName,
     };
 }
-exports.ReadUserGroupRequestToJSON = ReadUserGroupRequestToJSON;

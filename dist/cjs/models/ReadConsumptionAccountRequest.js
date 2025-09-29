@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadConsumptionAccountRequestToJSON = exports.ReadConsumptionAccountRequestFromJSONTyped = exports.ReadConsumptionAccountRequestFromJSON = void 0;
+exports.ReadConsumptionAccountRequestFromJSON = ReadConsumptionAccountRequestFromJSON;
+exports.ReadConsumptionAccountRequestFromJSONTyped = ReadConsumptionAccountRequestFromJSONTyped;
+exports.ReadConsumptionAccountRequestToJSON = ReadConsumptionAccountRequestToJSON;
 const runtime_1 = require("../runtime");
 function ReadConsumptionAccountRequestFromJSON(json) {
     return ReadConsumptionAccountRequestFromJSONTyped(json, false);
 }
-exports.ReadConsumptionAccountRequestFromJSON = ReadConsumptionAccountRequestFromJSON;
 function ReadConsumptionAccountRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadConsumptionAccountRequestFromJSONTyped(json, ignoreDiscriminator) {
         'toDate': json['ToDate'],
     };
 }
-exports.ReadConsumptionAccountRequestFromJSONTyped = ReadConsumptionAccountRequestFromJSONTyped;
 function ReadConsumptionAccountRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function ReadConsumptionAccountRequestToJSON(value) {
         'ToDate': value.toDate,
     };
 }
-exports.ReadConsumptionAccountRequestToJSON = ReadConsumptionAccountRequestToJSON;

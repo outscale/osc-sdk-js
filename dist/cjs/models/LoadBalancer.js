@@ -13,7 +13,9 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LoadBalancerToJSON = exports.LoadBalancerFromJSONTyped = exports.LoadBalancerFromJSON = void 0;
+exports.LoadBalancerFromJSON = LoadBalancerFromJSON;
+exports.LoadBalancerFromJSONTyped = LoadBalancerFromJSONTyped;
+exports.LoadBalancerToJSON = LoadBalancerToJSON;
 const runtime_1 = require("../runtime");
 const AccessLog_1 = require("./AccessLog");
 const ApplicationStickyCookiePolicy_1 = require("./ApplicationStickyCookiePolicy");
@@ -25,7 +27,6 @@ const SourceSecurityGroup_1 = require("./SourceSecurityGroup");
 function LoadBalancerFromJSON(json) {
     return LoadBalancerFromJSONTyped(json, false);
 }
-exports.LoadBalancerFromJSON = LoadBalancerFromJSON;
 function LoadBalancerFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -51,7 +52,6 @@ function LoadBalancerFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
     };
 }
-exports.LoadBalancerFromJSONTyped = LoadBalancerFromJSONTyped;
 function LoadBalancerToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -80,4 +80,3 @@ function LoadBalancerToJSON(value) {
         'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
     };
 }
-exports.LoadBalancerToJSON = LoadBalancerToJSON;

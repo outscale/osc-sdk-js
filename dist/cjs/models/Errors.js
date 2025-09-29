@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ErrorsToJSON = exports.ErrorsFromJSONTyped = exports.ErrorsFromJSON = void 0;
+exports.ErrorsFromJSON = ErrorsFromJSON;
+exports.ErrorsFromJSONTyped = ErrorsFromJSONTyped;
+exports.ErrorsToJSON = ErrorsToJSON;
 const runtime_1 = require("../runtime");
 function ErrorsFromJSON(json) {
     return ErrorsFromJSONTyped(json, false);
 }
-exports.ErrorsFromJSON = ErrorsFromJSON;
 function ErrorsFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function ErrorsFromJSONTyped(json, ignoreDiscriminator) {
         'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
     };
 }
-exports.ErrorsFromJSONTyped = ErrorsFromJSONTyped;
 function ErrorsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ErrorsToJSON(value) {
         'Type': value.type,
     };
 }
-exports.ErrorsToJSON = ErrorsToJSON;

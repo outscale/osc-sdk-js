@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateAccessKeyRequestToJSON = exports.CreateAccessKeyRequestFromJSONTyped = exports.CreateAccessKeyRequestFromJSON = void 0;
+exports.CreateAccessKeyRequestFromJSON = CreateAccessKeyRequestFromJSON;
+exports.CreateAccessKeyRequestFromJSONTyped = CreateAccessKeyRequestFromJSONTyped;
+exports.CreateAccessKeyRequestToJSON = CreateAccessKeyRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateAccessKeyRequestFromJSON(json) {
     return CreateAccessKeyRequestFromJSONTyped(json, false);
 }
-exports.CreateAccessKeyRequestFromJSON = CreateAccessKeyRequestFromJSON;
 function CreateAccessKeyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateAccessKeyRequestFromJSONTyped(json, ignoreDiscriminator) {
         'userName': !(0, runtime_1.exists)(json, 'UserName') ? undefined : json['UserName'],
     };
 }
-exports.CreateAccessKeyRequestFromJSONTyped = CreateAccessKeyRequestFromJSONTyped;
 function CreateAccessKeyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function CreateAccessKeyRequestToJSON(value) {
         'UserName': value.userName,
     };
 }
-exports.CreateAccessKeyRequestToJSON = CreateAccessKeyRequestToJSON;

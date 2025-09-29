@@ -28,13 +28,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -90,8 +100,8 @@ class AccessKeyApi extends runtime.BaseAPI {
     /**
      * Creates an access key for either your root account or an EIM user. The new key is automatically set to `ACTIVE`.<br /><br /> For more information, see [About Access Keys](https://docs.outscale.com/en/userguide/About-Access-Keys.html).
      */
-    createAccessKey(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createAccessKey() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createAccessKeyRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -134,8 +144,8 @@ class AccessKeyApi extends runtime.BaseAPI {
     /**
      * Deletes the specified access key of either your root account or an EIM user.<br /><br /> The access key of an EIM user must be in the `INACTIVE` state to be deleted.
      */
-    deleteAccessKey(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteAccessKey() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteAccessKeyRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -178,8 +188,8 @@ class AccessKeyApi extends runtime.BaseAPI {
     /**
      * Lists the access key IDs of either your root account or an EIM user.
      */
-    readAccessKeys(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readAccessKeys() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readAccessKeysRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -222,8 +232,8 @@ class AccessKeyApi extends runtime.BaseAPI {
     /**
      * Modifies the attributes of the specified access key of either your root account or an EIM user.<br /><br /> The parameter `ExpirationDate` is not required when updating the state of your access key. However, if you do not specify the expiration date of an access key when updating its state, it is then set to not expire.
      */
-    updateAccessKey(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateAccessKey() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateAccessKeyRaw(requestParameters, initOverrides);
             return yield response.value();
         });

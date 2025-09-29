@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnlinkVirtualGatewayResponseToJSON = exports.UnlinkVirtualGatewayResponseFromJSONTyped = exports.UnlinkVirtualGatewayResponseFromJSON = void 0;
+exports.UnlinkVirtualGatewayResponseFromJSON = UnlinkVirtualGatewayResponseFromJSON;
+exports.UnlinkVirtualGatewayResponseFromJSONTyped = UnlinkVirtualGatewayResponseFromJSONTyped;
+exports.UnlinkVirtualGatewayResponseToJSON = UnlinkVirtualGatewayResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function UnlinkVirtualGatewayResponseFromJSON(json) {
     return UnlinkVirtualGatewayResponseFromJSONTyped(json, false);
 }
-exports.UnlinkVirtualGatewayResponseFromJSON = UnlinkVirtualGatewayResponseFromJSON;
 function UnlinkVirtualGatewayResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function UnlinkVirtualGatewayResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.UnlinkVirtualGatewayResponseFromJSONTyped = UnlinkVirtualGatewayResponseFromJSONTyped;
 function UnlinkVirtualGatewayResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function UnlinkVirtualGatewayResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.UnlinkVirtualGatewayResponseToJSON = UnlinkVirtualGatewayResponseToJSON;

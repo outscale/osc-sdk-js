@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersVmToJSON = exports.FiltersVmFromJSONTyped = exports.FiltersVmFromJSON = void 0;
+exports.FiltersVmFromJSON = FiltersVmFromJSON;
+exports.FiltersVmFromJSONTyped = FiltersVmFromJSONTyped;
+exports.FiltersVmToJSON = FiltersVmToJSON;
 const runtime_1 = require("../runtime");
 const BootMode_1 = require("./BootMode");
 function FiltersVmFromJSON(json) {
     return FiltersVmFromJSONTyped(json, false);
 }
-exports.FiltersVmFromJSON = FiltersVmFromJSON;
 function FiltersVmFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -92,7 +93,6 @@ function FiltersVmFromJSONTyped(json, ignoreDiscriminator) {
         'vmTypes': !(0, runtime_1.exists)(json, 'VmTypes') ? undefined : json['VmTypes'],
     };
 }
-exports.FiltersVmFromJSONTyped = FiltersVmFromJSONTyped;
 function FiltersVmToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -168,4 +168,3 @@ function FiltersVmToJSON(value) {
         'VmTypes': value.vmTypes,
     };
 }
-exports.FiltersVmToJSON = FiltersVmToJSON;

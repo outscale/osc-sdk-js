@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateSnapshotExportTaskResponseToJSON = exports.CreateSnapshotExportTaskResponseFromJSONTyped = exports.CreateSnapshotExportTaskResponseFromJSON = void 0;
+exports.CreateSnapshotExportTaskResponseFromJSON = CreateSnapshotExportTaskResponseFromJSON;
+exports.CreateSnapshotExportTaskResponseFromJSONTyped = CreateSnapshotExportTaskResponseFromJSONTyped;
+exports.CreateSnapshotExportTaskResponseToJSON = CreateSnapshotExportTaskResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const SnapshotExportTask_1 = require("./SnapshotExportTask");
 function CreateSnapshotExportTaskResponseFromJSON(json) {
     return CreateSnapshotExportTaskResponseFromJSONTyped(json, false);
 }
-exports.CreateSnapshotExportTaskResponseFromJSON = CreateSnapshotExportTaskResponseFromJSON;
 function CreateSnapshotExportTaskResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateSnapshotExportTaskResponseFromJSONTyped(json, ignoreDiscriminator
         'snapshotExportTask': !(0, runtime_1.exists)(json, 'SnapshotExportTask') ? undefined : (0, SnapshotExportTask_1.SnapshotExportTaskFromJSON)(json['SnapshotExportTask']),
     };
 }
-exports.CreateSnapshotExportTaskResponseFromJSONTyped = CreateSnapshotExportTaskResponseFromJSONTyped;
 function CreateSnapshotExportTaskResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateSnapshotExportTaskResponseToJSON(value) {
         'SnapshotExportTask': (0, SnapshotExportTask_1.SnapshotExportTaskToJSON)(value.snapshotExportTask),
     };
 }
-exports.CreateSnapshotExportTaskResponseToJSON = CreateSnapshotExportTaskResponseToJSON;

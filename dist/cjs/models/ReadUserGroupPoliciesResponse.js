@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadUserGroupPoliciesResponseToJSON = exports.ReadUserGroupPoliciesResponseFromJSONTyped = exports.ReadUserGroupPoliciesResponseFromJSON = void 0;
+exports.ReadUserGroupPoliciesResponseFromJSON = ReadUserGroupPoliciesResponseFromJSON;
+exports.ReadUserGroupPoliciesResponseFromJSONTyped = ReadUserGroupPoliciesResponseFromJSONTyped;
+exports.ReadUserGroupPoliciesResponseToJSON = ReadUserGroupPoliciesResponseToJSON;
 const runtime_1 = require("../runtime");
 const InlinePolicy_1 = require("./InlinePolicy");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadUserGroupPoliciesResponseFromJSON(json) {
     return ReadUserGroupPoliciesResponseFromJSONTyped(json, false);
 }
-exports.ReadUserGroupPoliciesResponseFromJSON = ReadUserGroupPoliciesResponseFromJSON;
 function ReadUserGroupPoliciesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function ReadUserGroupPoliciesResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadUserGroupPoliciesResponseFromJSONTyped = ReadUserGroupPoliciesResponseFromJSONTyped;
 function ReadUserGroupPoliciesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function ReadUserGroupPoliciesResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadUserGroupPoliciesResponseToJSON = ReadUserGroupPoliciesResponseToJSON;

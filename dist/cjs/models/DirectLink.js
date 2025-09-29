@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DirectLinkToJSON = exports.DirectLinkFromJSONTyped = exports.DirectLinkFromJSON = void 0;
+exports.DirectLinkFromJSON = DirectLinkFromJSON;
+exports.DirectLinkFromJSONTyped = DirectLinkFromJSONTyped;
+exports.DirectLinkToJSON = DirectLinkToJSON;
 const runtime_1 = require("../runtime");
 function DirectLinkFromJSON(json) {
     return DirectLinkFromJSONTyped(json, false);
 }
-exports.DirectLinkFromJSON = DirectLinkFromJSON;
 function DirectLinkFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function DirectLinkFromJSONTyped(json, ignoreDiscriminator) {
         'state': !(0, runtime_1.exists)(json, 'State') ? undefined : json['State'],
     };
 }
-exports.DirectLinkFromJSONTyped = DirectLinkFromJSONTyped;
 function DirectLinkToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function DirectLinkToJSON(value) {
         'State': value.state,
     };
 }
-exports.DirectLinkToJSON = DirectLinkToJSON;

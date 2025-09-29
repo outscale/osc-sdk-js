@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RemoveUserFromUserGroupRequestToJSON = exports.RemoveUserFromUserGroupRequestFromJSONTyped = exports.RemoveUserFromUserGroupRequestFromJSON = void 0;
+exports.RemoveUserFromUserGroupRequestFromJSON = RemoveUserFromUserGroupRequestFromJSON;
+exports.RemoveUserFromUserGroupRequestFromJSONTyped = RemoveUserFromUserGroupRequestFromJSONTyped;
+exports.RemoveUserFromUserGroupRequestToJSON = RemoveUserFromUserGroupRequestToJSON;
 const runtime_1 = require("../runtime");
 function RemoveUserFromUserGroupRequestFromJSON(json) {
     return RemoveUserFromUserGroupRequestFromJSONTyped(json, false);
 }
-exports.RemoveUserFromUserGroupRequestFromJSON = RemoveUserFromUserGroupRequestFromJSON;
 function RemoveUserFromUserGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function RemoveUserFromUserGroupRequestFromJSONTyped(json, ignoreDiscriminator) 
         'userPath': !(0, runtime_1.exists)(json, 'UserPath') ? undefined : json['UserPath'],
     };
 }
-exports.RemoveUserFromUserGroupRequestFromJSONTyped = RemoveUserFromUserGroupRequestFromJSONTyped;
 function RemoveUserFromUserGroupRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function RemoveUserFromUserGroupRequestToJSON(value) {
         'UserPath': value.userPath,
     };
 }
-exports.RemoveUserFromUserGroupRequestToJSON = RemoveUserFromUserGroupRequestToJSON;

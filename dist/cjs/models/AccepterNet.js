@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AccepterNetToJSON = exports.AccepterNetFromJSONTyped = exports.AccepterNetFromJSON = void 0;
+exports.AccepterNetFromJSON = AccepterNetFromJSON;
+exports.AccepterNetFromJSONTyped = AccepterNetFromJSONTyped;
+exports.AccepterNetToJSON = AccepterNetToJSON;
 const runtime_1 = require("../runtime");
 function AccepterNetFromJSON(json) {
     return AccepterNetFromJSONTyped(json, false);
 }
-exports.AccepterNetFromJSON = AccepterNetFromJSON;
 function AccepterNetFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function AccepterNetFromJSONTyped(json, ignoreDiscriminator) {
         'netId': !(0, runtime_1.exists)(json, 'NetId') ? undefined : json['NetId'],
     };
 }
-exports.AccepterNetFromJSONTyped = AccepterNetFromJSONTyped;
 function AccepterNetToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function AccepterNetToJSON(value) {
         'NetId': value.netId,
     };
 }
-exports.AccepterNetToJSON = AccepterNetToJSON;

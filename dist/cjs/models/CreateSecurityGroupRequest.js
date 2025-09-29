@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateSecurityGroupRequestToJSON = exports.CreateSecurityGroupRequestFromJSONTyped = exports.CreateSecurityGroupRequestFromJSON = void 0;
+exports.CreateSecurityGroupRequestFromJSON = CreateSecurityGroupRequestFromJSON;
+exports.CreateSecurityGroupRequestFromJSONTyped = CreateSecurityGroupRequestFromJSONTyped;
+exports.CreateSecurityGroupRequestToJSON = CreateSecurityGroupRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateSecurityGroupRequestFromJSON(json) {
     return CreateSecurityGroupRequestFromJSONTyped(json, false);
 }
-exports.CreateSecurityGroupRequestFromJSON = CreateSecurityGroupRequestFromJSON;
 function CreateSecurityGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateSecurityGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
         'securityGroupName': json['SecurityGroupName'],
     };
 }
-exports.CreateSecurityGroupRequestFromJSONTyped = CreateSecurityGroupRequestFromJSONTyped;
 function CreateSecurityGroupRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function CreateSecurityGroupRequestToJSON(value) {
         'SecurityGroupName': value.securityGroupName,
     };
 }
-exports.CreateSecurityGroupRequestToJSON = CreateSecurityGroupRequestToJSON;

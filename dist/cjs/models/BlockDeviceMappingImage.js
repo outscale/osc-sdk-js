@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlockDeviceMappingImageToJSON = exports.BlockDeviceMappingImageFromJSONTyped = exports.BlockDeviceMappingImageFromJSON = void 0;
+exports.BlockDeviceMappingImageFromJSON = BlockDeviceMappingImageFromJSON;
+exports.BlockDeviceMappingImageFromJSONTyped = BlockDeviceMappingImageFromJSONTyped;
+exports.BlockDeviceMappingImageToJSON = BlockDeviceMappingImageToJSON;
 const runtime_1 = require("../runtime");
 const BsuToCreate_1 = require("./BsuToCreate");
 function BlockDeviceMappingImageFromJSON(json) {
     return BlockDeviceMappingImageFromJSONTyped(json, false);
 }
-exports.BlockDeviceMappingImageFromJSON = BlockDeviceMappingImageFromJSON;
 function BlockDeviceMappingImageFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function BlockDeviceMappingImageFromJSONTyped(json, ignoreDiscriminator) {
         'virtualDeviceName': !(0, runtime_1.exists)(json, 'VirtualDeviceName') ? undefined : json['VirtualDeviceName'],
     };
 }
-exports.BlockDeviceMappingImageFromJSONTyped = BlockDeviceMappingImageFromJSONTyped;
 function BlockDeviceMappingImageToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function BlockDeviceMappingImageToJSON(value) {
         'VirtualDeviceName': value.virtualDeviceName,
     };
 }
-exports.BlockDeviceMappingImageToJSON = BlockDeviceMappingImageToJSON;

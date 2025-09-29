@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadNetAccessPointServicesResponseToJSON = exports.ReadNetAccessPointServicesResponseFromJSONTyped = exports.ReadNetAccessPointServicesResponseFromJSON = void 0;
+exports.ReadNetAccessPointServicesResponseFromJSON = ReadNetAccessPointServicesResponseFromJSON;
+exports.ReadNetAccessPointServicesResponseFromJSONTyped = ReadNetAccessPointServicesResponseFromJSONTyped;
+exports.ReadNetAccessPointServicesResponseToJSON = ReadNetAccessPointServicesResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Service_1 = require("./Service");
 function ReadNetAccessPointServicesResponseFromJSON(json) {
     return ReadNetAccessPointServicesResponseFromJSONTyped(json, false);
 }
-exports.ReadNetAccessPointServicesResponseFromJSON = ReadNetAccessPointServicesResponseFromJSON;
 function ReadNetAccessPointServicesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadNetAccessPointServicesResponseFromJSONTyped(json, ignoreDiscriminat
         'services': !(0, runtime_1.exists)(json, 'Services') ? undefined : (json['Services'].map(Service_1.ServiceFromJSON)),
     };
 }
-exports.ReadNetAccessPointServicesResponseFromJSONTyped = ReadNetAccessPointServicesResponseFromJSONTyped;
 function ReadNetAccessPointServicesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadNetAccessPointServicesResponseToJSON(value) {
         'Services': value.services === undefined ? undefined : (value.services.map(Service_1.ServiceToJSON)),
     };
 }
-exports.ReadNetAccessPointServicesResponseToJSON = ReadNetAccessPointServicesResponseToJSON;

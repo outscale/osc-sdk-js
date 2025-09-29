@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateVpnConnectionRequestToJSON = exports.UpdateVpnConnectionRequestFromJSONTyped = exports.UpdateVpnConnectionRequestFromJSON = void 0;
+exports.UpdateVpnConnectionRequestFromJSON = UpdateVpnConnectionRequestFromJSON;
+exports.UpdateVpnConnectionRequestFromJSONTyped = UpdateVpnConnectionRequestFromJSONTyped;
+exports.UpdateVpnConnectionRequestToJSON = UpdateVpnConnectionRequestToJSON;
 const runtime_1 = require("../runtime");
 const VpnOptions_1 = require("./VpnOptions");
 function UpdateVpnConnectionRequestFromJSON(json) {
     return UpdateVpnConnectionRequestFromJSONTyped(json, false);
 }
-exports.UpdateVpnConnectionRequestFromJSON = UpdateVpnConnectionRequestFromJSON;
 function UpdateVpnConnectionRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -32,7 +33,6 @@ function UpdateVpnConnectionRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vpnOptions': !(0, runtime_1.exists)(json, 'VpnOptions') ? undefined : (0, VpnOptions_1.VpnOptionsFromJSON)(json['VpnOptions']),
     };
 }
-exports.UpdateVpnConnectionRequestFromJSONTyped = UpdateVpnConnectionRequestFromJSONTyped;
 function UpdateVpnConnectionRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -48,4 +48,3 @@ function UpdateVpnConnectionRequestToJSON(value) {
         'VpnOptions': (0, VpnOptions_1.VpnOptionsToJSON)(value.vpnOptions),
     };
 }
-exports.UpdateVpnConnectionRequestToJSON = UpdateVpnConnectionRequestToJSON;

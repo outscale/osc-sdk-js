@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateVpnConnectionResponseToJSON = exports.CreateVpnConnectionResponseFromJSONTyped = exports.CreateVpnConnectionResponseFromJSON = void 0;
+exports.CreateVpnConnectionResponseFromJSON = CreateVpnConnectionResponseFromJSON;
+exports.CreateVpnConnectionResponseFromJSONTyped = CreateVpnConnectionResponseFromJSONTyped;
+exports.CreateVpnConnectionResponseToJSON = CreateVpnConnectionResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const VpnConnection_1 = require("./VpnConnection");
 function CreateVpnConnectionResponseFromJSON(json) {
     return CreateVpnConnectionResponseFromJSONTyped(json, false);
 }
-exports.CreateVpnConnectionResponseFromJSON = CreateVpnConnectionResponseFromJSON;
 function CreateVpnConnectionResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateVpnConnectionResponseFromJSONTyped(json, ignoreDiscriminator) {
         'vpnConnection': !(0, runtime_1.exists)(json, 'VpnConnection') ? undefined : (0, VpnConnection_1.VpnConnectionFromJSON)(json['VpnConnection']),
     };
 }
-exports.CreateVpnConnectionResponseFromJSONTyped = CreateVpnConnectionResponseFromJSONTyped;
 function CreateVpnConnectionResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateVpnConnectionResponseToJSON(value) {
         'VpnConnection': (0, VpnConnection_1.VpnConnectionToJSON)(value.vpnConnection),
     };
 }
-exports.CreateVpnConnectionResponseToJSON = CreateVpnConnectionResponseToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateSnapshotRequestToJSON = exports.CreateSnapshotRequestFromJSONTyped = exports.CreateSnapshotRequestFromJSON = void 0;
+exports.CreateSnapshotRequestFromJSON = CreateSnapshotRequestFromJSON;
+exports.CreateSnapshotRequestFromJSONTyped = CreateSnapshotRequestFromJSONTyped;
+exports.CreateSnapshotRequestToJSON = CreateSnapshotRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateSnapshotRequestFromJSON(json) {
     return CreateSnapshotRequestFromJSONTyped(json, false);
 }
-exports.CreateSnapshotRequestFromJSON = CreateSnapshotRequestFromJSON;
 function CreateSnapshotRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -34,7 +35,6 @@ function CreateSnapshotRequestFromJSONTyped(json, ignoreDiscriminator) {
         'volumeId': !(0, runtime_1.exists)(json, 'VolumeId') ? undefined : json['VolumeId'],
     };
 }
-exports.CreateSnapshotRequestFromJSONTyped = CreateSnapshotRequestFromJSONTyped;
 function CreateSnapshotRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +53,3 @@ function CreateSnapshotRequestToJSON(value) {
         'VolumeId': value.volumeId,
     };
 }
-exports.CreateSnapshotRequestToJSON = CreateSnapshotRequestToJSON;

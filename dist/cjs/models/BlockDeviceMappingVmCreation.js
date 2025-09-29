@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlockDeviceMappingVmCreationToJSON = exports.BlockDeviceMappingVmCreationFromJSONTyped = exports.BlockDeviceMappingVmCreationFromJSON = void 0;
+exports.BlockDeviceMappingVmCreationFromJSON = BlockDeviceMappingVmCreationFromJSON;
+exports.BlockDeviceMappingVmCreationFromJSONTyped = BlockDeviceMappingVmCreationFromJSONTyped;
+exports.BlockDeviceMappingVmCreationToJSON = BlockDeviceMappingVmCreationToJSON;
 const runtime_1 = require("../runtime");
 const BsuToCreate_1 = require("./BsuToCreate");
 function BlockDeviceMappingVmCreationFromJSON(json) {
     return BlockDeviceMappingVmCreationFromJSONTyped(json, false);
 }
-exports.BlockDeviceMappingVmCreationFromJSON = BlockDeviceMappingVmCreationFromJSON;
 function BlockDeviceMappingVmCreationFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function BlockDeviceMappingVmCreationFromJSONTyped(json, ignoreDiscriminator) {
         'virtualDeviceName': !(0, runtime_1.exists)(json, 'VirtualDeviceName') ? undefined : json['VirtualDeviceName'],
     };
 }
-exports.BlockDeviceMappingVmCreationFromJSONTyped = BlockDeviceMappingVmCreationFromJSONTyped;
 function BlockDeviceMappingVmCreationToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function BlockDeviceMappingVmCreationToJSON(value) {
         'VirtualDeviceName': value.virtualDeviceName,
     };
 }
-exports.BlockDeviceMappingVmCreationToJSON = BlockDeviceMappingVmCreationToJSON;

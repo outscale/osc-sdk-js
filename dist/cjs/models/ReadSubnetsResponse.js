@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadSubnetsResponseToJSON = exports.ReadSubnetsResponseFromJSONTyped = exports.ReadSubnetsResponseFromJSON = void 0;
+exports.ReadSubnetsResponseFromJSON = ReadSubnetsResponseFromJSON;
+exports.ReadSubnetsResponseFromJSONTyped = ReadSubnetsResponseFromJSONTyped;
+exports.ReadSubnetsResponseToJSON = ReadSubnetsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Subnet_1 = require("./Subnet");
 function ReadSubnetsResponseFromJSON(json) {
     return ReadSubnetsResponseFromJSONTyped(json, false);
 }
-exports.ReadSubnetsResponseFromJSON = ReadSubnetsResponseFromJSON;
 function ReadSubnetsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadSubnetsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'subnets': !(0, runtime_1.exists)(json, 'Subnets') ? undefined : (json['Subnets'].map(Subnet_1.SubnetFromJSON)),
     };
 }
-exports.ReadSubnetsResponseFromJSONTyped = ReadSubnetsResponseFromJSONTyped;
 function ReadSubnetsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadSubnetsResponseToJSON(value) {
         'Subnets': value.subnets === undefined ? undefined : (value.subnets.map(Subnet_1.SubnetToJSON)),
     };
 }
-exports.ReadSubnetsResponseToJSON = ReadSubnetsResponseToJSON;

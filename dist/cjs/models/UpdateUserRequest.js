@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateUserRequestToJSON = exports.UpdateUserRequestFromJSONTyped = exports.UpdateUserRequestFromJSON = void 0;
+exports.UpdateUserRequestFromJSON = UpdateUserRequestFromJSON;
+exports.UpdateUserRequestFromJSONTyped = UpdateUserRequestFromJSONTyped;
+exports.UpdateUserRequestToJSON = UpdateUserRequestToJSON;
 const runtime_1 = require("../runtime");
 function UpdateUserRequestFromJSON(json) {
     return UpdateUserRequestFromJSONTyped(json, false);
 }
-exports.UpdateUserRequestFromJSON = UpdateUserRequestFromJSON;
 function UpdateUserRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function UpdateUserRequestFromJSONTyped(json, ignoreDiscriminator) {
         'userName': json['UserName'],
     };
 }
-exports.UpdateUserRequestFromJSONTyped = UpdateUserRequestFromJSONTyped;
 function UpdateUserRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function UpdateUserRequestToJSON(value) {
         'UserName': value.userName,
     };
 }
-exports.UpdateUserRequestToJSON = UpdateUserRequestToJSON;

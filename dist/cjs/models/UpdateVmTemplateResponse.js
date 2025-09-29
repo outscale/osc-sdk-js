@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateVmTemplateResponseToJSON = exports.UpdateVmTemplateResponseFromJSONTyped = exports.UpdateVmTemplateResponseFromJSON = void 0;
+exports.UpdateVmTemplateResponseFromJSON = UpdateVmTemplateResponseFromJSON;
+exports.UpdateVmTemplateResponseFromJSONTyped = UpdateVmTemplateResponseFromJSONTyped;
+exports.UpdateVmTemplateResponseToJSON = UpdateVmTemplateResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const VmTemplate_1 = require("./VmTemplate");
 function UpdateVmTemplateResponseFromJSON(json) {
     return UpdateVmTemplateResponseFromJSONTyped(json, false);
 }
-exports.UpdateVmTemplateResponseFromJSON = UpdateVmTemplateResponseFromJSON;
 function UpdateVmTemplateResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function UpdateVmTemplateResponseFromJSONTyped(json, ignoreDiscriminator) {
         'vmTemplate': !(0, runtime_1.exists)(json, 'VmTemplate') ? undefined : (0, VmTemplate_1.VmTemplateFromJSON)(json['VmTemplate']),
     };
 }
-exports.UpdateVmTemplateResponseFromJSONTyped = UpdateVmTemplateResponseFromJSONTyped;
 function UpdateVmTemplateResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UpdateVmTemplateResponseToJSON(value) {
         'VmTemplate': (0, VmTemplate_1.VmTemplateToJSON)(value.vmTemplate),
     };
 }
-exports.UpdateVmTemplateResponseToJSON = UpdateVmTemplateResponseToJSON;

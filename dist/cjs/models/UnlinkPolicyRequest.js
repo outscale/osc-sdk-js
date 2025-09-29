@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnlinkPolicyRequestToJSON = exports.UnlinkPolicyRequestFromJSONTyped = exports.UnlinkPolicyRequestFromJSON = void 0;
+exports.UnlinkPolicyRequestFromJSON = UnlinkPolicyRequestFromJSON;
+exports.UnlinkPolicyRequestFromJSONTyped = UnlinkPolicyRequestFromJSONTyped;
+exports.UnlinkPolicyRequestToJSON = UnlinkPolicyRequestToJSON;
 const runtime_1 = require("../runtime");
 function UnlinkPolicyRequestFromJSON(json) {
     return UnlinkPolicyRequestFromJSONTyped(json, false);
 }
-exports.UnlinkPolicyRequestFromJSON = UnlinkPolicyRequestFromJSON;
 function UnlinkPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function UnlinkPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
         'userName': json['UserName'],
     };
 }
-exports.UnlinkPolicyRequestFromJSONTyped = UnlinkPolicyRequestFromJSONTyped;
 function UnlinkPolicyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UnlinkPolicyRequestToJSON(value) {
         'UserName': value.userName,
     };
 }
-exports.UnlinkPolicyRequestToJSON = UnlinkPolicyRequestToJSON;

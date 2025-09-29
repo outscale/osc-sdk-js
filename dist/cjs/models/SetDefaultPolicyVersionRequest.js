@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SetDefaultPolicyVersionRequestToJSON = exports.SetDefaultPolicyVersionRequestFromJSONTyped = exports.SetDefaultPolicyVersionRequestFromJSON = void 0;
+exports.SetDefaultPolicyVersionRequestFromJSON = SetDefaultPolicyVersionRequestFromJSON;
+exports.SetDefaultPolicyVersionRequestFromJSONTyped = SetDefaultPolicyVersionRequestFromJSONTyped;
+exports.SetDefaultPolicyVersionRequestToJSON = SetDefaultPolicyVersionRequestToJSON;
 function SetDefaultPolicyVersionRequestFromJSON(json) {
     return SetDefaultPolicyVersionRequestFromJSONTyped(json, false);
 }
-exports.SetDefaultPolicyVersionRequestFromJSON = SetDefaultPolicyVersionRequestFromJSON;
 function SetDefaultPolicyVersionRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function SetDefaultPolicyVersionRequestFromJSONTyped(json, ignoreDiscriminator) 
         'versionId': json['VersionId'],
     };
 }
-exports.SetDefaultPolicyVersionRequestFromJSONTyped = SetDefaultPolicyVersionRequestFromJSONTyped;
 function SetDefaultPolicyVersionRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function SetDefaultPolicyVersionRequestToJSON(value) {
         'VersionId': value.versionId,
     };
 }
-exports.SetDefaultPolicyVersionRequestToJSON = SetDefaultPolicyVersionRequestToJSON;

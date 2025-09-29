@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateVmsRequestToJSON = exports.CreateVmsRequestFromJSONTyped = exports.CreateVmsRequestFromJSON = exports.CreateVmsRequestPerformanceEnum = void 0;
+exports.CreateVmsRequestPerformanceEnum = void 0;
+exports.CreateVmsRequestFromJSON = CreateVmsRequestFromJSON;
+exports.CreateVmsRequestFromJSONTyped = CreateVmsRequestFromJSONTyped;
+exports.CreateVmsRequestToJSON = CreateVmsRequestToJSON;
 const runtime_1 = require("../runtime");
 const ActionsOnNextBoot_1 = require("./ActionsOnNextBoot");
 const BlockDeviceMappingVmCreation_1 = require("./BlockDeviceMappingVmCreation");
@@ -31,7 +34,6 @@ exports.CreateVmsRequestPerformanceEnum = {
 function CreateVmsRequestFromJSON(json) {
     return CreateVmsRequestFromJSONTyped(json, false);
 }
-exports.CreateVmsRequestFromJSON = CreateVmsRequestFromJSON;
 function CreateVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -62,7 +64,6 @@ function CreateVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vmType': !(0, runtime_1.exists)(json, 'VmType') ? undefined : json['VmType'],
     };
 }
-exports.CreateVmsRequestFromJSONTyped = CreateVmsRequestFromJSONTyped;
 function CreateVmsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -96,4 +97,3 @@ function CreateVmsRequestToJSON(value) {
         'VmType': value.vmType,
     };
 }
-exports.CreateVmsRequestToJSON = CreateVmsRequestToJSON;

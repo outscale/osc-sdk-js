@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadManagedPoliciesLinkedToUserGroupResponseToJSON = exports.ReadManagedPoliciesLinkedToUserGroupResponseFromJSONTyped = exports.ReadManagedPoliciesLinkedToUserGroupResponseFromJSON = void 0;
+exports.ReadManagedPoliciesLinkedToUserGroupResponseFromJSON = ReadManagedPoliciesLinkedToUserGroupResponseFromJSON;
+exports.ReadManagedPoliciesLinkedToUserGroupResponseFromJSONTyped = ReadManagedPoliciesLinkedToUserGroupResponseFromJSONTyped;
+exports.ReadManagedPoliciesLinkedToUserGroupResponseToJSON = ReadManagedPoliciesLinkedToUserGroupResponseToJSON;
 const runtime_1 = require("../runtime");
 const LinkedPolicy_1 = require("./LinkedPolicy");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadManagedPoliciesLinkedToUserGroupResponseFromJSON(json) {
     return ReadManagedPoliciesLinkedToUserGroupResponseFromJSONTyped(json, false);
 }
-exports.ReadManagedPoliciesLinkedToUserGroupResponseFromJSON = ReadManagedPoliciesLinkedToUserGroupResponseFromJSON;
 function ReadManagedPoliciesLinkedToUserGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function ReadManagedPoliciesLinkedToUserGroupResponseFromJSONTyped(json, ignoreD
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadManagedPoliciesLinkedToUserGroupResponseFromJSONTyped = ReadManagedPoliciesLinkedToUserGroupResponseFromJSONTyped;
 function ReadManagedPoliciesLinkedToUserGroupResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function ReadManagedPoliciesLinkedToUserGroupResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadManagedPoliciesLinkedToUserGroupResponseToJSON = ReadManagedPoliciesLinkedToUserGroupResponseToJSON;

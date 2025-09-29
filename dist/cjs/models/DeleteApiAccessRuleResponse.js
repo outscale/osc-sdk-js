@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteApiAccessRuleResponseToJSON = exports.DeleteApiAccessRuleResponseFromJSONTyped = exports.DeleteApiAccessRuleResponseFromJSON = void 0;
+exports.DeleteApiAccessRuleResponseFromJSON = DeleteApiAccessRuleResponseFromJSON;
+exports.DeleteApiAccessRuleResponseFromJSONTyped = DeleteApiAccessRuleResponseFromJSONTyped;
+exports.DeleteApiAccessRuleResponseToJSON = DeleteApiAccessRuleResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteApiAccessRuleResponseFromJSON(json) {
     return DeleteApiAccessRuleResponseFromJSONTyped(json, false);
 }
-exports.DeleteApiAccessRuleResponseFromJSON = DeleteApiAccessRuleResponseFromJSON;
 function DeleteApiAccessRuleResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteApiAccessRuleResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteApiAccessRuleResponseFromJSONTyped = DeleteApiAccessRuleResponseFromJSONTyped;
 function DeleteApiAccessRuleResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteApiAccessRuleResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteApiAccessRuleResponseToJSON = DeleteApiAccessRuleResponseToJSON;

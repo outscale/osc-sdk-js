@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CatalogEntryToJSON = exports.CatalogEntryFromJSONTyped = exports.CatalogEntryFromJSON = void 0;
+exports.CatalogEntryFromJSON = CatalogEntryFromJSON;
+exports.CatalogEntryFromJSONTyped = CatalogEntryFromJSONTyped;
+exports.CatalogEntryToJSON = CatalogEntryToJSON;
 const runtime_1 = require("../runtime");
 function CatalogEntryFromJSON(json) {
     return CatalogEntryFromJSONTyped(json, false);
 }
-exports.CatalogEntryFromJSON = CatalogEntryFromJSON;
 function CatalogEntryFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -34,7 +35,6 @@ function CatalogEntryFromJSONTyped(json, ignoreDiscriminator) {
         'unitPrice': !(0, runtime_1.exists)(json, 'UnitPrice') ? undefined : json['UnitPrice'],
     };
 }
-exports.CatalogEntryFromJSONTyped = CatalogEntryFromJSONTyped;
 function CatalogEntryToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +53,3 @@ function CatalogEntryToJSON(value) {
         'UnitPrice': value.unitPrice,
     };
 }
-exports.CatalogEntryToJSON = CatalogEntryToJSON;

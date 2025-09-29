@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PolicyToJSON = exports.PolicyFromJSONTyped = exports.PolicyFromJSON = void 0;
+exports.PolicyFromJSON = PolicyFromJSON;
+exports.PolicyFromJSONTyped = PolicyFromJSONTyped;
+exports.PolicyToJSON = PolicyToJSON;
 const runtime_1 = require("../runtime");
 function PolicyFromJSON(json) {
     return PolicyFromJSONTyped(json, false);
 }
-exports.PolicyFromJSON = PolicyFromJSON;
 function PolicyFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -36,7 +37,6 @@ function PolicyFromJSONTyped(json, ignoreDiscriminator) {
         'resourcesCount': !(0, runtime_1.exists)(json, 'ResourcesCount') ? undefined : json['ResourcesCount'],
     };
 }
-exports.PolicyFromJSONTyped = PolicyFromJSONTyped;
 function PolicyToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -57,4 +57,3 @@ function PolicyToJSON(value) {
         'ResourcesCount': value.resourcesCount,
     };
 }
-exports.PolicyToJSON = PolicyToJSON;

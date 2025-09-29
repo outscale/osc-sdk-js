@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateRouteResponseToJSON = exports.UpdateRouteResponseFromJSONTyped = exports.UpdateRouteResponseFromJSON = void 0;
+exports.UpdateRouteResponseFromJSON = UpdateRouteResponseFromJSON;
+exports.UpdateRouteResponseFromJSONTyped = UpdateRouteResponseFromJSONTyped;
+exports.UpdateRouteResponseToJSON = UpdateRouteResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const RouteTable_1 = require("./RouteTable");
 function UpdateRouteResponseFromJSON(json) {
     return UpdateRouteResponseFromJSONTyped(json, false);
 }
-exports.UpdateRouteResponseFromJSON = UpdateRouteResponseFromJSON;
 function UpdateRouteResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function UpdateRouteResponseFromJSONTyped(json, ignoreDiscriminator) {
         'routeTable': !(0, runtime_1.exists)(json, 'RouteTable') ? undefined : (0, RouteTable_1.RouteTableFromJSON)(json['RouteTable']),
     };
 }
-exports.UpdateRouteResponseFromJSONTyped = UpdateRouteResponseFromJSONTyped;
 function UpdateRouteResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UpdateRouteResponseToJSON(value) {
         'RouteTable': (0, RouteTable_1.RouteTableToJSON)(value.routeTable),
     };
 }
-exports.UpdateRouteResponseToJSON = UpdateRouteResponseToJSON;

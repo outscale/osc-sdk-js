@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkRouteTableResponseToJSON = exports.LinkRouteTableResponseFromJSONTyped = exports.LinkRouteTableResponseFromJSON = void 0;
+exports.LinkRouteTableResponseFromJSON = LinkRouteTableResponseFromJSON;
+exports.LinkRouteTableResponseFromJSONTyped = LinkRouteTableResponseFromJSONTyped;
+exports.LinkRouteTableResponseToJSON = LinkRouteTableResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function LinkRouteTableResponseFromJSON(json) {
     return LinkRouteTableResponseFromJSONTyped(json, false);
 }
-exports.LinkRouteTableResponseFromJSON = LinkRouteTableResponseFromJSON;
 function LinkRouteTableResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function LinkRouteTableResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.LinkRouteTableResponseFromJSONTyped = LinkRouteTableResponseFromJSONTyped;
 function LinkRouteTableResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function LinkRouteTableResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.LinkRouteTableResponseToJSON = LinkRouteTableResponseToJSON;

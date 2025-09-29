@@ -61,8 +61,8 @@ export class CatalogApi extends runtime.BaseAPI {
     /**
      * Returns the price list of OUTSCALE services for the current Region.
      */
-    readCatalog(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readCatalog() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readCatalogRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class CatalogApi extends runtime.BaseAPI {
     /**
      * Returns the price list of OUTSCALE services for the current Region within a specific time period.
      */
-    readCatalogs(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readCatalogs() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readCatalogsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class CatalogApi extends runtime.BaseAPI {
     /**
      * Gets unit price information for the specified parameters.
      */
-    readUnitPrice(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readUnitPrice() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readUnitPriceRaw(requestParameters, initOverrides);
             return yield response.value();
         });

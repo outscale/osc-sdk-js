@@ -61,8 +61,8 @@ export class ProductTypeApi extends runtime.BaseAPI {
     /**
      * Creates a product type you can associate with an OMI for consumption monitoring and billing purposes.
      */
-    createProductType(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createProductType() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createProductTypeRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class ProductTypeApi extends runtime.BaseAPI {
     /**
      * Deletes a specified product type that belongs to you.<br />  **[WARNING]**<br /> The product type must not be associated with one or more OMIs to be deleted. Otherwise, you need to force the deletion.<br /> If you force the deletion, the product type is deleted and remains associated with the OMIs.<br />
      */
-    deleteProductType(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteProductType() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteProductTypeRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -140,8 +140,8 @@ export class ProductTypeApi extends runtime.BaseAPI {
     /**
      * Lists one or more product types.
      */
-    readProductTypes(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readProductTypes() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readProductTypesRaw(requestParameters, initOverrides);
             return yield response.value();
         });

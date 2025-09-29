@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadRegionsResponseToJSON = exports.ReadRegionsResponseFromJSONTyped = exports.ReadRegionsResponseFromJSON = void 0;
+exports.ReadRegionsResponseFromJSON = ReadRegionsResponseFromJSON;
+exports.ReadRegionsResponseFromJSONTyped = ReadRegionsResponseFromJSONTyped;
+exports.ReadRegionsResponseToJSON = ReadRegionsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Region_1 = require("./Region");
 function ReadRegionsResponseFromJSON(json) {
     return ReadRegionsResponseFromJSONTyped(json, false);
 }
-exports.ReadRegionsResponseFromJSON = ReadRegionsResponseFromJSON;
 function ReadRegionsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function ReadRegionsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadRegionsResponseFromJSONTyped = ReadRegionsResponseFromJSONTyped;
 function ReadRegionsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ReadRegionsResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadRegionsResponseToJSON = ReadRegionsResponseToJSON;

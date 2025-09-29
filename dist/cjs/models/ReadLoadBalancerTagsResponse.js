@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadLoadBalancerTagsResponseToJSON = exports.ReadLoadBalancerTagsResponseFromJSONTyped = exports.ReadLoadBalancerTagsResponseFromJSON = void 0;
+exports.ReadLoadBalancerTagsResponseFromJSON = ReadLoadBalancerTagsResponseFromJSON;
+exports.ReadLoadBalancerTagsResponseFromJSONTyped = ReadLoadBalancerTagsResponseFromJSONTyped;
+exports.ReadLoadBalancerTagsResponseToJSON = ReadLoadBalancerTagsResponseToJSON;
 const runtime_1 = require("../runtime");
 const LoadBalancerTag_1 = require("./LoadBalancerTag");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadLoadBalancerTagsResponseFromJSON(json) {
     return ReadLoadBalancerTagsResponseFromJSONTyped(json, false);
 }
-exports.ReadLoadBalancerTagsResponseFromJSON = ReadLoadBalancerTagsResponseFromJSON;
 function ReadLoadBalancerTagsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function ReadLoadBalancerTagsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : (json['Tags'].map(LoadBalancerTag_1.LoadBalancerTagFromJSON)),
     };
 }
-exports.ReadLoadBalancerTagsResponseFromJSONTyped = ReadLoadBalancerTagsResponseFromJSONTyped;
 function ReadLoadBalancerTagsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ReadLoadBalancerTagsResponseToJSON(value) {
         'Tags': value.tags === undefined ? undefined : (value.tags.map(LoadBalancerTag_1.LoadBalancerTagToJSON)),
     };
 }
-exports.ReadLoadBalancerTagsResponseToJSON = ReadLoadBalancerTagsResponseToJSON;

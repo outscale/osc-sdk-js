@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LocationToJSON = exports.LocationFromJSONTyped = exports.LocationFromJSON = void 0;
+exports.LocationFromJSON = LocationFromJSON;
+exports.LocationFromJSONTyped = LocationFromJSONTyped;
+exports.LocationToJSON = LocationToJSON;
 const runtime_1 = require("../runtime");
 function LocationFromJSON(json) {
     return LocationFromJSONTyped(json, false);
 }
-exports.LocationFromJSON = LocationFromJSON;
 function LocationFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function LocationFromJSONTyped(json, ignoreDiscriminator) {
         'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
     };
 }
-exports.LocationFromJSONTyped = LocationFromJSONTyped;
 function LocationToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function LocationToJSON(value) {
         'Name': value.name,
     };
 }
-exports.LocationToJSON = LocationToJSON;

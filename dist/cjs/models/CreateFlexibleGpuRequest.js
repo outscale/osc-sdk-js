@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateFlexibleGpuRequestToJSON = exports.CreateFlexibleGpuRequestFromJSONTyped = exports.CreateFlexibleGpuRequestFromJSON = void 0;
+exports.CreateFlexibleGpuRequestFromJSON = CreateFlexibleGpuRequestFromJSON;
+exports.CreateFlexibleGpuRequestFromJSONTyped = CreateFlexibleGpuRequestFromJSONTyped;
+exports.CreateFlexibleGpuRequestToJSON = CreateFlexibleGpuRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateFlexibleGpuRequestFromJSON(json) {
     return CreateFlexibleGpuRequestFromJSONTyped(json, false);
 }
-exports.CreateFlexibleGpuRequestFromJSON = CreateFlexibleGpuRequestFromJSON;
 function CreateFlexibleGpuRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function CreateFlexibleGpuRequestFromJSONTyped(json, ignoreDiscriminator) {
         'subregionName': json['SubregionName'],
     };
 }
-exports.CreateFlexibleGpuRequestFromJSONTyped = CreateFlexibleGpuRequestFromJSONTyped;
 function CreateFlexibleGpuRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function CreateFlexibleGpuRequestToJSON(value) {
         'SubregionName': value.subregionName,
     };
 }
-exports.CreateFlexibleGpuRequestToJSON = CreateFlexibleGpuRequestToJSON;

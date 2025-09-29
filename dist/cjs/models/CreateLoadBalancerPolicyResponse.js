@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateLoadBalancerPolicyResponseToJSON = exports.CreateLoadBalancerPolicyResponseFromJSONTyped = exports.CreateLoadBalancerPolicyResponseFromJSON = void 0;
+exports.CreateLoadBalancerPolicyResponseFromJSON = CreateLoadBalancerPolicyResponseFromJSON;
+exports.CreateLoadBalancerPolicyResponseFromJSONTyped = CreateLoadBalancerPolicyResponseFromJSONTyped;
+exports.CreateLoadBalancerPolicyResponseToJSON = CreateLoadBalancerPolicyResponseToJSON;
 const runtime_1 = require("../runtime");
 const LoadBalancer_1 = require("./LoadBalancer");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function CreateLoadBalancerPolicyResponseFromJSON(json) {
     return CreateLoadBalancerPolicyResponseFromJSONTyped(json, false);
 }
-exports.CreateLoadBalancerPolicyResponseFromJSON = CreateLoadBalancerPolicyResponseFromJSON;
 function CreateLoadBalancerPolicyResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateLoadBalancerPolicyResponseFromJSONTyped(json, ignoreDiscriminator
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CreateLoadBalancerPolicyResponseFromJSONTyped = CreateLoadBalancerPolicyResponseFromJSONTyped;
 function CreateLoadBalancerPolicyResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateLoadBalancerPolicyResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CreateLoadBalancerPolicyResponseToJSON = CreateLoadBalancerPolicyResponseToJSON;

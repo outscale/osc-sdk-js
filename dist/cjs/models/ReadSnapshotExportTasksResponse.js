@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadSnapshotExportTasksResponseToJSON = exports.ReadSnapshotExportTasksResponseFromJSONTyped = exports.ReadSnapshotExportTasksResponseFromJSON = void 0;
+exports.ReadSnapshotExportTasksResponseFromJSON = ReadSnapshotExportTasksResponseFromJSON;
+exports.ReadSnapshotExportTasksResponseFromJSONTyped = ReadSnapshotExportTasksResponseFromJSONTyped;
+exports.ReadSnapshotExportTasksResponseToJSON = ReadSnapshotExportTasksResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const SnapshotExportTask_1 = require("./SnapshotExportTask");
 function ReadSnapshotExportTasksResponseFromJSON(json) {
     return ReadSnapshotExportTasksResponseFromJSONTyped(json, false);
 }
-exports.ReadSnapshotExportTasksResponseFromJSON = ReadSnapshotExportTasksResponseFromJSON;
 function ReadSnapshotExportTasksResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadSnapshotExportTasksResponseFromJSONTyped(json, ignoreDiscriminator)
         'snapshotExportTasks': !(0, runtime_1.exists)(json, 'SnapshotExportTasks') ? undefined : (json['SnapshotExportTasks'].map(SnapshotExportTask_1.SnapshotExportTaskFromJSON)),
     };
 }
-exports.ReadSnapshotExportTasksResponseFromJSONTyped = ReadSnapshotExportTasksResponseFromJSONTyped;
 function ReadSnapshotExportTasksResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadSnapshotExportTasksResponseToJSON(value) {
         'SnapshotExportTasks': value.snapshotExportTasks === undefined ? undefined : (value.snapshotExportTasks.map(SnapshotExportTask_1.SnapshotExportTaskToJSON)),
     };
 }
-exports.ReadSnapshotExportTasksResponseToJSON = ReadSnapshotExportTasksResponseToJSON;

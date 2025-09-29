@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersInternetServiceToJSON = exports.FiltersInternetServiceFromJSONTyped = exports.FiltersInternetServiceFromJSON = void 0;
+exports.FiltersInternetServiceFromJSON = FiltersInternetServiceFromJSON;
+exports.FiltersInternetServiceFromJSONTyped = FiltersInternetServiceFromJSONTyped;
+exports.FiltersInternetServiceToJSON = FiltersInternetServiceToJSON;
 const runtime_1 = require("../runtime");
 function FiltersInternetServiceFromJSON(json) {
     return FiltersInternetServiceFromJSONTyped(json, false);
 }
-exports.FiltersInternetServiceFromJSON = FiltersInternetServiceFromJSON;
 function FiltersInternetServiceFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -32,7 +33,6 @@ function FiltersInternetServiceFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersInternetServiceFromJSONTyped = FiltersInternetServiceFromJSONTyped;
 function FiltersInternetServiceToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function FiltersInternetServiceToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersInternetServiceToJSON = FiltersInternetServiceToJSON;

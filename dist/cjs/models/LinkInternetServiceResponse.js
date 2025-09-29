@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkInternetServiceResponseToJSON = exports.LinkInternetServiceResponseFromJSONTyped = exports.LinkInternetServiceResponseFromJSON = void 0;
+exports.LinkInternetServiceResponseFromJSON = LinkInternetServiceResponseFromJSON;
+exports.LinkInternetServiceResponseFromJSONTyped = LinkInternetServiceResponseFromJSONTyped;
+exports.LinkInternetServiceResponseToJSON = LinkInternetServiceResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function LinkInternetServiceResponseFromJSON(json) {
     return LinkInternetServiceResponseFromJSONTyped(json, false);
 }
-exports.LinkInternetServiceResponseFromJSON = LinkInternetServiceResponseFromJSON;
 function LinkInternetServiceResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function LinkInternetServiceResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.LinkInternetServiceResponseFromJSONTyped = LinkInternetServiceResponseFromJSONTyped;
 function LinkInternetServiceResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function LinkInternetServiceResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.LinkInternetServiceResponseToJSON = LinkInternetServiceResponseToJSON;

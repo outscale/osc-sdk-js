@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteNetPeeringRequestToJSON = exports.DeleteNetPeeringRequestFromJSONTyped = exports.DeleteNetPeeringRequestFromJSON = void 0;
+exports.DeleteNetPeeringRequestFromJSON = DeleteNetPeeringRequestFromJSON;
+exports.DeleteNetPeeringRequestFromJSONTyped = DeleteNetPeeringRequestFromJSONTyped;
+exports.DeleteNetPeeringRequestToJSON = DeleteNetPeeringRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteNetPeeringRequestFromJSON(json) {
     return DeleteNetPeeringRequestFromJSONTyped(json, false);
 }
-exports.DeleteNetPeeringRequestFromJSON = DeleteNetPeeringRequestFromJSON;
 function DeleteNetPeeringRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteNetPeeringRequestFromJSONTyped(json, ignoreDiscriminator) {
         'netPeeringId': json['NetPeeringId'],
     };
 }
-exports.DeleteNetPeeringRequestFromJSONTyped = DeleteNetPeeringRequestFromJSONTyped;
 function DeleteNetPeeringRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteNetPeeringRequestToJSON(value) {
         'NetPeeringId': value.netPeeringId,
     };
 }
-exports.DeleteNetPeeringRequestToJSON = DeleteNetPeeringRequestToJSON;

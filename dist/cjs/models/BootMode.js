@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BootModeToJSON = exports.BootModeFromJSONTyped = exports.BootModeFromJSON = exports.BootMode = void 0;
+exports.BootMode = void 0;
+exports.BootModeFromJSON = BootModeFromJSON;
+exports.BootModeFromJSONTyped = BootModeFromJSONTyped;
+exports.BootModeToJSON = BootModeToJSON;
 /**
  * Information about the boot mode of the VM.
  * @export
@@ -25,12 +28,9 @@ exports.BootMode = {
 function BootModeFromJSON(json) {
     return BootModeFromJSONTyped(json, false);
 }
-exports.BootModeFromJSON = BootModeFromJSON;
 function BootModeFromJSONTyped(json, ignoreDiscriminator) {
     return json;
 }
-exports.BootModeFromJSONTyped = BootModeFromJSONTyped;
 function BootModeToJSON(value) {
     return value;
 }
-exports.BootModeToJSON = BootModeToJSON;

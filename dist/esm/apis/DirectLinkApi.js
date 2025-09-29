@@ -61,8 +61,8 @@ export class DirectLinkApi extends runtime.BaseAPI {
     /**
      * Creates a DirectLink between a customer network and a specified DirectLink location.<br /><br /> For more information, see [About DirectLink](https://docs.outscale.com/en/userguide/About-DirectLink.html).
      */
-    createDirectLink(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createDirectLink() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createDirectLinkRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class DirectLinkApi extends runtime.BaseAPI {
     /**
      * Deletes a specified DirectLink.<br /> Before deleting a DirectLink, ensure that all your DirectLink interfaces related to this DirectLink are deleted.
      */
-    deleteDirectLink(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteDirectLink() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteDirectLinkRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class DirectLinkApi extends runtime.BaseAPI {
     /**
      * Lists all DirectLinks in the Region.
      */
-    readDirectLinks(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readDirectLinks() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readDirectLinksRaw(requestParameters, initOverrides);
             return yield response.value();
         });

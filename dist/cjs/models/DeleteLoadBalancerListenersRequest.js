@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteLoadBalancerListenersRequestToJSON = exports.DeleteLoadBalancerListenersRequestFromJSONTyped = exports.DeleteLoadBalancerListenersRequestFromJSON = void 0;
+exports.DeleteLoadBalancerListenersRequestFromJSON = DeleteLoadBalancerListenersRequestFromJSON;
+exports.DeleteLoadBalancerListenersRequestFromJSONTyped = DeleteLoadBalancerListenersRequestFromJSONTyped;
+exports.DeleteLoadBalancerListenersRequestToJSON = DeleteLoadBalancerListenersRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteLoadBalancerListenersRequestFromJSON(json) {
     return DeleteLoadBalancerListenersRequestFromJSONTyped(json, false);
 }
-exports.DeleteLoadBalancerListenersRequestFromJSON = DeleteLoadBalancerListenersRequestFromJSON;
 function DeleteLoadBalancerListenersRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function DeleteLoadBalancerListenersRequestFromJSONTyped(json, ignoreDiscriminat
         'loadBalancerPorts': json['LoadBalancerPorts'],
     };
 }
-exports.DeleteLoadBalancerListenersRequestFromJSONTyped = DeleteLoadBalancerListenersRequestFromJSONTyped;
 function DeleteLoadBalancerListenersRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function DeleteLoadBalancerListenersRequestToJSON(value) {
         'LoadBalancerPorts': value.loadBalancerPorts,
     };
 }
-exports.DeleteLoadBalancerListenersRequestToJSON = DeleteLoadBalancerListenersRequestToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadPublicIpRangesResponseToJSON = exports.ReadPublicIpRangesResponseFromJSONTyped = exports.ReadPublicIpRangesResponseFromJSON = void 0;
+exports.ReadPublicIpRangesResponseFromJSON = ReadPublicIpRangesResponseFromJSON;
+exports.ReadPublicIpRangesResponseFromJSONTyped = ReadPublicIpRangesResponseFromJSONTyped;
+exports.ReadPublicIpRangesResponseToJSON = ReadPublicIpRangesResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadPublicIpRangesResponseFromJSON(json) {
     return ReadPublicIpRangesResponseFromJSONTyped(json, false);
 }
-exports.ReadPublicIpRangesResponseFromJSON = ReadPublicIpRangesResponseFromJSON;
 function ReadPublicIpRangesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function ReadPublicIpRangesResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadPublicIpRangesResponseFromJSONTyped = ReadPublicIpRangesResponseFromJSONTyped;
 function ReadPublicIpRangesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function ReadPublicIpRangesResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadPublicIpRangesResponseToJSON = ReadPublicIpRangesResponseToJSON;

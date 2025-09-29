@@ -13,7 +13,9 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NicLightToJSON = exports.NicLightFromJSONTyped = exports.NicLightFromJSON = void 0;
+exports.NicLightFromJSON = NicLightFromJSON;
+exports.NicLightFromJSONTyped = NicLightFromJSONTyped;
+exports.NicLightToJSON = NicLightToJSON;
 const runtime_1 = require("../runtime");
 const LinkNicLight_1 = require("./LinkNicLight");
 const LinkPublicIpLightForVm_1 = require("./LinkPublicIpLightForVm");
@@ -22,7 +24,6 @@ const SecurityGroupLight_1 = require("./SecurityGroupLight");
 function NicLightFromJSON(json) {
     return NicLightFromJSONTyped(json, false);
 }
-exports.NicLightFromJSON = NicLightFromJSON;
 function NicLightFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -43,7 +44,6 @@ function NicLightFromJSONTyped(json, ignoreDiscriminator) {
         'subnetId': !(0, runtime_1.exists)(json, 'SubnetId') ? undefined : json['SubnetId'],
     };
 }
-exports.NicLightFromJSONTyped = NicLightFromJSONTyped;
 function NicLightToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -67,4 +67,3 @@ function NicLightToJSON(value) {
         'SubnetId': value.subnetId,
     };
 }
-exports.NicLightToJSON = NicLightToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteUserPolicyResponseToJSON = exports.DeleteUserPolicyResponseFromJSONTyped = exports.DeleteUserPolicyResponseFromJSON = void 0;
+exports.DeleteUserPolicyResponseFromJSON = DeleteUserPolicyResponseFromJSON;
+exports.DeleteUserPolicyResponseFromJSONTyped = DeleteUserPolicyResponseFromJSONTyped;
+exports.DeleteUserPolicyResponseToJSON = DeleteUserPolicyResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteUserPolicyResponseFromJSON(json) {
     return DeleteUserPolicyResponseFromJSONTyped(json, false);
 }
-exports.DeleteUserPolicyResponseFromJSON = DeleteUserPolicyResponseFromJSON;
 function DeleteUserPolicyResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteUserPolicyResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteUserPolicyResponseFromJSONTyped = DeleteUserPolicyResponseFromJSONTyped;
 function DeleteUserPolicyResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteUserPolicyResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteUserPolicyResponseToJSON = DeleteUserPolicyResponseToJSON;

@@ -61,8 +61,8 @@ export class RouteTableApi extends runtime.BaseAPI {
     /**
      * Creates a route table for a specified Net.<br /> You can then add routes and associate this route table with a Subnet.<br /><br /> For more information, see [About Route Tables](https://docs.outscale.com/en/userguide/About-Route-Tables.html).
      */
-    createRouteTable(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createRouteTable() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createRouteTableRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class RouteTableApi extends runtime.BaseAPI {
     /**
      * Deletes a specified route table.<br /> Before deleting a route table, you must disassociate it from any Subnet. You cannot delete the main route table.
      */
-    deleteRouteTable(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteRouteTable() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteRouteTableRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class RouteTableApi extends runtime.BaseAPI {
     /**
      * Associates a Subnet with a route table.<br /> The Subnet and the route table must be in the same Net. The traffic is routed according to the route table defined within this Net. You can associate a route table with several Subnets.
      */
-    linkRouteTable(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    linkRouteTable() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.linkRouteTableRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -184,8 +184,8 @@ export class RouteTableApi extends runtime.BaseAPI {
     /**
      * Lists one or more of your route tables.<br /> In your Net, each Subnet must be associated with a route table. If a Subnet is not explicitly associated with a route table, it is implicitly associated with the main route table of the Net.
      */
-    readRouteTables(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readRouteTables() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readRouteTablesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -225,8 +225,8 @@ export class RouteTableApi extends runtime.BaseAPI {
     /**
      * Disassociates a Subnet from a route table.<br /> After disassociation, the Subnet can no longer use the routes in this route table, but uses the routes in the main route table of the Net instead.
      */
-    unlinkRouteTable(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    unlinkRouteTable() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.unlinkRouteTableRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -266,8 +266,8 @@ export class RouteTableApi extends runtime.BaseAPI {
     /**
      * Replaces the route table associated with a specific Subnet in a Net with another one.<br /> After the route table is replaced, the Subnet uses the routes in the new route table it is associated with.
      */
-    updateRouteTableLink(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateRouteTableLink() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateRouteTableLinkRaw(requestParameters, initOverrides);
             return yield response.value();
         });

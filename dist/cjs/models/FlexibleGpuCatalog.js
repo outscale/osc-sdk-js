@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FlexibleGpuCatalogToJSON = exports.FlexibleGpuCatalogFromJSONTyped = exports.FlexibleGpuCatalogFromJSON = void 0;
+exports.FlexibleGpuCatalogFromJSON = FlexibleGpuCatalogFromJSON;
+exports.FlexibleGpuCatalogFromJSONTyped = FlexibleGpuCatalogFromJSONTyped;
+exports.FlexibleGpuCatalogToJSON = FlexibleGpuCatalogToJSON;
 const runtime_1 = require("../runtime");
 function FlexibleGpuCatalogFromJSON(json) {
     return FlexibleGpuCatalogFromJSONTyped(json, false);
 }
-exports.FlexibleGpuCatalogFromJSON = FlexibleGpuCatalogFromJSON;
 function FlexibleGpuCatalogFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function FlexibleGpuCatalogFromJSONTyped(json, ignoreDiscriminator) {
         'vRam': !(0, runtime_1.exists)(json, 'VRam') ? undefined : json['VRam'],
     };
 }
-exports.FlexibleGpuCatalogFromJSONTyped = FlexibleGpuCatalogFromJSONTyped;
 function FlexibleGpuCatalogToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function FlexibleGpuCatalogToJSON(value) {
         'VRam': value.vRam,
     };
 }
-exports.FlexibleGpuCatalogToJSON = FlexibleGpuCatalogToJSON;

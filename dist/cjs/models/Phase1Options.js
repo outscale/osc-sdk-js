@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Phase1OptionsToJSON = exports.Phase1OptionsFromJSONTyped = exports.Phase1OptionsFromJSON = void 0;
+exports.Phase1OptionsFromJSON = Phase1OptionsFromJSON;
+exports.Phase1OptionsFromJSONTyped = Phase1OptionsFromJSONTyped;
+exports.Phase1OptionsToJSON = Phase1OptionsToJSON;
 const runtime_1 = require("../runtime");
 function Phase1OptionsFromJSON(json) {
     return Phase1OptionsFromJSONTyped(json, false);
 }
-exports.Phase1OptionsFromJSON = Phase1OptionsFromJSON;
 function Phase1OptionsFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -35,7 +36,6 @@ function Phase1OptionsFromJSONTyped(json, ignoreDiscriminator) {
         'startupAction': !(0, runtime_1.exists)(json, 'StartupAction') ? undefined : json['StartupAction'],
     };
 }
-exports.Phase1OptionsFromJSONTyped = Phase1OptionsFromJSONTyped;
 function Phase1OptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +55,3 @@ function Phase1OptionsToJSON(value) {
         'StartupAction': value.startupAction,
     };
 }
-exports.Phase1OptionsToJSON = Phase1OptionsToJSON;

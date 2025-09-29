@@ -58,8 +58,8 @@ export class PublicCatalogApi extends runtime.BaseAPI {
     /**
      * Returns the price list of OUTSCALE products and services for the Region specified in the endpoint of the request. For more information, see [About Regions and Subregions](https://docs.outscale.com/en/userguide/About-Regions-and-Subregions.html).
      */
-    readPublicCatalog(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readPublicCatalog() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readPublicCatalogRaw(requestParameters, initOverrides);
             return yield response.value();
         });

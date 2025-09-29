@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadSubnetsRequestToJSON = exports.ReadSubnetsRequestFromJSONTyped = exports.ReadSubnetsRequestFromJSON = void 0;
+exports.ReadSubnetsRequestFromJSON = ReadSubnetsRequestFromJSON;
+exports.ReadSubnetsRequestFromJSONTyped = ReadSubnetsRequestFromJSONTyped;
+exports.ReadSubnetsRequestToJSON = ReadSubnetsRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersSubnet_1 = require("./FiltersSubnet");
 function ReadSubnetsRequestFromJSON(json) {
     return ReadSubnetsRequestFromJSONTyped(json, false);
 }
-exports.ReadSubnetsRequestFromJSON = ReadSubnetsRequestFromJSON;
 function ReadSubnetsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadSubnetsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadSubnetsRequestFromJSONTyped = ReadSubnetsRequestFromJSONTyped;
 function ReadSubnetsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadSubnetsRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadSubnetsRequestToJSON = ReadSubnetsRequestToJSON;

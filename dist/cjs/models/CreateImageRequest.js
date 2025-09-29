@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateImageRequestToJSON = exports.CreateImageRequestFromJSONTyped = exports.CreateImageRequestFromJSON = void 0;
+exports.CreateImageRequestFromJSON = CreateImageRequestFromJSON;
+exports.CreateImageRequestFromJSONTyped = CreateImageRequestFromJSONTyped;
+exports.CreateImageRequestToJSON = CreateImageRequestToJSON;
 const runtime_1 = require("../runtime");
 const BlockDeviceMappingImage_1 = require("./BlockDeviceMappingImage");
 const BootMode_1 = require("./BootMode");
 function CreateImageRequestFromJSON(json) {
     return CreateImageRequestFromJSONTyped(json, false);
 }
-exports.CreateImageRequestFromJSON = CreateImageRequestFromJSON;
 function CreateImageRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -41,7 +42,6 @@ function CreateImageRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vmId': !(0, runtime_1.exists)(json, 'VmId') ? undefined : json['VmId'],
     };
 }
-exports.CreateImageRequestFromJSONTyped = CreateImageRequestFromJSONTyped;
 function CreateImageRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -65,4 +65,3 @@ function CreateImageRequestToJSON(value) {
         'VmId': value.vmId,
     };
 }
-exports.CreateImageRequestToJSON = CreateImageRequestToJSON;

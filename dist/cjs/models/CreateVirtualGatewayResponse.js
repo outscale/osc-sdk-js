@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateVirtualGatewayResponseToJSON = exports.CreateVirtualGatewayResponseFromJSONTyped = exports.CreateVirtualGatewayResponseFromJSON = void 0;
+exports.CreateVirtualGatewayResponseFromJSON = CreateVirtualGatewayResponseFromJSON;
+exports.CreateVirtualGatewayResponseFromJSONTyped = CreateVirtualGatewayResponseFromJSONTyped;
+exports.CreateVirtualGatewayResponseToJSON = CreateVirtualGatewayResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const VirtualGateway_1 = require("./VirtualGateway");
 function CreateVirtualGatewayResponseFromJSON(json) {
     return CreateVirtualGatewayResponseFromJSONTyped(json, false);
 }
-exports.CreateVirtualGatewayResponseFromJSON = CreateVirtualGatewayResponseFromJSON;
 function CreateVirtualGatewayResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateVirtualGatewayResponseFromJSONTyped(json, ignoreDiscriminator) {
         'virtualGateway': !(0, runtime_1.exists)(json, 'VirtualGateway') ? undefined : (0, VirtualGateway_1.VirtualGatewayFromJSON)(json['VirtualGateway']),
     };
 }
-exports.CreateVirtualGatewayResponseFromJSONTyped = CreateVirtualGatewayResponseFromJSONTyped;
 function CreateVirtualGatewayResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateVirtualGatewayResponseToJSON(value) {
         'VirtualGateway': (0, VirtualGateway_1.VirtualGatewayToJSON)(value.virtualGateway),
     };
 }
-exports.CreateVirtualGatewayResponseToJSON = CreateVirtualGatewayResponseToJSON;

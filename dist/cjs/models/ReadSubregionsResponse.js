@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadSubregionsResponseToJSON = exports.ReadSubregionsResponseFromJSONTyped = exports.ReadSubregionsResponseFromJSON = void 0;
+exports.ReadSubregionsResponseFromJSON = ReadSubregionsResponseFromJSON;
+exports.ReadSubregionsResponseFromJSONTyped = ReadSubregionsResponseFromJSONTyped;
+exports.ReadSubregionsResponseToJSON = ReadSubregionsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Subregion_1 = require("./Subregion");
 function ReadSubregionsResponseFromJSON(json) {
     return ReadSubregionsResponseFromJSONTyped(json, false);
 }
-exports.ReadSubregionsResponseFromJSON = ReadSubregionsResponseFromJSON;
 function ReadSubregionsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadSubregionsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'subregions': !(0, runtime_1.exists)(json, 'Subregions') ? undefined : (json['Subregions'].map(Subregion_1.SubregionFromJSON)),
     };
 }
-exports.ReadSubregionsResponseFromJSONTyped = ReadSubregionsResponseFromJSONTyped;
 function ReadSubregionsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadSubregionsResponseToJSON(value) {
         'Subregions': value.subregions === undefined ? undefined : (value.subregions.map(Subregion_1.SubregionToJSON)),
     };
 }
-exports.ReadSubregionsResponseToJSON = ReadSubregionsResponseToJSON;

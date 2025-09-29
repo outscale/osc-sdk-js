@@ -61,8 +61,8 @@ export class ApiLogApi extends runtime.BaseAPI {
     /**
      * Lists the logs of the API calls you have performed with this account.  **[IMPORTANT]**<br /> Past logs are accessible for up to 32 days.<br /> By default, the retrieved interval is 48 hours. If neither of the `QueryDateBefore` nor `QueryDateAfter` parameters are specified, logs from the past 48 hours are retrieved. If you only specify one of two, logs are retrieved from a 2-day interval based on the date you provided. To retrieve logs beyond a 2-day interval, specify both parameters.<br /><br /> For more information, see [About OMS](https://docs.outscale.com/en/userguide/About-OMS.html).
      */
-    readApiLogs(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readApiLogs() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readApiLogsRaw(requestParameters, initOverrides);
             return yield response.value();
         });

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FlexibleGpuToJSON = exports.FlexibleGpuFromJSONTyped = exports.FlexibleGpuFromJSON = void 0;
+exports.FlexibleGpuFromJSON = FlexibleGpuFromJSON;
+exports.FlexibleGpuFromJSONTyped = FlexibleGpuFromJSONTyped;
+exports.FlexibleGpuToJSON = FlexibleGpuToJSON;
 const runtime_1 = require("../runtime");
 function FlexibleGpuFromJSON(json) {
     return FlexibleGpuFromJSONTyped(json, false);
 }
-exports.FlexibleGpuFromJSON = FlexibleGpuFromJSON;
 function FlexibleGpuFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function FlexibleGpuFromJSONTyped(json, ignoreDiscriminator) {
         'vmId': !(0, runtime_1.exists)(json, 'VmId') ? undefined : json['VmId'],
     };
 }
-exports.FlexibleGpuFromJSONTyped = FlexibleGpuFromJSONTyped;
 function FlexibleGpuToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function FlexibleGpuToJSON(value) {
         'VmId': value.vmId,
     };
 }
-exports.FlexibleGpuToJSON = FlexibleGpuToJSON;

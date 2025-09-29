@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadTagsResponseToJSON = exports.ReadTagsResponseFromJSONTyped = exports.ReadTagsResponseFromJSON = void 0;
+exports.ReadTagsResponseFromJSON = ReadTagsResponseFromJSON;
+exports.ReadTagsResponseFromJSONTyped = ReadTagsResponseFromJSONTyped;
+exports.ReadTagsResponseToJSON = ReadTagsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Tag_1 = require("./Tag");
 function ReadTagsResponseFromJSON(json) {
     return ReadTagsResponseFromJSONTyped(json, false);
 }
-exports.ReadTagsResponseFromJSON = ReadTagsResponseFromJSON;
 function ReadTagsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadTagsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : (json['Tags'].map(Tag_1.TagFromJSON)),
     };
 }
-exports.ReadTagsResponseFromJSONTyped = ReadTagsResponseFromJSONTyped;
 function ReadTagsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadTagsResponseToJSON(value) {
         'Tags': value.tags === undefined ? undefined : (value.tags.map(Tag_1.TagToJSON)),
     };
 }
-exports.ReadTagsResponseToJSON = ReadTagsResponseToJSON;

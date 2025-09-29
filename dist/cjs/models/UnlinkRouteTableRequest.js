@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnlinkRouteTableRequestToJSON = exports.UnlinkRouteTableRequestFromJSONTyped = exports.UnlinkRouteTableRequestFromJSON = void 0;
+exports.UnlinkRouteTableRequestFromJSON = UnlinkRouteTableRequestFromJSON;
+exports.UnlinkRouteTableRequestFromJSONTyped = UnlinkRouteTableRequestFromJSONTyped;
+exports.UnlinkRouteTableRequestToJSON = UnlinkRouteTableRequestToJSON;
 const runtime_1 = require("../runtime");
 function UnlinkRouteTableRequestFromJSON(json) {
     return UnlinkRouteTableRequestFromJSONTyped(json, false);
 }
-exports.UnlinkRouteTableRequestFromJSON = UnlinkRouteTableRequestFromJSON;
 function UnlinkRouteTableRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function UnlinkRouteTableRequestFromJSONTyped(json, ignoreDiscriminator) {
         'linkRouteTableId': json['LinkRouteTableId'],
     };
 }
-exports.UnlinkRouteTableRequestFromJSONTyped = UnlinkRouteTableRequestFromJSONTyped;
 function UnlinkRouteTableRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function UnlinkRouteTableRequestToJSON(value) {
         'LinkRouteTableId': value.linkRouteTableId,
     };
 }
-exports.UnlinkRouteTableRequestToJSON = UnlinkRouteTableRequestToJSON;

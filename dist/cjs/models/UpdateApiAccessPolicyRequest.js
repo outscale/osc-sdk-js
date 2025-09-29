@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateApiAccessPolicyRequestToJSON = exports.UpdateApiAccessPolicyRequestFromJSONTyped = exports.UpdateApiAccessPolicyRequestFromJSON = void 0;
+exports.UpdateApiAccessPolicyRequestFromJSON = UpdateApiAccessPolicyRequestFromJSON;
+exports.UpdateApiAccessPolicyRequestFromJSONTyped = UpdateApiAccessPolicyRequestFromJSONTyped;
+exports.UpdateApiAccessPolicyRequestToJSON = UpdateApiAccessPolicyRequestToJSON;
 const runtime_1 = require("../runtime");
 function UpdateApiAccessPolicyRequestFromJSON(json) {
     return UpdateApiAccessPolicyRequestFromJSONTyped(json, false);
 }
-exports.UpdateApiAccessPolicyRequestFromJSON = UpdateApiAccessPolicyRequestFromJSON;
 function UpdateApiAccessPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function UpdateApiAccessPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
         'requireTrustedEnv': json['RequireTrustedEnv'],
     };
 }
-exports.UpdateApiAccessPolicyRequestFromJSONTyped = UpdateApiAccessPolicyRequestFromJSONTyped;
 function UpdateApiAccessPolicyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UpdateApiAccessPolicyRequestToJSON(value) {
         'RequireTrustedEnv': value.requireTrustedEnv,
     };
 }
-exports.UpdateApiAccessPolicyRequestToJSON = UpdateApiAccessPolicyRequestToJSON;

@@ -61,8 +61,8 @@ export class VmApi extends runtime.BaseAPI {
     /**
      * Creates virtual machines (VMs), and then launches them.<br /> This action enables you to create a specified number of VMs using an OUTSCALE machine image (OMI) that you are allowed to use, and then to automatically launch them.<br /> The VMs remain in the `pending` state until they are created and ready to be used. Once automatically launched, they are in the `running` state.<br /> To check the state of your VMs, call the [ReadVms](#readvms) method.<br /> If not specified, the security group used by the service is the default one.<br /> The metadata server enables you to get the public key provided when the VM is launched. Official OMIs contain a script to get this public key and put it inside the VM to provide secure access without password.<br /><br /> For more information, see [About VMs](https://docs.outscale.com/en/userguide/About-VMs.html).
      */
-    createVms(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createVms() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createVmsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class VmApi extends runtime.BaseAPI {
     /**
      * Terminates one or more virtual machines (VMs).<br /> This operation is idempotent, that means that all calls succeed if you terminate a VM more than once.
      */
-    deleteVms(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteVms() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteVmsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class VmApi extends runtime.BaseAPI {
     /**
      * Gets the administrator password for a Windows running virtual machine (VM).<br /> The administrator password is encrypted using the keypair you specified when launching the VM.<br /><br />  **[IMPORTANT]**<br /> * Only RSA keypairs can decrypt the password of a Windows VM.<br /> * The administrator password is generated only on the first boot of the Windows VM. It is not returned after the first boot.
      */
-    readAdminPassword(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readAdminPassword() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readAdminPasswordRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -184,8 +184,8 @@ export class VmApi extends runtime.BaseAPI {
     /**
      * Gets the console output for a virtual machine (VM). This console is not in real-time. It is refreshed every two seconds and provides the most recent 64 KiB output.<br /><br />  **[IMPORTANT]**<br /> On Windows VMs, the console is handled only on the first boot. It returns no output after the first boot.
      */
-    readConsoleOutput(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readConsoleOutput() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readConsoleOutputRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -222,8 +222,8 @@ export class VmApi extends runtime.BaseAPI {
     /**
      * Lists one or more predefined VM types.
      */
-    readVmTypes(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readVmTypes() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readVmTypesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -263,8 +263,8 @@ export class VmApi extends runtime.BaseAPI {
     /**
      * Lists one or more of your virtual machines (VMs).<br /> If you provide one or more VM IDs, this action returns a description for all of these VMs. If you do not provide any VM ID, this action returns a description for all of the VMs that belong to you. If you provide an invalid VM ID, an error is returned. If you provide the ID of a VM that does not belong to you, the description of this VM is not included in the response. The refresh interval for data returned by this action is one hour, meaning that a terminated VM may appear in the response.
      */
-    readVms(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readVms() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readVmsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -304,8 +304,8 @@ export class VmApi extends runtime.BaseAPI {
     /**
      * Lists the status of one or more virtual machines (VMs).
      */
-    readVmsState(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readVmsState() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readVmsStateRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -345,8 +345,8 @@ export class VmApi extends runtime.BaseAPI {
     /**
      * Reboots one or more virtual machines (VMs).<br /> This operation sends a reboot request to one or more specified VMs. This is an asynchronous action that queues this reboot request. This action only reboots VMs that are valid and that belong to you.
      */
-    rebootVms(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    rebootVms() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.rebootVmsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -386,8 +386,8 @@ export class VmApi extends runtime.BaseAPI {
     /**
      * Start one or more virtual machines (VMs).<br /> You can start only VMs that are valid and that belong to you.
      */
-    startVms(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    startVms() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.startVmsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -427,8 +427,8 @@ export class VmApi extends runtime.BaseAPI {
     /**
      * Stops one or more running virtual machines (VMs).<br /> You can stop only VMs that are valid and that belong to you. Data stored in the VM RAM is lost.
      */
-    stopVms(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    stopVms() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.stopVmsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -468,8 +468,8 @@ export class VmApi extends runtime.BaseAPI {
     /**
      * Modifies the specified attributes of a virtual machine (VM).<br /> You must stop the VM before modifying the following attributes:<br /> * `NestedVirtualization`<br /> * `Performance`<br /> * `UserData`<br /> * `VmType`  To complete the update of secure boot, you need to do a stop/start of the VM. A simple restart is not sufficient, as the update is done when the VM goes through the stopped state. For the difference between stop/start and restart, see [About VM Lifecycle](https://docs.outscale.com/en/userguide/About-VM-Lifecycle.html).
      */
-    updateVm(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateVm() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateVmRaw(requestParameters, initOverrides);
             return yield response.value();
         });

@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadClientGatewaysResponseToJSON = exports.ReadClientGatewaysResponseFromJSONTyped = exports.ReadClientGatewaysResponseFromJSON = void 0;
+exports.ReadClientGatewaysResponseFromJSON = ReadClientGatewaysResponseFromJSON;
+exports.ReadClientGatewaysResponseFromJSONTyped = ReadClientGatewaysResponseFromJSONTyped;
+exports.ReadClientGatewaysResponseToJSON = ReadClientGatewaysResponseToJSON;
 const runtime_1 = require("../runtime");
 const ClientGateway_1 = require("./ClientGateway");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadClientGatewaysResponseFromJSON(json) {
     return ReadClientGatewaysResponseFromJSONTyped(json, false);
 }
-exports.ReadClientGatewaysResponseFromJSON = ReadClientGatewaysResponseFromJSON;
 function ReadClientGatewaysResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadClientGatewaysResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadClientGatewaysResponseFromJSONTyped = ReadClientGatewaysResponseFromJSONTyped;
 function ReadClientGatewaysResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadClientGatewaysResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadClientGatewaysResponseToJSON = ReadClientGatewaysResponseToJSON;

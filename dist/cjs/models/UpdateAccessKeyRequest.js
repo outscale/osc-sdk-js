@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateAccessKeyRequestToJSON = exports.UpdateAccessKeyRequestFromJSONTyped = exports.UpdateAccessKeyRequestFromJSON = void 0;
+exports.UpdateAccessKeyRequestFromJSON = UpdateAccessKeyRequestFromJSON;
+exports.UpdateAccessKeyRequestFromJSONTyped = UpdateAccessKeyRequestFromJSONTyped;
+exports.UpdateAccessKeyRequestToJSON = UpdateAccessKeyRequestToJSON;
 const runtime_1 = require("../runtime");
 function UpdateAccessKeyRequestFromJSON(json) {
     return UpdateAccessKeyRequestFromJSONTyped(json, false);
 }
-exports.UpdateAccessKeyRequestFromJSON = UpdateAccessKeyRequestFromJSON;
 function UpdateAccessKeyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function UpdateAccessKeyRequestFromJSONTyped(json, ignoreDiscriminator) {
         'userName': !(0, runtime_1.exists)(json, 'UserName') ? undefined : json['UserName'],
     };
 }
-exports.UpdateAccessKeyRequestFromJSONTyped = UpdateAccessKeyRequestFromJSONTyped;
 function UpdateAccessKeyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function UpdateAccessKeyRequestToJSON(value) {
         'UserName': value.userName,
     };
 }
-exports.UpdateAccessKeyRequestToJSON = UpdateAccessKeyRequestToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ListenerToJSON = exports.ListenerFromJSONTyped = exports.ListenerFromJSON = void 0;
+exports.ListenerFromJSON = ListenerFromJSON;
+exports.ListenerFromJSONTyped = ListenerFromJSONTyped;
+exports.ListenerToJSON = ListenerToJSON;
 const runtime_1 = require("../runtime");
 function ListenerFromJSON(json) {
     return ListenerFromJSONTyped(json, false);
 }
-exports.ListenerFromJSON = ListenerFromJSON;
 function ListenerFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -32,7 +33,6 @@ function ListenerFromJSONTyped(json, ignoreDiscriminator) {
         'serverCertificateId': !(0, runtime_1.exists)(json, 'ServerCertificateId') ? undefined : json['ServerCertificateId'],
     };
 }
-exports.ListenerFromJSONTyped = ListenerFromJSONTyped;
 function ListenerToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function ListenerToJSON(value) {
         'ServerCertificateId': value.serverCertificateId,
     };
 }
-exports.ListenerToJSON = ListenerToJSON;

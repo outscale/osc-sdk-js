@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteDirectLinkRequestToJSON = exports.DeleteDirectLinkRequestFromJSONTyped = exports.DeleteDirectLinkRequestFromJSON = void 0;
+exports.DeleteDirectLinkRequestFromJSON = DeleteDirectLinkRequestFromJSON;
+exports.DeleteDirectLinkRequestFromJSONTyped = DeleteDirectLinkRequestFromJSONTyped;
+exports.DeleteDirectLinkRequestToJSON = DeleteDirectLinkRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteDirectLinkRequestFromJSON(json) {
     return DeleteDirectLinkRequestFromJSONTyped(json, false);
 }
-exports.DeleteDirectLinkRequestFromJSON = DeleteDirectLinkRequestFromJSON;
 function DeleteDirectLinkRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteDirectLinkRequestFromJSONTyped(json, ignoreDiscriminator) {
         'dryRun': !(0, runtime_1.exists)(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.DeleteDirectLinkRequestFromJSONTyped = DeleteDirectLinkRequestFromJSONTyped;
 function DeleteDirectLinkRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteDirectLinkRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.DeleteDirectLinkRequestToJSON = DeleteDirectLinkRequestToJSON;

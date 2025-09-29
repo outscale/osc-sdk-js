@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateLoadBalancerListenersRequestToJSON = exports.CreateLoadBalancerListenersRequestFromJSONTyped = exports.CreateLoadBalancerListenersRequestFromJSON = void 0;
+exports.CreateLoadBalancerListenersRequestFromJSON = CreateLoadBalancerListenersRequestFromJSON;
+exports.CreateLoadBalancerListenersRequestFromJSONTyped = CreateLoadBalancerListenersRequestFromJSONTyped;
+exports.CreateLoadBalancerListenersRequestToJSON = CreateLoadBalancerListenersRequestToJSON;
 const runtime_1 = require("../runtime");
 const ListenerForCreation_1 = require("./ListenerForCreation");
 function CreateLoadBalancerListenersRequestFromJSON(json) {
     return CreateLoadBalancerListenersRequestFromJSONTyped(json, false);
 }
-exports.CreateLoadBalancerListenersRequestFromJSON = CreateLoadBalancerListenersRequestFromJSON;
 function CreateLoadBalancerListenersRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateLoadBalancerListenersRequestFromJSONTyped(json, ignoreDiscriminat
         'loadBalancerName': json['LoadBalancerName'],
     };
 }
-exports.CreateLoadBalancerListenersRequestFromJSONTyped = CreateLoadBalancerListenersRequestFromJSONTyped;
 function CreateLoadBalancerListenersRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function CreateLoadBalancerListenersRequestToJSON(value) {
         'LoadBalancerName': value.loadBalancerName,
     };
 }
-exports.CreateLoadBalancerListenersRequestToJSON = CreateLoadBalancerListenersRequestToJSON;

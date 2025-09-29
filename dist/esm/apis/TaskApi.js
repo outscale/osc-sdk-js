@@ -61,8 +61,8 @@ export class TaskApi extends runtime.BaseAPI {
     /**
      * Deletes an export task.<br /> If the export task is not in the `active` or `pending` state, the command fails and an error is returned.
      */
-    deleteExportTask(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteExportTask() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteExportTaskRaw(requestParameters, initOverrides);
             return yield response.value();
         });

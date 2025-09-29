@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateApiAccessRuleResponseToJSON = exports.CreateApiAccessRuleResponseFromJSONTyped = exports.CreateApiAccessRuleResponseFromJSON = void 0;
+exports.CreateApiAccessRuleResponseFromJSON = CreateApiAccessRuleResponseFromJSON;
+exports.CreateApiAccessRuleResponseFromJSONTyped = CreateApiAccessRuleResponseFromJSONTyped;
+exports.CreateApiAccessRuleResponseToJSON = CreateApiAccessRuleResponseToJSON;
 const runtime_1 = require("../runtime");
 const ApiAccessRule_1 = require("./ApiAccessRule");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function CreateApiAccessRuleResponseFromJSON(json) {
     return CreateApiAccessRuleResponseFromJSONTyped(json, false);
 }
-exports.CreateApiAccessRuleResponseFromJSON = CreateApiAccessRuleResponseFromJSON;
 function CreateApiAccessRuleResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateApiAccessRuleResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CreateApiAccessRuleResponseFromJSONTyped = CreateApiAccessRuleResponseFromJSONTyped;
 function CreateApiAccessRuleResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateApiAccessRuleResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CreateApiAccessRuleResponseToJSON = CreateApiAccessRuleResponseToJSON;

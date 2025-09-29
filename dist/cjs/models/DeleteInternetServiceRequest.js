@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteInternetServiceRequestToJSON = exports.DeleteInternetServiceRequestFromJSONTyped = exports.DeleteInternetServiceRequestFromJSON = void 0;
+exports.DeleteInternetServiceRequestFromJSON = DeleteInternetServiceRequestFromJSON;
+exports.DeleteInternetServiceRequestFromJSONTyped = DeleteInternetServiceRequestFromJSONTyped;
+exports.DeleteInternetServiceRequestToJSON = DeleteInternetServiceRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteInternetServiceRequestFromJSON(json) {
     return DeleteInternetServiceRequestFromJSONTyped(json, false);
 }
-exports.DeleteInternetServiceRequestFromJSON = DeleteInternetServiceRequestFromJSON;
 function DeleteInternetServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteInternetServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
         'internetServiceId': json['InternetServiceId'],
     };
 }
-exports.DeleteInternetServiceRequestFromJSONTyped = DeleteInternetServiceRequestFromJSONTyped;
 function DeleteInternetServiceRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteInternetServiceRequestToJSON(value) {
         'InternetServiceId': value.internetServiceId,
     };
 }
-exports.DeleteInternetServiceRequestToJSON = DeleteInternetServiceRequestToJSON;

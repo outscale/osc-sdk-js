@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteTagsResponseToJSON = exports.DeleteTagsResponseFromJSONTyped = exports.DeleteTagsResponseFromJSON = void 0;
+exports.DeleteTagsResponseFromJSON = DeleteTagsResponseFromJSON;
+exports.DeleteTagsResponseFromJSONTyped = DeleteTagsResponseFromJSONTyped;
+exports.DeleteTagsResponseToJSON = DeleteTagsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteTagsResponseFromJSON(json) {
     return DeleteTagsResponseFromJSONTyped(json, false);
 }
-exports.DeleteTagsResponseFromJSON = DeleteTagsResponseFromJSON;
 function DeleteTagsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteTagsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteTagsResponseFromJSONTyped = DeleteTagsResponseFromJSONTyped;
 function DeleteTagsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteTagsResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteTagsResponseToJSON = DeleteTagsResponseToJSON;

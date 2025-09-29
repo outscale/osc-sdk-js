@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteNatServiceResponseToJSON = exports.DeleteNatServiceResponseFromJSONTyped = exports.DeleteNatServiceResponseFromJSON = void 0;
+exports.DeleteNatServiceResponseFromJSON = DeleteNatServiceResponseFromJSON;
+exports.DeleteNatServiceResponseFromJSONTyped = DeleteNatServiceResponseFromJSONTyped;
+exports.DeleteNatServiceResponseToJSON = DeleteNatServiceResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteNatServiceResponseFromJSON(json) {
     return DeleteNatServiceResponseFromJSONTyped(json, false);
 }
-exports.DeleteNatServiceResponseFromJSON = DeleteNatServiceResponseFromJSON;
 function DeleteNatServiceResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteNatServiceResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteNatServiceResponseFromJSONTyped = DeleteNatServiceResponseFromJSONTyped;
 function DeleteNatServiceResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteNatServiceResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteNatServiceResponseToJSON = DeleteNatServiceResponseToJSON;

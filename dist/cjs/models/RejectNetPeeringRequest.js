@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RejectNetPeeringRequestToJSON = exports.RejectNetPeeringRequestFromJSONTyped = exports.RejectNetPeeringRequestFromJSON = void 0;
+exports.RejectNetPeeringRequestFromJSON = RejectNetPeeringRequestFromJSON;
+exports.RejectNetPeeringRequestFromJSONTyped = RejectNetPeeringRequestFromJSONTyped;
+exports.RejectNetPeeringRequestToJSON = RejectNetPeeringRequestToJSON;
 const runtime_1 = require("../runtime");
 function RejectNetPeeringRequestFromJSON(json) {
     return RejectNetPeeringRequestFromJSONTyped(json, false);
 }
-exports.RejectNetPeeringRequestFromJSON = RejectNetPeeringRequestFromJSON;
 function RejectNetPeeringRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function RejectNetPeeringRequestFromJSONTyped(json, ignoreDiscriminator) {
         'netPeeringId': json['NetPeeringId'],
     };
 }
-exports.RejectNetPeeringRequestFromJSONTyped = RejectNetPeeringRequestFromJSONTyped;
 function RejectNetPeeringRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function RejectNetPeeringRequestToJSON(value) {
         'NetPeeringId': value.netPeeringId,
     };
 }
-exports.RejectNetPeeringRequestToJSON = RejectNetPeeringRequestToJSON;

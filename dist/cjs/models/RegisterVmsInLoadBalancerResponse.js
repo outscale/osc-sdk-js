@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RegisterVmsInLoadBalancerResponseToJSON = exports.RegisterVmsInLoadBalancerResponseFromJSONTyped = exports.RegisterVmsInLoadBalancerResponseFromJSON = void 0;
+exports.RegisterVmsInLoadBalancerResponseFromJSON = RegisterVmsInLoadBalancerResponseFromJSON;
+exports.RegisterVmsInLoadBalancerResponseFromJSONTyped = RegisterVmsInLoadBalancerResponseFromJSONTyped;
+exports.RegisterVmsInLoadBalancerResponseToJSON = RegisterVmsInLoadBalancerResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function RegisterVmsInLoadBalancerResponseFromJSON(json) {
     return RegisterVmsInLoadBalancerResponseFromJSONTyped(json, false);
 }
-exports.RegisterVmsInLoadBalancerResponseFromJSON = RegisterVmsInLoadBalancerResponseFromJSON;
 function RegisterVmsInLoadBalancerResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function RegisterVmsInLoadBalancerResponseFromJSONTyped(json, ignoreDiscriminato
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.RegisterVmsInLoadBalancerResponseFromJSONTyped = RegisterVmsInLoadBalancerResponseFromJSONTyped;
 function RegisterVmsInLoadBalancerResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function RegisterVmsInLoadBalancerResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.RegisterVmsInLoadBalancerResponseToJSON = RegisterVmsInLoadBalancerResponseToJSON;

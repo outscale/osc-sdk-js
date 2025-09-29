@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateAccountRequestToJSON = exports.UpdateAccountRequestFromJSONTyped = exports.UpdateAccountRequestFromJSON = void 0;
+exports.UpdateAccountRequestFromJSON = UpdateAccountRequestFromJSON;
+exports.UpdateAccountRequestFromJSONTyped = UpdateAccountRequestFromJSONTyped;
+exports.UpdateAccountRequestToJSON = UpdateAccountRequestToJSON;
 const runtime_1 = require("../runtime");
 function UpdateAccountRequestFromJSON(json) {
     return UpdateAccountRequestFromJSONTyped(json, false);
 }
-exports.UpdateAccountRequestFromJSON = UpdateAccountRequestFromJSON;
 function UpdateAccountRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -40,7 +41,6 @@ function UpdateAccountRequestFromJSONTyped(json, ignoreDiscriminator) {
         'zipCode': !(0, runtime_1.exists)(json, 'ZipCode') ? undefined : json['ZipCode'],
     };
 }
-exports.UpdateAccountRequestFromJSONTyped = UpdateAccountRequestFromJSONTyped;
 function UpdateAccountRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -65,4 +65,3 @@ function UpdateAccountRequestToJSON(value) {
         'ZipCode': value.zipCode,
     };
 }
-exports.UpdateAccountRequestToJSON = UpdateAccountRequestToJSON;

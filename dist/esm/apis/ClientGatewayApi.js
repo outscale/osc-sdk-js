@@ -61,8 +61,8 @@ export class ClientGatewayApi extends runtime.BaseAPI {
     /**
      * Provides information about your client gateway.<br /> This action registers information to identify the client gateway that you deployed in your network.<br /> To open a tunnel to the client gateway, you must provide the communication protocol type, the fixed public IP of the gateway, and an Autonomous System Number (ASN).<br /><br /> For more information, see [About Client Gateways](https://docs.outscale.com/en/userguide/About-Client-Gateways.html).
      */
-    createClientGateway(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createClientGateway() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createClientGatewayRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class ClientGatewayApi extends runtime.BaseAPI {
     /**
      * Deletes a client gateway.<br /> You must delete the VPN connection before deleting the client gateway.
      */
-    deleteClientGateway(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteClientGateway() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteClientGatewayRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class ClientGatewayApi extends runtime.BaseAPI {
     /**
      * Lists one or more of your client gateways.
      */
-    readClientGateways(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readClientGateways() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readClientGatewaysRaw(requestParameters, initOverrides);
             return yield response.value();
         });

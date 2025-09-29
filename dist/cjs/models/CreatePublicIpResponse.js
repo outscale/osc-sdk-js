@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePublicIpResponseToJSON = exports.CreatePublicIpResponseFromJSONTyped = exports.CreatePublicIpResponseFromJSON = void 0;
+exports.CreatePublicIpResponseFromJSON = CreatePublicIpResponseFromJSON;
+exports.CreatePublicIpResponseFromJSONTyped = CreatePublicIpResponseFromJSONTyped;
+exports.CreatePublicIpResponseToJSON = CreatePublicIpResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const PublicIp_1 = require("./PublicIp");
 function CreatePublicIpResponseFromJSON(json) {
     return CreatePublicIpResponseFromJSONTyped(json, false);
 }
-exports.CreatePublicIpResponseFromJSON = CreatePublicIpResponseFromJSON;
 function CreatePublicIpResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreatePublicIpResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CreatePublicIpResponseFromJSONTyped = CreatePublicIpResponseFromJSONTyped;
 function CreatePublicIpResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreatePublicIpResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CreatePublicIpResponseToJSON = CreatePublicIpResponseToJSON;

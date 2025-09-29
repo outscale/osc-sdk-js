@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RejectNetPeeringResponseToJSON = exports.RejectNetPeeringResponseFromJSONTyped = exports.RejectNetPeeringResponseFromJSON = void 0;
+exports.RejectNetPeeringResponseFromJSON = RejectNetPeeringResponseFromJSON;
+exports.RejectNetPeeringResponseFromJSONTyped = RejectNetPeeringResponseFromJSONTyped;
+exports.RejectNetPeeringResponseToJSON = RejectNetPeeringResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function RejectNetPeeringResponseFromJSON(json) {
     return RejectNetPeeringResponseFromJSONTyped(json, false);
 }
-exports.RejectNetPeeringResponseFromJSON = RejectNetPeeringResponseFromJSON;
 function RejectNetPeeringResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function RejectNetPeeringResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.RejectNetPeeringResponseFromJSONTyped = RejectNetPeeringResponseFromJSONTyped;
 function RejectNetPeeringResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function RejectNetPeeringResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.RejectNetPeeringResponseToJSON = RejectNetPeeringResponseToJSON;

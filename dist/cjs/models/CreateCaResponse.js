@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateCaResponseToJSON = exports.CreateCaResponseFromJSONTyped = exports.CreateCaResponseFromJSON = void 0;
+exports.CreateCaResponseFromJSON = CreateCaResponseFromJSON;
+exports.CreateCaResponseFromJSONTyped = CreateCaResponseFromJSONTyped;
+exports.CreateCaResponseToJSON = CreateCaResponseToJSON;
 const runtime_1 = require("../runtime");
 const Ca_1 = require("./Ca");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function CreateCaResponseFromJSON(json) {
     return CreateCaResponseFromJSONTyped(json, false);
 }
-exports.CreateCaResponseFromJSON = CreateCaResponseFromJSON;
 function CreateCaResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateCaResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CreateCaResponseFromJSONTyped = CreateCaResponseFromJSONTyped;
 function CreateCaResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateCaResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CreateCaResponseToJSON = CreateCaResponseToJSON;

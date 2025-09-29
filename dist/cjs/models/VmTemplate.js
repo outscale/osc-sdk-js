@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VmTemplateToJSON = exports.VmTemplateFromJSONTyped = exports.VmTemplateFromJSON = exports.VmTemplateCpuPerformanceEnum = void 0;
+exports.VmTemplateCpuPerformanceEnum = void 0;
+exports.VmTemplateFromJSON = VmTemplateFromJSON;
+exports.VmTemplateFromJSONTyped = VmTemplateFromJSONTyped;
+exports.VmTemplateToJSON = VmTemplateToJSON;
 const runtime_1 = require("../runtime");
 const ResourceTag_1 = require("./ResourceTag");
 /**
@@ -27,7 +30,6 @@ exports.VmTemplateCpuPerformanceEnum = {
 function VmTemplateFromJSON(json) {
     return VmTemplateFromJSONTyped(json, false);
 }
-exports.VmTemplateFromJSON = VmTemplateFromJSON;
 function VmTemplateFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -46,7 +48,6 @@ function VmTemplateFromJSONTyped(json, ignoreDiscriminator) {
         'vmTemplateName': json['VmTemplateName'],
     };
 }
-exports.VmTemplateFromJSONTyped = VmTemplateFromJSONTyped;
 function VmTemplateToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +69,3 @@ function VmTemplateToJSON(value) {
         'VmTemplateName': value.vmTemplateName,
     };
 }
-exports.VmTemplateToJSON = VmTemplateToJSON;

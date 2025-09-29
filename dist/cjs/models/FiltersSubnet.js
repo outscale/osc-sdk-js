@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersSubnetToJSON = exports.FiltersSubnetFromJSONTyped = exports.FiltersSubnetFromJSON = void 0;
+exports.FiltersSubnetFromJSON = FiltersSubnetFromJSON;
+exports.FiltersSubnetFromJSONTyped = FiltersSubnetFromJSONTyped;
+exports.FiltersSubnetToJSON = FiltersSubnetToJSON;
 const runtime_1 = require("../runtime");
 function FiltersSubnetFromJSON(json) {
     return FiltersSubnetFromJSONTyped(json, false);
 }
-exports.FiltersSubnetFromJSON = FiltersSubnetFromJSON;
 function FiltersSubnetFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -35,7 +36,6 @@ function FiltersSubnetFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersSubnetFromJSONTyped = FiltersSubnetFromJSONTyped;
 function FiltersSubnetToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +55,3 @@ function FiltersSubnetToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersSubnetToJSON = FiltersSubnetToJSON;

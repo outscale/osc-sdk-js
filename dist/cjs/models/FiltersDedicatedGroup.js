@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersDedicatedGroupToJSON = exports.FiltersDedicatedGroupFromJSONTyped = exports.FiltersDedicatedGroupFromJSON = void 0;
+exports.FiltersDedicatedGroupFromJSON = FiltersDedicatedGroupFromJSON;
+exports.FiltersDedicatedGroupFromJSONTyped = FiltersDedicatedGroupFromJSONTyped;
+exports.FiltersDedicatedGroupToJSON = FiltersDedicatedGroupToJSON;
 const runtime_1 = require("../runtime");
 function FiltersDedicatedGroupFromJSON(json) {
     return FiltersDedicatedGroupFromJSONTyped(json, false);
 }
-exports.FiltersDedicatedGroupFromJSON = FiltersDedicatedGroupFromJSON;
 function FiltersDedicatedGroupFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function FiltersDedicatedGroupFromJSONTyped(json, ignoreDiscriminator) {
         'subregionNames': !(0, runtime_1.exists)(json, 'SubregionNames') ? undefined : json['SubregionNames'],
     };
 }
-exports.FiltersDedicatedGroupFromJSONTyped = FiltersDedicatedGroupFromJSONTyped;
 function FiltersDedicatedGroupToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function FiltersDedicatedGroupToJSON(value) {
         'SubregionNames': value.subregionNames,
     };
 }
-exports.FiltersDedicatedGroupToJSON = FiltersDedicatedGroupToJSON;

@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SnapshotToJSON = exports.SnapshotFromJSONTyped = exports.SnapshotFromJSON = void 0;
+exports.SnapshotFromJSON = SnapshotFromJSON;
+exports.SnapshotFromJSONTyped = SnapshotFromJSONTyped;
+exports.SnapshotToJSON = SnapshotToJSON;
 const runtime_1 = require("../runtime");
 const PermissionsOnResource_1 = require("./PermissionsOnResource");
 const ResourceTag_1 = require("./ResourceTag");
 function SnapshotFromJSON(json) {
     return SnapshotFromJSONTyped(json, false);
 }
-exports.SnapshotFromJSON = SnapshotFromJSON;
 function SnapshotFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -40,7 +41,6 @@ function SnapshotFromJSONTyped(json, ignoreDiscriminator) {
         'volumeSize': !(0, runtime_1.exists)(json, 'VolumeSize') ? undefined : json['VolumeSize'],
     };
 }
-exports.SnapshotFromJSONTyped = SnapshotFromJSONTyped;
 function SnapshotToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -63,4 +63,3 @@ function SnapshotToJSON(value) {
         'VolumeSize': value.volumeSize,
     };
 }
-exports.SnapshotToJSON = SnapshotToJSON;

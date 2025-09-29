@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RegionToJSON = exports.RegionFromJSONTyped = exports.RegionFromJSON = void 0;
+exports.RegionFromJSON = RegionFromJSON;
+exports.RegionFromJSONTyped = RegionFromJSONTyped;
+exports.RegionToJSON = RegionToJSON;
 const runtime_1 = require("../runtime");
 function RegionFromJSON(json) {
     return RegionFromJSONTyped(json, false);
 }
-exports.RegionFromJSON = RegionFromJSON;
 function RegionFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function RegionFromJSONTyped(json, ignoreDiscriminator) {
         'regionName': !(0, runtime_1.exists)(json, 'RegionName') ? undefined : json['RegionName'],
     };
 }
-exports.RegionFromJSONTyped = RegionFromJSONTyped;
 function RegionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function RegionToJSON(value) {
         'RegionName': value.regionName,
     };
 }
-exports.RegionToJSON = RegionToJSON;

@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VpnOptionsToJSON = exports.VpnOptionsFromJSONTyped = exports.VpnOptionsFromJSON = void 0;
+exports.VpnOptionsFromJSON = VpnOptionsFromJSON;
+exports.VpnOptionsFromJSONTyped = VpnOptionsFromJSONTyped;
+exports.VpnOptionsToJSON = VpnOptionsToJSON;
 const runtime_1 = require("../runtime");
 const Phase1Options_1 = require("./Phase1Options");
 const Phase2Options_1 = require("./Phase2Options");
 function VpnOptionsFromJSON(json) {
     return VpnOptionsFromJSONTyped(json, false);
 }
-exports.VpnOptionsFromJSON = VpnOptionsFromJSON;
 function VpnOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function VpnOptionsFromJSONTyped(json, ignoreDiscriminator) {
         'tunnelInsideIpRange': !(0, runtime_1.exists)(json, 'TunnelInsideIpRange') ? undefined : json['TunnelInsideIpRange'],
     };
 }
-exports.VpnOptionsFromJSONTyped = VpnOptionsFromJSONTyped;
 function VpnOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function VpnOptionsToJSON(value) {
         'TunnelInsideIpRange': value.tunnelInsideIpRange,
     };
 }
-exports.VpnOptionsToJSON = VpnOptionsToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.QuotaToJSON = exports.QuotaFromJSONTyped = exports.QuotaFromJSON = void 0;
+exports.QuotaFromJSON = QuotaFromJSON;
+exports.QuotaFromJSONTyped = QuotaFromJSONTyped;
+exports.QuotaToJSON = QuotaToJSON;
 const runtime_1 = require("../runtime");
 function QuotaFromJSON(json) {
     return QuotaFromJSONTyped(json, false);
 }
-exports.QuotaFromJSON = QuotaFromJSON;
 function QuotaFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function QuotaFromJSONTyped(json, ignoreDiscriminator) {
         'usedValue': !(0, runtime_1.exists)(json, 'UsedValue') ? undefined : json['UsedValue'],
     };
 }
-exports.QuotaFromJSONTyped = QuotaFromJSONTyped;
 function QuotaToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function QuotaToJSON(value) {
         'UsedValue': value.usedValue,
     };
 }
-exports.QuotaToJSON = QuotaToJSON;

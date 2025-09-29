@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateServerCertificateResponseToJSON = exports.CreateServerCertificateResponseFromJSONTyped = exports.CreateServerCertificateResponseFromJSON = void 0;
+exports.CreateServerCertificateResponseFromJSON = CreateServerCertificateResponseFromJSON;
+exports.CreateServerCertificateResponseFromJSONTyped = CreateServerCertificateResponseFromJSONTyped;
+exports.CreateServerCertificateResponseToJSON = CreateServerCertificateResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const ServerCertificate_1 = require("./ServerCertificate");
 function CreateServerCertificateResponseFromJSON(json) {
     return CreateServerCertificateResponseFromJSONTyped(json, false);
 }
-exports.CreateServerCertificateResponseFromJSON = CreateServerCertificateResponseFromJSON;
 function CreateServerCertificateResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateServerCertificateResponseFromJSONTyped(json, ignoreDiscriminator)
         'serverCertificate': !(0, runtime_1.exists)(json, 'ServerCertificate') ? undefined : (0, ServerCertificate_1.ServerCertificateFromJSON)(json['ServerCertificate']),
     };
 }
-exports.CreateServerCertificateResponseFromJSONTyped = CreateServerCertificateResponseFromJSONTyped;
 function CreateServerCertificateResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateServerCertificateResponseToJSON(value) {
         'ServerCertificate': (0, ServerCertificate_1.ServerCertificateToJSON)(value.serverCertificate),
     };
 }
-exports.CreateServerCertificateResponseToJSON = CreateServerCertificateResponseToJSON;

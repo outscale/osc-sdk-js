@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadAccountsResponseToJSON = exports.ReadAccountsResponseFromJSONTyped = exports.ReadAccountsResponseFromJSON = void 0;
+exports.ReadAccountsResponseFromJSON = ReadAccountsResponseFromJSON;
+exports.ReadAccountsResponseFromJSONTyped = ReadAccountsResponseFromJSONTyped;
+exports.ReadAccountsResponseToJSON = ReadAccountsResponseToJSON;
 const runtime_1 = require("../runtime");
 const Account_1 = require("./Account");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadAccountsResponseFromJSON(json) {
     return ReadAccountsResponseFromJSONTyped(json, false);
 }
-exports.ReadAccountsResponseFromJSON = ReadAccountsResponseFromJSON;
 function ReadAccountsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function ReadAccountsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadAccountsResponseFromJSONTyped = ReadAccountsResponseFromJSONTyped;
 function ReadAccountsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ReadAccountsResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadAccountsResponseToJSON = ReadAccountsResponseToJSON;

@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteSecurityGroupRuleResponseToJSON = exports.DeleteSecurityGroupRuleResponseFromJSONTyped = exports.DeleteSecurityGroupRuleResponseFromJSON = void 0;
+exports.DeleteSecurityGroupRuleResponseFromJSON = DeleteSecurityGroupRuleResponseFromJSON;
+exports.DeleteSecurityGroupRuleResponseFromJSONTyped = DeleteSecurityGroupRuleResponseFromJSONTyped;
+exports.DeleteSecurityGroupRuleResponseToJSON = DeleteSecurityGroupRuleResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const SecurityGroup_1 = require("./SecurityGroup");
 function DeleteSecurityGroupRuleResponseFromJSON(json) {
     return DeleteSecurityGroupRuleResponseFromJSONTyped(json, false);
 }
-exports.DeleteSecurityGroupRuleResponseFromJSON = DeleteSecurityGroupRuleResponseFromJSON;
 function DeleteSecurityGroupRuleResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function DeleteSecurityGroupRuleResponseFromJSONTyped(json, ignoreDiscriminator)
         'securityGroup': !(0, runtime_1.exists)(json, 'SecurityGroup') ? undefined : (0, SecurityGroup_1.SecurityGroupFromJSON)(json['SecurityGroup']),
     };
 }
-exports.DeleteSecurityGroupRuleResponseFromJSONTyped = DeleteSecurityGroupRuleResponseFromJSONTyped;
 function DeleteSecurityGroupRuleResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function DeleteSecurityGroupRuleResponseToJSON(value) {
         'SecurityGroup': (0, SecurityGroup_1.SecurityGroupToJSON)(value.securityGroup),
     };
 }
-exports.DeleteSecurityGroupRuleResponseToJSON = DeleteSecurityGroupRuleResponseToJSON;

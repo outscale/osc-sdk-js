@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadDirectLinksResponseToJSON = exports.ReadDirectLinksResponseFromJSONTyped = exports.ReadDirectLinksResponseFromJSON = void 0;
+exports.ReadDirectLinksResponseFromJSON = ReadDirectLinksResponseFromJSON;
+exports.ReadDirectLinksResponseFromJSONTyped = ReadDirectLinksResponseFromJSONTyped;
+exports.ReadDirectLinksResponseToJSON = ReadDirectLinksResponseToJSON;
 const runtime_1 = require("../runtime");
 const DirectLink_1 = require("./DirectLink");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadDirectLinksResponseFromJSON(json) {
     return ReadDirectLinksResponseFromJSONTyped(json, false);
 }
-exports.ReadDirectLinksResponseFromJSON = ReadDirectLinksResponseFromJSON;
 function ReadDirectLinksResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadDirectLinksResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadDirectLinksResponseFromJSONTyped = ReadDirectLinksResponseFromJSONTyped;
 function ReadDirectLinksResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadDirectLinksResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadDirectLinksResponseToJSON = ReadDirectLinksResponseToJSON;

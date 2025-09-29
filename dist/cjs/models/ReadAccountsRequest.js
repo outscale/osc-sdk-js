@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadAccountsRequestToJSON = exports.ReadAccountsRequestFromJSONTyped = exports.ReadAccountsRequestFromJSON = void 0;
+exports.ReadAccountsRequestFromJSON = ReadAccountsRequestFromJSON;
+exports.ReadAccountsRequestFromJSONTyped = ReadAccountsRequestFromJSONTyped;
+exports.ReadAccountsRequestToJSON = ReadAccountsRequestToJSON;
 const runtime_1 = require("../runtime");
 function ReadAccountsRequestFromJSON(json) {
     return ReadAccountsRequestFromJSONTyped(json, false);
 }
-exports.ReadAccountsRequestFromJSON = ReadAccountsRequestFromJSON;
 function ReadAccountsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function ReadAccountsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'dryRun': !(0, runtime_1.exists)(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.ReadAccountsRequestFromJSONTyped = ReadAccountsRequestFromJSONTyped;
 function ReadAccountsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function ReadAccountsRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.ReadAccountsRequestToJSON = ReadAccountsRequestToJSON;

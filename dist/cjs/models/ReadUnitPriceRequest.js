@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadUnitPriceRequestToJSON = exports.ReadUnitPriceRequestFromJSONTyped = exports.ReadUnitPriceRequestFromJSON = void 0;
+exports.ReadUnitPriceRequestFromJSON = ReadUnitPriceRequestFromJSON;
+exports.ReadUnitPriceRequestFromJSONTyped = ReadUnitPriceRequestFromJSONTyped;
+exports.ReadUnitPriceRequestToJSON = ReadUnitPriceRequestToJSON;
 function ReadUnitPriceRequestFromJSON(json) {
     return ReadUnitPriceRequestFromJSONTyped(json, false);
 }
-exports.ReadUnitPriceRequestFromJSON = ReadUnitPriceRequestFromJSON;
 function ReadUnitPriceRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function ReadUnitPriceRequestFromJSONTyped(json, ignoreDiscriminator) {
         'type': json['Type'],
     };
 }
-exports.ReadUnitPriceRequestFromJSONTyped = ReadUnitPriceRequestFromJSONTyped;
 function ReadUnitPriceRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function ReadUnitPriceRequestToJSON(value) {
         'Type': value.type,
     };
 }
-exports.ReadUnitPriceRequestToJSON = ReadUnitPriceRequestToJSON;

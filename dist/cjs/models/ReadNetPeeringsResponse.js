@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadNetPeeringsResponseToJSON = exports.ReadNetPeeringsResponseFromJSONTyped = exports.ReadNetPeeringsResponseFromJSON = void 0;
+exports.ReadNetPeeringsResponseFromJSON = ReadNetPeeringsResponseFromJSON;
+exports.ReadNetPeeringsResponseFromJSONTyped = ReadNetPeeringsResponseFromJSONTyped;
+exports.ReadNetPeeringsResponseToJSON = ReadNetPeeringsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const NetPeering_1 = require("./NetPeering");
 function ReadNetPeeringsResponseFromJSON(json) {
     return ReadNetPeeringsResponseFromJSONTyped(json, false);
 }
-exports.ReadNetPeeringsResponseFromJSON = ReadNetPeeringsResponseFromJSON;
 function ReadNetPeeringsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadNetPeeringsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadNetPeeringsResponseFromJSONTyped = ReadNetPeeringsResponseFromJSONTyped;
 function ReadNetPeeringsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadNetPeeringsResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadNetPeeringsResponseToJSON = ReadNetPeeringsResponseToJSON;

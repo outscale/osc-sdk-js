@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteProductTypeResponseToJSON = exports.DeleteProductTypeResponseFromJSONTyped = exports.DeleteProductTypeResponseFromJSON = void 0;
+exports.DeleteProductTypeResponseFromJSON = DeleteProductTypeResponseFromJSON;
+exports.DeleteProductTypeResponseFromJSONTyped = DeleteProductTypeResponseFromJSONTyped;
+exports.DeleteProductTypeResponseToJSON = DeleteProductTypeResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteProductTypeResponseFromJSON(json) {
     return DeleteProductTypeResponseFromJSONTyped(json, false);
 }
-exports.DeleteProductTypeResponseFromJSON = DeleteProductTypeResponseFromJSON;
 function DeleteProductTypeResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteProductTypeResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteProductTypeResponseFromJSONTyped = DeleteProductTypeResponseFromJSONTyped;
 function DeleteProductTypeResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteProductTypeResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteProductTypeResponseToJSON = DeleteProductTypeResponseToJSON;

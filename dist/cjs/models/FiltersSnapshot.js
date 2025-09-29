@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersSnapshotToJSON = exports.FiltersSnapshotFromJSONTyped = exports.FiltersSnapshotFromJSON = void 0;
+exports.FiltersSnapshotFromJSON = FiltersSnapshotFromJSON;
+exports.FiltersSnapshotFromJSONTyped = FiltersSnapshotFromJSONTyped;
+exports.FiltersSnapshotToJSON = FiltersSnapshotToJSON;
 const runtime_1 = require("../runtime");
 function FiltersSnapshotFromJSON(json) {
     return FiltersSnapshotFromJSONTyped(json, false);
 }
-exports.FiltersSnapshotFromJSON = FiltersSnapshotFromJSON;
 function FiltersSnapshotFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -42,7 +43,6 @@ function FiltersSnapshotFromJSONTyped(json, ignoreDiscriminator) {
         'volumeSizes': !(0, runtime_1.exists)(json, 'VolumeSizes') ? undefined : json['VolumeSizes'],
     };
 }
-exports.FiltersSnapshotFromJSONTyped = FiltersSnapshotFromJSONTyped;
 function FiltersSnapshotToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -69,4 +69,3 @@ function FiltersSnapshotToJSON(value) {
         'VolumeSizes': value.volumeSizes,
     };
 }
-exports.FiltersSnapshotToJSON = FiltersSnapshotToJSON;

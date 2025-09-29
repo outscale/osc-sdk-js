@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteProductTypeRequestToJSON = exports.DeleteProductTypeRequestFromJSONTyped = exports.DeleteProductTypeRequestFromJSON = void 0;
+exports.DeleteProductTypeRequestFromJSON = DeleteProductTypeRequestFromJSON;
+exports.DeleteProductTypeRequestFromJSONTyped = DeleteProductTypeRequestFromJSONTyped;
+exports.DeleteProductTypeRequestToJSON = DeleteProductTypeRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteProductTypeRequestFromJSON(json) {
     return DeleteProductTypeRequestFromJSONTyped(json, false);
 }
-exports.DeleteProductTypeRequestFromJSON = DeleteProductTypeRequestFromJSON;
 function DeleteProductTypeRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function DeleteProductTypeRequestFromJSONTyped(json, ignoreDiscriminator) {
         'productTypeId': json['ProductTypeId'],
     };
 }
-exports.DeleteProductTypeRequestFromJSONTyped = DeleteProductTypeRequestFromJSONTyped;
 function DeleteProductTypeRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function DeleteProductTypeRequestToJSON(value) {
         'ProductTypeId': value.productTypeId,
     };
 }
-exports.DeleteProductTypeRequestToJSON = DeleteProductTypeRequestToJSON;

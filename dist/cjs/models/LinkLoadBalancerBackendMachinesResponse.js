@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkLoadBalancerBackendMachinesResponseToJSON = exports.LinkLoadBalancerBackendMachinesResponseFromJSONTyped = exports.LinkLoadBalancerBackendMachinesResponseFromJSON = void 0;
+exports.LinkLoadBalancerBackendMachinesResponseFromJSON = LinkLoadBalancerBackendMachinesResponseFromJSON;
+exports.LinkLoadBalancerBackendMachinesResponseFromJSONTyped = LinkLoadBalancerBackendMachinesResponseFromJSONTyped;
+exports.LinkLoadBalancerBackendMachinesResponseToJSON = LinkLoadBalancerBackendMachinesResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function LinkLoadBalancerBackendMachinesResponseFromJSON(json) {
     return LinkLoadBalancerBackendMachinesResponseFromJSONTyped(json, false);
 }
-exports.LinkLoadBalancerBackendMachinesResponseFromJSON = LinkLoadBalancerBackendMachinesResponseFromJSON;
 function LinkLoadBalancerBackendMachinesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function LinkLoadBalancerBackendMachinesResponseFromJSONTyped(json, ignoreDiscri
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.LinkLoadBalancerBackendMachinesResponseFromJSONTyped = LinkLoadBalancerBackendMachinesResponseFromJSONTyped;
 function LinkLoadBalancerBackendMachinesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function LinkLoadBalancerBackendMachinesResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.LinkLoadBalancerBackendMachinesResponseToJSON = LinkLoadBalancerBackendMachinesResponseToJSON;

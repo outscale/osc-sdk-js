@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkPublicIpToJSON = exports.LinkPublicIpFromJSONTyped = exports.LinkPublicIpFromJSON = void 0;
+exports.LinkPublicIpFromJSON = LinkPublicIpFromJSON;
+exports.LinkPublicIpFromJSONTyped = LinkPublicIpFromJSONTyped;
+exports.LinkPublicIpToJSON = LinkPublicIpToJSON;
 const runtime_1 = require("../runtime");
 function LinkPublicIpFromJSON(json) {
     return LinkPublicIpFromJSONTyped(json, false);
 }
-exports.LinkPublicIpFromJSON = LinkPublicIpFromJSON;
 function LinkPublicIpFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function LinkPublicIpFromJSONTyped(json, ignoreDiscriminator) {
         'publicIpId': !(0, runtime_1.exists)(json, 'PublicIpId') ? undefined : json['PublicIpId'],
     };
 }
-exports.LinkPublicIpFromJSONTyped = LinkPublicIpFromJSONTyped;
 function LinkPublicIpToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function LinkPublicIpToJSON(value) {
         'PublicIpId': value.publicIpId,
     };
 }
-exports.LinkPublicIpToJSON = LinkPublicIpToJSON;

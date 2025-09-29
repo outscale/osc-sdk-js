@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadVmsHealthRequestToJSON = exports.ReadVmsHealthRequestFromJSONTyped = exports.ReadVmsHealthRequestFromJSON = void 0;
+exports.ReadVmsHealthRequestFromJSON = ReadVmsHealthRequestFromJSON;
+exports.ReadVmsHealthRequestFromJSONTyped = ReadVmsHealthRequestFromJSONTyped;
+exports.ReadVmsHealthRequestToJSON = ReadVmsHealthRequestToJSON;
 const runtime_1 = require("../runtime");
 function ReadVmsHealthRequestFromJSON(json) {
     return ReadVmsHealthRequestFromJSONTyped(json, false);
 }
-exports.ReadVmsHealthRequestFromJSON = ReadVmsHealthRequestFromJSON;
 function ReadVmsHealthRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function ReadVmsHealthRequestFromJSONTyped(json, ignoreDiscriminator) {
         'loadBalancerName': json['LoadBalancerName'],
     };
 }
-exports.ReadVmsHealthRequestFromJSONTyped = ReadVmsHealthRequestFromJSONTyped;
 function ReadVmsHealthRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ReadVmsHealthRequestToJSON(value) {
         'LoadBalancerName': value.loadBalancerName,
     };
 }
-exports.ReadVmsHealthRequestToJSON = ReadVmsHealthRequestToJSON;

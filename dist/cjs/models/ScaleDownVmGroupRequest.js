@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScaleDownVmGroupRequestToJSON = exports.ScaleDownVmGroupRequestFromJSONTyped = exports.ScaleDownVmGroupRequestFromJSON = void 0;
+exports.ScaleDownVmGroupRequestFromJSON = ScaleDownVmGroupRequestFromJSON;
+exports.ScaleDownVmGroupRequestFromJSONTyped = ScaleDownVmGroupRequestFromJSONTyped;
+exports.ScaleDownVmGroupRequestToJSON = ScaleDownVmGroupRequestToJSON;
 const runtime_1 = require("../runtime");
 function ScaleDownVmGroupRequestFromJSON(json) {
     return ScaleDownVmGroupRequestFromJSONTyped(json, false);
 }
-exports.ScaleDownVmGroupRequestFromJSON = ScaleDownVmGroupRequestFromJSON;
 function ScaleDownVmGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function ScaleDownVmGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vmSubtraction': json['VmSubtraction'],
     };
 }
-exports.ScaleDownVmGroupRequestFromJSONTyped = ScaleDownVmGroupRequestFromJSONTyped;
 function ScaleDownVmGroupRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ScaleDownVmGroupRequestToJSON(value) {
         'VmSubtraction': value.vmSubtraction,
     };
 }
-exports.ScaleDownVmGroupRequestToJSON = ScaleDownVmGroupRequestToJSON;

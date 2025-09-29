@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadCasResponseToJSON = exports.ReadCasResponseFromJSONTyped = exports.ReadCasResponseFromJSON = void 0;
+exports.ReadCasResponseFromJSON = ReadCasResponseFromJSON;
+exports.ReadCasResponseFromJSONTyped = ReadCasResponseFromJSONTyped;
+exports.ReadCasResponseToJSON = ReadCasResponseToJSON;
 const runtime_1 = require("../runtime");
 const Ca_1 = require("./Ca");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadCasResponseFromJSON(json) {
     return ReadCasResponseFromJSONTyped(json, false);
 }
-exports.ReadCasResponseFromJSON = ReadCasResponseFromJSON;
 function ReadCasResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function ReadCasResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadCasResponseFromJSONTyped = ReadCasResponseFromJSONTyped;
 function ReadCasResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ReadCasResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadCasResponseToJSON = ReadCasResponseToJSON;

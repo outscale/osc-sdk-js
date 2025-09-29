@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OsuExportSnapshotExportTaskToJSON = exports.OsuExportSnapshotExportTaskFromJSONTyped = exports.OsuExportSnapshotExportTaskFromJSON = void 0;
+exports.OsuExportSnapshotExportTaskFromJSON = OsuExportSnapshotExportTaskFromJSON;
+exports.OsuExportSnapshotExportTaskFromJSONTyped = OsuExportSnapshotExportTaskFromJSONTyped;
+exports.OsuExportSnapshotExportTaskToJSON = OsuExportSnapshotExportTaskToJSON;
 const runtime_1 = require("../runtime");
 function OsuExportSnapshotExportTaskFromJSON(json) {
     return OsuExportSnapshotExportTaskFromJSONTyped(json, false);
 }
-exports.OsuExportSnapshotExportTaskFromJSON = OsuExportSnapshotExportTaskFromJSON;
 function OsuExportSnapshotExportTaskFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function OsuExportSnapshotExportTaskFromJSONTyped(json, ignoreDiscriminator) {
         'osuPrefix': !(0, runtime_1.exists)(json, 'OsuPrefix') ? undefined : json['OsuPrefix'],
     };
 }
-exports.OsuExportSnapshotExportTaskFromJSONTyped = OsuExportSnapshotExportTaskFromJSONTyped;
 function OsuExportSnapshotExportTaskToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function OsuExportSnapshotExportTaskToJSON(value) {
         'OsuPrefix': value.osuPrefix,
     };
 }
-exports.OsuExportSnapshotExportTaskToJSON = OsuExportSnapshotExportTaskToJSON;

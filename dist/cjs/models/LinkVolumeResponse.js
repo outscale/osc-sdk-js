@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkVolumeResponseToJSON = exports.LinkVolumeResponseFromJSONTyped = exports.LinkVolumeResponseFromJSON = void 0;
+exports.LinkVolumeResponseFromJSON = LinkVolumeResponseFromJSON;
+exports.LinkVolumeResponseFromJSONTyped = LinkVolumeResponseFromJSONTyped;
+exports.LinkVolumeResponseToJSON = LinkVolumeResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function LinkVolumeResponseFromJSON(json) {
     return LinkVolumeResponseFromJSONTyped(json, false);
 }
-exports.LinkVolumeResponseFromJSON = LinkVolumeResponseFromJSON;
 function LinkVolumeResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function LinkVolumeResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.LinkVolumeResponseFromJSONTyped = LinkVolumeResponseFromJSONTyped;
 function LinkVolumeResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function LinkVolumeResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.LinkVolumeResponseToJSON = LinkVolumeResponseToJSON;

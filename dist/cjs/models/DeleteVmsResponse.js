@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteVmsResponseToJSON = exports.DeleteVmsResponseFromJSONTyped = exports.DeleteVmsResponseFromJSON = void 0;
+exports.DeleteVmsResponseFromJSON = DeleteVmsResponseFromJSON;
+exports.DeleteVmsResponseFromJSONTyped = DeleteVmsResponseFromJSONTyped;
+exports.DeleteVmsResponseToJSON = DeleteVmsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const VmState_1 = require("./VmState");
 function DeleteVmsResponseFromJSON(json) {
     return DeleteVmsResponseFromJSONTyped(json, false);
 }
-exports.DeleteVmsResponseFromJSON = DeleteVmsResponseFromJSON;
 function DeleteVmsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function DeleteVmsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'vms': !(0, runtime_1.exists)(json, 'Vms') ? undefined : (json['Vms'].map(VmState_1.VmStateFromJSON)),
     };
 }
-exports.DeleteVmsResponseFromJSONTyped = DeleteVmsResponseFromJSONTyped;
 function DeleteVmsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function DeleteVmsResponseToJSON(value) {
         'Vms': value.vms === undefined ? undefined : (value.vms.map(VmState_1.VmStateToJSON)),
     };
 }
-exports.DeleteVmsResponseToJSON = DeleteVmsResponseToJSON;

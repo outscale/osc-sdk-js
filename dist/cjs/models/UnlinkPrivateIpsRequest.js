@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnlinkPrivateIpsRequestToJSON = exports.UnlinkPrivateIpsRequestFromJSONTyped = exports.UnlinkPrivateIpsRequestFromJSON = void 0;
+exports.UnlinkPrivateIpsRequestFromJSON = UnlinkPrivateIpsRequestFromJSON;
+exports.UnlinkPrivateIpsRequestFromJSONTyped = UnlinkPrivateIpsRequestFromJSONTyped;
+exports.UnlinkPrivateIpsRequestToJSON = UnlinkPrivateIpsRequestToJSON;
 const runtime_1 = require("../runtime");
 function UnlinkPrivateIpsRequestFromJSON(json) {
     return UnlinkPrivateIpsRequestFromJSONTyped(json, false);
 }
-exports.UnlinkPrivateIpsRequestFromJSON = UnlinkPrivateIpsRequestFromJSON;
 function UnlinkPrivateIpsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function UnlinkPrivateIpsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'privateIps': json['PrivateIps'],
     };
 }
-exports.UnlinkPrivateIpsRequestFromJSONTyped = UnlinkPrivateIpsRequestFromJSONTyped;
 function UnlinkPrivateIpsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UnlinkPrivateIpsRequestToJSON(value) {
         'PrivateIps': value.privateIps,
     };
 }
-exports.UnlinkPrivateIpsRequestToJSON = UnlinkPrivateIpsRequestToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteExportTaskRequestToJSON = exports.DeleteExportTaskRequestFromJSONTyped = exports.DeleteExportTaskRequestFromJSON = void 0;
+exports.DeleteExportTaskRequestFromJSON = DeleteExportTaskRequestFromJSON;
+exports.DeleteExportTaskRequestFromJSONTyped = DeleteExportTaskRequestFromJSONTyped;
+exports.DeleteExportTaskRequestToJSON = DeleteExportTaskRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteExportTaskRequestFromJSON(json) {
     return DeleteExportTaskRequestFromJSONTyped(json, false);
 }
-exports.DeleteExportTaskRequestFromJSON = DeleteExportTaskRequestFromJSON;
 function DeleteExportTaskRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteExportTaskRequestFromJSONTyped(json, ignoreDiscriminator) {
         'exportTaskId': json['ExportTaskId'],
     };
 }
-exports.DeleteExportTaskRequestFromJSONTyped = DeleteExportTaskRequestFromJSONTyped;
 function DeleteExportTaskRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteExportTaskRequestToJSON(value) {
         'ExportTaskId': value.exportTaskId,
     };
 }
-exports.DeleteExportTaskRequestToJSON = DeleteExportTaskRequestToJSON;

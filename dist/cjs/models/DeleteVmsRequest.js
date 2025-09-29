@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteVmsRequestToJSON = exports.DeleteVmsRequestFromJSONTyped = exports.DeleteVmsRequestFromJSON = void 0;
+exports.DeleteVmsRequestFromJSON = DeleteVmsRequestFromJSON;
+exports.DeleteVmsRequestFromJSONTyped = DeleteVmsRequestFromJSONTyped;
+exports.DeleteVmsRequestToJSON = DeleteVmsRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteVmsRequestFromJSON(json) {
     return DeleteVmsRequestFromJSONTyped(json, false);
 }
-exports.DeleteVmsRequestFromJSON = DeleteVmsRequestFromJSON;
 function DeleteVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vmIds': json['VmIds'],
     };
 }
-exports.DeleteVmsRequestFromJSONTyped = DeleteVmsRequestFromJSONTyped;
 function DeleteVmsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteVmsRequestToJSON(value) {
         'VmIds': value.vmIds,
     };
 }
-exports.DeleteVmsRequestToJSON = DeleteVmsRequestToJSON;

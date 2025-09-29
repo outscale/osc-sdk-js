@@ -28,13 +28,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -87,8 +97,8 @@ class FlexibleGpuApi extends runtime.BaseAPI {
     /**
      * Allocates a flexible GPU (fGPU) to your account.<br /> You can then attach this fGPU to a virtual machine (VM).<br /><br /> For more information, see [About Flexible GPUs](https://docs.outscale.com/en/userguide/About-Flexible-GPUs.html).
      */
-    createFlexibleGpu(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createFlexibleGpu() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createFlexibleGpuRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -128,8 +138,8 @@ class FlexibleGpuApi extends runtime.BaseAPI {
     /**
      * Releases a flexible GPU (fGPU) from your account.<br /> The fGPU becomes free to be used by someone else.
      */
-    deleteFlexibleGpu(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteFlexibleGpu() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteFlexibleGpuRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -169,8 +179,8 @@ class FlexibleGpuApi extends runtime.BaseAPI {
     /**
      * Attaches one of your allocated flexible GPUs (fGPUs) to one of your virtual machines (VMs).<br /> To complete the linking of the fGPU, you need to do a stop/start of the VM. A simple restart is not sufficient, as the linking of the fGPU is done when the VM goes through the `stopped` state. For the difference between stop/start and restart, see [About VM Lifecycle](https://docs.outscale.com/en/userguide/About-VM-Lifecycle.html).<br /><br />  **[NOTE]**<br /> You can attach fGPUs only to VMs with the `highest` (1) performance flag. For more information see [About Flexible GPUs](https://docs.outscale.com/en/userguide/About-Flexible-GPUs.html) and [VM Types](https://docs.outscale.com/en/userguide/VM-Types.html).
      */
-    linkFlexibleGpu(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    linkFlexibleGpu() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.linkFlexibleGpuRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -207,8 +217,8 @@ class FlexibleGpuApi extends runtime.BaseAPI {
     /**
      * Lists all flexible GPUs available in the public catalog.
      */
-    readFlexibleGpuCatalog(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readFlexibleGpuCatalog() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readFlexibleGpuCatalogRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -248,8 +258,8 @@ class FlexibleGpuApi extends runtime.BaseAPI {
     /**
      * Lists one or more flexible GPUs (fGPUs) allocated to your account.
      */
-    readFlexibleGpus(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readFlexibleGpus() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readFlexibleGpusRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -289,8 +299,8 @@ class FlexibleGpuApi extends runtime.BaseAPI {
     /**
      * Detaches a flexible GPU (fGPU) from a virtual machine (VM).<br /> The fGPU is in the `detaching` state until the VM is stopped, after which it becomes `allocated`. It is then available again for attachment to a VM.
      */
-    unlinkFlexibleGpu(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    unlinkFlexibleGpu() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.unlinkFlexibleGpuRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -330,8 +340,8 @@ class FlexibleGpuApi extends runtime.BaseAPI {
     /**
      * Modifies a flexible GPU (fGPU) behavior.
      */
-    updateFlexibleGpu(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateFlexibleGpu() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateFlexibleGpuRaw(requestParameters, initOverrides);
             return yield response.value();
         });

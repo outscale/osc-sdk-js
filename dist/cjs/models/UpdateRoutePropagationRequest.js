@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateRoutePropagationRequestToJSON = exports.UpdateRoutePropagationRequestFromJSONTyped = exports.UpdateRoutePropagationRequestFromJSON = void 0;
+exports.UpdateRoutePropagationRequestFromJSON = UpdateRoutePropagationRequestFromJSON;
+exports.UpdateRoutePropagationRequestFromJSONTyped = UpdateRoutePropagationRequestFromJSONTyped;
+exports.UpdateRoutePropagationRequestToJSON = UpdateRoutePropagationRequestToJSON;
 const runtime_1 = require("../runtime");
 function UpdateRoutePropagationRequestFromJSON(json) {
     return UpdateRoutePropagationRequestFromJSONTyped(json, false);
 }
-exports.UpdateRoutePropagationRequestFromJSON = UpdateRoutePropagationRequestFromJSON;
 function UpdateRoutePropagationRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function UpdateRoutePropagationRequestFromJSONTyped(json, ignoreDiscriminator) {
         'virtualGatewayId': json['VirtualGatewayId'],
     };
 }
-exports.UpdateRoutePropagationRequestFromJSONTyped = UpdateRoutePropagationRequestFromJSONTyped;
 function UpdateRoutePropagationRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function UpdateRoutePropagationRequestToJSON(value) {
         'VirtualGatewayId': value.virtualGatewayId,
     };
 }
-exports.UpdateRoutePropagationRequestToJSON = UpdateRoutePropagationRequestToJSON;

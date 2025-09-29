@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ApplicationStickyCookiePolicyToJSON = exports.ApplicationStickyCookiePolicyFromJSONTyped = exports.ApplicationStickyCookiePolicyFromJSON = void 0;
+exports.ApplicationStickyCookiePolicyFromJSON = ApplicationStickyCookiePolicyFromJSON;
+exports.ApplicationStickyCookiePolicyFromJSONTyped = ApplicationStickyCookiePolicyFromJSONTyped;
+exports.ApplicationStickyCookiePolicyToJSON = ApplicationStickyCookiePolicyToJSON;
 const runtime_1 = require("../runtime");
 function ApplicationStickyCookiePolicyFromJSON(json) {
     return ApplicationStickyCookiePolicyFromJSONTyped(json, false);
 }
-exports.ApplicationStickyCookiePolicyFromJSON = ApplicationStickyCookiePolicyFromJSON;
 function ApplicationStickyCookiePolicyFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function ApplicationStickyCookiePolicyFromJSONTyped(json, ignoreDiscriminator) {
         'policyName': !(0, runtime_1.exists)(json, 'PolicyName') ? undefined : json['PolicyName'],
     };
 }
-exports.ApplicationStickyCookiePolicyFromJSONTyped = ApplicationStickyCookiePolicyFromJSONTyped;
 function ApplicationStickyCookiePolicyToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function ApplicationStickyCookiePolicyToJSON(value) {
         'PolicyName': value.policyName,
     };
 }
-exports.ApplicationStickyCookiePolicyToJSON = ApplicationStickyCookiePolicyToJSON;

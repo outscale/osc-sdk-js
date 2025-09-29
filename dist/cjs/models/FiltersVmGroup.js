@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersVmGroupToJSON = exports.FiltersVmGroupFromJSONTyped = exports.FiltersVmGroupFromJSON = void 0;
+exports.FiltersVmGroupFromJSON = FiltersVmGroupFromJSON;
+exports.FiltersVmGroupFromJSONTyped = FiltersVmGroupFromJSONTyped;
+exports.FiltersVmGroupToJSON = FiltersVmGroupToJSON;
 const runtime_1 = require("../runtime");
 function FiltersVmGroupFromJSON(json) {
     return FiltersVmGroupFromJSONTyped(json, false);
 }
-exports.FiltersVmGroupFromJSON = FiltersVmGroupFromJSON;
 function FiltersVmGroupFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -36,7 +37,6 @@ function FiltersVmGroupFromJSONTyped(json, ignoreDiscriminator) {
         'vmTemplateIds': !(0, runtime_1.exists)(json, 'VmTemplateIds') ? undefined : json['VmTemplateIds'],
     };
 }
-exports.FiltersVmGroupFromJSONTyped = FiltersVmGroupFromJSONTyped;
 function FiltersVmGroupToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -57,4 +57,3 @@ function FiltersVmGroupToJSON(value) {
         'VmTemplateIds': value.vmTemplateIds,
     };
 }
-exports.FiltersVmGroupToJSON = FiltersVmGroupToJSON;

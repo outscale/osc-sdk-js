@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteNatServiceRequestToJSON = exports.DeleteNatServiceRequestFromJSONTyped = exports.DeleteNatServiceRequestFromJSON = void 0;
+exports.DeleteNatServiceRequestFromJSON = DeleteNatServiceRequestFromJSON;
+exports.DeleteNatServiceRequestFromJSONTyped = DeleteNatServiceRequestFromJSONTyped;
+exports.DeleteNatServiceRequestToJSON = DeleteNatServiceRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteNatServiceRequestFromJSON(json) {
     return DeleteNatServiceRequestFromJSONTyped(json, false);
 }
-exports.DeleteNatServiceRequestFromJSON = DeleteNatServiceRequestFromJSON;
 function DeleteNatServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteNatServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
         'natServiceId': json['NatServiceId'],
     };
 }
-exports.DeleteNatServiceRequestFromJSONTyped = DeleteNatServiceRequestFromJSONTyped;
 function DeleteNatServiceRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteNatServiceRequestToJSON(value) {
         'NatServiceId': value.natServiceId,
     };
 }
-exports.DeleteNatServiceRequestToJSON = DeleteNatServiceRequestToJSON;

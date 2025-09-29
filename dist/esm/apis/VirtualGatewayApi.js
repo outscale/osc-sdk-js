@@ -61,8 +61,8 @@ export class VirtualGatewayApi extends runtime.BaseAPI {
     /**
      * Creates a virtual gateway.<br /> A virtual gateway is the access point on the Net side of a VPN connection.<br /><br /> For more information, see [About Virtual Gateways](https://docs.outscale.com/en/userguide/About-Virtual-Gateways.html).
      */
-    createVirtualGateway(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createVirtualGateway() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createVirtualGatewayRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class VirtualGatewayApi extends runtime.BaseAPI {
     /**
      * Deletes a specified virtual gateway.<br /> Before deleting a virtual gateway, we recommend to detach it from the Net and delete the VPN connection.
      */
-    deleteVirtualGateway(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteVirtualGateway() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteVirtualGatewayRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class VirtualGatewayApi extends runtime.BaseAPI {
     /**
      * Attaches a virtual gateway to a Net.  **[IMPORTANT]**<br /> This action can be done only if the virtual gateway is in the `available` state.
      */
-    linkVirtualGateway(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    linkVirtualGateway() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.linkVirtualGatewayRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -184,8 +184,8 @@ export class VirtualGatewayApi extends runtime.BaseAPI {
     /**
      * Lists one or more virtual gateways.
      */
-    readVirtualGateways(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readVirtualGateways() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readVirtualGatewaysRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -225,8 +225,8 @@ export class VirtualGatewayApi extends runtime.BaseAPI {
     /**
      * Detaches a virtual gateway from a Net.<br /> You must wait until the virtual gateway is in the detached state before you can attach another Net to it or delete the Net it was previously attached to.
      */
-    unlinkVirtualGateway(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    unlinkVirtualGateway() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.unlinkVirtualGatewayRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -266,8 +266,8 @@ export class VirtualGatewayApi extends runtime.BaseAPI {
     /**
      * Configures the propagation of routes to a specified route table of a Net by a virtual gateway.
      */
-    updateRoutePropagation(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateRoutePropagation() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateRoutePropagationRaw(requestParameters, initOverrides);
             return yield response.value();
         });

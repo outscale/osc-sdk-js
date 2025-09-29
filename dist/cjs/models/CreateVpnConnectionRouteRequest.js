@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateVpnConnectionRouteRequestToJSON = exports.CreateVpnConnectionRouteRequestFromJSONTyped = exports.CreateVpnConnectionRouteRequestFromJSON = void 0;
+exports.CreateVpnConnectionRouteRequestFromJSON = CreateVpnConnectionRouteRequestFromJSON;
+exports.CreateVpnConnectionRouteRequestFromJSONTyped = CreateVpnConnectionRouteRequestFromJSONTyped;
+exports.CreateVpnConnectionRouteRequestToJSON = CreateVpnConnectionRouteRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateVpnConnectionRouteRequestFromJSON(json) {
     return CreateVpnConnectionRouteRequestFromJSONTyped(json, false);
 }
-exports.CreateVpnConnectionRouteRequestFromJSON = CreateVpnConnectionRouteRequestFromJSON;
 function CreateVpnConnectionRouteRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function CreateVpnConnectionRouteRequestFromJSONTyped(json, ignoreDiscriminator)
         'vpnConnectionId': json['VpnConnectionId'],
     };
 }
-exports.CreateVpnConnectionRouteRequestFromJSONTyped = CreateVpnConnectionRouteRequestFromJSONTyped;
 function CreateVpnConnectionRouteRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateVpnConnectionRouteRequestToJSON(value) {
         'VpnConnectionId': value.vpnConnectionId,
     };
 }
-exports.CreateVpnConnectionRouteRequestToJSON = CreateVpnConnectionRouteRequestToJSON;

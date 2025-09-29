@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadApiAccessRulesResponseToJSON = exports.ReadApiAccessRulesResponseFromJSONTyped = exports.ReadApiAccessRulesResponseFromJSON = void 0;
+exports.ReadApiAccessRulesResponseFromJSON = ReadApiAccessRulesResponseFromJSON;
+exports.ReadApiAccessRulesResponseFromJSONTyped = ReadApiAccessRulesResponseFromJSONTyped;
+exports.ReadApiAccessRulesResponseToJSON = ReadApiAccessRulesResponseToJSON;
 const runtime_1 = require("../runtime");
 const ApiAccessRule_1 = require("./ApiAccessRule");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadApiAccessRulesResponseFromJSON(json) {
     return ReadApiAccessRulesResponseFromJSONTyped(json, false);
 }
-exports.ReadApiAccessRulesResponseFromJSON = ReadApiAccessRulesResponseFromJSON;
 function ReadApiAccessRulesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function ReadApiAccessRulesResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadApiAccessRulesResponseFromJSONTyped = ReadApiAccessRulesResponseFromJSONTyped;
 function ReadApiAccessRulesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ReadApiAccessRulesResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadApiAccessRulesResponseToJSON = ReadApiAccessRulesResponseToJSON;
