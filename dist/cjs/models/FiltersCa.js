@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersCaToJSON = exports.FiltersCaFromJSONTyped = exports.FiltersCaFromJSON = void 0;
+exports.FiltersCaFromJSON = FiltersCaFromJSON;
+exports.FiltersCaFromJSONTyped = FiltersCaFromJSONTyped;
+exports.FiltersCaToJSON = FiltersCaToJSON;
 const runtime_1 = require("../runtime");
 function FiltersCaFromJSON(json) {
     return FiltersCaFromJSONTyped(json, false);
 }
-exports.FiltersCaFromJSON = FiltersCaFromJSON;
 function FiltersCaFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function FiltersCaFromJSONTyped(json, ignoreDiscriminator) {
         'descriptions': !(0, runtime_1.exists)(json, 'Descriptions') ? undefined : json['Descriptions'],
     };
 }
-exports.FiltersCaFromJSONTyped = FiltersCaFromJSONTyped;
 function FiltersCaToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function FiltersCaToJSON(value) {
         'Descriptions': value.descriptions,
     };
 }
-exports.FiltersCaToJSON = FiltersCaToJSON;

@@ -61,8 +61,8 @@ export class VmTemplateApi extends runtime.BaseAPI {
     /**
      * > [WARNING]<br /> > This feature is currently under development and may not function properly.<br />  Creates a virtual machine (VM) template. You can then use the VM template to create VM groups.<br /> You can create up to 50 VM templates in your account.
      */
-    createVmTemplate(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createVmTemplate() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createVmTemplateRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class VmTemplateApi extends runtime.BaseAPI {
     /**
      * > [WARNING]<br /> > This feature is currently under development and may not function properly.<br />  Deletes a virtual machine (VM) template.<br /> You cannot delete a template currently used by a VM group.
      */
-    deleteVmTemplate(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteVmTemplate() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteVmTemplateRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class VmTemplateApi extends runtime.BaseAPI {
     /**
      * > [WARNING]<br /> > This feature is currently under development and may not function properly.<br />  Lists one or more virtual machine (VM) templates.
      */
-    readVmTemplates(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readVmTemplates() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readVmTemplatesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -184,8 +184,8 @@ export class VmTemplateApi extends runtime.BaseAPI {
     /**
      * > [WARNING]<br /> > This feature is currently under development and may not function properly.<br />  Modifies the specified attributes of a template of virtual machines (VMs).
      */
-    updateVmTemplate(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateVmTemplate() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateVmTemplateRaw(requestParameters, initOverrides);
             return yield response.value();
         });

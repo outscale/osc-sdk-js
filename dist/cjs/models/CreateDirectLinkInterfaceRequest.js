@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateDirectLinkInterfaceRequestToJSON = exports.CreateDirectLinkInterfaceRequestFromJSONTyped = exports.CreateDirectLinkInterfaceRequestFromJSON = void 0;
+exports.CreateDirectLinkInterfaceRequestFromJSON = CreateDirectLinkInterfaceRequestFromJSON;
+exports.CreateDirectLinkInterfaceRequestFromJSONTyped = CreateDirectLinkInterfaceRequestFromJSONTyped;
+exports.CreateDirectLinkInterfaceRequestToJSON = CreateDirectLinkInterfaceRequestToJSON;
 const runtime_1 = require("../runtime");
 const DirectLinkInterface_1 = require("./DirectLinkInterface");
 function CreateDirectLinkInterfaceRequestFromJSON(json) {
     return CreateDirectLinkInterfaceRequestFromJSONTyped(json, false);
 }
-exports.CreateDirectLinkInterfaceRequestFromJSON = CreateDirectLinkInterfaceRequestFromJSON;
 function CreateDirectLinkInterfaceRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateDirectLinkInterfaceRequestFromJSONTyped(json, ignoreDiscriminator
         'dryRun': !(0, runtime_1.exists)(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.CreateDirectLinkInterfaceRequestFromJSONTyped = CreateDirectLinkInterfaceRequestFromJSONTyped;
 function CreateDirectLinkInterfaceRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function CreateDirectLinkInterfaceRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.CreateDirectLinkInterfaceRequestToJSON = CreateDirectLinkInterfaceRequestToJSON;

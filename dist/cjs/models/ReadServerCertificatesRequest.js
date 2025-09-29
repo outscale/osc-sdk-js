@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadServerCertificatesRequestToJSON = exports.ReadServerCertificatesRequestFromJSONTyped = exports.ReadServerCertificatesRequestFromJSON = void 0;
+exports.ReadServerCertificatesRequestFromJSON = ReadServerCertificatesRequestFromJSON;
+exports.ReadServerCertificatesRequestFromJSONTyped = ReadServerCertificatesRequestFromJSONTyped;
+exports.ReadServerCertificatesRequestToJSON = ReadServerCertificatesRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersServerCertificate_1 = require("./FiltersServerCertificate");
 function ReadServerCertificatesRequestFromJSON(json) {
     return ReadServerCertificatesRequestFromJSONTyped(json, false);
 }
-exports.ReadServerCertificatesRequestFromJSON = ReadServerCertificatesRequestFromJSON;
 function ReadServerCertificatesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function ReadServerCertificatesRequestFromJSONTyped(json, ignoreDiscriminator) {
         'filters': !(0, runtime_1.exists)(json, 'Filters') ? undefined : (0, FiltersServerCertificate_1.FiltersServerCertificateFromJSON)(json['Filters']),
     };
 }
-exports.ReadServerCertificatesRequestFromJSONTyped = ReadServerCertificatesRequestFromJSONTyped;
 function ReadServerCertificatesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function ReadServerCertificatesRequestToJSON(value) {
         'Filters': (0, FiltersServerCertificate_1.FiltersServerCertificateToJSON)(value.filters),
     };
 }
-exports.ReadServerCertificatesRequestToJSON = ReadServerCertificatesRequestToJSON;

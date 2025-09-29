@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadInternetServicesResponseToJSON = exports.ReadInternetServicesResponseFromJSONTyped = exports.ReadInternetServicesResponseFromJSON = void 0;
+exports.ReadInternetServicesResponseFromJSON = ReadInternetServicesResponseFromJSON;
+exports.ReadInternetServicesResponseFromJSONTyped = ReadInternetServicesResponseFromJSONTyped;
+exports.ReadInternetServicesResponseToJSON = ReadInternetServicesResponseToJSON;
 const runtime_1 = require("../runtime");
 const InternetService_1 = require("./InternetService");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadInternetServicesResponseFromJSON(json) {
     return ReadInternetServicesResponseFromJSONTyped(json, false);
 }
-exports.ReadInternetServicesResponseFromJSON = ReadInternetServicesResponseFromJSON;
 function ReadInternetServicesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadInternetServicesResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadInternetServicesResponseFromJSONTyped = ReadInternetServicesResponseFromJSONTyped;
 function ReadInternetServicesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadInternetServicesResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadInternetServicesResponseToJSON = ReadInternetServicesResponseToJSON;

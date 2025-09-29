@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateClientGatewayRequestToJSON = exports.CreateClientGatewayRequestFromJSONTyped = exports.CreateClientGatewayRequestFromJSON = void 0;
+exports.CreateClientGatewayRequestFromJSON = CreateClientGatewayRequestFromJSON;
+exports.CreateClientGatewayRequestFromJSONTyped = CreateClientGatewayRequestFromJSONTyped;
+exports.CreateClientGatewayRequestToJSON = CreateClientGatewayRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateClientGatewayRequestFromJSON(json) {
     return CreateClientGatewayRequestFromJSONTyped(json, false);
 }
-exports.CreateClientGatewayRequestFromJSON = CreateClientGatewayRequestFromJSON;
 function CreateClientGatewayRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateClientGatewayRequestFromJSONTyped(json, ignoreDiscriminator) {
         'publicIp': json['PublicIp'],
     };
 }
-exports.CreateClientGatewayRequestFromJSONTyped = CreateClientGatewayRequestFromJSONTyped;
 function CreateClientGatewayRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function CreateClientGatewayRequestToJSON(value) {
         'PublicIp': value.publicIp,
     };
 }
-exports.CreateClientGatewayRequestToJSON = CreateClientGatewayRequestToJSON;

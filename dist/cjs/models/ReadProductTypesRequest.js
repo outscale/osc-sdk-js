@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadProductTypesRequestToJSON = exports.ReadProductTypesRequestFromJSONTyped = exports.ReadProductTypesRequestFromJSON = void 0;
+exports.ReadProductTypesRequestFromJSON = ReadProductTypesRequestFromJSON;
+exports.ReadProductTypesRequestFromJSONTyped = ReadProductTypesRequestFromJSONTyped;
+exports.ReadProductTypesRequestToJSON = ReadProductTypesRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersProductType_1 = require("./FiltersProductType");
 function ReadProductTypesRequestFromJSON(json) {
     return ReadProductTypesRequestFromJSONTyped(json, false);
 }
-exports.ReadProductTypesRequestFromJSON = ReadProductTypesRequestFromJSON;
 function ReadProductTypesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadProductTypesRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadProductTypesRequestFromJSONTyped = ReadProductTypesRequestFromJSONTyped;
 function ReadProductTypesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadProductTypesRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadProductTypesRequestToJSON = ReadProductTypesRequestToJSON;

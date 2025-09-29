@@ -61,8 +61,8 @@ export class DhcpOptionApi extends runtime.BaseAPI {
     /**
      * Creates a set of DHCP options, that you can then associate with a Net using the [UpdateNet](#updatenet) method.<br /><br /> For more information, see [About DHCP Options](https://docs.outscale.com/en/userguide/About-DHCP-Options.html).
      */
-    createDhcpOptions(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createDhcpOptions() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createDhcpOptionsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class DhcpOptionApi extends runtime.BaseAPI {
     /**
      * Deletes a specified DHCP options set.<br /> Before deleting a DHCP options set, you must disassociate it from the Nets you associated it with. To do so, you need to associate with each Net a new set of DHCP options, or the `default` one if you do not want to associate any DHCP options with the Net.<br /><br />  **[IMPORTANT]**<br /> You cannot delete the `default` set.
      */
-    deleteDhcpOptions(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteDhcpOptions() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteDhcpOptionsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class DhcpOptionApi extends runtime.BaseAPI {
     /**
      * Gets information about the content of one or more DHCP options sets.
      */
-    readDhcpOptions(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readDhcpOptions() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readDhcpOptionsRaw(requestParameters, initOverrides);
             return yield response.value();
         });

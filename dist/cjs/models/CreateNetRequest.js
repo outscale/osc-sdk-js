@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateNetRequestToJSON = exports.CreateNetRequestFromJSONTyped = exports.CreateNetRequestFromJSON = void 0;
+exports.CreateNetRequestFromJSON = CreateNetRequestFromJSON;
+exports.CreateNetRequestFromJSONTyped = CreateNetRequestFromJSONTyped;
+exports.CreateNetRequestToJSON = CreateNetRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateNetRequestFromJSON(json) {
     return CreateNetRequestFromJSONTyped(json, false);
 }
-exports.CreateNetRequestFromJSON = CreateNetRequestFromJSON;
 function CreateNetRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function CreateNetRequestFromJSONTyped(json, ignoreDiscriminator) {
         'tenancy': !(0, runtime_1.exists)(json, 'Tenancy') ? undefined : json['Tenancy'],
     };
 }
-exports.CreateNetRequestFromJSONTyped = CreateNetRequestFromJSONTyped;
 function CreateNetRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateNetRequestToJSON(value) {
         'Tenancy': value.tenancy,
     };
 }
-exports.CreateNetRequestToJSON = CreateNetRequestToJSON;

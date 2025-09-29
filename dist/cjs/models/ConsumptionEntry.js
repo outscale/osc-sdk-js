@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConsumptionEntryToJSON = exports.ConsumptionEntryFromJSONTyped = exports.ConsumptionEntryFromJSON = void 0;
+exports.ConsumptionEntryFromJSON = ConsumptionEntryFromJSON;
+exports.ConsumptionEntryFromJSONTyped = ConsumptionEntryFromJSONTyped;
+exports.ConsumptionEntryToJSON = ConsumptionEntryToJSON;
 const runtime_1 = require("../runtime");
 function ConsumptionEntryFromJSON(json) {
     return ConsumptionEntryFromJSONTyped(json, false);
 }
-exports.ConsumptionEntryFromJSON = ConsumptionEntryFromJSON;
 function ConsumptionEntryFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -39,7 +40,6 @@ function ConsumptionEntryFromJSONTyped(json, ignoreDiscriminator) {
         'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
     };
 }
-exports.ConsumptionEntryFromJSONTyped = ConsumptionEntryFromJSONTyped;
 function ConsumptionEntryToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -63,4 +63,3 @@ function ConsumptionEntryToJSON(value) {
         'Value': value.value,
     };
 }
-exports.ConsumptionEntryToJSON = ConsumptionEntryToJSON;

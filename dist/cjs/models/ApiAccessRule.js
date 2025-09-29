@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ApiAccessRuleToJSON = exports.ApiAccessRuleFromJSONTyped = exports.ApiAccessRuleFromJSON = void 0;
+exports.ApiAccessRuleFromJSON = ApiAccessRuleFromJSON;
+exports.ApiAccessRuleFromJSONTyped = ApiAccessRuleFromJSONTyped;
+exports.ApiAccessRuleToJSON = ApiAccessRuleToJSON;
 const runtime_1 = require("../runtime");
 function ApiAccessRuleFromJSON(json) {
     return ApiAccessRuleFromJSONTyped(json, false);
 }
-exports.ApiAccessRuleFromJSON = ApiAccessRuleFromJSON;
 function ApiAccessRuleFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ApiAccessRuleFromJSONTyped(json, ignoreDiscriminator) {
         'ipRanges': !(0, runtime_1.exists)(json, 'IpRanges') ? undefined : json['IpRanges'],
     };
 }
-exports.ApiAccessRuleFromJSONTyped = ApiAccessRuleFromJSONTyped;
 function ApiAccessRuleToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function ApiAccessRuleToJSON(value) {
         'IpRanges': value.ipRanges,
     };
 }
-exports.ApiAccessRuleToJSON = ApiAccessRuleToJSON;

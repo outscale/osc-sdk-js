@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EnableOutscaleLoginRequestToJSON = exports.EnableOutscaleLoginRequestFromJSONTyped = exports.EnableOutscaleLoginRequestFromJSON = void 0;
+exports.EnableOutscaleLoginRequestFromJSON = EnableOutscaleLoginRequestFromJSON;
+exports.EnableOutscaleLoginRequestFromJSONTyped = EnableOutscaleLoginRequestFromJSONTyped;
+exports.EnableOutscaleLoginRequestToJSON = EnableOutscaleLoginRequestToJSON;
 const runtime_1 = require("../runtime");
 function EnableOutscaleLoginRequestFromJSON(json) {
     return EnableOutscaleLoginRequestFromJSONTyped(json, false);
 }
-exports.EnableOutscaleLoginRequestFromJSON = EnableOutscaleLoginRequestFromJSON;
 function EnableOutscaleLoginRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function EnableOutscaleLoginRequestFromJSONTyped(json, ignoreDiscriminator) {
         'dryRun': !(0, runtime_1.exists)(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.EnableOutscaleLoginRequestFromJSONTyped = EnableOutscaleLoginRequestFromJSONTyped;
 function EnableOutscaleLoginRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function EnableOutscaleLoginRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.EnableOutscaleLoginRequestToJSON = EnableOutscaleLoginRequestToJSON;

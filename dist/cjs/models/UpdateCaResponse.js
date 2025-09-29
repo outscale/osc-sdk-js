@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCaResponseToJSON = exports.UpdateCaResponseFromJSONTyped = exports.UpdateCaResponseFromJSON = void 0;
+exports.UpdateCaResponseFromJSON = UpdateCaResponseFromJSON;
+exports.UpdateCaResponseFromJSONTyped = UpdateCaResponseFromJSONTyped;
+exports.UpdateCaResponseToJSON = UpdateCaResponseToJSON;
 const runtime_1 = require("../runtime");
 const Ca_1 = require("./Ca");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function UpdateCaResponseFromJSON(json) {
     return UpdateCaResponseFromJSONTyped(json, false);
 }
-exports.UpdateCaResponseFromJSON = UpdateCaResponseFromJSON;
 function UpdateCaResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function UpdateCaResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.UpdateCaResponseFromJSONTyped = UpdateCaResponseFromJSONTyped;
 function UpdateCaResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UpdateCaResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.UpdateCaResponseToJSON = UpdateCaResponseToJSON;

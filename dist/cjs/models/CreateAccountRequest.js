@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateAccountRequestToJSON = exports.CreateAccountRequestFromJSONTyped = exports.CreateAccountRequestFromJSON = void 0;
+exports.CreateAccountRequestFromJSON = CreateAccountRequestFromJSON;
+exports.CreateAccountRequestFromJSONTyped = CreateAccountRequestFromJSONTyped;
+exports.CreateAccountRequestToJSON = CreateAccountRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateAccountRequestFromJSON(json) {
     return CreateAccountRequestFromJSONTyped(json, false);
 }
-exports.CreateAccountRequestFromJSON = CreateAccountRequestFromJSON;
 function CreateAccountRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -41,7 +42,6 @@ function CreateAccountRequestFromJSONTyped(json, ignoreDiscriminator) {
         'zipCode': json['ZipCode'],
     };
 }
-exports.CreateAccountRequestFromJSONTyped = CreateAccountRequestFromJSONTyped;
 function CreateAccountRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -67,4 +67,3 @@ function CreateAccountRequestToJSON(value) {
         'ZipCode': value.zipCode,
     };
 }
-exports.CreateAccountRequestToJSON = CreateAccountRequestToJSON;

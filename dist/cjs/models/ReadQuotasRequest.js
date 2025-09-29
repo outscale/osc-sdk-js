@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadQuotasRequestToJSON = exports.ReadQuotasRequestFromJSONTyped = exports.ReadQuotasRequestFromJSON = void 0;
+exports.ReadQuotasRequestFromJSON = ReadQuotasRequestFromJSON;
+exports.ReadQuotasRequestFromJSONTyped = ReadQuotasRequestFromJSONTyped;
+exports.ReadQuotasRequestToJSON = ReadQuotasRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersQuota_1 = require("./FiltersQuota");
 function ReadQuotasRequestFromJSON(json) {
     return ReadQuotasRequestFromJSONTyped(json, false);
 }
-exports.ReadQuotasRequestFromJSON = ReadQuotasRequestFromJSON;
 function ReadQuotasRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadQuotasRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadQuotasRequestFromJSONTyped = ReadQuotasRequestFromJSONTyped;
 function ReadQuotasRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadQuotasRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadQuotasRequestToJSON = ReadQuotasRequestToJSON;

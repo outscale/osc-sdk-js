@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteVpnConnectionRouteRequestToJSON = exports.DeleteVpnConnectionRouteRequestFromJSONTyped = exports.DeleteVpnConnectionRouteRequestFromJSON = void 0;
+exports.DeleteVpnConnectionRouteRequestFromJSON = DeleteVpnConnectionRouteRequestFromJSON;
+exports.DeleteVpnConnectionRouteRequestFromJSONTyped = DeleteVpnConnectionRouteRequestFromJSONTyped;
+exports.DeleteVpnConnectionRouteRequestToJSON = DeleteVpnConnectionRouteRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteVpnConnectionRouteRequestFromJSON(json) {
     return DeleteVpnConnectionRouteRequestFromJSONTyped(json, false);
 }
-exports.DeleteVpnConnectionRouteRequestFromJSON = DeleteVpnConnectionRouteRequestFromJSON;
 function DeleteVpnConnectionRouteRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function DeleteVpnConnectionRouteRequestFromJSONTyped(json, ignoreDiscriminator)
         'vpnConnectionId': json['VpnConnectionId'],
     };
 }
-exports.DeleteVpnConnectionRouteRequestFromJSONTyped = DeleteVpnConnectionRouteRequestFromJSONTyped;
 function DeleteVpnConnectionRouteRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function DeleteVpnConnectionRouteRequestToJSON(value) {
         'VpnConnectionId': value.vpnConnectionId,
     };
 }
-exports.DeleteVpnConnectionRouteRequestToJSON = DeleteVpnConnectionRouteRequestToJSON;

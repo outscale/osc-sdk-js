@@ -61,8 +61,8 @@ export class ListenerApi extends runtime.BaseAPI {
     /**
      * Creates a rule for traffic redirection for the specified listener. Each rule must have either the `HostNamePattern` or `PathPattern` parameter specified. Rules are treated in priority order, from the highest value to the lowest value.<br /> Once the rule is created, you need to register backend VMs with it. For more information, see the [RegisterVmsInLoadBalancer](#registervmsinloadbalancer) method.<br /><br /> For more information, see [About Load Balancers](https://docs.outscale.com/en/userguide/About-Load-Balancers.html).
      */
-    createListenerRule(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createListenerRule() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createListenerRuleRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class ListenerApi extends runtime.BaseAPI {
     /**
      * Creates one or more listeners for a specified load balancer.<br /><br /> For more information, see [About Load Balancers](https://docs.outscale.com/en/userguide/About-Load-Balancers.html).
      */
-    createLoadBalancerListeners(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createLoadBalancerListeners() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createLoadBalancerListenersRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class ListenerApi extends runtime.BaseAPI {
     /**
      * Deletes a listener rule.<br /> The previously active rule is disabled after deletion.
      */
-    deleteListenerRule(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteListenerRule() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteListenerRuleRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -184,8 +184,8 @@ export class ListenerApi extends runtime.BaseAPI {
     /**
      * Deletes listeners of a specified load balancer.
      */
-    deleteLoadBalancerListeners(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteLoadBalancerListeners() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteLoadBalancerListenersRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -225,8 +225,8 @@ export class ListenerApi extends runtime.BaseAPI {
     /**
      * Lists one or more listener rules. By default, this action returns the full list of listener rules for the account.
      */
-    readListenerRules(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readListenerRules() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readListenerRulesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -266,8 +266,8 @@ export class ListenerApi extends runtime.BaseAPI {
     /**
      * Updates the pattern of the listener rule.<br /> This call updates the pattern matching algorithm for incoming traffic.
      */
-    updateListenerRule(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateListenerRule() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateListenerRuleRaw(requestParameters, initOverrides);
             return yield response.value();
         });

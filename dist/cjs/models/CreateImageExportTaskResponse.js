@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateImageExportTaskResponseToJSON = exports.CreateImageExportTaskResponseFromJSONTyped = exports.CreateImageExportTaskResponseFromJSON = void 0;
+exports.CreateImageExportTaskResponseFromJSON = CreateImageExportTaskResponseFromJSON;
+exports.CreateImageExportTaskResponseFromJSONTyped = CreateImageExportTaskResponseFromJSONTyped;
+exports.CreateImageExportTaskResponseToJSON = CreateImageExportTaskResponseToJSON;
 const runtime_1 = require("../runtime");
 const ImageExportTask_1 = require("./ImageExportTask");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function CreateImageExportTaskResponseFromJSON(json) {
     return CreateImageExportTaskResponseFromJSONTyped(json, false);
 }
-exports.CreateImageExportTaskResponseFromJSON = CreateImageExportTaskResponseFromJSON;
 function CreateImageExportTaskResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateImageExportTaskResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CreateImageExportTaskResponseFromJSONTyped = CreateImageExportTaskResponseFromJSONTyped;
 function CreateImageExportTaskResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateImageExportTaskResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CreateImageExportTaskResponseToJSON = CreateImageExportTaskResponseToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateLoadBalancerTagsResponseToJSON = exports.CreateLoadBalancerTagsResponseFromJSONTyped = exports.CreateLoadBalancerTagsResponseFromJSON = void 0;
+exports.CreateLoadBalancerTagsResponseFromJSON = CreateLoadBalancerTagsResponseFromJSON;
+exports.CreateLoadBalancerTagsResponseFromJSONTyped = CreateLoadBalancerTagsResponseFromJSONTyped;
+exports.CreateLoadBalancerTagsResponseToJSON = CreateLoadBalancerTagsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function CreateLoadBalancerTagsResponseFromJSON(json) {
     return CreateLoadBalancerTagsResponseFromJSONTyped(json, false);
 }
-exports.CreateLoadBalancerTagsResponseFromJSON = CreateLoadBalancerTagsResponseFromJSON;
 function CreateLoadBalancerTagsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function CreateLoadBalancerTagsResponseFromJSONTyped(json, ignoreDiscriminator) 
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CreateLoadBalancerTagsResponseFromJSONTyped = CreateLoadBalancerTagsResponseFromJSONTyped;
 function CreateLoadBalancerTagsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function CreateLoadBalancerTagsResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CreateLoadBalancerTagsResponseToJSON = CreateLoadBalancerTagsResponseToJSON;

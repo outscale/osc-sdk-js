@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadVmsResponseToJSON = exports.ReadVmsResponseFromJSONTyped = exports.ReadVmsResponseFromJSON = void 0;
+exports.ReadVmsResponseFromJSON = ReadVmsResponseFromJSON;
+exports.ReadVmsResponseFromJSONTyped = ReadVmsResponseFromJSONTyped;
+exports.ReadVmsResponseToJSON = ReadVmsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Vm_1 = require("./Vm");
 function ReadVmsResponseFromJSON(json) {
     return ReadVmsResponseFromJSONTyped(json, false);
 }
-exports.ReadVmsResponseFromJSON = ReadVmsResponseFromJSON;
 function ReadVmsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadVmsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'vms': !(0, runtime_1.exists)(json, 'Vms') ? undefined : (json['Vms'].map(Vm_1.VmFromJSON)),
     };
 }
-exports.ReadVmsResponseFromJSONTyped = ReadVmsResponseFromJSONTyped;
 function ReadVmsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadVmsResponseToJSON(value) {
         'Vms': value.vms === undefined ? undefined : (value.vms.map(Vm_1.VmToJSON)),
     };
 }
-exports.ReadVmsResponseToJSON = ReadVmsResponseToJSON;

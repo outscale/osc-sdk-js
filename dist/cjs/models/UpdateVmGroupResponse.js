@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateVmGroupResponseToJSON = exports.UpdateVmGroupResponseFromJSONTyped = exports.UpdateVmGroupResponseFromJSON = void 0;
+exports.UpdateVmGroupResponseFromJSON = UpdateVmGroupResponseFromJSON;
+exports.UpdateVmGroupResponseFromJSONTyped = UpdateVmGroupResponseFromJSONTyped;
+exports.UpdateVmGroupResponseToJSON = UpdateVmGroupResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const VmGroup_1 = require("./VmGroup");
 function UpdateVmGroupResponseFromJSON(json) {
     return UpdateVmGroupResponseFromJSONTyped(json, false);
 }
-exports.UpdateVmGroupResponseFromJSON = UpdateVmGroupResponseFromJSON;
 function UpdateVmGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function UpdateVmGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
         'vmGroup': !(0, runtime_1.exists)(json, 'VmGroup') ? undefined : (0, VmGroup_1.VmGroupFromJSON)(json['VmGroup']),
     };
 }
-exports.UpdateVmGroupResponseFromJSONTyped = UpdateVmGroupResponseFromJSONTyped;
 function UpdateVmGroupResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UpdateVmGroupResponseToJSON(value) {
         'VmGroup': (0, VmGroup_1.VmGroupToJSON)(value.vmGroup),
     };
 }
-exports.UpdateVmGroupResponseToJSON = UpdateVmGroupResponseToJSON;

@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadLocationsResponseToJSON = exports.ReadLocationsResponseFromJSONTyped = exports.ReadLocationsResponseFromJSON = void 0;
+exports.ReadLocationsResponseFromJSON = ReadLocationsResponseFromJSON;
+exports.ReadLocationsResponseFromJSONTyped = ReadLocationsResponseFromJSONTyped;
+exports.ReadLocationsResponseToJSON = ReadLocationsResponseToJSON;
 const runtime_1 = require("../runtime");
 const Location_1 = require("./Location");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadLocationsResponseFromJSON(json) {
     return ReadLocationsResponseFromJSONTyped(json, false);
 }
-exports.ReadLocationsResponseFromJSON = ReadLocationsResponseFromJSON;
 function ReadLocationsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadLocationsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadLocationsResponseFromJSONTyped = ReadLocationsResponseFromJSONTyped;
 function ReadLocationsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadLocationsResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadLocationsResponseToJSON = ReadLocationsResponseToJSON;

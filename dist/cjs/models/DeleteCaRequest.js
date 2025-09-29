@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteCaRequestToJSON = exports.DeleteCaRequestFromJSONTyped = exports.DeleteCaRequestFromJSON = void 0;
+exports.DeleteCaRequestFromJSON = DeleteCaRequestFromJSON;
+exports.DeleteCaRequestFromJSONTyped = DeleteCaRequestFromJSONTyped;
+exports.DeleteCaRequestToJSON = DeleteCaRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteCaRequestFromJSON(json) {
     return DeleteCaRequestFromJSONTyped(json, false);
 }
-exports.DeleteCaRequestFromJSON = DeleteCaRequestFromJSON;
 function DeleteCaRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteCaRequestFromJSONTyped(json, ignoreDiscriminator) {
         'dryRun': !(0, runtime_1.exists)(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.DeleteCaRequestFromJSONTyped = DeleteCaRequestFromJSONTyped;
 function DeleteCaRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteCaRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.DeleteCaRequestToJSON = DeleteCaRequestToJSON;

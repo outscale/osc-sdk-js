@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BackendVmHealthToJSON = exports.BackendVmHealthFromJSONTyped = exports.BackendVmHealthFromJSON = void 0;
+exports.BackendVmHealthFromJSON = BackendVmHealthFromJSON;
+exports.BackendVmHealthFromJSONTyped = BackendVmHealthFromJSONTyped;
+exports.BackendVmHealthToJSON = BackendVmHealthToJSON;
 const runtime_1 = require("../runtime");
 function BackendVmHealthFromJSON(json) {
     return BackendVmHealthFromJSONTyped(json, false);
 }
-exports.BackendVmHealthFromJSON = BackendVmHealthFromJSON;
 function BackendVmHealthFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function BackendVmHealthFromJSONTyped(json, ignoreDiscriminator) {
         'vmId': !(0, runtime_1.exists)(json, 'VmId') ? undefined : json['VmId'],
     };
 }
-exports.BackendVmHealthFromJSONTyped = BackendVmHealthFromJSONTyped;
 function BackendVmHealthToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function BackendVmHealthToJSON(value) {
         'VmId': value.vmId,
     };
 }
-exports.BackendVmHealthToJSON = BackendVmHealthToJSON;

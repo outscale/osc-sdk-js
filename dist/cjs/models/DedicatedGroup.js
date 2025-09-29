@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DedicatedGroupToJSON = exports.DedicatedGroupFromJSONTyped = exports.DedicatedGroupFromJSON = void 0;
+exports.DedicatedGroupFromJSON = DedicatedGroupFromJSON;
+exports.DedicatedGroupFromJSONTyped = DedicatedGroupFromJSONTyped;
+exports.DedicatedGroupToJSON = DedicatedGroupToJSON;
 const runtime_1 = require("../runtime");
 function DedicatedGroupFromJSON(json) {
     return DedicatedGroupFromJSONTyped(json, false);
 }
-exports.DedicatedGroupFromJSON = DedicatedGroupFromJSON;
 function DedicatedGroupFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function DedicatedGroupFromJSONTyped(json, ignoreDiscriminator) {
         'vmIds': !(0, runtime_1.exists)(json, 'VmIds') ? undefined : json['VmIds'],
     };
 }
-exports.DedicatedGroupFromJSONTyped = DedicatedGroupFromJSONTyped;
 function DedicatedGroupToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function DedicatedGroupToJSON(value) {
         'VmIds': value.vmIds,
     };
 }
-exports.DedicatedGroupToJSON = DedicatedGroupToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateVolumeRequestToJSON = exports.CreateVolumeRequestFromJSONTyped = exports.CreateVolumeRequestFromJSON = void 0;
+exports.CreateVolumeRequestFromJSON = CreateVolumeRequestFromJSON;
+exports.CreateVolumeRequestFromJSONTyped = CreateVolumeRequestFromJSONTyped;
+exports.CreateVolumeRequestToJSON = CreateVolumeRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateVolumeRequestFromJSON(json) {
     return CreateVolumeRequestFromJSONTyped(json, false);
 }
-exports.CreateVolumeRequestFromJSON = CreateVolumeRequestFromJSON;
 function CreateVolumeRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function CreateVolumeRequestFromJSONTyped(json, ignoreDiscriminator) {
         'volumeType': !(0, runtime_1.exists)(json, 'VolumeType') ? undefined : json['VolumeType'],
     };
 }
-exports.CreateVolumeRequestFromJSONTyped = CreateVolumeRequestFromJSONTyped;
 function CreateVolumeRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function CreateVolumeRequestToJSON(value) {
         'VolumeType': value.volumeType,
     };
 }
-exports.CreateVolumeRequestToJSON = CreateVolumeRequestToJSON;

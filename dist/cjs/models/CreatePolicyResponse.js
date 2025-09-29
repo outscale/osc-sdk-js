@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePolicyResponseToJSON = exports.CreatePolicyResponseFromJSONTyped = exports.CreatePolicyResponseFromJSON = void 0;
+exports.CreatePolicyResponseFromJSON = CreatePolicyResponseFromJSON;
+exports.CreatePolicyResponseFromJSONTyped = CreatePolicyResponseFromJSONTyped;
+exports.CreatePolicyResponseToJSON = CreatePolicyResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Policy_1 = require("./Policy");
 function CreatePolicyResponseFromJSON(json) {
     return CreatePolicyResponseFromJSONTyped(json, false);
 }
-exports.CreatePolicyResponseFromJSON = CreatePolicyResponseFromJSON;
 function CreatePolicyResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreatePolicyResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CreatePolicyResponseFromJSONTyped = CreatePolicyResponseFromJSONTyped;
 function CreatePolicyResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreatePolicyResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CreatePolicyResponseToJSON = CreatePolicyResponseToJSON;

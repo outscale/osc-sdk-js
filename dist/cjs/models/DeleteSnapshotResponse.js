@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteSnapshotResponseToJSON = exports.DeleteSnapshotResponseFromJSONTyped = exports.DeleteSnapshotResponseFromJSON = void 0;
+exports.DeleteSnapshotResponseFromJSON = DeleteSnapshotResponseFromJSON;
+exports.DeleteSnapshotResponseFromJSONTyped = DeleteSnapshotResponseFromJSONTyped;
+exports.DeleteSnapshotResponseToJSON = DeleteSnapshotResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteSnapshotResponseFromJSON(json) {
     return DeleteSnapshotResponseFromJSONTyped(json, false);
 }
-exports.DeleteSnapshotResponseFromJSON = DeleteSnapshotResponseFromJSON;
 function DeleteSnapshotResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteSnapshotResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteSnapshotResponseFromJSONTyped = DeleteSnapshotResponseFromJSONTyped;
 function DeleteSnapshotResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteSnapshotResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteSnapshotResponseToJSON = DeleteSnapshotResponseToJSON;

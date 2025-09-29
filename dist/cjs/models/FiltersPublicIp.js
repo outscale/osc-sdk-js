@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersPublicIpToJSON = exports.FiltersPublicIpFromJSONTyped = exports.FiltersPublicIpFromJSON = void 0;
+exports.FiltersPublicIpFromJSON = FiltersPublicIpFromJSON;
+exports.FiltersPublicIpFromJSONTyped = FiltersPublicIpFromJSONTyped;
+exports.FiltersPublicIpToJSON = FiltersPublicIpToJSON;
 const runtime_1 = require("../runtime");
 function FiltersPublicIpFromJSON(json) {
     return FiltersPublicIpFromJSONTyped(json, false);
 }
-exports.FiltersPublicIpFromJSON = FiltersPublicIpFromJSON;
 function FiltersPublicIpFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -37,7 +38,6 @@ function FiltersPublicIpFromJSONTyped(json, ignoreDiscriminator) {
         'vmIds': !(0, runtime_1.exists)(json, 'VmIds') ? undefined : json['VmIds'],
     };
 }
-exports.FiltersPublicIpFromJSONTyped = FiltersPublicIpFromJSONTyped;
 function FiltersPublicIpToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -59,4 +59,3 @@ function FiltersPublicIpToJSON(value) {
         'VmIds': value.vmIds,
     };
 }
-exports.FiltersPublicIpToJSON = FiltersPublicIpToJSON;

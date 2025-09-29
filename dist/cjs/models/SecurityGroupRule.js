@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SecurityGroupRuleToJSON = exports.SecurityGroupRuleFromJSONTyped = exports.SecurityGroupRuleFromJSON = void 0;
+exports.SecurityGroupRuleFromJSON = SecurityGroupRuleFromJSON;
+exports.SecurityGroupRuleFromJSONTyped = SecurityGroupRuleFromJSONTyped;
+exports.SecurityGroupRuleToJSON = SecurityGroupRuleToJSON;
 const runtime_1 = require("../runtime");
 const SecurityGroupsMember_1 = require("./SecurityGroupsMember");
 function SecurityGroupRuleFromJSON(json) {
     return SecurityGroupRuleFromJSONTyped(json, false);
 }
-exports.SecurityGroupRuleFromJSON = SecurityGroupRuleFromJSON;
 function SecurityGroupRuleFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function SecurityGroupRuleFromJSONTyped(json, ignoreDiscriminator) {
         'toPortRange': !(0, runtime_1.exists)(json, 'ToPortRange') ? undefined : json['ToPortRange'],
     };
 }
-exports.SecurityGroupRuleFromJSONTyped = SecurityGroupRuleFromJSONTyped;
 function SecurityGroupRuleToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -50,4 +50,3 @@ function SecurityGroupRuleToJSON(value) {
         'ToPortRange': value.toPortRange,
     };
 }
-exports.SecurityGroupRuleToJSON = SecurityGroupRuleToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadUserGroupPoliciesRequestToJSON = exports.ReadUserGroupPoliciesRequestFromJSONTyped = exports.ReadUserGroupPoliciesRequestFromJSON = void 0;
+exports.ReadUserGroupPoliciesRequestFromJSON = ReadUserGroupPoliciesRequestFromJSON;
+exports.ReadUserGroupPoliciesRequestFromJSONTyped = ReadUserGroupPoliciesRequestFromJSONTyped;
+exports.ReadUserGroupPoliciesRequestToJSON = ReadUserGroupPoliciesRequestToJSON;
 const runtime_1 = require("../runtime");
 function ReadUserGroupPoliciesRequestFromJSON(json) {
     return ReadUserGroupPoliciesRequestFromJSONTyped(json, false);
 }
-exports.ReadUserGroupPoliciesRequestFromJSON = ReadUserGroupPoliciesRequestFromJSON;
 function ReadUserGroupPoliciesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadUserGroupPoliciesRequestFromJSONTyped(json, ignoreDiscriminator) {
         'userGroupPath': !(0, runtime_1.exists)(json, 'UserGroupPath') ? undefined : json['UserGroupPath'],
     };
 }
-exports.ReadUserGroupPoliciesRequestFromJSONTyped = ReadUserGroupPoliciesRequestFromJSONTyped;
 function ReadUserGroupPoliciesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function ReadUserGroupPoliciesRequestToJSON(value) {
         'UserGroupPath': value.userGroupPath,
     };
 }
-exports.ReadUserGroupPoliciesRequestToJSON = ReadUserGroupPoliciesRequestToJSON;

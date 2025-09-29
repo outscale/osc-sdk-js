@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Phase2OptionsToJSON = exports.Phase2OptionsFromJSONTyped = exports.Phase2OptionsFromJSON = void 0;
+exports.Phase2OptionsFromJSON = Phase2OptionsFromJSON;
+exports.Phase2OptionsFromJSONTyped = Phase2OptionsFromJSONTyped;
+exports.Phase2OptionsToJSON = Phase2OptionsToJSON;
 const runtime_1 = require("../runtime");
 function Phase2OptionsFromJSON(json) {
     return Phase2OptionsFromJSONTyped(json, false);
 }
-exports.Phase2OptionsFromJSON = Phase2OptionsFromJSON;
 function Phase2OptionsFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function Phase2OptionsFromJSONTyped(json, ignoreDiscriminator) {
         'preSharedKey': !(0, runtime_1.exists)(json, 'PreSharedKey') ? undefined : json['PreSharedKey'],
     };
 }
-exports.Phase2OptionsFromJSONTyped = Phase2OptionsFromJSONTyped;
 function Phase2OptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function Phase2OptionsToJSON(value) {
         'PreSharedKey': value.preSharedKey,
     };
 }
-exports.Phase2OptionsToJSON = Phase2OptionsToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersApiLogToJSON = exports.FiltersApiLogFromJSONTyped = exports.FiltersApiLogFromJSON = void 0;
+exports.FiltersApiLogFromJSON = FiltersApiLogFromJSON;
+exports.FiltersApiLogFromJSONTyped = FiltersApiLogFromJSONTyped;
+exports.FiltersApiLogToJSON = FiltersApiLogToJSON;
 const runtime_1 = require("../runtime");
 function FiltersApiLogFromJSON(json) {
     return FiltersApiLogFromJSONTyped(json, false);
 }
-exports.FiltersApiLogFromJSON = FiltersApiLogFromJSON;
 function FiltersApiLogFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -35,7 +36,6 @@ function FiltersApiLogFromJSONTyped(json, ignoreDiscriminator) {
         'responseStatusCodes': !(0, runtime_1.exists)(json, 'ResponseStatusCodes') ? undefined : json['ResponseStatusCodes'],
     };
 }
-exports.FiltersApiLogFromJSONTyped = FiltersApiLogFromJSONTyped;
 function FiltersApiLogToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +55,3 @@ function FiltersApiLogToJSON(value) {
         'ResponseStatusCodes': value.responseStatusCodes,
     };
 }
-exports.FiltersApiLogToJSON = FiltersApiLogToJSON;

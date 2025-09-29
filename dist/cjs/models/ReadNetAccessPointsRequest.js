@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadNetAccessPointsRequestToJSON = exports.ReadNetAccessPointsRequestFromJSONTyped = exports.ReadNetAccessPointsRequestFromJSON = void 0;
+exports.ReadNetAccessPointsRequestFromJSON = ReadNetAccessPointsRequestFromJSON;
+exports.ReadNetAccessPointsRequestFromJSONTyped = ReadNetAccessPointsRequestFromJSONTyped;
+exports.ReadNetAccessPointsRequestToJSON = ReadNetAccessPointsRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersNetAccessPoint_1 = require("./FiltersNetAccessPoint");
 function ReadNetAccessPointsRequestFromJSON(json) {
     return ReadNetAccessPointsRequestFromJSONTyped(json, false);
 }
-exports.ReadNetAccessPointsRequestFromJSON = ReadNetAccessPointsRequestFromJSON;
 function ReadNetAccessPointsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadNetAccessPointsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadNetAccessPointsRequestFromJSONTyped = ReadNetAccessPointsRequestFromJSONTyped;
 function ReadNetAccessPointsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadNetAccessPointsRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadNetAccessPointsRequestToJSON = ReadNetAccessPointsRequestToJSON;

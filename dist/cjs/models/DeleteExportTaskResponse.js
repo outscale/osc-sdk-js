@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteExportTaskResponseToJSON = exports.DeleteExportTaskResponseFromJSONTyped = exports.DeleteExportTaskResponseFromJSON = void 0;
+exports.DeleteExportTaskResponseFromJSON = DeleteExportTaskResponseFromJSON;
+exports.DeleteExportTaskResponseFromJSONTyped = DeleteExportTaskResponseFromJSONTyped;
+exports.DeleteExportTaskResponseToJSON = DeleteExportTaskResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteExportTaskResponseFromJSON(json) {
     return DeleteExportTaskResponseFromJSONTyped(json, false);
 }
-exports.DeleteExportTaskResponseFromJSON = DeleteExportTaskResponseFromJSON;
 function DeleteExportTaskResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteExportTaskResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteExportTaskResponseFromJSONTyped = DeleteExportTaskResponseFromJSONTyped;
 function DeleteExportTaskResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteExportTaskResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteExportTaskResponseToJSON = DeleteExportTaskResponseToJSON;

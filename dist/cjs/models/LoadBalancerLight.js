@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LoadBalancerLightToJSON = exports.LoadBalancerLightFromJSONTyped = exports.LoadBalancerLightFromJSON = void 0;
+exports.LoadBalancerLightFromJSON = LoadBalancerLightFromJSON;
+exports.LoadBalancerLightFromJSONTyped = LoadBalancerLightFromJSONTyped;
+exports.LoadBalancerLightToJSON = LoadBalancerLightToJSON;
 function LoadBalancerLightFromJSON(json) {
     return LoadBalancerLightFromJSONTyped(json, false);
 }
-exports.LoadBalancerLightFromJSON = LoadBalancerLightFromJSON;
 function LoadBalancerLightFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function LoadBalancerLightFromJSONTyped(json, ignoreDiscriminator) {
         'loadBalancerPort': json['LoadBalancerPort'],
     };
 }
-exports.LoadBalancerLightFromJSONTyped = LoadBalancerLightFromJSONTyped;
 function LoadBalancerLightToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function LoadBalancerLightToJSON(value) {
         'LoadBalancerPort': value.loadBalancerPort,
     };
 }
-exports.LoadBalancerLightToJSON = LoadBalancerLightToJSON;

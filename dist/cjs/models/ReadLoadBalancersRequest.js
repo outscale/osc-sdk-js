@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadLoadBalancersRequestToJSON = exports.ReadLoadBalancersRequestFromJSONTyped = exports.ReadLoadBalancersRequestFromJSON = void 0;
+exports.ReadLoadBalancersRequestFromJSON = ReadLoadBalancersRequestFromJSON;
+exports.ReadLoadBalancersRequestFromJSONTyped = ReadLoadBalancersRequestFromJSONTyped;
+exports.ReadLoadBalancersRequestToJSON = ReadLoadBalancersRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersLoadBalancer_1 = require("./FiltersLoadBalancer");
 function ReadLoadBalancersRequestFromJSON(json) {
     return ReadLoadBalancersRequestFromJSONTyped(json, false);
 }
-exports.ReadLoadBalancersRequestFromJSON = ReadLoadBalancersRequestFromJSON;
 function ReadLoadBalancersRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function ReadLoadBalancersRequestFromJSONTyped(json, ignoreDiscriminator) {
         'filters': !(0, runtime_1.exists)(json, 'Filters') ? undefined : (0, FiltersLoadBalancer_1.FiltersLoadBalancerFromJSON)(json['Filters']),
     };
 }
-exports.ReadLoadBalancersRequestFromJSONTyped = ReadLoadBalancersRequestFromJSONTyped;
 function ReadLoadBalancersRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function ReadLoadBalancersRequestToJSON(value) {
         'Filters': (0, FiltersLoadBalancer_1.FiltersLoadBalancerToJSON)(value.filters),
     };
 }
-exports.ReadLoadBalancersRequestToJSON = ReadLoadBalancersRequestToJSON;

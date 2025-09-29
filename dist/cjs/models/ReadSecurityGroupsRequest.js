@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadSecurityGroupsRequestToJSON = exports.ReadSecurityGroupsRequestFromJSONTyped = exports.ReadSecurityGroupsRequestFromJSON = void 0;
+exports.ReadSecurityGroupsRequestFromJSON = ReadSecurityGroupsRequestFromJSON;
+exports.ReadSecurityGroupsRequestFromJSONTyped = ReadSecurityGroupsRequestFromJSONTyped;
+exports.ReadSecurityGroupsRequestToJSON = ReadSecurityGroupsRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersSecurityGroup_1 = require("./FiltersSecurityGroup");
 function ReadSecurityGroupsRequestFromJSON(json) {
     return ReadSecurityGroupsRequestFromJSONTyped(json, false);
 }
-exports.ReadSecurityGroupsRequestFromJSON = ReadSecurityGroupsRequestFromJSON;
 function ReadSecurityGroupsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadSecurityGroupsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadSecurityGroupsRequestFromJSONTyped = ReadSecurityGroupsRequestFromJSONTyped;
 function ReadSecurityGroupsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadSecurityGroupsRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadSecurityGroupsRequestToJSON = ReadSecurityGroupsRequestToJSON;

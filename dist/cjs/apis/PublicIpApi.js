@@ -28,13 +28,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -87,8 +97,8 @@ class PublicIpApi extends runtime.BaseAPI {
     /**
      * Acquires a public IP for your account.<br /> A public IP is a static IP designed for dynamic Cloud computing. It can be associated with a virtual machine (VM) in the public Cloud or in a Net, a network interface card (NIC), a NAT service.<br /><br /> For more information, see [About Public IPs](https://docs.outscale.com/en/userguide/About-Public-IPs.html).
      */
-    createPublicIp(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createPublicIp() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createPublicIpRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -128,8 +138,8 @@ class PublicIpApi extends runtime.BaseAPI {
     /**
      * Releases a public IP.<br /> You can release a public IP associated with your account. This address is released in the public IP pool and can be used by someone else. Before releasing a public IP, ensure you updated all your resources communicating with this address.
      */
-    deletePublicIp(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deletePublicIp() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deletePublicIpRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -169,8 +179,8 @@ class PublicIpApi extends runtime.BaseAPI {
     /**
      * Associates a public IP with a virtual machine (VM) or a network interface card (NIC), in the public Cloud or in a Net. You can associate a public IP with only one VM or network interface at a time.<br /> To associate a public IP in a Net, ensure that the Net has an internet service attached. For more information, see the [LinkInternetService](#linkinternetservice) method.<br /> By default, the public IP is disassociated every time you stop and start the VM. For a persistent association, you can add the `osc.fcu.eip.auto-attach` tag to the VM with the public IP as value. For more information, see the [CreateTags](#createtags) method.<br /><br />  **[IMPORTANT]**<br /> You can associate a public IP with a network address translation (NAT) service only when creating the NAT service. To modify its public IP, you need to delete the NAT service and re-create it with the new public IP. For more information, see the [CreateNatService](#createnatservice) method.
      */
-    linkPublicIp(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    linkPublicIp() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.linkPublicIpRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -207,8 +217,8 @@ class PublicIpApi extends runtime.BaseAPI {
     /**
      * Gets the public IPv4 addresses in CIDR notation for the Region specified in the endpoint of the request. For more information, see [About Regions and Subregions](https://docs.outscale.com/en/userguide/About-Regions-and-Subregions.html).
      */
-    readPublicIpRanges(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readPublicIpRanges() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readPublicIpRangesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -248,8 +258,8 @@ class PublicIpApi extends runtime.BaseAPI {
     /**
      * Lists one or more public IPs allocated to your account.<br /> By default, this action returns information about all your public IPs: available or associated with a virtual machine (VM), a network interface card (NIC) or a NAT service.
      */
-    readPublicIps(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readPublicIps() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readPublicIpsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -289,8 +299,8 @@ class PublicIpApi extends runtime.BaseAPI {
     /**
      * Disassociates a public IP from the virtual machine (VM) or network interface card (NIC) it is associated with.<br /><br />  **[IMPORTANT]**<br /> To disassociate the public IP from a NAT service, you need to delete the NAT service. For more information, see the [DeleteNatService](#deletenatservice) method.
      */
-    unlinkPublicIp(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    unlinkPublicIp() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.unlinkPublicIpRaw(requestParameters, initOverrides);
             return yield response.value();
         });

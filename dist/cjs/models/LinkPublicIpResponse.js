@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkPublicIpResponseToJSON = exports.LinkPublicIpResponseFromJSONTyped = exports.LinkPublicIpResponseFromJSON = void 0;
+exports.LinkPublicIpResponseFromJSON = LinkPublicIpResponseFromJSON;
+exports.LinkPublicIpResponseFromJSONTyped = LinkPublicIpResponseFromJSONTyped;
+exports.LinkPublicIpResponseToJSON = LinkPublicIpResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function LinkPublicIpResponseFromJSON(json) {
     return LinkPublicIpResponseFromJSONTyped(json, false);
 }
-exports.LinkPublicIpResponseFromJSON = LinkPublicIpResponseFromJSON;
 function LinkPublicIpResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function LinkPublicIpResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.LinkPublicIpResponseFromJSONTyped = LinkPublicIpResponseFromJSONTyped;
 function LinkPublicIpResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function LinkPublicIpResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.LinkPublicIpResponseToJSON = LinkPublicIpResponseToJSON;

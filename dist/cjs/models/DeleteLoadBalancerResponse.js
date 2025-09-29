@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteLoadBalancerResponseToJSON = exports.DeleteLoadBalancerResponseFromJSONTyped = exports.DeleteLoadBalancerResponseFromJSON = void 0;
+exports.DeleteLoadBalancerResponseFromJSON = DeleteLoadBalancerResponseFromJSON;
+exports.DeleteLoadBalancerResponseFromJSONTyped = DeleteLoadBalancerResponseFromJSONTyped;
+exports.DeleteLoadBalancerResponseToJSON = DeleteLoadBalancerResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteLoadBalancerResponseFromJSON(json) {
     return DeleteLoadBalancerResponseFromJSONTyped(json, false);
 }
-exports.DeleteLoadBalancerResponseFromJSON = DeleteLoadBalancerResponseFromJSON;
 function DeleteLoadBalancerResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteLoadBalancerResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteLoadBalancerResponseFromJSONTyped = DeleteLoadBalancerResponseFromJSONTyped;
 function DeleteLoadBalancerResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteLoadBalancerResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteLoadBalancerResponseToJSON = DeleteLoadBalancerResponseToJSON;

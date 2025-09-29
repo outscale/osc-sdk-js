@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadConsoleOutputResponseToJSON = exports.ReadConsoleOutputResponseFromJSONTyped = exports.ReadConsoleOutputResponseFromJSON = void 0;
+exports.ReadConsoleOutputResponseFromJSON = ReadConsoleOutputResponseFromJSON;
+exports.ReadConsoleOutputResponseFromJSONTyped = ReadConsoleOutputResponseFromJSONTyped;
+exports.ReadConsoleOutputResponseToJSON = ReadConsoleOutputResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadConsoleOutputResponseFromJSON(json) {
     return ReadConsoleOutputResponseFromJSONTyped(json, false);
 }
-exports.ReadConsoleOutputResponseFromJSON = ReadConsoleOutputResponseFromJSON;
 function ReadConsoleOutputResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function ReadConsoleOutputResponseFromJSONTyped(json, ignoreDiscriminator) {
         'vmId': !(0, runtime_1.exists)(json, 'VmId') ? undefined : json['VmId'],
     };
 }
-exports.ReadConsoleOutputResponseFromJSONTyped = ReadConsoleOutputResponseFromJSONTyped;
 function ReadConsoleOutputResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function ReadConsoleOutputResponseToJSON(value) {
         'VmId': value.vmId,
     };
 }
-exports.ReadConsoleOutputResponseToJSON = ReadConsoleOutputResponseToJSON;

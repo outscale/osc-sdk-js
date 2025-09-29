@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PolicyEntitiesToJSON = exports.PolicyEntitiesFromJSONTyped = exports.PolicyEntitiesFromJSON = void 0;
+exports.PolicyEntitiesFromJSON = PolicyEntitiesFromJSON;
+exports.PolicyEntitiesFromJSONTyped = PolicyEntitiesFromJSONTyped;
+exports.PolicyEntitiesToJSON = PolicyEntitiesToJSON;
 const runtime_1 = require("../runtime");
 const MinimalPolicy_1 = require("./MinimalPolicy");
 function PolicyEntitiesFromJSON(json) {
     return PolicyEntitiesFromJSONTyped(json, false);
 }
-exports.PolicyEntitiesFromJSON = PolicyEntitiesFromJSON;
 function PolicyEntitiesFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -34,7 +35,6 @@ function PolicyEntitiesFromJSONTyped(json, ignoreDiscriminator) {
         'users': !(0, runtime_1.exists)(json, 'Users') ? undefined : (json['Users'].map(MinimalPolicy_1.MinimalPolicyFromJSON)),
     };
 }
-exports.PolicyEntitiesFromJSONTyped = PolicyEntitiesFromJSONTyped;
 function PolicyEntitiesToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -52,4 +52,3 @@ function PolicyEntitiesToJSON(value) {
         'Users': value.users === undefined ? undefined : (value.users.map(MinimalPolicy_1.MinimalPolicyToJSON)),
     };
 }
-exports.PolicyEntitiesToJSON = PolicyEntitiesToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ServerCertificateToJSON = exports.ServerCertificateFromJSONTyped = exports.ServerCertificateFromJSON = void 0;
+exports.ServerCertificateFromJSON = ServerCertificateFromJSON;
+exports.ServerCertificateFromJSONTyped = ServerCertificateFromJSONTyped;
+exports.ServerCertificateToJSON = ServerCertificateToJSON;
 const runtime_1 = require("../runtime");
 function ServerCertificateFromJSON(json) {
     return ServerCertificateFromJSONTyped(json, false);
 }
-exports.ServerCertificateFromJSON = ServerCertificateFromJSON;
 function ServerCertificateFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -32,7 +33,6 @@ function ServerCertificateFromJSONTyped(json, ignoreDiscriminator) {
         'uploadDate': !(0, runtime_1.exists)(json, 'UploadDate') ? undefined : (new Date(json['UploadDate'])),
     };
 }
-exports.ServerCertificateFromJSONTyped = ServerCertificateFromJSONTyped;
 function ServerCertificateToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function ServerCertificateToJSON(value) {
         'UploadDate': value.uploadDate === undefined ? undefined : (value.uploadDate.toISOString().substr(0, 10)),
     };
 }
-exports.ServerCertificateToJSON = ServerCertificateToJSON;

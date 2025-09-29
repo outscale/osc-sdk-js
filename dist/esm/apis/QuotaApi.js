@@ -61,8 +61,8 @@ export class QuotaApi extends runtime.BaseAPI {
     /**
      * Lists one or more of your quotas.<br /><br /> For more information, see [About Your Account](https://docs.outscale.com/en/userguide/About-Your-Account.html).
      */
-    readQuotas(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readQuotas() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readQuotasRaw(requestParameters, initOverrides);
             return yield response.value();
         });

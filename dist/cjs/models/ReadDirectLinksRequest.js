@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadDirectLinksRequestToJSON = exports.ReadDirectLinksRequestFromJSONTyped = exports.ReadDirectLinksRequestFromJSON = void 0;
+exports.ReadDirectLinksRequestFromJSON = ReadDirectLinksRequestFromJSON;
+exports.ReadDirectLinksRequestFromJSONTyped = ReadDirectLinksRequestFromJSONTyped;
+exports.ReadDirectLinksRequestToJSON = ReadDirectLinksRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersDirectLink_1 = require("./FiltersDirectLink");
 function ReadDirectLinksRequestFromJSON(json) {
     return ReadDirectLinksRequestFromJSONTyped(json, false);
 }
-exports.ReadDirectLinksRequestFromJSON = ReadDirectLinksRequestFromJSON;
 function ReadDirectLinksRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadDirectLinksRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadDirectLinksRequestFromJSONTyped = ReadDirectLinksRequestFromJSONTyped;
 function ReadDirectLinksRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadDirectLinksRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadDirectLinksRequestToJSON = ReadDirectLinksRequestToJSON;

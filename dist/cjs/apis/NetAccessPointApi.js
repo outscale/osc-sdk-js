@@ -28,13 +28,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -87,8 +97,8 @@ class NetAccessPointApi extends runtime.BaseAPI {
     /**
      * Creates a Net access point to access an OUTSCALE service from this Net without using the Internet and public IPs.<br /> You specify the service using its name. For more information about the available services, see [ReadNetAccessPointServices](#readnetaccesspointservices).<br /> <br /> To control the routing of traffic between the Net and the specified service, you can specify one or more route tables. Virtual machines placed in Subnets associated with the specified route table thus use the Net access point to access the service. When you specify a route table, a route is automatically added to it with the destination set to the prefix list ID of the service, and the target set to the ID of the access point.<br /><br /> When a Net access point is created, a public IP is automatically allocated to your account and used for the Net access point. This public IP is not connected to the Internet. It is counted in your quota, but it is not billed.<br /> <br /> For more information, see [About Net Access Points](https://docs.outscale.com/en/userguide/About-Net-Access-Points.html).
      */
-    createNetAccessPoint(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createNetAccessPoint() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createNetAccessPointRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -128,8 +138,8 @@ class NetAccessPointApi extends runtime.BaseAPI {
     /**
      * Deletes a specified Net access point.<br /> This action also deletes the corresponding routes added to the route tables you specified for the Net access point.
      */
-    deleteNetAccessPoint(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteNetAccessPoint() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteNetAccessPointRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -166,8 +176,8 @@ class NetAccessPointApi extends runtime.BaseAPI {
     /**
      * Lists OUTSCALE services available to create Net access points.<br /> For more information, see [CreateNetAccessPoint](#createnetaccesspoint).
      */
-    readNetAccessPointServices(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readNetAccessPointServices() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readNetAccessPointServicesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -207,8 +217,8 @@ class NetAccessPointApi extends runtime.BaseAPI {
     /**
      * Lists one or more Net access points.
      */
-    readNetAccessPoints(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readNetAccessPoints() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readNetAccessPointsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -248,8 +258,8 @@ class NetAccessPointApi extends runtime.BaseAPI {
     /**
      * Modifies the attributes of a Net access point.<br /> This action enables you to add or remove route tables associated with the specified Net access point.
      */
-    updateNetAccessPoint(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateNetAccessPoint() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateNetAccessPointRaw(requestParameters, initOverrides);
             return yield response.value();
         });

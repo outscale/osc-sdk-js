@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateNicResponseToJSON = exports.CreateNicResponseFromJSONTyped = exports.CreateNicResponseFromJSON = void 0;
+exports.CreateNicResponseFromJSON = CreateNicResponseFromJSON;
+exports.CreateNicResponseFromJSONTyped = CreateNicResponseFromJSONTyped;
+exports.CreateNicResponseToJSON = CreateNicResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Nic_1 = require("./Nic");
 function CreateNicResponseFromJSON(json) {
     return CreateNicResponseFromJSONTyped(json, false);
 }
-exports.CreateNicResponseFromJSON = CreateNicResponseFromJSON;
 function CreateNicResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateNicResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CreateNicResponseFromJSONTyped = CreateNicResponseFromJSONTyped;
 function CreateNicResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateNicResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CreateNicResponseToJSON = CreateNicResponseToJSON;

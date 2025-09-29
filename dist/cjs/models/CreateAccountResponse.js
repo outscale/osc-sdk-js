@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateAccountResponseToJSON = exports.CreateAccountResponseFromJSONTyped = exports.CreateAccountResponseFromJSON = void 0;
+exports.CreateAccountResponseFromJSON = CreateAccountResponseFromJSON;
+exports.CreateAccountResponseFromJSONTyped = CreateAccountResponseFromJSONTyped;
+exports.CreateAccountResponseToJSON = CreateAccountResponseToJSON;
 const runtime_1 = require("../runtime");
 const Account_1 = require("./Account");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function CreateAccountResponseFromJSON(json) {
     return CreateAccountResponseFromJSONTyped(json, false);
 }
-exports.CreateAccountResponseFromJSON = CreateAccountResponseFromJSON;
 function CreateAccountResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateAccountResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CreateAccountResponseFromJSONTyped = CreateAccountResponseFromJSONTyped;
 function CreateAccountResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateAccountResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CreateAccountResponseToJSON = CreateAccountResponseToJSON;

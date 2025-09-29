@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadTagsRequestToJSON = exports.ReadTagsRequestFromJSONTyped = exports.ReadTagsRequestFromJSON = void 0;
+exports.ReadTagsRequestFromJSON = ReadTagsRequestFromJSON;
+exports.ReadTagsRequestFromJSONTyped = ReadTagsRequestFromJSONTyped;
+exports.ReadTagsRequestToJSON = ReadTagsRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersTag_1 = require("./FiltersTag");
 function ReadTagsRequestFromJSON(json) {
     return ReadTagsRequestFromJSONTyped(json, false);
 }
-exports.ReadTagsRequestFromJSON = ReadTagsRequestFromJSON;
 function ReadTagsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadTagsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadTagsRequestFromJSONTyped = ReadTagsRequestFromJSONTyped;
 function ReadTagsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadTagsRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadTagsRequestToJSON = ReadTagsRequestToJSON;

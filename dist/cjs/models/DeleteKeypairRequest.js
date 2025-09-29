@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteKeypairRequestToJSON = exports.DeleteKeypairRequestFromJSONTyped = exports.DeleteKeypairRequestFromJSON = void 0;
+exports.DeleteKeypairRequestFromJSON = DeleteKeypairRequestFromJSON;
+exports.DeleteKeypairRequestFromJSONTyped = DeleteKeypairRequestFromJSONTyped;
+exports.DeleteKeypairRequestToJSON = DeleteKeypairRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteKeypairRequestFromJSON(json) {
     return DeleteKeypairRequestFromJSONTyped(json, false);
 }
-exports.DeleteKeypairRequestFromJSON = DeleteKeypairRequestFromJSON;
 function DeleteKeypairRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function DeleteKeypairRequestFromJSONTyped(json, ignoreDiscriminator) {
         'keypairName': !(0, runtime_1.exists)(json, 'KeypairName') ? undefined : json['KeypairName'],
     };
 }
-exports.DeleteKeypairRequestFromJSONTyped = DeleteKeypairRequestFromJSONTyped;
 function DeleteKeypairRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function DeleteKeypairRequestToJSON(value) {
         'KeypairName': value.keypairName,
     };
 }
-exports.DeleteKeypairRequestToJSON = DeleteKeypairRequestToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateSecurityGroupRuleRequestToJSON = exports.CreateSecurityGroupRuleRequestFromJSONTyped = exports.CreateSecurityGroupRuleRequestFromJSON = void 0;
+exports.CreateSecurityGroupRuleRequestFromJSON = CreateSecurityGroupRuleRequestFromJSON;
+exports.CreateSecurityGroupRuleRequestFromJSONTyped = CreateSecurityGroupRuleRequestFromJSONTyped;
+exports.CreateSecurityGroupRuleRequestToJSON = CreateSecurityGroupRuleRequestToJSON;
 const runtime_1 = require("../runtime");
 const SecurityGroupRule_1 = require("./SecurityGroupRule");
 function CreateSecurityGroupRuleRequestFromJSON(json) {
     return CreateSecurityGroupRuleRequestFromJSONTyped(json, false);
 }
-exports.CreateSecurityGroupRuleRequestFromJSON = CreateSecurityGroupRuleRequestFromJSON;
 function CreateSecurityGroupRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -37,7 +38,6 @@ function CreateSecurityGroupRuleRequestFromJSONTyped(json, ignoreDiscriminator) 
         'toPortRange': !(0, runtime_1.exists)(json, 'ToPortRange') ? undefined : json['ToPortRange'],
     };
 }
-exports.CreateSecurityGroupRuleRequestFromJSONTyped = CreateSecurityGroupRuleRequestFromJSONTyped;
 function CreateSecurityGroupRuleRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -58,4 +58,3 @@ function CreateSecurityGroupRuleRequestToJSON(value) {
         'ToPortRange': value.toPortRange,
     };
 }
-exports.CreateSecurityGroupRuleRequestToJSON = CreateSecurityGroupRuleRequestToJSON;

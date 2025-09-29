@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateNetAccessPointRequestToJSON = exports.UpdateNetAccessPointRequestFromJSONTyped = exports.UpdateNetAccessPointRequestFromJSON = void 0;
+exports.UpdateNetAccessPointRequestFromJSON = UpdateNetAccessPointRequestFromJSON;
+exports.UpdateNetAccessPointRequestFromJSONTyped = UpdateNetAccessPointRequestFromJSONTyped;
+exports.UpdateNetAccessPointRequestToJSON = UpdateNetAccessPointRequestToJSON;
 const runtime_1 = require("../runtime");
 function UpdateNetAccessPointRequestFromJSON(json) {
     return UpdateNetAccessPointRequestFromJSONTyped(json, false);
 }
-exports.UpdateNetAccessPointRequestFromJSON = UpdateNetAccessPointRequestFromJSON;
 function UpdateNetAccessPointRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function UpdateNetAccessPointRequestFromJSONTyped(json, ignoreDiscriminator) {
         'removeRouteTableIds': !(0, runtime_1.exists)(json, 'RemoveRouteTableIds') ? undefined : json['RemoveRouteTableIds'],
     };
 }
-exports.UpdateNetAccessPointRequestFromJSONTyped = UpdateNetAccessPointRequestFromJSONTyped;
 function UpdateNetAccessPointRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function UpdateNetAccessPointRequestToJSON(value) {
         'RemoveRouteTableIds': value.removeRouteTableIds,
     };
 }
-exports.UpdateNetAccessPointRequestToJSON = UpdateNetAccessPointRequestToJSON;

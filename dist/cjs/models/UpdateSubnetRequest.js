@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateSubnetRequestToJSON = exports.UpdateSubnetRequestFromJSONTyped = exports.UpdateSubnetRequestFromJSON = void 0;
+exports.UpdateSubnetRequestFromJSON = UpdateSubnetRequestFromJSON;
+exports.UpdateSubnetRequestFromJSONTyped = UpdateSubnetRequestFromJSONTyped;
+exports.UpdateSubnetRequestToJSON = UpdateSubnetRequestToJSON;
 const runtime_1 = require("../runtime");
 function UpdateSubnetRequestFromJSON(json) {
     return UpdateSubnetRequestFromJSONTyped(json, false);
 }
-exports.UpdateSubnetRequestFromJSON = UpdateSubnetRequestFromJSON;
 function UpdateSubnetRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function UpdateSubnetRequestFromJSONTyped(json, ignoreDiscriminator) {
         'subnetId': json['SubnetId'],
     };
 }
-exports.UpdateSubnetRequestFromJSONTyped = UpdateSubnetRequestFromJSONTyped;
 function UpdateSubnetRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UpdateSubnetRequestToJSON(value) {
         'SubnetId': value.subnetId,
     };
 }
-exports.UpdateSubnetRequestToJSON = UpdateSubnetRequestToJSON;

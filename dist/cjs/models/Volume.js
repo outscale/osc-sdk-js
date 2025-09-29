@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VolumeToJSON = exports.VolumeFromJSONTyped = exports.VolumeFromJSON = void 0;
+exports.VolumeFromJSON = VolumeFromJSON;
+exports.VolumeFromJSONTyped = VolumeFromJSONTyped;
+exports.VolumeToJSON = VolumeToJSON;
 const runtime_1 = require("../runtime");
 const LinkedVolume_1 = require("./LinkedVolume");
 const ResourceTag_1 = require("./ResourceTag");
 function VolumeFromJSON(json) {
     return VolumeFromJSONTyped(json, false);
 }
-exports.VolumeFromJSON = VolumeFromJSON;
 function VolumeFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -39,7 +40,6 @@ function VolumeFromJSONTyped(json, ignoreDiscriminator) {
         'volumeType': !(0, runtime_1.exists)(json, 'VolumeType') ? undefined : json['VolumeType'],
     };
 }
-exports.VolumeFromJSONTyped = VolumeFromJSONTyped;
 function VolumeToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -61,4 +61,3 @@ function VolumeToJSON(value) {
         'VolumeType': value.volumeType,
     };
 }
-exports.VolumeToJSON = VolumeToJSON;

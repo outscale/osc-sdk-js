@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateRouteTableLinkRequestToJSON = exports.UpdateRouteTableLinkRequestFromJSONTyped = exports.UpdateRouteTableLinkRequestFromJSON = void 0;
+exports.UpdateRouteTableLinkRequestFromJSON = UpdateRouteTableLinkRequestFromJSON;
+exports.UpdateRouteTableLinkRequestFromJSONTyped = UpdateRouteTableLinkRequestFromJSONTyped;
+exports.UpdateRouteTableLinkRequestToJSON = UpdateRouteTableLinkRequestToJSON;
 const runtime_1 = require("../runtime");
 function UpdateRouteTableLinkRequestFromJSON(json) {
     return UpdateRouteTableLinkRequestFromJSONTyped(json, false);
 }
-exports.UpdateRouteTableLinkRequestFromJSON = UpdateRouteTableLinkRequestFromJSON;
 function UpdateRouteTableLinkRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function UpdateRouteTableLinkRequestFromJSONTyped(json, ignoreDiscriminator) {
         'routeTableId': json['RouteTableId'],
     };
 }
-exports.UpdateRouteTableLinkRequestFromJSONTyped = UpdateRouteTableLinkRequestFromJSONTyped;
 function UpdateRouteTableLinkRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UpdateRouteTableLinkRequestToJSON(value) {
         'RouteTableId': value.routeTableId,
     };
 }
-exports.UpdateRouteTableLinkRequestToJSON = UpdateRouteTableLinkRequestToJSON;

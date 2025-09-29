@@ -13,7 +13,9 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RouteTableToJSON = exports.RouteTableFromJSONTyped = exports.RouteTableFromJSON = void 0;
+exports.RouteTableFromJSON = RouteTableFromJSON;
+exports.RouteTableFromJSONTyped = RouteTableFromJSONTyped;
+exports.RouteTableToJSON = RouteTableToJSON;
 const runtime_1 = require("../runtime");
 const LinkRouteTable_1 = require("./LinkRouteTable");
 const ResourceTag_1 = require("./ResourceTag");
@@ -22,7 +24,6 @@ const RoutePropagatingVirtualGateway_1 = require("./RoutePropagatingVirtualGatew
 function RouteTableFromJSON(json) {
     return RouteTableFromJSONTyped(json, false);
 }
-exports.RouteTableFromJSON = RouteTableFromJSON;
 function RouteTableFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -36,7 +37,6 @@ function RouteTableFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
     };
 }
-exports.RouteTableFromJSONTyped = RouteTableFromJSONTyped;
 function RouteTableToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +53,3 @@ function RouteTableToJSON(value) {
         'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
     };
 }
-exports.RouteTableToJSON = RouteTableToJSON;

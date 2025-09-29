@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlockDeviceMappingCreatedToJSON = exports.BlockDeviceMappingCreatedFromJSONTyped = exports.BlockDeviceMappingCreatedFromJSON = void 0;
+exports.BlockDeviceMappingCreatedFromJSON = BlockDeviceMappingCreatedFromJSON;
+exports.BlockDeviceMappingCreatedFromJSONTyped = BlockDeviceMappingCreatedFromJSONTyped;
+exports.BlockDeviceMappingCreatedToJSON = BlockDeviceMappingCreatedToJSON;
 const runtime_1 = require("../runtime");
 const BsuCreated_1 = require("./BsuCreated");
 function BlockDeviceMappingCreatedFromJSON(json) {
     return BlockDeviceMappingCreatedFromJSONTyped(json, false);
 }
-exports.BlockDeviceMappingCreatedFromJSON = BlockDeviceMappingCreatedFromJSON;
 function BlockDeviceMappingCreatedFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function BlockDeviceMappingCreatedFromJSONTyped(json, ignoreDiscriminator) {
         'deviceName': !(0, runtime_1.exists)(json, 'DeviceName') ? undefined : json['DeviceName'],
     };
 }
-exports.BlockDeviceMappingCreatedFromJSONTyped = BlockDeviceMappingCreatedFromJSONTyped;
 function BlockDeviceMappingCreatedToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function BlockDeviceMappingCreatedToJSON(value) {
         'DeviceName': value.deviceName,
     };
 }
-exports.BlockDeviceMappingCreatedToJSON = BlockDeviceMappingCreatedToJSON;

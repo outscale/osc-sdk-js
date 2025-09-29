@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateImageResponseToJSON = exports.CreateImageResponseFromJSONTyped = exports.CreateImageResponseFromJSON = void 0;
+exports.CreateImageResponseFromJSON = CreateImageResponseFromJSON;
+exports.CreateImageResponseFromJSONTyped = CreateImageResponseFromJSONTyped;
+exports.CreateImageResponseToJSON = CreateImageResponseToJSON;
 const runtime_1 = require("../runtime");
 const Image_1 = require("./Image");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function CreateImageResponseFromJSON(json) {
     return CreateImageResponseFromJSONTyped(json, false);
 }
-exports.CreateImageResponseFromJSON = CreateImageResponseFromJSON;
 function CreateImageResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateImageResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CreateImageResponseFromJSONTyped = CreateImageResponseFromJSONTyped;
 function CreateImageResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateImageResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CreateImageResponseToJSON = CreateImageResponseToJSON;

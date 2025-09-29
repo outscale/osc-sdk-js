@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadProductTypesResponseToJSON = exports.ReadProductTypesResponseFromJSONTyped = exports.ReadProductTypesResponseFromJSON = void 0;
+exports.ReadProductTypesResponseFromJSON = ReadProductTypesResponseFromJSON;
+exports.ReadProductTypesResponseFromJSONTyped = ReadProductTypesResponseFromJSONTyped;
+exports.ReadProductTypesResponseToJSON = ReadProductTypesResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const ProductType_1 = require("./ProductType");
 function ReadProductTypesResponseFromJSON(json) {
     return ReadProductTypesResponseFromJSONTyped(json, false);
 }
-exports.ReadProductTypesResponseFromJSON = ReadProductTypesResponseFromJSON;
 function ReadProductTypesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadProductTypesResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadProductTypesResponseFromJSONTyped = ReadProductTypesResponseFromJSONTyped;
 function ReadProductTypesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadProductTypesResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadProductTypesResponseToJSON = ReadProductTypesResponseToJSON;

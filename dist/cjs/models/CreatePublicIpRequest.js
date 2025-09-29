@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePublicIpRequestToJSON = exports.CreatePublicIpRequestFromJSONTyped = exports.CreatePublicIpRequestFromJSON = void 0;
+exports.CreatePublicIpRequestFromJSON = CreatePublicIpRequestFromJSON;
+exports.CreatePublicIpRequestFromJSONTyped = CreatePublicIpRequestFromJSONTyped;
+exports.CreatePublicIpRequestToJSON = CreatePublicIpRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreatePublicIpRequestFromJSON(json) {
     return CreatePublicIpRequestFromJSONTyped(json, false);
 }
-exports.CreatePublicIpRequestFromJSON = CreatePublicIpRequestFromJSON;
 function CreatePublicIpRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function CreatePublicIpRequestFromJSONTyped(json, ignoreDiscriminator) {
         'dryRun': !(0, runtime_1.exists)(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.CreatePublicIpRequestFromJSONTyped = CreatePublicIpRequestFromJSONTyped;
 function CreatePublicIpRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function CreatePublicIpRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.CreatePublicIpRequestToJSON = CreatePublicIpRequestToJSON;

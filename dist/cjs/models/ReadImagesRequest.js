@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadImagesRequestToJSON = exports.ReadImagesRequestFromJSONTyped = exports.ReadImagesRequestFromJSON = void 0;
+exports.ReadImagesRequestFromJSON = ReadImagesRequestFromJSON;
+exports.ReadImagesRequestFromJSONTyped = ReadImagesRequestFromJSONTyped;
+exports.ReadImagesRequestToJSON = ReadImagesRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersImage_1 = require("./FiltersImage");
 function ReadImagesRequestFromJSON(json) {
     return ReadImagesRequestFromJSONTyped(json, false);
 }
-exports.ReadImagesRequestFromJSON = ReadImagesRequestFromJSON;
 function ReadImagesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadImagesRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadImagesRequestFromJSONTyped = ReadImagesRequestFromJSONTyped;
 function ReadImagesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadImagesRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadImagesRequestToJSON = ReadImagesRequestToJSON;

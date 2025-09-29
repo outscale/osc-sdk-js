@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateNetPeeringRequestToJSON = exports.CreateNetPeeringRequestFromJSONTyped = exports.CreateNetPeeringRequestFromJSON = void 0;
+exports.CreateNetPeeringRequestFromJSON = CreateNetPeeringRequestFromJSON;
+exports.CreateNetPeeringRequestFromJSONTyped = CreateNetPeeringRequestFromJSONTyped;
+exports.CreateNetPeeringRequestToJSON = CreateNetPeeringRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateNetPeeringRequestFromJSON(json) {
     return CreateNetPeeringRequestFromJSONTyped(json, false);
 }
-exports.CreateNetPeeringRequestFromJSON = CreateNetPeeringRequestFromJSON;
 function CreateNetPeeringRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateNetPeeringRequestFromJSONTyped(json, ignoreDiscriminator) {
         'sourceNetId': json['SourceNetId'],
     };
 }
-exports.CreateNetPeeringRequestFromJSONTyped = CreateNetPeeringRequestFromJSONTyped;
 function CreateNetPeeringRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function CreateNetPeeringRequestToJSON(value) {
         'SourceNetId': value.sourceNetId,
     };
 }
-exports.CreateNetPeeringRequestToJSON = CreateNetPeeringRequestToJSON;

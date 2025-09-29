@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadNicsRequestToJSON = exports.ReadNicsRequestFromJSONTyped = exports.ReadNicsRequestFromJSON = void 0;
+exports.ReadNicsRequestFromJSON = ReadNicsRequestFromJSON;
+exports.ReadNicsRequestFromJSONTyped = ReadNicsRequestFromJSONTyped;
+exports.ReadNicsRequestToJSON = ReadNicsRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersNic_1 = require("./FiltersNic");
 function ReadNicsRequestFromJSON(json) {
     return ReadNicsRequestFromJSONTyped(json, false);
 }
-exports.ReadNicsRequestFromJSON = ReadNicsRequestFromJSON;
 function ReadNicsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadNicsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadNicsRequestFromJSONTyped = ReadNicsRequestFromJSONTyped;
 function ReadNicsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadNicsRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadNicsRequestToJSON = ReadNicsRequestToJSON;

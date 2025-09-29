@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateVmResponseToJSON = exports.UpdateVmResponseFromJSONTyped = exports.UpdateVmResponseFromJSON = void 0;
+exports.UpdateVmResponseFromJSON = UpdateVmResponseFromJSON;
+exports.UpdateVmResponseFromJSONTyped = UpdateVmResponseFromJSONTyped;
+exports.UpdateVmResponseToJSON = UpdateVmResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Vm_1 = require("./Vm");
 function UpdateVmResponseFromJSON(json) {
     return UpdateVmResponseFromJSONTyped(json, false);
 }
-exports.UpdateVmResponseFromJSON = UpdateVmResponseFromJSON;
 function UpdateVmResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function UpdateVmResponseFromJSONTyped(json, ignoreDiscriminator) {
         'vm': !(0, runtime_1.exists)(json, 'Vm') ? undefined : (0, Vm_1.VmFromJSON)(json['Vm']),
     };
 }
-exports.UpdateVmResponseFromJSONTyped = UpdateVmResponseFromJSONTyped;
 function UpdateVmResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UpdateVmResponseToJSON(value) {
         'Vm': (0, Vm_1.VmToJSON)(value.vm),
     };
 }
-exports.UpdateVmResponseToJSON = UpdateVmResponseToJSON;

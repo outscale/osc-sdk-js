@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteLoadBalancerListenersResponseToJSON = exports.DeleteLoadBalancerListenersResponseFromJSONTyped = exports.DeleteLoadBalancerListenersResponseFromJSON = void 0;
+exports.DeleteLoadBalancerListenersResponseFromJSON = DeleteLoadBalancerListenersResponseFromJSON;
+exports.DeleteLoadBalancerListenersResponseFromJSONTyped = DeleteLoadBalancerListenersResponseFromJSONTyped;
+exports.DeleteLoadBalancerListenersResponseToJSON = DeleteLoadBalancerListenersResponseToJSON;
 const runtime_1 = require("../runtime");
 const LoadBalancer_1 = require("./LoadBalancer");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteLoadBalancerListenersResponseFromJSON(json) {
     return DeleteLoadBalancerListenersResponseFromJSONTyped(json, false);
 }
-exports.DeleteLoadBalancerListenersResponseFromJSON = DeleteLoadBalancerListenersResponseFromJSON;
 function DeleteLoadBalancerListenersResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function DeleteLoadBalancerListenersResponseFromJSONTyped(json, ignoreDiscrimina
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteLoadBalancerListenersResponseFromJSONTyped = DeleteLoadBalancerListenersResponseFromJSONTyped;
 function DeleteLoadBalancerListenersResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function DeleteLoadBalancerListenersResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteLoadBalancerListenersResponseToJSON = DeleteLoadBalancerListenersResponseToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VgwTelemetryToJSON = exports.VgwTelemetryFromJSONTyped = exports.VgwTelemetryFromJSON = void 0;
+exports.VgwTelemetryFromJSON = VgwTelemetryFromJSON;
+exports.VgwTelemetryFromJSONTyped = VgwTelemetryFromJSONTyped;
+exports.VgwTelemetryToJSON = VgwTelemetryToJSON;
 const runtime_1 = require("../runtime");
 function VgwTelemetryFromJSON(json) {
     return VgwTelemetryFromJSONTyped(json, false);
 }
-exports.VgwTelemetryFromJSON = VgwTelemetryFromJSON;
 function VgwTelemetryFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function VgwTelemetryFromJSONTyped(json, ignoreDiscriminator) {
         'stateDescription': !(0, runtime_1.exists)(json, 'StateDescription') ? undefined : json['StateDescription'],
     };
 }
-exports.VgwTelemetryFromJSONTyped = VgwTelemetryFromJSONTyped;
 function VgwTelemetryToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function VgwTelemetryToJSON(value) {
         'StateDescription': value.stateDescription,
     };
 }
-exports.VgwTelemetryToJSON = VgwTelemetryToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteTagsRequestToJSON = exports.DeleteTagsRequestFromJSONTyped = exports.DeleteTagsRequestFromJSON = void 0;
+exports.DeleteTagsRequestFromJSON = DeleteTagsRequestFromJSON;
+exports.DeleteTagsRequestFromJSONTyped = DeleteTagsRequestFromJSONTyped;
+exports.DeleteTagsRequestToJSON = DeleteTagsRequestToJSON;
 const runtime_1 = require("../runtime");
 const ResourceTag_1 = require("./ResourceTag");
 function DeleteTagsRequestFromJSON(json) {
     return DeleteTagsRequestFromJSONTyped(json, false);
 }
-exports.DeleteTagsRequestFromJSON = DeleteTagsRequestFromJSON;
 function DeleteTagsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function DeleteTagsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'tags': (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
     };
 }
-exports.DeleteTagsRequestFromJSONTyped = DeleteTagsRequestFromJSONTyped;
 function DeleteTagsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function DeleteTagsRequestToJSON(value) {
         'Tags': (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
     };
 }
-exports.DeleteTagsRequestToJSON = DeleteTagsRequestToJSON;

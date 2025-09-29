@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateSubnetResponseToJSON = exports.UpdateSubnetResponseFromJSONTyped = exports.UpdateSubnetResponseFromJSON = void 0;
+exports.UpdateSubnetResponseFromJSON = UpdateSubnetResponseFromJSON;
+exports.UpdateSubnetResponseFromJSONTyped = UpdateSubnetResponseFromJSONTyped;
+exports.UpdateSubnetResponseToJSON = UpdateSubnetResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Subnet_1 = require("./Subnet");
 function UpdateSubnetResponseFromJSON(json) {
     return UpdateSubnetResponseFromJSONTyped(json, false);
 }
-exports.UpdateSubnetResponseFromJSON = UpdateSubnetResponseFromJSON;
 function UpdateSubnetResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function UpdateSubnetResponseFromJSONTyped(json, ignoreDiscriminator) {
         'subnet': !(0, runtime_1.exists)(json, 'Subnet') ? undefined : (0, Subnet_1.SubnetFromJSON)(json['Subnet']),
     };
 }
-exports.UpdateSubnetResponseFromJSONTyped = UpdateSubnetResponseFromJSONTyped;
 function UpdateSubnetResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UpdateSubnetResponseToJSON(value) {
         'Subnet': (0, Subnet_1.SubnetToJSON)(value.subnet),
     };
 }
-exports.UpdateSubnetResponseToJSON = UpdateSubnetResponseToJSON;

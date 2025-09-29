@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadDedicatedGroupsRequestToJSON = exports.ReadDedicatedGroupsRequestFromJSONTyped = exports.ReadDedicatedGroupsRequestFromJSON = void 0;
+exports.ReadDedicatedGroupsRequestFromJSON = ReadDedicatedGroupsRequestFromJSON;
+exports.ReadDedicatedGroupsRequestFromJSONTyped = ReadDedicatedGroupsRequestFromJSONTyped;
+exports.ReadDedicatedGroupsRequestToJSON = ReadDedicatedGroupsRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersDedicatedGroup_1 = require("./FiltersDedicatedGroup");
 function ReadDedicatedGroupsRequestFromJSON(json) {
     return ReadDedicatedGroupsRequestFromJSONTyped(json, false);
 }
-exports.ReadDedicatedGroupsRequestFromJSON = ReadDedicatedGroupsRequestFromJSON;
 function ReadDedicatedGroupsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadDedicatedGroupsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadDedicatedGroupsRequestFromJSONTyped = ReadDedicatedGroupsRequestFromJSONTyped;
 function ReadDedicatedGroupsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadDedicatedGroupsRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadDedicatedGroupsRequestToJSON = ReadDedicatedGroupsRequestToJSON;

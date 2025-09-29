@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RebootVmsRequestToJSON = exports.RebootVmsRequestFromJSONTyped = exports.RebootVmsRequestFromJSON = void 0;
+exports.RebootVmsRequestFromJSON = RebootVmsRequestFromJSON;
+exports.RebootVmsRequestFromJSONTyped = RebootVmsRequestFromJSONTyped;
+exports.RebootVmsRequestToJSON = RebootVmsRequestToJSON;
 const runtime_1 = require("../runtime");
 function RebootVmsRequestFromJSON(json) {
     return RebootVmsRequestFromJSONTyped(json, false);
 }
-exports.RebootVmsRequestFromJSON = RebootVmsRequestFromJSON;
 function RebootVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function RebootVmsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vmIds': json['VmIds'],
     };
 }
-exports.RebootVmsRequestFromJSONTyped = RebootVmsRequestFromJSONTyped;
 function RebootVmsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function RebootVmsRequestToJSON(value) {
         'VmIds': value.vmIds,
     };
 }
-exports.RebootVmsRequestToJSON = RebootVmsRequestToJSON;

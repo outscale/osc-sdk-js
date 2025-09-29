@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadPublicIpsRequestToJSON = exports.ReadPublicIpsRequestFromJSONTyped = exports.ReadPublicIpsRequestFromJSON = void 0;
+exports.ReadPublicIpsRequestFromJSON = ReadPublicIpsRequestFromJSON;
+exports.ReadPublicIpsRequestFromJSONTyped = ReadPublicIpsRequestFromJSONTyped;
+exports.ReadPublicIpsRequestToJSON = ReadPublicIpsRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersPublicIp_1 = require("./FiltersPublicIp");
 function ReadPublicIpsRequestFromJSON(json) {
     return ReadPublicIpsRequestFromJSONTyped(json, false);
 }
-exports.ReadPublicIpsRequestFromJSON = ReadPublicIpsRequestFromJSON;
 function ReadPublicIpsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadPublicIpsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadPublicIpsRequestFromJSONTyped = ReadPublicIpsRequestFromJSONTyped;
 function ReadPublicIpsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadPublicIpsRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadPublicIpsRequestToJSON = ReadPublicIpsRequestToJSON;

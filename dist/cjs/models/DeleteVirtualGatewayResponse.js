@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteVirtualGatewayResponseToJSON = exports.DeleteVirtualGatewayResponseFromJSONTyped = exports.DeleteVirtualGatewayResponseFromJSON = void 0;
+exports.DeleteVirtualGatewayResponseFromJSON = DeleteVirtualGatewayResponseFromJSON;
+exports.DeleteVirtualGatewayResponseFromJSONTyped = DeleteVirtualGatewayResponseFromJSONTyped;
+exports.DeleteVirtualGatewayResponseToJSON = DeleteVirtualGatewayResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteVirtualGatewayResponseFromJSON(json) {
     return DeleteVirtualGatewayResponseFromJSONTyped(json, false);
 }
-exports.DeleteVirtualGatewayResponseFromJSON = DeleteVirtualGatewayResponseFromJSON;
 function DeleteVirtualGatewayResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteVirtualGatewayResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteVirtualGatewayResponseFromJSONTyped = DeleteVirtualGatewayResponseFromJSONTyped;
 function DeleteVirtualGatewayResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteVirtualGatewayResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteVirtualGatewayResponseToJSON = DeleteVirtualGatewayResponseToJSON;

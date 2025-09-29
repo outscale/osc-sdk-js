@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadFlexibleGpuCatalogRequestToJSON = exports.ReadFlexibleGpuCatalogRequestFromJSONTyped = exports.ReadFlexibleGpuCatalogRequestFromJSON = void 0;
+exports.ReadFlexibleGpuCatalogRequestFromJSON = ReadFlexibleGpuCatalogRequestFromJSON;
+exports.ReadFlexibleGpuCatalogRequestFromJSONTyped = ReadFlexibleGpuCatalogRequestFromJSONTyped;
+exports.ReadFlexibleGpuCatalogRequestToJSON = ReadFlexibleGpuCatalogRequestToJSON;
 const runtime_1 = require("../runtime");
 function ReadFlexibleGpuCatalogRequestFromJSON(json) {
     return ReadFlexibleGpuCatalogRequestFromJSONTyped(json, false);
 }
-exports.ReadFlexibleGpuCatalogRequestFromJSON = ReadFlexibleGpuCatalogRequestFromJSON;
 function ReadFlexibleGpuCatalogRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function ReadFlexibleGpuCatalogRequestFromJSONTyped(json, ignoreDiscriminator) {
         'dryRun': !(0, runtime_1.exists)(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.ReadFlexibleGpuCatalogRequestFromJSONTyped = ReadFlexibleGpuCatalogRequestFromJSONTyped;
 function ReadFlexibleGpuCatalogRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function ReadFlexibleGpuCatalogRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.ReadFlexibleGpuCatalogRequestToJSON = ReadFlexibleGpuCatalogRequestToJSON;

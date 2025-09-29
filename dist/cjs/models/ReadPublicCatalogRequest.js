@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadPublicCatalogRequestToJSON = exports.ReadPublicCatalogRequestFromJSONTyped = exports.ReadPublicCatalogRequestFromJSON = void 0;
+exports.ReadPublicCatalogRequestFromJSON = ReadPublicCatalogRequestFromJSON;
+exports.ReadPublicCatalogRequestFromJSONTyped = ReadPublicCatalogRequestFromJSONTyped;
+exports.ReadPublicCatalogRequestToJSON = ReadPublicCatalogRequestToJSON;
 const runtime_1 = require("../runtime");
 function ReadPublicCatalogRequestFromJSON(json) {
     return ReadPublicCatalogRequestFromJSONTyped(json, false);
 }
-exports.ReadPublicCatalogRequestFromJSON = ReadPublicCatalogRequestFromJSON;
 function ReadPublicCatalogRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function ReadPublicCatalogRequestFromJSONTyped(json, ignoreDiscriminator) {
         'dryRun': !(0, runtime_1.exists)(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.ReadPublicCatalogRequestFromJSONTyped = ReadPublicCatalogRequestFromJSONTyped;
 function ReadPublicCatalogRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function ReadPublicCatalogRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.ReadPublicCatalogRequestToJSON = ReadPublicCatalogRequestToJSON;

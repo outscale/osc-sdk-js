@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeletePublicIpRequestToJSON = exports.DeletePublicIpRequestFromJSONTyped = exports.DeletePublicIpRequestFromJSON = void 0;
+exports.DeletePublicIpRequestFromJSON = DeletePublicIpRequestFromJSON;
+exports.DeletePublicIpRequestFromJSONTyped = DeletePublicIpRequestFromJSONTyped;
+exports.DeletePublicIpRequestToJSON = DeletePublicIpRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeletePublicIpRequestFromJSON(json) {
     return DeletePublicIpRequestFromJSONTyped(json, false);
 }
-exports.DeletePublicIpRequestFromJSON = DeletePublicIpRequestFromJSON;
 function DeletePublicIpRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function DeletePublicIpRequestFromJSONTyped(json, ignoreDiscriminator) {
         'publicIpId': !(0, runtime_1.exists)(json, 'PublicIpId') ? undefined : json['PublicIpId'],
     };
 }
-exports.DeletePublicIpRequestFromJSONTyped = DeletePublicIpRequestFromJSONTyped;
 function DeletePublicIpRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function DeletePublicIpRequestToJSON(value) {
         'PublicIpId': value.publicIpId,
     };
 }
-exports.DeletePublicIpRequestToJSON = DeletePublicIpRequestToJSON;

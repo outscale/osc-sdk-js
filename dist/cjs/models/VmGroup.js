@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VmGroupToJSON = exports.VmGroupFromJSONTyped = exports.VmGroupFromJSON = exports.VmGroupStateEnum = exports.VmGroupPositioningStrategyEnum = void 0;
+exports.VmGroupStateEnum = exports.VmGroupPositioningStrategyEnum = void 0;
+exports.VmGroupFromJSON = VmGroupFromJSON;
+exports.VmGroupFromJSONTyped = VmGroupFromJSONTyped;
+exports.VmGroupToJSON = VmGroupToJSON;
 const runtime_1 = require("../runtime");
 const ResourceTag_1 = require("./ResourceTag");
 /**
@@ -38,7 +41,6 @@ exports.VmGroupStateEnum = {
 function VmGroupFromJSON(json) {
     return VmGroupFromJSONTyped(json, false);
 }
-exports.VmGroupFromJSON = VmGroupFromJSON;
 function VmGroupFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -58,7 +60,6 @@ function VmGroupFromJSONTyped(json, ignoreDiscriminator) {
         'vmTemplateId': !(0, runtime_1.exists)(json, 'VmTemplateId') ? undefined : json['VmTemplateId'],
     };
 }
-exports.VmGroupFromJSONTyped = VmGroupFromJSONTyped;
 function VmGroupToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -81,4 +82,3 @@ function VmGroupToJSON(value) {
         'VmTemplateId': value.vmTemplateId,
     };
 }
-exports.VmGroupToJSON = VmGroupToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NetPeeringStateToJSON = exports.NetPeeringStateFromJSONTyped = exports.NetPeeringStateFromJSON = void 0;
+exports.NetPeeringStateFromJSON = NetPeeringStateFromJSON;
+exports.NetPeeringStateFromJSONTyped = NetPeeringStateFromJSONTyped;
+exports.NetPeeringStateToJSON = NetPeeringStateToJSON;
 const runtime_1 = require("../runtime");
 function NetPeeringStateFromJSON(json) {
     return NetPeeringStateFromJSONTyped(json, false);
 }
-exports.NetPeeringStateFromJSON = NetPeeringStateFromJSON;
 function NetPeeringStateFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function NetPeeringStateFromJSONTyped(json, ignoreDiscriminator) {
         'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
     };
 }
-exports.NetPeeringStateFromJSONTyped = NetPeeringStateFromJSONTyped;
 function NetPeeringStateToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function NetPeeringStateToJSON(value) {
         'Name': value.name,
     };
 }
-exports.NetPeeringStateToJSON = NetPeeringStateToJSON;

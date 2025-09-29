@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateCaRequestToJSON = exports.CreateCaRequestFromJSONTyped = exports.CreateCaRequestFromJSON = void 0;
+exports.CreateCaRequestFromJSON = CreateCaRequestFromJSON;
+exports.CreateCaRequestFromJSONTyped = CreateCaRequestFromJSONTyped;
+exports.CreateCaRequestToJSON = CreateCaRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateCaRequestFromJSON(json) {
     return CreateCaRequestFromJSONTyped(json, false);
 }
-exports.CreateCaRequestFromJSON = CreateCaRequestFromJSON;
 function CreateCaRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function CreateCaRequestFromJSONTyped(json, ignoreDiscriminator) {
         'dryRun': !(0, runtime_1.exists)(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.CreateCaRequestFromJSONTyped = CreateCaRequestFromJSONTyped;
 function CreateCaRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateCaRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.CreateCaRequestToJSON = CreateCaRequestToJSON;

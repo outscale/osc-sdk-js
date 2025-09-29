@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateImageRequestToJSON = exports.UpdateImageRequestFromJSONTyped = exports.UpdateImageRequestFromJSON = void 0;
+exports.UpdateImageRequestFromJSON = UpdateImageRequestFromJSON;
+exports.UpdateImageRequestFromJSONTyped = UpdateImageRequestFromJSONTyped;
+exports.UpdateImageRequestToJSON = UpdateImageRequestToJSON;
 const runtime_1 = require("../runtime");
 const PermissionsOnResourceCreation_1 = require("./PermissionsOnResourceCreation");
 function UpdateImageRequestFromJSON(json) {
     return UpdateImageRequestFromJSONTyped(json, false);
 }
-exports.UpdateImageRequestFromJSON = UpdateImageRequestFromJSON;
 function UpdateImageRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -32,7 +33,6 @@ function UpdateImageRequestFromJSONTyped(json, ignoreDiscriminator) {
         'productCodes': !(0, runtime_1.exists)(json, 'ProductCodes') ? undefined : json['ProductCodes'],
     };
 }
-exports.UpdateImageRequestFromJSONTyped = UpdateImageRequestFromJSONTyped;
 function UpdateImageRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -48,4 +48,3 @@ function UpdateImageRequestToJSON(value) {
         'ProductCodes': value.productCodes,
     };
 }
-exports.UpdateImageRequestToJSON = UpdateImageRequestToJSON;

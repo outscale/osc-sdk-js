@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteLoadBalancerPolicyRequestToJSON = exports.DeleteLoadBalancerPolicyRequestFromJSONTyped = exports.DeleteLoadBalancerPolicyRequestFromJSON = void 0;
+exports.DeleteLoadBalancerPolicyRequestFromJSON = DeleteLoadBalancerPolicyRequestFromJSON;
+exports.DeleteLoadBalancerPolicyRequestFromJSONTyped = DeleteLoadBalancerPolicyRequestFromJSONTyped;
+exports.DeleteLoadBalancerPolicyRequestToJSON = DeleteLoadBalancerPolicyRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteLoadBalancerPolicyRequestFromJSON(json) {
     return DeleteLoadBalancerPolicyRequestFromJSONTyped(json, false);
 }
-exports.DeleteLoadBalancerPolicyRequestFromJSON = DeleteLoadBalancerPolicyRequestFromJSON;
 function DeleteLoadBalancerPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function DeleteLoadBalancerPolicyRequestFromJSONTyped(json, ignoreDiscriminator)
         'policyName': json['PolicyName'],
     };
 }
-exports.DeleteLoadBalancerPolicyRequestFromJSONTyped = DeleteLoadBalancerPolicyRequestFromJSONTyped;
 function DeleteLoadBalancerPolicyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function DeleteLoadBalancerPolicyRequestToJSON(value) {
         'PolicyName': value.policyName,
     };
 }
-exports.DeleteLoadBalancerPolicyRequestToJSON = DeleteLoadBalancerPolicyRequestToJSON;

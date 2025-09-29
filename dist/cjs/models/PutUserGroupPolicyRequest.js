@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PutUserGroupPolicyRequestToJSON = exports.PutUserGroupPolicyRequestFromJSONTyped = exports.PutUserGroupPolicyRequestFromJSON = void 0;
+exports.PutUserGroupPolicyRequestFromJSON = PutUserGroupPolicyRequestFromJSON;
+exports.PutUserGroupPolicyRequestFromJSONTyped = PutUserGroupPolicyRequestFromJSONTyped;
+exports.PutUserGroupPolicyRequestToJSON = PutUserGroupPolicyRequestToJSON;
 const runtime_1 = require("../runtime");
 function PutUserGroupPolicyRequestFromJSON(json) {
     return PutUserGroupPolicyRequestFromJSONTyped(json, false);
 }
-exports.PutUserGroupPolicyRequestFromJSON = PutUserGroupPolicyRequestFromJSON;
 function PutUserGroupPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function PutUserGroupPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
         'userGroupPath': !(0, runtime_1.exists)(json, 'UserGroupPath') ? undefined : json['UserGroupPath'],
     };
 }
-exports.PutUserGroupPolicyRequestFromJSONTyped = PutUserGroupPolicyRequestFromJSONTyped;
 function PutUserGroupPolicyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function PutUserGroupPolicyRequestToJSON(value) {
         'UserGroupPath': value.userGroupPath,
     };
 }
-exports.PutUserGroupPolicyRequestToJSON = PutUserGroupPolicyRequestToJSON;

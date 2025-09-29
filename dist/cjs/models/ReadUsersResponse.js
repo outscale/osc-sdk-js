@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadUsersResponseToJSON = exports.ReadUsersResponseFromJSONTyped = exports.ReadUsersResponseFromJSON = void 0;
+exports.ReadUsersResponseFromJSON = ReadUsersResponseFromJSON;
+exports.ReadUsersResponseFromJSONTyped = ReadUsersResponseFromJSONTyped;
+exports.ReadUsersResponseToJSON = ReadUsersResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const User_1 = require("./User");
 function ReadUsersResponseFromJSON(json) {
     return ReadUsersResponseFromJSONTyped(json, false);
 }
-exports.ReadUsersResponseFromJSON = ReadUsersResponseFromJSON;
 function ReadUsersResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function ReadUsersResponseFromJSONTyped(json, ignoreDiscriminator) {
         'users': !(0, runtime_1.exists)(json, 'Users') ? undefined : (json['Users'].map(User_1.UserFromJSON)),
     };
 }
-exports.ReadUsersResponseFromJSONTyped = ReadUsersResponseFromJSONTyped;
 function ReadUsersResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function ReadUsersResponseToJSON(value) {
         'Users': value.users === undefined ? undefined : (value.users.map(User_1.UserToJSON)),
     };
 }
-exports.ReadUsersResponseToJSON = ReadUsersResponseToJSON;

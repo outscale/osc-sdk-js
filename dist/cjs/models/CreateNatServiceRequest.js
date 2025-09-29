@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateNatServiceRequestToJSON = exports.CreateNatServiceRequestFromJSONTyped = exports.CreateNatServiceRequestFromJSON = void 0;
+exports.CreateNatServiceRequestFromJSON = CreateNatServiceRequestFromJSON;
+exports.CreateNatServiceRequestFromJSONTyped = CreateNatServiceRequestFromJSONTyped;
+exports.CreateNatServiceRequestToJSON = CreateNatServiceRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateNatServiceRequestFromJSON(json) {
     return CreateNatServiceRequestFromJSONTyped(json, false);
 }
-exports.CreateNatServiceRequestFromJSON = CreateNatServiceRequestFromJSON;
 function CreateNatServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateNatServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
         'subnetId': json['SubnetId'],
     };
 }
-exports.CreateNatServiceRequestFromJSONTyped = CreateNatServiceRequestFromJSONTyped;
 function CreateNatServiceRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function CreateNatServiceRequestToJSON(value) {
         'SubnetId': value.subnetId,
     };
 }
-exports.CreateNatServiceRequestToJSON = CreateNatServiceRequestToJSON;

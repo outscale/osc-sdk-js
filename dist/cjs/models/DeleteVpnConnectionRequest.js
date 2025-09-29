@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteVpnConnectionRequestToJSON = exports.DeleteVpnConnectionRequestFromJSONTyped = exports.DeleteVpnConnectionRequestFromJSON = void 0;
+exports.DeleteVpnConnectionRequestFromJSON = DeleteVpnConnectionRequestFromJSON;
+exports.DeleteVpnConnectionRequestFromJSONTyped = DeleteVpnConnectionRequestFromJSONTyped;
+exports.DeleteVpnConnectionRequestToJSON = DeleteVpnConnectionRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteVpnConnectionRequestFromJSON(json) {
     return DeleteVpnConnectionRequestFromJSONTyped(json, false);
 }
-exports.DeleteVpnConnectionRequestFromJSON = DeleteVpnConnectionRequestFromJSON;
 function DeleteVpnConnectionRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteVpnConnectionRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vpnConnectionId': json['VpnConnectionId'],
     };
 }
-exports.DeleteVpnConnectionRequestFromJSONTyped = DeleteVpnConnectionRequestFromJSONTyped;
 function DeleteVpnConnectionRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteVpnConnectionRequestToJSON(value) {
         'VpnConnectionId': value.vpnConnectionId,
     };
 }
-exports.DeleteVpnConnectionRequestToJSON = DeleteVpnConnectionRequestToJSON;

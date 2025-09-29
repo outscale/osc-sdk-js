@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InternetServiceToJSON = exports.InternetServiceFromJSONTyped = exports.InternetServiceFromJSON = void 0;
+exports.InternetServiceFromJSON = InternetServiceFromJSON;
+exports.InternetServiceFromJSONTyped = InternetServiceFromJSONTyped;
+exports.InternetServiceToJSON = InternetServiceToJSON;
 const runtime_1 = require("../runtime");
 const ResourceTag_1 = require("./ResourceTag");
 function InternetServiceFromJSON(json) {
     return InternetServiceFromJSONTyped(json, false);
 }
-exports.InternetServiceFromJSON = InternetServiceFromJSON;
 function InternetServiceFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function InternetServiceFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
     };
 }
-exports.InternetServiceFromJSONTyped = InternetServiceFromJSONTyped;
 function InternetServiceToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function InternetServiceToJSON(value) {
         'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
     };
 }
-exports.InternetServiceToJSON = InternetServiceToJSON;

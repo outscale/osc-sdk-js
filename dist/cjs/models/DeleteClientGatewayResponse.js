@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteClientGatewayResponseToJSON = exports.DeleteClientGatewayResponseFromJSONTyped = exports.DeleteClientGatewayResponseFromJSON = void 0;
+exports.DeleteClientGatewayResponseFromJSON = DeleteClientGatewayResponseFromJSON;
+exports.DeleteClientGatewayResponseFromJSONTyped = DeleteClientGatewayResponseFromJSONTyped;
+exports.DeleteClientGatewayResponseToJSON = DeleteClientGatewayResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteClientGatewayResponseFromJSON(json) {
     return DeleteClientGatewayResponseFromJSONTyped(json, false);
 }
-exports.DeleteClientGatewayResponseFromJSON = DeleteClientGatewayResponseFromJSON;
 function DeleteClientGatewayResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteClientGatewayResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteClientGatewayResponseFromJSONTyped = DeleteClientGatewayResponseFromJSONTyped;
 function DeleteClientGatewayResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteClientGatewayResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteClientGatewayResponseToJSON = DeleteClientGatewayResponseToJSON;

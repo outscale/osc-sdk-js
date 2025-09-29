@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersLoadBalancerToJSON = exports.FiltersLoadBalancerFromJSONTyped = exports.FiltersLoadBalancerFromJSON = void 0;
+exports.FiltersLoadBalancerFromJSON = FiltersLoadBalancerFromJSON;
+exports.FiltersLoadBalancerFromJSONTyped = FiltersLoadBalancerFromJSONTyped;
+exports.FiltersLoadBalancerToJSON = FiltersLoadBalancerToJSON;
 const runtime_1 = require("../runtime");
 function FiltersLoadBalancerFromJSON(json) {
     return FiltersLoadBalancerFromJSONTyped(json, false);
 }
-exports.FiltersLoadBalancerFromJSON = FiltersLoadBalancerFromJSON;
 function FiltersLoadBalancerFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function FiltersLoadBalancerFromJSONTyped(json, ignoreDiscriminator) {
         'loadBalancerNames': !(0, runtime_1.exists)(json, 'LoadBalancerNames') ? undefined : json['LoadBalancerNames'],
     };
 }
-exports.FiltersLoadBalancerFromJSONTyped = FiltersLoadBalancerFromJSONTyped;
 function FiltersLoadBalancerToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function FiltersLoadBalancerToJSON(value) {
         'LoadBalancerNames': value.loadBalancerNames,
     };
 }
-exports.FiltersLoadBalancerToJSON = FiltersLoadBalancerToJSON;

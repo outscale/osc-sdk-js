@@ -61,8 +61,8 @@ export class VolumeApi extends runtime.BaseAPI {
     /**
      * Creates a Block Storage Unit (BSU) volume in a specified Region.<br /> BSU volumes can be attached to a virtual machine (VM) in the same Subregion. You can create an empty volume or restore a volume from an existing snapshot.<br /> You can create the following volume types: Enterprise (`io1`) for provisioned IOPS SSD volumes, Performance (`gp2`) for general purpose SSD volumes, or Magnetic (`standard`) volumes.<br /><br /> For more information, see [About Volumes](https://docs.outscale.com/en/userguide/About-Volumes.html).
      */
-    createVolume(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createVolume() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createVolumeRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class VolumeApi extends runtime.BaseAPI {
     /**
      * Deletes a specified Block Storage Unit (BSU) volume.<br /> You can delete available volumes only, that is, volumes that are not attached to a virtual machine (VM).
      */
-    deleteVolume(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteVolume() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteVolumeRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class VolumeApi extends runtime.BaseAPI {
     /**
      * Attaches a Block Storage Unit (BSU) volume to a virtual machine (VM).<br /> The volume and the VM must be in the same Subregion. The VM can be running or stopped. The volume is attached to the specified VM device.
      */
-    linkVolume(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    linkVolume() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.linkVolumeRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -184,8 +184,8 @@ export class VolumeApi extends runtime.BaseAPI {
     /**
      * Lists one or more specified Block Storage Unit (BSU) volumes.
      */
-    readVolumes(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readVolumes() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readVolumesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -225,8 +225,8 @@ export class VolumeApi extends runtime.BaseAPI {
     /**
      * Detaches a Block Storage Unit (BSU) volume from a virtual machine (VM).<br /> To detach the root device of a VM, this VM must be stopped.
      */
-    unlinkVolume(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    unlinkVolume() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.unlinkVolumeRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -266,8 +266,8 @@ export class VolumeApi extends runtime.BaseAPI {
     /**
      * Modifies the specified attributes of a volume.<br /> Cold volumes are volumes that are attached to stopped or stopping VMs, or that are detached. Hot volumes are volumes that are attached to running VMs.<br /><br />  **[NOTE]**<br /> When the modification is not instantaneous, the response displays the previous value. You can use the [ReadVolumes](#readvolumes) method to see the new value.
      */
-    updateVolume(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateVolume() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateVolumeRaw(requestParameters, initOverrides);
             return yield response.value();
         });

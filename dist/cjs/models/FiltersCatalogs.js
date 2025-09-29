@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersCatalogsToJSON = exports.FiltersCatalogsFromJSONTyped = exports.FiltersCatalogsFromJSON = void 0;
+exports.FiltersCatalogsFromJSON = FiltersCatalogsFromJSON;
+exports.FiltersCatalogsFromJSONTyped = FiltersCatalogsFromJSONTyped;
+exports.FiltersCatalogsToJSON = FiltersCatalogsToJSON;
 const runtime_1 = require("../runtime");
 function FiltersCatalogsFromJSON(json) {
     return FiltersCatalogsFromJSONTyped(json, false);
 }
-exports.FiltersCatalogsFromJSON = FiltersCatalogsFromJSON;
 function FiltersCatalogsFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function FiltersCatalogsFromJSONTyped(json, ignoreDiscriminator) {
         'toDate': !(0, runtime_1.exists)(json, 'ToDate') ? undefined : (new Date(json['ToDate'])),
     };
 }
-exports.FiltersCatalogsFromJSONTyped = FiltersCatalogsFromJSONTyped;
 function FiltersCatalogsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function FiltersCatalogsToJSON(value) {
         'ToDate': value.toDate === undefined ? undefined : (value.toDate.toISOString().substr(0, 10)),
     };
 }
-exports.FiltersCatalogsToJSON = FiltersCatalogsToJSON;

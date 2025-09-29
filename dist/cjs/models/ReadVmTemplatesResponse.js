@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadVmTemplatesResponseToJSON = exports.ReadVmTemplatesResponseFromJSONTyped = exports.ReadVmTemplatesResponseFromJSON = void 0;
+exports.ReadVmTemplatesResponseFromJSON = ReadVmTemplatesResponseFromJSON;
+exports.ReadVmTemplatesResponseFromJSONTyped = ReadVmTemplatesResponseFromJSONTyped;
+exports.ReadVmTemplatesResponseToJSON = ReadVmTemplatesResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const VmTemplate_1 = require("./VmTemplate");
 function ReadVmTemplatesResponseFromJSON(json) {
     return ReadVmTemplatesResponseFromJSONTyped(json, false);
 }
-exports.ReadVmTemplatesResponseFromJSON = ReadVmTemplatesResponseFromJSON;
 function ReadVmTemplatesResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function ReadVmTemplatesResponseFromJSONTyped(json, ignoreDiscriminator) {
         'vmTemplates': !(0, runtime_1.exists)(json, 'VmTemplates') ? undefined : (json['VmTemplates'].map(VmTemplate_1.VmTemplateFromJSON)),
     };
 }
-exports.ReadVmTemplatesResponseFromJSONTyped = ReadVmTemplatesResponseFromJSONTyped;
 function ReadVmTemplatesResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ReadVmTemplatesResponseToJSON(value) {
         'VmTemplates': value.vmTemplates === undefined ? undefined : (value.vmTemplates.map(VmTemplate_1.VmTemplateToJSON)),
     };
 }
-exports.ReadVmTemplatesResponseToJSON = ReadVmTemplatesResponseToJSON;

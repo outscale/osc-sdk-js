@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImageExportTaskToJSON = exports.ImageExportTaskFromJSONTyped = exports.ImageExportTaskFromJSON = void 0;
+exports.ImageExportTaskFromJSON = ImageExportTaskFromJSON;
+exports.ImageExportTaskFromJSONTyped = ImageExportTaskFromJSONTyped;
+exports.ImageExportTaskToJSON = ImageExportTaskToJSON;
 const runtime_1 = require("../runtime");
 const OsuExportImageExportTask_1 = require("./OsuExportImageExportTask");
 const ResourceTag_1 = require("./ResourceTag");
 function ImageExportTaskFromJSON(json) {
     return ImageExportTaskFromJSONTyped(json, false);
 }
-exports.ImageExportTaskFromJSON = ImageExportTaskFromJSON;
 function ImageExportTaskFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -35,7 +36,6 @@ function ImageExportTaskFromJSONTyped(json, ignoreDiscriminator) {
         'taskId': !(0, runtime_1.exists)(json, 'TaskId') ? undefined : json['TaskId'],
     };
 }
-exports.ImageExportTaskFromJSONTyped = ImageExportTaskFromJSONTyped;
 function ImageExportTaskToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +53,3 @@ function ImageExportTaskToJSON(value) {
         'TaskId': value.taskId,
     };
 }
-exports.ImageExportTaskToJSON = ImageExportTaskToJSON;

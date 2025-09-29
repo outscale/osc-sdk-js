@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadAdminPasswordRequestToJSON = exports.ReadAdminPasswordRequestFromJSONTyped = exports.ReadAdminPasswordRequestFromJSON = void 0;
+exports.ReadAdminPasswordRequestFromJSON = ReadAdminPasswordRequestFromJSON;
+exports.ReadAdminPasswordRequestFromJSONTyped = ReadAdminPasswordRequestFromJSONTyped;
+exports.ReadAdminPasswordRequestToJSON = ReadAdminPasswordRequestToJSON;
 const runtime_1 = require("../runtime");
 function ReadAdminPasswordRequestFromJSON(json) {
     return ReadAdminPasswordRequestFromJSONTyped(json, false);
 }
-exports.ReadAdminPasswordRequestFromJSON = ReadAdminPasswordRequestFromJSON;
 function ReadAdminPasswordRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function ReadAdminPasswordRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vmId': json['VmId'],
     };
 }
-exports.ReadAdminPasswordRequestFromJSONTyped = ReadAdminPasswordRequestFromJSONTyped;
 function ReadAdminPasswordRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function ReadAdminPasswordRequestToJSON(value) {
         'VmId': value.vmId,
     };
 }
-exports.ReadAdminPasswordRequestToJSON = ReadAdminPasswordRequestToJSON;

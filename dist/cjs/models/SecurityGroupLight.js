@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SecurityGroupLightToJSON = exports.SecurityGroupLightFromJSONTyped = exports.SecurityGroupLightFromJSON = void 0;
+exports.SecurityGroupLightFromJSON = SecurityGroupLightFromJSON;
+exports.SecurityGroupLightFromJSONTyped = SecurityGroupLightFromJSONTyped;
+exports.SecurityGroupLightToJSON = SecurityGroupLightToJSON;
 const runtime_1 = require("../runtime");
 function SecurityGroupLightFromJSON(json) {
     return SecurityGroupLightFromJSONTyped(json, false);
 }
-exports.SecurityGroupLightFromJSON = SecurityGroupLightFromJSON;
 function SecurityGroupLightFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function SecurityGroupLightFromJSONTyped(json, ignoreDiscriminator) {
         'securityGroupName': !(0, runtime_1.exists)(json, 'SecurityGroupName') ? undefined : json['SecurityGroupName'],
     };
 }
-exports.SecurityGroupLightFromJSONTyped = SecurityGroupLightFromJSONTyped;
 function SecurityGroupLightToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function SecurityGroupLightToJSON(value) {
         'SecurityGroupName': value.securityGroupName,
     };
 }
-exports.SecurityGroupLightToJSON = SecurityGroupLightToJSON;

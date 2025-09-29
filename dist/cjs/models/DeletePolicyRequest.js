@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeletePolicyRequestToJSON = exports.DeletePolicyRequestFromJSONTyped = exports.DeletePolicyRequestFromJSON = void 0;
+exports.DeletePolicyRequestFromJSON = DeletePolicyRequestFromJSON;
+exports.DeletePolicyRequestFromJSONTyped = DeletePolicyRequestFromJSONTyped;
+exports.DeletePolicyRequestToJSON = DeletePolicyRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeletePolicyRequestFromJSON(json) {
     return DeletePolicyRequestFromJSONTyped(json, false);
 }
-exports.DeletePolicyRequestFromJSON = DeletePolicyRequestFromJSON;
 function DeletePolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeletePolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
         'policyOrn': json['PolicyOrn'],
     };
 }
-exports.DeletePolicyRequestFromJSONTyped = DeletePolicyRequestFromJSONTyped;
 function DeletePolicyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeletePolicyRequestToJSON(value) {
         'PolicyOrn': value.policyOrn,
     };
 }
-exports.DeletePolicyRequestToJSON = DeletePolicyRequestToJSON;

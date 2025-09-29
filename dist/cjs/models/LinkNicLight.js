@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkNicLightToJSON = exports.LinkNicLightFromJSONTyped = exports.LinkNicLightFromJSON = void 0;
+exports.LinkNicLightFromJSON = LinkNicLightFromJSON;
+exports.LinkNicLightFromJSONTyped = LinkNicLightFromJSONTyped;
+exports.LinkNicLightToJSON = LinkNicLightToJSON;
 const runtime_1 = require("../runtime");
 function LinkNicLightFromJSON(json) {
     return LinkNicLightFromJSONTyped(json, false);
 }
-exports.LinkNicLightFromJSON = LinkNicLightFromJSON;
 function LinkNicLightFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function LinkNicLightFromJSONTyped(json, ignoreDiscriminator) {
         'state': !(0, runtime_1.exists)(json, 'State') ? undefined : json['State'],
     };
 }
-exports.LinkNicLightFromJSONTyped = LinkNicLightFromJSONTyped;
 function LinkNicLightToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function LinkNicLightToJSON(value) {
         'State': value.state,
     };
 }
-exports.LinkNicLightToJSON = LinkNicLightToJSON;

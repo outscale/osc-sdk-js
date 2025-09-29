@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BsuCreatedToJSON = exports.BsuCreatedFromJSONTyped = exports.BsuCreatedFromJSON = void 0;
+exports.BsuCreatedFromJSON = BsuCreatedFromJSON;
+exports.BsuCreatedFromJSONTyped = BsuCreatedFromJSONTyped;
+exports.BsuCreatedToJSON = BsuCreatedToJSON;
 const runtime_1 = require("../runtime");
 function BsuCreatedFromJSON(json) {
     return BsuCreatedFromJSONTyped(json, false);
 }
-exports.BsuCreatedFromJSON = BsuCreatedFromJSON;
 function BsuCreatedFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function BsuCreatedFromJSONTyped(json, ignoreDiscriminator) {
         'volumeId': !(0, runtime_1.exists)(json, 'VolumeId') ? undefined : json['VolumeId'],
     };
 }
-exports.BsuCreatedFromJSONTyped = BsuCreatedFromJSONTyped;
 function BsuCreatedToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function BsuCreatedToJSON(value) {
         'VolumeId': value.volumeId,
     };
 }
-exports.BsuCreatedToJSON = BsuCreatedToJSON;

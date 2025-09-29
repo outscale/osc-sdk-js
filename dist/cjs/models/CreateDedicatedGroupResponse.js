@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateDedicatedGroupResponseToJSON = exports.CreateDedicatedGroupResponseFromJSONTyped = exports.CreateDedicatedGroupResponseFromJSON = void 0;
+exports.CreateDedicatedGroupResponseFromJSON = CreateDedicatedGroupResponseFromJSON;
+exports.CreateDedicatedGroupResponseFromJSONTyped = CreateDedicatedGroupResponseFromJSONTyped;
+exports.CreateDedicatedGroupResponseToJSON = CreateDedicatedGroupResponseToJSON;
 const runtime_1 = require("../runtime");
 const DedicatedGroup_1 = require("./DedicatedGroup");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function CreateDedicatedGroupResponseFromJSON(json) {
     return CreateDedicatedGroupResponseFromJSONTyped(json, false);
 }
-exports.CreateDedicatedGroupResponseFromJSON = CreateDedicatedGroupResponseFromJSON;
 function CreateDedicatedGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateDedicatedGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CreateDedicatedGroupResponseFromJSONTyped = CreateDedicatedGroupResponseFromJSONTyped;
 function CreateDedicatedGroupResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateDedicatedGroupResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CreateDedicatedGroupResponseToJSON = CreateDedicatedGroupResponseToJSON;

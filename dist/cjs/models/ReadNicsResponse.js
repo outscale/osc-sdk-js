@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadNicsResponseToJSON = exports.ReadNicsResponseFromJSONTyped = exports.ReadNicsResponseFromJSON = void 0;
+exports.ReadNicsResponseFromJSON = ReadNicsResponseFromJSON;
+exports.ReadNicsResponseFromJSONTyped = ReadNicsResponseFromJSONTyped;
+exports.ReadNicsResponseToJSON = ReadNicsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Nic_1 = require("./Nic");
 function ReadNicsResponseFromJSON(json) {
     return ReadNicsResponseFromJSONTyped(json, false);
 }
-exports.ReadNicsResponseFromJSON = ReadNicsResponseFromJSON;
 function ReadNicsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadNicsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadNicsResponseFromJSONTyped = ReadNicsResponseFromJSONTyped;
 function ReadNicsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadNicsResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadNicsResponseToJSON = ReadNicsResponseToJSON;

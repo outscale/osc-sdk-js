@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NetAccessPointToJSON = exports.NetAccessPointFromJSONTyped = exports.NetAccessPointFromJSON = void 0;
+exports.NetAccessPointFromJSON = NetAccessPointFromJSON;
+exports.NetAccessPointFromJSONTyped = NetAccessPointFromJSONTyped;
+exports.NetAccessPointToJSON = NetAccessPointToJSON;
 const runtime_1 = require("../runtime");
 const ResourceTag_1 = require("./ResourceTag");
 function NetAccessPointFromJSON(json) {
     return NetAccessPointFromJSONTyped(json, false);
 }
-exports.NetAccessPointFromJSON = NetAccessPointFromJSON;
 function NetAccessPointFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function NetAccessPointFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
     };
 }
-exports.NetAccessPointFromJSONTyped = NetAccessPointFromJSONTyped;
 function NetAccessPointToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -50,4 +50,3 @@ function NetAccessPointToJSON(value) {
         'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
     };
 }
-exports.NetAccessPointToJSON = NetAccessPointToJSON;

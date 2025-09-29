@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersNetPeeringToJSON = exports.FiltersNetPeeringFromJSONTyped = exports.FiltersNetPeeringFromJSON = void 0;
+exports.FiltersNetPeeringFromJSON = FiltersNetPeeringFromJSON;
+exports.FiltersNetPeeringFromJSONTyped = FiltersNetPeeringFromJSONTyped;
+exports.FiltersNetPeeringToJSON = FiltersNetPeeringToJSON;
 const runtime_1 = require("../runtime");
 function FiltersNetPeeringFromJSON(json) {
     return FiltersNetPeeringFromJSONTyped(json, false);
 }
-exports.FiltersNetPeeringFromJSON = FiltersNetPeeringFromJSON;
 function FiltersNetPeeringFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -39,7 +40,6 @@ function FiltersNetPeeringFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersNetPeeringFromJSONTyped = FiltersNetPeeringFromJSONTyped;
 function FiltersNetPeeringToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -63,4 +63,3 @@ function FiltersNetPeeringToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersNetPeeringToJSON = FiltersNetPeeringToJSON;

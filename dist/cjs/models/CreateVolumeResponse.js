@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateVolumeResponseToJSON = exports.CreateVolumeResponseFromJSONTyped = exports.CreateVolumeResponseFromJSON = void 0;
+exports.CreateVolumeResponseFromJSON = CreateVolumeResponseFromJSON;
+exports.CreateVolumeResponseFromJSONTyped = CreateVolumeResponseFromJSONTyped;
+exports.CreateVolumeResponseToJSON = CreateVolumeResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Volume_1 = require("./Volume");
 function CreateVolumeResponseFromJSON(json) {
     return CreateVolumeResponseFromJSONTyped(json, false);
 }
-exports.CreateVolumeResponseFromJSON = CreateVolumeResponseFromJSON;
 function CreateVolumeResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateVolumeResponseFromJSONTyped(json, ignoreDiscriminator) {
         'volume': !(0, runtime_1.exists)(json, 'Volume') ? undefined : (0, Volume_1.VolumeFromJSON)(json['Volume']),
     };
 }
-exports.CreateVolumeResponseFromJSONTyped = CreateVolumeResponseFromJSONTyped;
 function CreateVolumeResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateVolumeResponseToJSON(value) {
         'Volume': (0, Volume_1.VolumeToJSON)(value.volume),
     };
 }
-exports.CreateVolumeResponseToJSON = CreateVolumeResponseToJSON;

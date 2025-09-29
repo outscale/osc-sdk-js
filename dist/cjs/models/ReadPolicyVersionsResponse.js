@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadPolicyVersionsResponseToJSON = exports.ReadPolicyVersionsResponseFromJSONTyped = exports.ReadPolicyVersionsResponseFromJSON = void 0;
+exports.ReadPolicyVersionsResponseFromJSON = ReadPolicyVersionsResponseFromJSON;
+exports.ReadPolicyVersionsResponseFromJSONTyped = ReadPolicyVersionsResponseFromJSONTyped;
+exports.ReadPolicyVersionsResponseToJSON = ReadPolicyVersionsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const PolicyVersion_1 = require("./PolicyVersion");
 function ReadPolicyVersionsResponseFromJSON(json) {
     return ReadPolicyVersionsResponseFromJSONTyped(json, false);
 }
-exports.ReadPolicyVersionsResponseFromJSON = ReadPolicyVersionsResponseFromJSON;
 function ReadPolicyVersionsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -32,7 +33,6 @@ function ReadPolicyVersionsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadPolicyVersionsResponseFromJSONTyped = ReadPolicyVersionsResponseFromJSONTyped;
 function ReadPolicyVersionsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function ReadPolicyVersionsResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadPolicyVersionsResponseToJSON = ReadPolicyVersionsResponseToJSON;

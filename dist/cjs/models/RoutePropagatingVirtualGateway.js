@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RoutePropagatingVirtualGatewayToJSON = exports.RoutePropagatingVirtualGatewayFromJSONTyped = exports.RoutePropagatingVirtualGatewayFromJSON = void 0;
+exports.RoutePropagatingVirtualGatewayFromJSON = RoutePropagatingVirtualGatewayFromJSON;
+exports.RoutePropagatingVirtualGatewayFromJSONTyped = RoutePropagatingVirtualGatewayFromJSONTyped;
+exports.RoutePropagatingVirtualGatewayToJSON = RoutePropagatingVirtualGatewayToJSON;
 const runtime_1 = require("../runtime");
 function RoutePropagatingVirtualGatewayFromJSON(json) {
     return RoutePropagatingVirtualGatewayFromJSONTyped(json, false);
 }
-exports.RoutePropagatingVirtualGatewayFromJSON = RoutePropagatingVirtualGatewayFromJSON;
 function RoutePropagatingVirtualGatewayFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function RoutePropagatingVirtualGatewayFromJSONTyped(json, ignoreDiscriminator) 
         'virtualGatewayId': !(0, runtime_1.exists)(json, 'VirtualGatewayId') ? undefined : json['VirtualGatewayId'],
     };
 }
-exports.RoutePropagatingVirtualGatewayFromJSONTyped = RoutePropagatingVirtualGatewayFromJSONTyped;
 function RoutePropagatingVirtualGatewayToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function RoutePropagatingVirtualGatewayToJSON(value) {
         'VirtualGatewayId': value.virtualGatewayId,
     };
 }
-exports.RoutePropagatingVirtualGatewayToJSON = RoutePropagatingVirtualGatewayToJSON;

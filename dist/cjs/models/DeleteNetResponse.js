@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteNetResponseToJSON = exports.DeleteNetResponseFromJSONTyped = exports.DeleteNetResponseFromJSON = void 0;
+exports.DeleteNetResponseFromJSON = DeleteNetResponseFromJSON;
+exports.DeleteNetResponseFromJSONTyped = DeleteNetResponseFromJSONTyped;
+exports.DeleteNetResponseToJSON = DeleteNetResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteNetResponseFromJSON(json) {
     return DeleteNetResponseFromJSONTyped(json, false);
 }
-exports.DeleteNetResponseFromJSON = DeleteNetResponseFromJSON;
 function DeleteNetResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteNetResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteNetResponseFromJSONTyped = DeleteNetResponseFromJSONTyped;
 function DeleteNetResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteNetResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteNetResponseToJSON = DeleteNetResponseToJSON;

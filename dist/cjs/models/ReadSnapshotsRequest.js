@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadSnapshotsRequestToJSON = exports.ReadSnapshotsRequestFromJSONTyped = exports.ReadSnapshotsRequestFromJSON = void 0;
+exports.ReadSnapshotsRequestFromJSON = ReadSnapshotsRequestFromJSON;
+exports.ReadSnapshotsRequestFromJSONTyped = ReadSnapshotsRequestFromJSONTyped;
+exports.ReadSnapshotsRequestToJSON = ReadSnapshotsRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersSnapshot_1 = require("./FiltersSnapshot");
 function ReadSnapshotsRequestFromJSON(json) {
     return ReadSnapshotsRequestFromJSONTyped(json, false);
 }
-exports.ReadSnapshotsRequestFromJSON = ReadSnapshotsRequestFromJSON;
 function ReadSnapshotsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadSnapshotsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadSnapshotsRequestFromJSONTyped = ReadSnapshotsRequestFromJSONTyped;
 function ReadSnapshotsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadSnapshotsRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadSnapshotsRequestToJSON = ReadSnapshotsRequestToJSON;

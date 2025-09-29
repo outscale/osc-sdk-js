@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteSubnetRequestToJSON = exports.DeleteSubnetRequestFromJSONTyped = exports.DeleteSubnetRequestFromJSON = void 0;
+exports.DeleteSubnetRequestFromJSON = DeleteSubnetRequestFromJSON;
+exports.DeleteSubnetRequestFromJSONTyped = DeleteSubnetRequestFromJSONTyped;
+exports.DeleteSubnetRequestToJSON = DeleteSubnetRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteSubnetRequestFromJSON(json) {
     return DeleteSubnetRequestFromJSONTyped(json, false);
 }
-exports.DeleteSubnetRequestFromJSON = DeleteSubnetRequestFromJSON;
 function DeleteSubnetRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteSubnetRequestFromJSONTyped(json, ignoreDiscriminator) {
         'subnetId': json['SubnetId'],
     };
 }
-exports.DeleteSubnetRequestFromJSONTyped = DeleteSubnetRequestFromJSONTyped;
 function DeleteSubnetRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteSubnetRequestToJSON(value) {
         'SubnetId': value.subnetId,
     };
 }
-exports.DeleteSubnetRequestToJSON = DeleteSubnetRequestToJSON;

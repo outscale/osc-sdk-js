@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkVolumeRequestToJSON = exports.LinkVolumeRequestFromJSONTyped = exports.LinkVolumeRequestFromJSON = void 0;
+exports.LinkVolumeRequestFromJSON = LinkVolumeRequestFromJSON;
+exports.LinkVolumeRequestFromJSONTyped = LinkVolumeRequestFromJSONTyped;
+exports.LinkVolumeRequestToJSON = LinkVolumeRequestToJSON;
 const runtime_1 = require("../runtime");
 function LinkVolumeRequestFromJSON(json) {
     return LinkVolumeRequestFromJSONTyped(json, false);
 }
-exports.LinkVolumeRequestFromJSON = LinkVolumeRequestFromJSON;
 function LinkVolumeRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function LinkVolumeRequestFromJSONTyped(json, ignoreDiscriminator) {
         'volumeId': json['VolumeId'],
     };
 }
-exports.LinkVolumeRequestFromJSONTyped = LinkVolumeRequestFromJSONTyped;
 function LinkVolumeRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function LinkVolumeRequestToJSON(value) {
         'VolumeId': value.volumeId,
     };
 }
-exports.LinkVolumeRequestToJSON = LinkVolumeRequestToJSON;

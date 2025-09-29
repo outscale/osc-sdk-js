@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateInternetServiceResponseToJSON = exports.CreateInternetServiceResponseFromJSONTyped = exports.CreateInternetServiceResponseFromJSON = void 0;
+exports.CreateInternetServiceResponseFromJSON = CreateInternetServiceResponseFromJSON;
+exports.CreateInternetServiceResponseFromJSONTyped = CreateInternetServiceResponseFromJSONTyped;
+exports.CreateInternetServiceResponseToJSON = CreateInternetServiceResponseToJSON;
 const runtime_1 = require("../runtime");
 const InternetService_1 = require("./InternetService");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function CreateInternetServiceResponseFromJSON(json) {
     return CreateInternetServiceResponseFromJSONTyped(json, false);
 }
-exports.CreateInternetServiceResponseFromJSON = CreateInternetServiceResponseFromJSON;
 function CreateInternetServiceResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateInternetServiceResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CreateInternetServiceResponseFromJSONTyped = CreateInternetServiceResponseFromJSONTyped;
 function CreateInternetServiceResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateInternetServiceResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CreateInternetServiceResponseToJSON = CreateInternetServiceResponseToJSON;

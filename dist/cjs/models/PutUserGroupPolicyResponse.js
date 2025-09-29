@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PutUserGroupPolicyResponseToJSON = exports.PutUserGroupPolicyResponseFromJSONTyped = exports.PutUserGroupPolicyResponseFromJSON = void 0;
+exports.PutUserGroupPolicyResponseFromJSON = PutUserGroupPolicyResponseFromJSON;
+exports.PutUserGroupPolicyResponseFromJSONTyped = PutUserGroupPolicyResponseFromJSONTyped;
+exports.PutUserGroupPolicyResponseToJSON = PutUserGroupPolicyResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function PutUserGroupPolicyResponseFromJSON(json) {
     return PutUserGroupPolicyResponseFromJSONTyped(json, false);
 }
-exports.PutUserGroupPolicyResponseFromJSON = PutUserGroupPolicyResponseFromJSON;
 function PutUserGroupPolicyResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function PutUserGroupPolicyResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.PutUserGroupPolicyResponseFromJSONTyped = PutUserGroupPolicyResponseFromJSONTyped;
 function PutUserGroupPolicyResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function PutUserGroupPolicyResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.PutUserGroupPolicyResponseToJSON = PutUserGroupPolicyResponseToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BsuToUpdateVmToJSON = exports.BsuToUpdateVmFromJSONTyped = exports.BsuToUpdateVmFromJSON = void 0;
+exports.BsuToUpdateVmFromJSON = BsuToUpdateVmFromJSON;
+exports.BsuToUpdateVmFromJSONTyped = BsuToUpdateVmFromJSONTyped;
+exports.BsuToUpdateVmToJSON = BsuToUpdateVmToJSON;
 const runtime_1 = require("../runtime");
 function BsuToUpdateVmFromJSON(json) {
     return BsuToUpdateVmFromJSONTyped(json, false);
 }
-exports.BsuToUpdateVmFromJSON = BsuToUpdateVmFromJSON;
 function BsuToUpdateVmFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function BsuToUpdateVmFromJSONTyped(json, ignoreDiscriminator) {
         'volumeId': !(0, runtime_1.exists)(json, 'VolumeId') ? undefined : json['VolumeId'],
     };
 }
-exports.BsuToUpdateVmFromJSONTyped = BsuToUpdateVmFromJSONTyped;
 function BsuToUpdateVmToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function BsuToUpdateVmToJSON(value) {
         'VolumeId': value.volumeId,
     };
 }
-exports.BsuToUpdateVmToJSON = BsuToUpdateVmToJSON;

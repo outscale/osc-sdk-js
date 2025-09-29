@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadApiAccessPolicyRequestToJSON = exports.ReadApiAccessPolicyRequestFromJSONTyped = exports.ReadApiAccessPolicyRequestFromJSON = void 0;
+exports.ReadApiAccessPolicyRequestFromJSON = ReadApiAccessPolicyRequestFromJSON;
+exports.ReadApiAccessPolicyRequestFromJSONTyped = ReadApiAccessPolicyRequestFromJSONTyped;
+exports.ReadApiAccessPolicyRequestToJSON = ReadApiAccessPolicyRequestToJSON;
 const runtime_1 = require("../runtime");
 function ReadApiAccessPolicyRequestFromJSON(json) {
     return ReadApiAccessPolicyRequestFromJSONTyped(json, false);
 }
-exports.ReadApiAccessPolicyRequestFromJSON = ReadApiAccessPolicyRequestFromJSON;
 function ReadApiAccessPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function ReadApiAccessPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
         'dryRun': !(0, runtime_1.exists)(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.ReadApiAccessPolicyRequestFromJSONTyped = ReadApiAccessPolicyRequestFromJSONTyped;
 function ReadApiAccessPolicyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function ReadApiAccessPolicyRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.ReadApiAccessPolicyRequestToJSON = ReadApiAccessPolicyRequestToJSON;

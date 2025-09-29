@@ -64,8 +64,8 @@ export class CaApi extends runtime.BaseAPI {
     /**
      * Creates a Client Certificate Authority (CA).<br /><br /> For more information, see [About API Access Rules](https://docs.outscale.com/en/userguide/About-API-Access-Rules.html).
      */
-    createCa(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createCa() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createCaRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -108,8 +108,8 @@ export class CaApi extends runtime.BaseAPI {
     /**
      * Deletes a specified Client Certificate Authority (CA).
      */
-    deleteCa(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteCa() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteCaRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -152,8 +152,8 @@ export class CaApi extends runtime.BaseAPI {
     /**
      * Gets information about one or more of your Client Certificate Authorities (CAs).
      */
-    readCas(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readCas() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readCasRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -196,8 +196,8 @@ export class CaApi extends runtime.BaseAPI {
     /**
      * Modifies the specified attribute of a Client Certificate Authority (CA).
      */
-    updateCa(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateCa() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateCaRaw(requestParameters, initOverrides);
             return yield response.value();
         });

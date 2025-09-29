@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadSubregionsRequestToJSON = exports.ReadSubregionsRequestFromJSONTyped = exports.ReadSubregionsRequestFromJSON = void 0;
+exports.ReadSubregionsRequestFromJSON = ReadSubregionsRequestFromJSON;
+exports.ReadSubregionsRequestFromJSONTyped = ReadSubregionsRequestFromJSONTyped;
+exports.ReadSubregionsRequestToJSON = ReadSubregionsRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersSubregion_1 = require("./FiltersSubregion");
 function ReadSubregionsRequestFromJSON(json) {
     return ReadSubregionsRequestFromJSONTyped(json, false);
 }
-exports.ReadSubregionsRequestFromJSON = ReadSubregionsRequestFromJSON;
 function ReadSubregionsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadSubregionsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadSubregionsRequestFromJSONTyped = ReadSubregionsRequestFromJSONTyped;
 function ReadSubregionsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadSubregionsRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadSubregionsRequestToJSON = ReadSubregionsRequestToJSON;

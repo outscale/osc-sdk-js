@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DirectLinkInterfaceToJSON = exports.DirectLinkInterfaceFromJSONTyped = exports.DirectLinkInterfaceFromJSON = void 0;
+exports.DirectLinkInterfaceFromJSON = DirectLinkInterfaceFromJSON;
+exports.DirectLinkInterfaceFromJSONTyped = DirectLinkInterfaceFromJSONTyped;
+exports.DirectLinkInterfaceToJSON = DirectLinkInterfaceToJSON;
 const runtime_1 = require("../runtime");
 function DirectLinkInterfaceFromJSON(json) {
     return DirectLinkInterfaceFromJSONTyped(json, false);
 }
-exports.DirectLinkInterfaceFromJSON = DirectLinkInterfaceFromJSON;
 function DirectLinkInterfaceFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function DirectLinkInterfaceFromJSONTyped(json, ignoreDiscriminator) {
         'vlan': json['Vlan'],
     };
 }
-exports.DirectLinkInterfaceFromJSONTyped = DirectLinkInterfaceFromJSONTyped;
 function DirectLinkInterfaceToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function DirectLinkInterfaceToJSON(value) {
         'Vlan': value.vlan,
     };
 }
-exports.DirectLinkInterfaceToJSON = DirectLinkInterfaceToJSON;

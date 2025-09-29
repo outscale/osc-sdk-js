@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PermissionsOnResourceCreationToJSON = exports.PermissionsOnResourceCreationFromJSONTyped = exports.PermissionsOnResourceCreationFromJSON = void 0;
+exports.PermissionsOnResourceCreationFromJSON = PermissionsOnResourceCreationFromJSON;
+exports.PermissionsOnResourceCreationFromJSONTyped = PermissionsOnResourceCreationFromJSONTyped;
+exports.PermissionsOnResourceCreationToJSON = PermissionsOnResourceCreationToJSON;
 const runtime_1 = require("../runtime");
 const PermissionsOnResource_1 = require("./PermissionsOnResource");
 function PermissionsOnResourceCreationFromJSON(json) {
     return PermissionsOnResourceCreationFromJSONTyped(json, false);
 }
-exports.PermissionsOnResourceCreationFromJSON = PermissionsOnResourceCreationFromJSON;
 function PermissionsOnResourceCreationFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function PermissionsOnResourceCreationFromJSONTyped(json, ignoreDiscriminator) {
         'removals': !(0, runtime_1.exists)(json, 'Removals') ? undefined : (0, PermissionsOnResource_1.PermissionsOnResourceFromJSON)(json['Removals']),
     };
 }
-exports.PermissionsOnResourceCreationFromJSONTyped = PermissionsOnResourceCreationFromJSONTyped;
 function PermissionsOnResourceCreationToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function PermissionsOnResourceCreationToJSON(value) {
         'Removals': (0, PermissionsOnResource_1.PermissionsOnResourceToJSON)(value.removals),
     };
 }
-exports.PermissionsOnResourceCreationToJSON = PermissionsOnResourceCreationToJSON;

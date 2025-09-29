@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadSnapshotExportTasksRequestToJSON = exports.ReadSnapshotExportTasksRequestFromJSONTyped = exports.ReadSnapshotExportTasksRequestFromJSON = void 0;
+exports.ReadSnapshotExportTasksRequestFromJSON = ReadSnapshotExportTasksRequestFromJSON;
+exports.ReadSnapshotExportTasksRequestFromJSONTyped = ReadSnapshotExportTasksRequestFromJSONTyped;
+exports.ReadSnapshotExportTasksRequestToJSON = ReadSnapshotExportTasksRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersExportTask_1 = require("./FiltersExportTask");
 function ReadSnapshotExportTasksRequestFromJSON(json) {
     return ReadSnapshotExportTasksRequestFromJSONTyped(json, false);
 }
-exports.ReadSnapshotExportTasksRequestFromJSON = ReadSnapshotExportTasksRequestFromJSON;
 function ReadSnapshotExportTasksRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadSnapshotExportTasksRequestFromJSONTyped(json, ignoreDiscriminator) 
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadSnapshotExportTasksRequestFromJSONTyped = ReadSnapshotExportTasksRequestFromJSONTyped;
 function ReadSnapshotExportTasksRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadSnapshotExportTasksRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadSnapshotExportTasksRequestToJSON = ReadSnapshotExportTasksRequestToJSON;

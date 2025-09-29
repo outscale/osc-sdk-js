@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadVpnConnectionsRequestToJSON = exports.ReadVpnConnectionsRequestFromJSONTyped = exports.ReadVpnConnectionsRequestFromJSON = void 0;
+exports.ReadVpnConnectionsRequestFromJSON = ReadVpnConnectionsRequestFromJSON;
+exports.ReadVpnConnectionsRequestFromJSONTyped = ReadVpnConnectionsRequestFromJSONTyped;
+exports.ReadVpnConnectionsRequestToJSON = ReadVpnConnectionsRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersVpnConnection_1 = require("./FiltersVpnConnection");
 function ReadVpnConnectionsRequestFromJSON(json) {
     return ReadVpnConnectionsRequestFromJSONTyped(json, false);
 }
-exports.ReadVpnConnectionsRequestFromJSON = ReadVpnConnectionsRequestFromJSON;
 function ReadVpnConnectionsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadVpnConnectionsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadVpnConnectionsRequestFromJSONTyped = ReadVpnConnectionsRequestFromJSONTyped;
 function ReadVpnConnectionsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadVpnConnectionsRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadVpnConnectionsRequestToJSON = ReadVpnConnectionsRequestToJSON;

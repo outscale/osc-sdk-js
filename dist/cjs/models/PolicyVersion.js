@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PolicyVersionToJSON = exports.PolicyVersionFromJSONTyped = exports.PolicyVersionFromJSON = void 0;
+exports.PolicyVersionFromJSON = PolicyVersionFromJSON;
+exports.PolicyVersionFromJSONTyped = PolicyVersionFromJSONTyped;
+exports.PolicyVersionToJSON = PolicyVersionToJSON;
 const runtime_1 = require("../runtime");
 function PolicyVersionFromJSON(json) {
     return PolicyVersionFromJSONTyped(json, false);
 }
-exports.PolicyVersionFromJSON = PolicyVersionFromJSON;
 function PolicyVersionFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function PolicyVersionFromJSONTyped(json, ignoreDiscriminator) {
         'versionId': !(0, runtime_1.exists)(json, 'VersionId') ? undefined : json['VersionId'],
     };
 }
-exports.PolicyVersionFromJSONTyped = PolicyVersionFromJSONTyped;
 function PolicyVersionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function PolicyVersionToJSON(value) {
         'VersionId': value.versionId,
     };
 }
-exports.PolicyVersionToJSON = PolicyVersionToJSON;

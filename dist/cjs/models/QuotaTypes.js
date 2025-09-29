@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.QuotaTypesToJSON = exports.QuotaTypesFromJSONTyped = exports.QuotaTypesFromJSON = void 0;
+exports.QuotaTypesFromJSON = QuotaTypesFromJSON;
+exports.QuotaTypesFromJSONTyped = QuotaTypesFromJSONTyped;
+exports.QuotaTypesToJSON = QuotaTypesToJSON;
 const runtime_1 = require("../runtime");
 const Quota_1 = require("./Quota");
 function QuotaTypesFromJSON(json) {
     return QuotaTypesFromJSONTyped(json, false);
 }
-exports.QuotaTypesFromJSON = QuotaTypesFromJSON;
 function QuotaTypesFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function QuotaTypesFromJSONTyped(json, ignoreDiscriminator) {
         'quotas': !(0, runtime_1.exists)(json, 'Quotas') ? undefined : (json['Quotas'].map(Quota_1.QuotaFromJSON)),
     };
 }
-exports.QuotaTypesFromJSONTyped = QuotaTypesFromJSONTyped;
 function QuotaTypesToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function QuotaTypesToJSON(value) {
         'Quotas': value.quotas === undefined ? undefined : (value.quotas.map(Quota_1.QuotaToJSON)),
     };
 }
-exports.QuotaTypesToJSON = QuotaTypesToJSON;

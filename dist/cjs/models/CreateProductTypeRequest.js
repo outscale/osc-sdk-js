@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateProductTypeRequestToJSON = exports.CreateProductTypeRequestFromJSONTyped = exports.CreateProductTypeRequestFromJSON = void 0;
+exports.CreateProductTypeRequestFromJSON = CreateProductTypeRequestFromJSON;
+exports.CreateProductTypeRequestFromJSONTyped = CreateProductTypeRequestFromJSONTyped;
+exports.CreateProductTypeRequestToJSON = CreateProductTypeRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateProductTypeRequestFromJSON(json) {
     return CreateProductTypeRequestFromJSONTyped(json, false);
 }
-exports.CreateProductTypeRequestFromJSON = CreateProductTypeRequestFromJSON;
 function CreateProductTypeRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function CreateProductTypeRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vendor': !(0, runtime_1.exists)(json, 'Vendor') ? undefined : json['Vendor'],
     };
 }
-exports.CreateProductTypeRequestFromJSONTyped = CreateProductTypeRequestFromJSONTyped;
 function CreateProductTypeRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateProductTypeRequestToJSON(value) {
         'Vendor': value.vendor,
     };
 }
-exports.CreateProductTypeRequestToJSON = CreateProductTypeRequestToJSON;

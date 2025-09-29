@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnlinkVirtualGatewayRequestToJSON = exports.UnlinkVirtualGatewayRequestFromJSONTyped = exports.UnlinkVirtualGatewayRequestFromJSON = void 0;
+exports.UnlinkVirtualGatewayRequestFromJSON = UnlinkVirtualGatewayRequestFromJSON;
+exports.UnlinkVirtualGatewayRequestFromJSONTyped = UnlinkVirtualGatewayRequestFromJSONTyped;
+exports.UnlinkVirtualGatewayRequestToJSON = UnlinkVirtualGatewayRequestToJSON;
 const runtime_1 = require("../runtime");
 function UnlinkVirtualGatewayRequestFromJSON(json) {
     return UnlinkVirtualGatewayRequestFromJSONTyped(json, false);
 }
-exports.UnlinkVirtualGatewayRequestFromJSON = UnlinkVirtualGatewayRequestFromJSON;
 function UnlinkVirtualGatewayRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function UnlinkVirtualGatewayRequestFromJSONTyped(json, ignoreDiscriminator) {
         'virtualGatewayId': json['VirtualGatewayId'],
     };
 }
-exports.UnlinkVirtualGatewayRequestFromJSONTyped = UnlinkVirtualGatewayRequestFromJSONTyped;
 function UnlinkVirtualGatewayRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UnlinkVirtualGatewayRequestToJSON(value) {
         'VirtualGatewayId': value.virtualGatewayId,
     };
 }
-exports.UnlinkVirtualGatewayRequestToJSON = UnlinkVirtualGatewayRequestToJSON;

@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateSecurityGroupResponseToJSON = exports.CreateSecurityGroupResponseFromJSONTyped = exports.CreateSecurityGroupResponseFromJSON = void 0;
+exports.CreateSecurityGroupResponseFromJSON = CreateSecurityGroupResponseFromJSON;
+exports.CreateSecurityGroupResponseFromJSONTyped = CreateSecurityGroupResponseFromJSONTyped;
+exports.CreateSecurityGroupResponseToJSON = CreateSecurityGroupResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const SecurityGroup_1 = require("./SecurityGroup");
 function CreateSecurityGroupResponseFromJSON(json) {
     return CreateSecurityGroupResponseFromJSONTyped(json, false);
 }
-exports.CreateSecurityGroupResponseFromJSON = CreateSecurityGroupResponseFromJSON;
 function CreateSecurityGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateSecurityGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
         'securityGroup': !(0, runtime_1.exists)(json, 'SecurityGroup') ? undefined : (0, SecurityGroup_1.SecurityGroupFromJSON)(json['SecurityGroup']),
     };
 }
-exports.CreateSecurityGroupResponseFromJSONTyped = CreateSecurityGroupResponseFromJSONTyped;
 function CreateSecurityGroupResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateSecurityGroupResponseToJSON(value) {
         'SecurityGroup': (0, SecurityGroup_1.SecurityGroupToJSON)(value.securityGroup),
     };
 }
-exports.CreateSecurityGroupResponseToJSON = CreateSecurityGroupResponseToJSON;

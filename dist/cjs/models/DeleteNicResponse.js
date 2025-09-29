@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteNicResponseToJSON = exports.DeleteNicResponseFromJSONTyped = exports.DeleteNicResponseFromJSON = void 0;
+exports.DeleteNicResponseFromJSON = DeleteNicResponseFromJSON;
+exports.DeleteNicResponseFromJSONTyped = DeleteNicResponseFromJSONTyped;
+exports.DeleteNicResponseToJSON = DeleteNicResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteNicResponseFromJSON(json) {
     return DeleteNicResponseFromJSONTyped(json, false);
 }
-exports.DeleteNicResponseFromJSON = DeleteNicResponseFromJSON;
 function DeleteNicResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteNicResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteNicResponseFromJSONTyped = DeleteNicResponseFromJSONTyped;
 function DeleteNicResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteNicResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteNicResponseToJSON = DeleteNicResponseToJSON;

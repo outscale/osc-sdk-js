@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateNetResponseToJSON = exports.UpdateNetResponseFromJSONTyped = exports.UpdateNetResponseFromJSON = void 0;
+exports.UpdateNetResponseFromJSON = UpdateNetResponseFromJSON;
+exports.UpdateNetResponseFromJSONTyped = UpdateNetResponseFromJSONTyped;
+exports.UpdateNetResponseToJSON = UpdateNetResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Net_1 = require("./Net");
 function UpdateNetResponseFromJSON(json) {
     return UpdateNetResponseFromJSONTyped(json, false);
 }
-exports.UpdateNetResponseFromJSON = UpdateNetResponseFromJSON;
 function UpdateNetResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function UpdateNetResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.UpdateNetResponseFromJSONTyped = UpdateNetResponseFromJSONTyped;
 function UpdateNetResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UpdateNetResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.UpdateNetResponseToJSON = UpdateNetResponseToJSON;

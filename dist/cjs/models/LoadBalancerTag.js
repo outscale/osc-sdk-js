@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LoadBalancerTagToJSON = exports.LoadBalancerTagFromJSONTyped = exports.LoadBalancerTagFromJSON = void 0;
+exports.LoadBalancerTagFromJSON = LoadBalancerTagFromJSON;
+exports.LoadBalancerTagFromJSONTyped = LoadBalancerTagFromJSONTyped;
+exports.LoadBalancerTagToJSON = LoadBalancerTagToJSON;
 const runtime_1 = require("../runtime");
 function LoadBalancerTagFromJSON(json) {
     return LoadBalancerTagFromJSONTyped(json, false);
 }
-exports.LoadBalancerTagFromJSON = LoadBalancerTagFromJSON;
 function LoadBalancerTagFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function LoadBalancerTagFromJSONTyped(json, ignoreDiscriminator) {
         'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
     };
 }
-exports.LoadBalancerTagFromJSONTyped = LoadBalancerTagFromJSONTyped;
 function LoadBalancerTagToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function LoadBalancerTagToJSON(value) {
         'Value': value.value,
     };
 }
-exports.LoadBalancerTagToJSON = LoadBalancerTagToJSON;

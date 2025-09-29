@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteUserResponseToJSON = exports.DeleteUserResponseFromJSONTyped = exports.DeleteUserResponseFromJSON = void 0;
+exports.DeleteUserResponseFromJSON = DeleteUserResponseFromJSON;
+exports.DeleteUserResponseFromJSONTyped = DeleteUserResponseFromJSONTyped;
+exports.DeleteUserResponseToJSON = DeleteUserResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteUserResponseFromJSON(json) {
     return DeleteUserResponseFromJSONTyped(json, false);
 }
-exports.DeleteUserResponseFromJSON = DeleteUserResponseFromJSON;
 function DeleteUserResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteUserResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteUserResponseFromJSONTyped = DeleteUserResponseFromJSONTyped;
 function DeleteUserResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteUserResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteUserResponseToJSON = DeleteUserResponseToJSON;

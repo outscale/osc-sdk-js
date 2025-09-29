@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeletePolicyVersionRequestToJSON = exports.DeletePolicyVersionRequestFromJSONTyped = exports.DeletePolicyVersionRequestFromJSON = void 0;
+exports.DeletePolicyVersionRequestFromJSON = DeletePolicyVersionRequestFromJSON;
+exports.DeletePolicyVersionRequestFromJSONTyped = DeletePolicyVersionRequestFromJSONTyped;
+exports.DeletePolicyVersionRequestToJSON = DeletePolicyVersionRequestToJSON;
 function DeletePolicyVersionRequestFromJSON(json) {
     return DeletePolicyVersionRequestFromJSONTyped(json, false);
 }
-exports.DeletePolicyVersionRequestFromJSON = DeletePolicyVersionRequestFromJSON;
 function DeletePolicyVersionRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function DeletePolicyVersionRequestFromJSONTyped(json, ignoreDiscriminator) {
         'versionId': json['VersionId'],
     };
 }
-exports.DeletePolicyVersionRequestFromJSONTyped = DeletePolicyVersionRequestFromJSONTyped;
 function DeletePolicyVersionRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeletePolicyVersionRequestToJSON(value) {
         'VersionId': value.versionId,
     };
 }
-exports.DeletePolicyVersionRequestToJSON = DeletePolicyVersionRequestToJSON;

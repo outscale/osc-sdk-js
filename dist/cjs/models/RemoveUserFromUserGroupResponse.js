@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RemoveUserFromUserGroupResponseToJSON = exports.RemoveUserFromUserGroupResponseFromJSONTyped = exports.RemoveUserFromUserGroupResponseFromJSON = void 0;
+exports.RemoveUserFromUserGroupResponseFromJSON = RemoveUserFromUserGroupResponseFromJSON;
+exports.RemoveUserFromUserGroupResponseFromJSONTyped = RemoveUserFromUserGroupResponseFromJSONTyped;
+exports.RemoveUserFromUserGroupResponseToJSON = RemoveUserFromUserGroupResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function RemoveUserFromUserGroupResponseFromJSON(json) {
     return RemoveUserFromUserGroupResponseFromJSONTyped(json, false);
 }
-exports.RemoveUserFromUserGroupResponseFromJSON = RemoveUserFromUserGroupResponseFromJSON;
 function RemoveUserFromUserGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function RemoveUserFromUserGroupResponseFromJSONTyped(json, ignoreDiscriminator)
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.RemoveUserFromUserGroupResponseFromJSONTyped = RemoveUserFromUserGroupResponseFromJSONTyped;
 function RemoveUserFromUserGroupResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function RemoveUserFromUserGroupResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.RemoveUserFromUserGroupResponseToJSON = RemoveUserFromUserGroupResponseToJSON;

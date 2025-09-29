@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AccessLogToJSON = exports.AccessLogFromJSONTyped = exports.AccessLogFromJSON = void 0;
+exports.AccessLogFromJSON = AccessLogFromJSON;
+exports.AccessLogFromJSONTyped = AccessLogFromJSONTyped;
+exports.AccessLogToJSON = AccessLogToJSON;
 const runtime_1 = require("../runtime");
 function AccessLogFromJSON(json) {
     return AccessLogFromJSONTyped(json, false);
 }
-exports.AccessLogFromJSON = AccessLogFromJSON;
 function AccessLogFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function AccessLogFromJSONTyped(json, ignoreDiscriminator) {
         'publicationInterval': !(0, runtime_1.exists)(json, 'PublicationInterval') ? undefined : json['PublicationInterval'],
     };
 }
-exports.AccessLogFromJSONTyped = AccessLogFromJSONTyped;
 function AccessLogToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function AccessLogToJSON(value) {
         'PublicationInterval': value.publicationInterval,
     };
 }
-exports.AccessLogToJSON = AccessLogToJSON;

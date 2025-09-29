@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateAccessKeyResponseToJSON = exports.CreateAccessKeyResponseFromJSONTyped = exports.CreateAccessKeyResponseFromJSON = void 0;
+exports.CreateAccessKeyResponseFromJSON = CreateAccessKeyResponseFromJSON;
+exports.CreateAccessKeyResponseFromJSONTyped = CreateAccessKeyResponseFromJSONTyped;
+exports.CreateAccessKeyResponseToJSON = CreateAccessKeyResponseToJSON;
 const runtime_1 = require("../runtime");
 const AccessKeySecretKey_1 = require("./AccessKeySecretKey");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function CreateAccessKeyResponseFromJSON(json) {
     return CreateAccessKeyResponseFromJSONTyped(json, false);
 }
-exports.CreateAccessKeyResponseFromJSON = CreateAccessKeyResponseFromJSON;
 function CreateAccessKeyResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateAccessKeyResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CreateAccessKeyResponseFromJSONTyped = CreateAccessKeyResponseFromJSONTyped;
 function CreateAccessKeyResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateAccessKeyResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CreateAccessKeyResponseToJSON = CreateAccessKeyResponseToJSON;

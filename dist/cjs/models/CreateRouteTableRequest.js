@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateRouteTableRequestToJSON = exports.CreateRouteTableRequestFromJSONTyped = exports.CreateRouteTableRequestFromJSON = void 0;
+exports.CreateRouteTableRequestFromJSON = CreateRouteTableRequestFromJSON;
+exports.CreateRouteTableRequestFromJSONTyped = CreateRouteTableRequestFromJSONTyped;
+exports.CreateRouteTableRequestToJSON = CreateRouteTableRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateRouteTableRequestFromJSON(json) {
     return CreateRouteTableRequestFromJSONTyped(json, false);
 }
-exports.CreateRouteTableRequestFromJSON = CreateRouteTableRequestFromJSON;
 function CreateRouteTableRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function CreateRouteTableRequestFromJSONTyped(json, ignoreDiscriminator) {
         'netId': json['NetId'],
     };
 }
-exports.CreateRouteTableRequestFromJSONTyped = CreateRouteTableRequestFromJSONTyped;
 function CreateRouteTableRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function CreateRouteTableRequestToJSON(value) {
         'NetId': value.netId,
     };
 }
-exports.CreateRouteTableRequestToJSON = CreateRouteTableRequestToJSON;

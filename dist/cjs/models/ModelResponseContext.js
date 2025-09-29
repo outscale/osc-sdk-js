@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ModelResponseContextToJSON = exports.ModelResponseContextFromJSONTyped = exports.ModelResponseContextFromJSON = void 0;
+exports.ModelResponseContextFromJSON = ModelResponseContextFromJSON;
+exports.ModelResponseContextFromJSONTyped = ModelResponseContextFromJSONTyped;
+exports.ModelResponseContextToJSON = ModelResponseContextToJSON;
 const runtime_1 = require("../runtime");
 function ModelResponseContextFromJSON(json) {
     return ModelResponseContextFromJSONTyped(json, false);
 }
-exports.ModelResponseContextFromJSON = ModelResponseContextFromJSON;
 function ModelResponseContextFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function ModelResponseContextFromJSONTyped(json, ignoreDiscriminator) {
         'requestId': !(0, runtime_1.exists)(json, 'RequestId') ? undefined : json['RequestId'],
     };
 }
-exports.ModelResponseContextFromJSONTyped = ModelResponseContextFromJSONTyped;
 function ModelResponseContextToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function ModelResponseContextToJSON(value) {
         'RequestId': value.requestId,
     };
 }
-exports.ModelResponseContextToJSON = ModelResponseContextToJSON;

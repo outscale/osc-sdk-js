@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadDhcpOptionsResponseToJSON = exports.ReadDhcpOptionsResponseFromJSONTyped = exports.ReadDhcpOptionsResponseFromJSON = void 0;
+exports.ReadDhcpOptionsResponseFromJSON = ReadDhcpOptionsResponseFromJSON;
+exports.ReadDhcpOptionsResponseFromJSONTyped = ReadDhcpOptionsResponseFromJSONTyped;
+exports.ReadDhcpOptionsResponseToJSON = ReadDhcpOptionsResponseToJSON;
 const runtime_1 = require("../runtime");
 const DhcpOptionsSet_1 = require("./DhcpOptionsSet");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadDhcpOptionsResponseFromJSON(json) {
     return ReadDhcpOptionsResponseFromJSONTyped(json, false);
 }
-exports.ReadDhcpOptionsResponseFromJSON = ReadDhcpOptionsResponseFromJSON;
 function ReadDhcpOptionsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadDhcpOptionsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadDhcpOptionsResponseFromJSONTyped = ReadDhcpOptionsResponseFromJSONTyped;
 function ReadDhcpOptionsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadDhcpOptionsResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadDhcpOptionsResponseToJSON = ReadDhcpOptionsResponseToJSON;

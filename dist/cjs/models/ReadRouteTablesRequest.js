@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadRouteTablesRequestToJSON = exports.ReadRouteTablesRequestFromJSONTyped = exports.ReadRouteTablesRequestFromJSON = void 0;
+exports.ReadRouteTablesRequestFromJSON = ReadRouteTablesRequestFromJSON;
+exports.ReadRouteTablesRequestFromJSONTyped = ReadRouteTablesRequestFromJSONTyped;
+exports.ReadRouteTablesRequestToJSON = ReadRouteTablesRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersRouteTable_1 = require("./FiltersRouteTable");
 function ReadRouteTablesRequestFromJSON(json) {
     return ReadRouteTablesRequestFromJSONTyped(json, false);
 }
-exports.ReadRouteTablesRequestFromJSON = ReadRouteTablesRequestFromJSON;
 function ReadRouteTablesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadRouteTablesRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadRouteTablesRequestFromJSONTyped = ReadRouteTablesRequestFromJSONTyped;
 function ReadRouteTablesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadRouteTablesRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadRouteTablesRequestToJSON = ReadRouteTablesRequestToJSON;

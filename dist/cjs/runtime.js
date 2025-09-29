@@ -22,7 +22,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TextApiResponse = exports.BlobApiResponse = exports.VoidApiResponse = exports.JSONApiResponse = exports.canConsumeForm = exports.mapValues = exports.querystring = exports.exists = exports.COLLECTION_FORMATS = exports.RequiredError = exports.ResponseError = exports.BaseAPI = exports.DefaultConfig = exports.Configuration = exports.AwsV4Signer = exports.BASE_PATH = void 0;
+exports.TextApiResponse = exports.BlobApiResponse = exports.VoidApiResponse = exports.JSONApiResponse = exports.COLLECTION_FORMATS = exports.RequiredError = exports.ResponseError = exports.BaseAPI = exports.DefaultConfig = exports.Configuration = exports.AwsV4Signer = exports.BASE_PATH = void 0;
+exports.exists = exists;
+exports.querystring = querystring;
+exports.mapValues = mapValues;
+exports.canConsumeForm = canConsumeForm;
 const aws4fetch_1 = require("aws4fetch");
 exports.BASE_PATH = "https://api.eu-west-2.outscale.com/api/v1".replace(/\/+$/, "");
 class AwsV4Signer {
@@ -238,7 +242,6 @@ function exists(json, key) {
     const value = json[key];
     return value !== null && value !== undefined;
 }
-exports.exists = exists;
 function querystring(params, prefix = '') {
     return Object.keys(params)
         .map((key) => {
@@ -260,11 +263,9 @@ function querystring(params, prefix = '') {
         .filter(part => part.length > 0)
         .join('&');
 }
-exports.querystring = querystring;
 function mapValues(data, fn) {
     return Object.keys(data).reduce((acc, key) => (Object.assign(Object.assign({}, acc), { [key]: fn(data[key]) })), {});
 }
-exports.mapValues = mapValues;
 function canConsumeForm(consumes) {
     for (const consume of consumes) {
         if ('multipart/form-data' === consume.contentType) {
@@ -273,7 +274,6 @@ function canConsumeForm(consumes) {
     }
     return false;
 }
-exports.canConsumeForm = canConsumeForm;
 class JSONApiResponse {
     constructor(raw, transformer = (jsonValue) => jsonValue) {
         this.raw = raw;

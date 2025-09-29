@@ -28,13 +28,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -87,8 +97,8 @@ class NicApi extends runtime.BaseAPI {
     /**
      * Creates a network interface card (NIC) in the specified Subnet.<br /><br /> For more information, see [About NICs](https://docs.outscale.com/en/userguide/About-NICs.html).
      */
-    createNic(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createNic() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createNicRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -128,8 +138,8 @@ class NicApi extends runtime.BaseAPI {
     /**
      * Deletes the specified network interface card (NIC).<br /> The network interface must not be attached to any virtual machine (VM).
      */
-    deleteNic(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteNic() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteNicRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -169,8 +179,8 @@ class NicApi extends runtime.BaseAPI {
     /**
      * Attaches a network interface card (NIC) to a virtual machine (VM).<br /> The interface and the VM must be in the same Subregion. The VM can be either `running` or `stopped`. The NIC must be in the `available` state. For more information, see [Attaching a NIC to a VM](https://docs.outscale.com/en/userguide/Attaching-a-NIC-to-a-VM.html).
      */
-    linkNic(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    linkNic() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.linkNicRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -210,8 +220,8 @@ class NicApi extends runtime.BaseAPI {
     /**
      * Assigns one or more secondary private IPs to a specified network interface card (NIC). This action is only available in a Net. The private IPs to be assigned can be added individually using the `PrivateIps` parameter, or you can specify the number of private IPs to be automatically chosen within the Subnet range using the `SecondaryPrivateIpCount` parameter. You can specify only one of these two parameters. If none of these parameters are specified, a private IP is chosen within the Subnet range.
      */
-    linkPrivateIps(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    linkPrivateIps() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.linkPrivateIpsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -251,8 +261,8 @@ class NicApi extends runtime.BaseAPI {
     /**
      * Lists one or more network interface cards (NICs).<br /> A NIC is a virtual network interface that you can attach to a virtual machine (VM) in a Net.
      */
-    readNics(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readNics() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readNicsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -292,8 +302,8 @@ class NicApi extends runtime.BaseAPI {
     /**
      * Detaches a network interface card (NIC) from a virtual machine (VM).<br /> The primary NIC cannot be detached.
      */
-    unlinkNic(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    unlinkNic() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.unlinkNicRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -333,8 +343,8 @@ class NicApi extends runtime.BaseAPI {
     /**
      * Unassigns one or more secondary private IPs from a network interface card (NIC).
      */
-    unlinkPrivateIps(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    unlinkPrivateIps() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.unlinkPrivateIpsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -374,8 +384,8 @@ class NicApi extends runtime.BaseAPI {
     /**
      * Modifies the specified network interface card (NIC). You can specify only one attribute at a time.
      */
-    updateNic(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateNic() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateNicRaw(requestParameters, initOverrides);
             return yield response.value();
         });

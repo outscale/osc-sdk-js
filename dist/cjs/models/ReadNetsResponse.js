@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadNetsResponseToJSON = exports.ReadNetsResponseFromJSONTyped = exports.ReadNetsResponseFromJSON = void 0;
+exports.ReadNetsResponseFromJSON = ReadNetsResponseFromJSON;
+exports.ReadNetsResponseFromJSONTyped = ReadNetsResponseFromJSONTyped;
+exports.ReadNetsResponseToJSON = ReadNetsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Net_1 = require("./Net");
 function ReadNetsResponseFromJSON(json) {
     return ReadNetsResponseFromJSONTyped(json, false);
 }
-exports.ReadNetsResponseFromJSON = ReadNetsResponseFromJSON;
 function ReadNetsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadNetsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadNetsResponseFromJSONTyped = ReadNetsResponseFromJSONTyped;
 function ReadNetsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadNetsResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadNetsResponseToJSON = ReadNetsResponseToJSON;

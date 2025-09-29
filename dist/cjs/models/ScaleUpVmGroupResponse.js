@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScaleUpVmGroupResponseToJSON = exports.ScaleUpVmGroupResponseFromJSONTyped = exports.ScaleUpVmGroupResponseFromJSON = void 0;
+exports.ScaleUpVmGroupResponseFromJSON = ScaleUpVmGroupResponseFromJSON;
+exports.ScaleUpVmGroupResponseFromJSONTyped = ScaleUpVmGroupResponseFromJSONTyped;
+exports.ScaleUpVmGroupResponseToJSON = ScaleUpVmGroupResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ScaleUpVmGroupResponseFromJSON(json) {
     return ScaleUpVmGroupResponseFromJSONTyped(json, false);
 }
-exports.ScaleUpVmGroupResponseFromJSON = ScaleUpVmGroupResponseFromJSON;
 function ScaleUpVmGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function ScaleUpVmGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ScaleUpVmGroupResponseFromJSONTyped = ScaleUpVmGroupResponseFromJSONTyped;
 function ScaleUpVmGroupResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function ScaleUpVmGroupResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ScaleUpVmGroupResponseToJSON = ScaleUpVmGroupResponseToJSON;

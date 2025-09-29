@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadConsoleOutputRequestToJSON = exports.ReadConsoleOutputRequestFromJSONTyped = exports.ReadConsoleOutputRequestFromJSON = void 0;
+exports.ReadConsoleOutputRequestFromJSON = ReadConsoleOutputRequestFromJSON;
+exports.ReadConsoleOutputRequestFromJSONTyped = ReadConsoleOutputRequestFromJSONTyped;
+exports.ReadConsoleOutputRequestToJSON = ReadConsoleOutputRequestToJSON;
 const runtime_1 = require("../runtime");
 function ReadConsoleOutputRequestFromJSON(json) {
     return ReadConsoleOutputRequestFromJSONTyped(json, false);
 }
-exports.ReadConsoleOutputRequestFromJSON = ReadConsoleOutputRequestFromJSON;
 function ReadConsoleOutputRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function ReadConsoleOutputRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vmId': json['VmId'],
     };
 }
-exports.ReadConsoleOutputRequestFromJSONTyped = ReadConsoleOutputRequestFromJSONTyped;
 function ReadConsoleOutputRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function ReadConsoleOutputRequestToJSON(value) {
         'VmId': value.vmId,
     };
 }
-exports.ReadConsoleOutputRequestToJSON = ReadConsoleOutputRequestToJSON;

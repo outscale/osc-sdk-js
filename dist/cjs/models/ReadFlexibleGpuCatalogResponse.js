@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadFlexibleGpuCatalogResponseToJSON = exports.ReadFlexibleGpuCatalogResponseFromJSONTyped = exports.ReadFlexibleGpuCatalogResponseFromJSON = void 0;
+exports.ReadFlexibleGpuCatalogResponseFromJSON = ReadFlexibleGpuCatalogResponseFromJSON;
+exports.ReadFlexibleGpuCatalogResponseFromJSONTyped = ReadFlexibleGpuCatalogResponseFromJSONTyped;
+exports.ReadFlexibleGpuCatalogResponseToJSON = ReadFlexibleGpuCatalogResponseToJSON;
 const runtime_1 = require("../runtime");
 const FlexibleGpuCatalog_1 = require("./FlexibleGpuCatalog");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadFlexibleGpuCatalogResponseFromJSON(json) {
     return ReadFlexibleGpuCatalogResponseFromJSONTyped(json, false);
 }
-exports.ReadFlexibleGpuCatalogResponseFromJSON = ReadFlexibleGpuCatalogResponseFromJSON;
 function ReadFlexibleGpuCatalogResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function ReadFlexibleGpuCatalogResponseFromJSONTyped(json, ignoreDiscriminator) 
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadFlexibleGpuCatalogResponseFromJSONTyped = ReadFlexibleGpuCatalogResponseFromJSONTyped;
 function ReadFlexibleGpuCatalogResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ReadFlexibleGpuCatalogResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadFlexibleGpuCatalogResponseToJSON = ReadFlexibleGpuCatalogResponseToJSON;

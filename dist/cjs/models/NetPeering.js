@@ -13,7 +13,9 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NetPeeringToJSON = exports.NetPeeringFromJSONTyped = exports.NetPeeringFromJSON = void 0;
+exports.NetPeeringFromJSON = NetPeeringFromJSON;
+exports.NetPeeringFromJSONTyped = NetPeeringFromJSONTyped;
+exports.NetPeeringToJSON = NetPeeringToJSON;
 const runtime_1 = require("../runtime");
 const AccepterNet_1 = require("./AccepterNet");
 const NetPeeringState_1 = require("./NetPeeringState");
@@ -22,7 +24,6 @@ const SourceNet_1 = require("./SourceNet");
 function NetPeeringFromJSON(json) {
     return NetPeeringFromJSONTyped(json, false);
 }
-exports.NetPeeringFromJSON = NetPeeringFromJSON;
 function NetPeeringFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -36,7 +37,6 @@ function NetPeeringFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
     };
 }
-exports.NetPeeringFromJSONTyped = NetPeeringFromJSONTyped;
 function NetPeeringToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +53,3 @@ function NetPeeringToJSON(value) {
         'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
     };
 }
-exports.NetPeeringToJSON = NetPeeringToJSON;

@@ -61,8 +61,8 @@ export class RouteApi extends runtime.BaseAPI {
     /**
      * Creates a route in a specified route table within a specified Net.<br /> You must specify one of the following elements as the target:<br /><br />  * Net peering<br /> * NAT VM<br /> * Internet service<br /> * Virtual gateway<br /> * NAT service<br /> * Network interface card (NIC)<br /><br />  The routing algorithm is based on the most specific match.<br /><br /> For more information, see [About Route Tables](https://docs.outscale.com/en/userguide/About-Route-Tables.html).
      */
-    createRoute(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createRoute() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createRouteRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class RouteApi extends runtime.BaseAPI {
     /**
      * Deletes a route from a specified route table.
      */
-    deleteRoute(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteRoute() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteRouteRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class RouteApi extends runtime.BaseAPI {
     /**
      * Replaces an existing route within a route table in a Net.<br /> You must specify one of the following elements as the target:<br /><br />  * Net peering<br /> * NAT virtual machine (VM)<br /> * Internet service<br /> * Virtual gateway<br /> * NAT service<br /> * Network interface card (NIC)<br /><br />  The routing algorithm is based on the most specific match.
      */
-    updateRoute(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateRoute() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateRouteRaw(requestParameters, initOverrides);
             return yield response.value();
         });

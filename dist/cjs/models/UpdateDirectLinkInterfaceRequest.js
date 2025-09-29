@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateDirectLinkInterfaceRequestToJSON = exports.UpdateDirectLinkInterfaceRequestFromJSONTyped = exports.UpdateDirectLinkInterfaceRequestFromJSON = exports.UpdateDirectLinkInterfaceRequestMtuEnum = void 0;
+exports.UpdateDirectLinkInterfaceRequestMtuEnum = void 0;
+exports.UpdateDirectLinkInterfaceRequestFromJSON = UpdateDirectLinkInterfaceRequestFromJSON;
+exports.UpdateDirectLinkInterfaceRequestFromJSONTyped = UpdateDirectLinkInterfaceRequestFromJSONTyped;
+exports.UpdateDirectLinkInterfaceRequestToJSON = UpdateDirectLinkInterfaceRequestToJSON;
 const runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,7 +27,6 @@ exports.UpdateDirectLinkInterfaceRequestMtuEnum = {
 function UpdateDirectLinkInterfaceRequestFromJSON(json) {
     return UpdateDirectLinkInterfaceRequestFromJSONTyped(json, false);
 }
-exports.UpdateDirectLinkInterfaceRequestFromJSON = UpdateDirectLinkInterfaceRequestFromJSON;
 function UpdateDirectLinkInterfaceRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -35,7 +37,6 @@ function UpdateDirectLinkInterfaceRequestFromJSONTyped(json, ignoreDiscriminator
         'mtu': json['Mtu'],
     };
 }
-exports.UpdateDirectLinkInterfaceRequestFromJSONTyped = UpdateDirectLinkInterfaceRequestFromJSONTyped;
 function UpdateDirectLinkInterfaceRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +50,3 @@ function UpdateDirectLinkInterfaceRequestToJSON(value) {
         'Mtu': value.mtu,
     };
 }
-exports.UpdateDirectLinkInterfaceRequestToJSON = UpdateDirectLinkInterfaceRequestToJSON;

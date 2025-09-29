@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersSecurityGroupToJSON = exports.FiltersSecurityGroupFromJSONTyped = exports.FiltersSecurityGroupFromJSON = void 0;
+exports.FiltersSecurityGroupFromJSON = FiltersSecurityGroupFromJSON;
+exports.FiltersSecurityGroupFromJSONTyped = FiltersSecurityGroupFromJSONTyped;
+exports.FiltersSecurityGroupToJSON = FiltersSecurityGroupToJSON;
 const runtime_1 = require("../runtime");
 function FiltersSecurityGroupFromJSON(json) {
     return FiltersSecurityGroupFromJSONTyped(json, false);
 }
-exports.FiltersSecurityGroupFromJSON = FiltersSecurityGroupFromJSON;
 function FiltersSecurityGroupFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -47,7 +48,6 @@ function FiltersSecurityGroupFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersSecurityGroupFromJSONTyped = FiltersSecurityGroupFromJSONTyped;
 function FiltersSecurityGroupToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -79,4 +79,3 @@ function FiltersSecurityGroupToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersSecurityGroupToJSON = FiltersSecurityGroupToJSON;

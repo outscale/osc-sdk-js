@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AcceptNetPeeringRequestToJSON = exports.AcceptNetPeeringRequestFromJSONTyped = exports.AcceptNetPeeringRequestFromJSON = void 0;
+exports.AcceptNetPeeringRequestFromJSON = AcceptNetPeeringRequestFromJSON;
+exports.AcceptNetPeeringRequestFromJSONTyped = AcceptNetPeeringRequestFromJSONTyped;
+exports.AcceptNetPeeringRequestToJSON = AcceptNetPeeringRequestToJSON;
 const runtime_1 = require("../runtime");
 function AcceptNetPeeringRequestFromJSON(json) {
     return AcceptNetPeeringRequestFromJSONTyped(json, false);
 }
-exports.AcceptNetPeeringRequestFromJSON = AcceptNetPeeringRequestFromJSON;
 function AcceptNetPeeringRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function AcceptNetPeeringRequestFromJSONTyped(json, ignoreDiscriminator) {
         'netPeeringId': json['NetPeeringId'],
     };
 }
-exports.AcceptNetPeeringRequestFromJSONTyped = AcceptNetPeeringRequestFromJSONTyped;
 function AcceptNetPeeringRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function AcceptNetPeeringRequestToJSON(value) {
         'NetPeeringId': value.netPeeringId,
     };
 }
-exports.AcceptNetPeeringRequestToJSON = AcceptNetPeeringRequestToJSON;

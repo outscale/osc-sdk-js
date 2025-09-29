@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateUserGroupResponseToJSON = exports.CreateUserGroupResponseFromJSONTyped = exports.CreateUserGroupResponseFromJSON = void 0;
+exports.CreateUserGroupResponseFromJSON = CreateUserGroupResponseFromJSON;
+exports.CreateUserGroupResponseFromJSONTyped = CreateUserGroupResponseFromJSONTyped;
+exports.CreateUserGroupResponseToJSON = CreateUserGroupResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const UserGroup_1 = require("./UserGroup");
 function CreateUserGroupResponseFromJSON(json) {
     return CreateUserGroupResponseFromJSONTyped(json, false);
 }
-exports.CreateUserGroupResponseFromJSON = CreateUserGroupResponseFromJSON;
 function CreateUserGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateUserGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
         'userGroup': !(0, runtime_1.exists)(json, 'UserGroup') ? undefined : (0, UserGroup_1.UserGroupFromJSON)(json['UserGroup']),
     };
 }
-exports.CreateUserGroupResponseFromJSONTyped = CreateUserGroupResponseFromJSONTyped;
 function CreateUserGroupResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateUserGroupResponseToJSON(value) {
         'UserGroup': (0, UserGroup_1.UserGroupToJSON)(value.userGroup),
     };
 }
-exports.CreateUserGroupResponseToJSON = CreateUserGroupResponseToJSON;

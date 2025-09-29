@@ -61,8 +61,8 @@ export class VmGroupApi extends runtime.BaseAPI {
     /**
      * > [WARNING]<br /> > This feature is currently under development and may not function properly.<br />  Creates a group of virtual machines (VMs) containing the same characteristics as a specified VM template, and then launches them.<br /> You can create up to 100 VM groups in your account.
      */
-    createVmGroup(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createVmGroup() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createVmGroupRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class VmGroupApi extends runtime.BaseAPI {
     /**
      * > [WARNING]<br /> > This feature is currently under development and may not function properly.<br />  Deletes a specified VM group.
      */
-    deleteVmGroup(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteVmGroup() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteVmGroupRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class VmGroupApi extends runtime.BaseAPI {
     /**
      * > [WARNING]<br /> > This feature is currently under development and may not function properly.<br />  Lists one or more group of virtual machines (VMs).
      */
-    readVmGroups(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readVmGroups() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readVmGroupsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -184,8 +184,8 @@ export class VmGroupApi extends runtime.BaseAPI {
     /**
      * > [WARNING]<br /> > This feature is currently under development and may not function properly.<br />  Deletes virtual machines (VMs) from a VM group.<br /> The oldest VMs are the first to be deleted.
      */
-    scaleDownVmGroup(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    scaleDownVmGroup() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.scaleDownVmGroupRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -225,8 +225,8 @@ export class VmGroupApi extends runtime.BaseAPI {
     /**
      * > [WARNING]<br /> > This feature is currently under development and may not function properly.<br />  Creates additional virtual machines (VMs) in a VM group.<br /> The new VMs use the current version of the VM template.
      */
-    scaleUpVmGroup(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    scaleUpVmGroup() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.scaleUpVmGroupRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -266,8 +266,8 @@ export class VmGroupApi extends runtime.BaseAPI {
     /**
      * > [WARNING]<br /> > This feature is currently under development and may not function properly.<br />  Modifies the specified attributes of a group of virtual machines (VMs).
      */
-    updateVmGroup(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateVmGroup() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateVmGroupRaw(requestParameters, initOverrides);
             return yield response.value();
         });

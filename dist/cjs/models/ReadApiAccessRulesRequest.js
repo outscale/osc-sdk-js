@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadApiAccessRulesRequestToJSON = exports.ReadApiAccessRulesRequestFromJSONTyped = exports.ReadApiAccessRulesRequestFromJSON = void 0;
+exports.ReadApiAccessRulesRequestFromJSON = ReadApiAccessRulesRequestFromJSON;
+exports.ReadApiAccessRulesRequestFromJSONTyped = ReadApiAccessRulesRequestFromJSONTyped;
+exports.ReadApiAccessRulesRequestToJSON = ReadApiAccessRulesRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersApiAccessRule_1 = require("./FiltersApiAccessRule");
 function ReadApiAccessRulesRequestFromJSON(json) {
     return ReadApiAccessRulesRequestFromJSONTyped(json, false);
 }
-exports.ReadApiAccessRulesRequestFromJSON = ReadApiAccessRulesRequestFromJSON;
 function ReadApiAccessRulesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function ReadApiAccessRulesRequestFromJSONTyped(json, ignoreDiscriminator) {
         'filters': !(0, runtime_1.exists)(json, 'Filters') ? undefined : (0, FiltersApiAccessRule_1.FiltersApiAccessRuleFromJSON)(json['Filters']),
     };
 }
-exports.ReadApiAccessRulesRequestFromJSONTyped = ReadApiAccessRulesRequestFromJSONTyped;
 function ReadApiAccessRulesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function ReadApiAccessRulesRequestToJSON(value) {
         'Filters': (0, FiltersApiAccessRule_1.FiltersApiAccessRuleToJSON)(value.filters),
     };
 }
-exports.ReadApiAccessRulesRequestToJSON = ReadApiAccessRulesRequestToJSON;

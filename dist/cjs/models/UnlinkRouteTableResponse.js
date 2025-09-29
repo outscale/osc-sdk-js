@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnlinkRouteTableResponseToJSON = exports.UnlinkRouteTableResponseFromJSONTyped = exports.UnlinkRouteTableResponseFromJSON = void 0;
+exports.UnlinkRouteTableResponseFromJSON = UnlinkRouteTableResponseFromJSON;
+exports.UnlinkRouteTableResponseFromJSONTyped = UnlinkRouteTableResponseFromJSONTyped;
+exports.UnlinkRouteTableResponseToJSON = UnlinkRouteTableResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function UnlinkRouteTableResponseFromJSON(json) {
     return UnlinkRouteTableResponseFromJSONTyped(json, false);
 }
-exports.UnlinkRouteTableResponseFromJSON = UnlinkRouteTableResponseFromJSON;
 function UnlinkRouteTableResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function UnlinkRouteTableResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.UnlinkRouteTableResponseFromJSONTyped = UnlinkRouteTableResponseFromJSONTyped;
 function UnlinkRouteTableResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function UnlinkRouteTableResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.UnlinkRouteTableResponseToJSON = UnlinkRouteTableResponseToJSON;

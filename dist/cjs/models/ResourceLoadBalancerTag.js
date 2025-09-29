@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ResourceLoadBalancerTagToJSON = exports.ResourceLoadBalancerTagFromJSONTyped = exports.ResourceLoadBalancerTagFromJSON = void 0;
+exports.ResourceLoadBalancerTagFromJSON = ResourceLoadBalancerTagFromJSON;
+exports.ResourceLoadBalancerTagFromJSONTyped = ResourceLoadBalancerTagFromJSONTyped;
+exports.ResourceLoadBalancerTagToJSON = ResourceLoadBalancerTagToJSON;
 function ResourceLoadBalancerTagFromJSON(json) {
     return ResourceLoadBalancerTagFromJSONTyped(json, false);
 }
-exports.ResourceLoadBalancerTagFromJSON = ResourceLoadBalancerTagFromJSON;
 function ResourceLoadBalancerTagFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -26,7 +27,6 @@ function ResourceLoadBalancerTagFromJSONTyped(json, ignoreDiscriminator) {
         'key': json['Key'],
     };
 }
-exports.ResourceLoadBalancerTagFromJSONTyped = ResourceLoadBalancerTagFromJSONTyped;
 function ResourceLoadBalancerTagToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function ResourceLoadBalancerTagToJSON(value) {
         'Key': value.key,
     };
 }
-exports.ResourceLoadBalancerTagToJSON = ResourceLoadBalancerTagToJSON;

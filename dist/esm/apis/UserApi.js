@@ -61,8 +61,8 @@ export class UserApi extends runtime.BaseAPI {
     /**
      * Creates an EIM user for your account.<br /><br /> For more information, see [About EIM Users](https://docs.outscale.com/en/userguide/About-EIM-Users.html).
      */
-    createUser(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createUser() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createUserRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class UserApi extends runtime.BaseAPI {
     /**
      * Deletes a specified EIM user. The EIM user must not belong to any group, nor have any key or linked policy.
      */
-    deleteUser(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteUser() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteUserRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class UserApi extends runtime.BaseAPI {
     /**
      * Lists all EIM users in the account.<br /> The response can be filtered using the UserIds.
      */
-    readUsers(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readUsers() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readUsersRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -184,8 +184,8 @@ export class UserApi extends runtime.BaseAPI {
     /**
      * Modifies the name and/or the path of a specified EIM user.
      */
-    updateUser(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateUser() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateUserRaw(requestParameters, initOverrides);
             return yield response.value();
         });

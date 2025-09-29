@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadVmsStateRequestToJSON = exports.ReadVmsStateRequestFromJSONTyped = exports.ReadVmsStateRequestFromJSON = void 0;
+exports.ReadVmsStateRequestFromJSON = ReadVmsStateRequestFromJSON;
+exports.ReadVmsStateRequestFromJSONTyped = ReadVmsStateRequestFromJSONTyped;
+exports.ReadVmsStateRequestToJSON = ReadVmsStateRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersVmsState_1 = require("./FiltersVmsState");
 function ReadVmsStateRequestFromJSON(json) {
     return ReadVmsStateRequestFromJSONTyped(json, false);
 }
-exports.ReadVmsStateRequestFromJSON = ReadVmsStateRequestFromJSON;
 function ReadVmsStateRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -32,7 +33,6 @@ function ReadVmsStateRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadVmsStateRequestFromJSONTyped = ReadVmsStateRequestFromJSONTyped;
 function ReadVmsStateRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -48,4 +48,3 @@ function ReadVmsStateRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadVmsStateRequestToJSON = ReadVmsStateRequestToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CatalogToJSON = exports.CatalogFromJSONTyped = exports.CatalogFromJSON = void 0;
+exports.CatalogFromJSON = CatalogFromJSON;
+exports.CatalogFromJSONTyped = CatalogFromJSONTyped;
+exports.CatalogToJSON = CatalogToJSON;
 const runtime_1 = require("../runtime");
 const CatalogEntry_1 = require("./CatalogEntry");
 function CatalogFromJSON(json) {
     return CatalogFromJSONTyped(json, false);
 }
-exports.CatalogFromJSON = CatalogFromJSON;
 function CatalogFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function CatalogFromJSONTyped(json, ignoreDiscriminator) {
         'entries': !(0, runtime_1.exists)(json, 'Entries') ? undefined : (json['Entries'].map(CatalogEntry_1.CatalogEntryFromJSON)),
     };
 }
-exports.CatalogFromJSONTyped = CatalogFromJSONTyped;
 function CatalogToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function CatalogToJSON(value) {
         'Entries': value.entries === undefined ? undefined : (value.entries.map(CatalogEntry_1.CatalogEntryToJSON)),
     };
 }
-exports.CatalogToJSON = CatalogToJSON;

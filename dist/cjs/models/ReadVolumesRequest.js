@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadVolumesRequestToJSON = exports.ReadVolumesRequestFromJSONTyped = exports.ReadVolumesRequestFromJSON = void 0;
+exports.ReadVolumesRequestFromJSON = ReadVolumesRequestFromJSON;
+exports.ReadVolumesRequestFromJSONTyped = ReadVolumesRequestFromJSONTyped;
+exports.ReadVolumesRequestToJSON = ReadVolumesRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersVolume_1 = require("./FiltersVolume");
 function ReadVolumesRequestFromJSON(json) {
     return ReadVolumesRequestFromJSONTyped(json, false);
 }
-exports.ReadVolumesRequestFromJSON = ReadVolumesRequestFromJSON;
 function ReadVolumesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadVolumesRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadVolumesRequestFromJSONTyped = ReadVolumesRequestFromJSONTyped;
 function ReadVolumesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadVolumesRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadVolumesRequestToJSON = ReadVolumesRequestToJSON;

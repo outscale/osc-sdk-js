@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateSnapshotExportTaskRequestToJSON = exports.CreateSnapshotExportTaskRequestFromJSONTyped = exports.CreateSnapshotExportTaskRequestFromJSON = void 0;
+exports.CreateSnapshotExportTaskRequestFromJSON = CreateSnapshotExportTaskRequestFromJSON;
+exports.CreateSnapshotExportTaskRequestFromJSONTyped = CreateSnapshotExportTaskRequestFromJSONTyped;
+exports.CreateSnapshotExportTaskRequestToJSON = CreateSnapshotExportTaskRequestToJSON;
 const runtime_1 = require("../runtime");
 const OsuExportToCreate_1 = require("./OsuExportToCreate");
 function CreateSnapshotExportTaskRequestFromJSON(json) {
     return CreateSnapshotExportTaskRequestFromJSONTyped(json, false);
 }
-exports.CreateSnapshotExportTaskRequestFromJSON = CreateSnapshotExportTaskRequestFromJSON;
 function CreateSnapshotExportTaskRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateSnapshotExportTaskRequestFromJSONTyped(json, ignoreDiscriminator)
         'snapshotId': json['SnapshotId'],
     };
 }
-exports.CreateSnapshotExportTaskRequestFromJSONTyped = CreateSnapshotExportTaskRequestFromJSONTyped;
 function CreateSnapshotExportTaskRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function CreateSnapshotExportTaskRequestToJSON(value) {
         'SnapshotId': value.snapshotId,
     };
 }
-exports.CreateSnapshotExportTaskRequestToJSON = CreateSnapshotExportTaskRequestToJSON;

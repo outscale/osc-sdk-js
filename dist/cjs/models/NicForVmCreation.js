@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NicForVmCreationToJSON = exports.NicForVmCreationFromJSONTyped = exports.NicForVmCreationFromJSON = void 0;
+exports.NicForVmCreationFromJSON = NicForVmCreationFromJSON;
+exports.NicForVmCreationFromJSONTyped = NicForVmCreationFromJSONTyped;
+exports.NicForVmCreationToJSON = NicForVmCreationToJSON;
 const runtime_1 = require("../runtime");
 const PrivateIpLight_1 = require("./PrivateIpLight");
 function NicForVmCreationFromJSON(json) {
     return NicForVmCreationFromJSONTyped(json, false);
 }
-exports.NicForVmCreationFromJSON = NicForVmCreationFromJSON;
 function NicForVmCreationFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -35,7 +36,6 @@ function NicForVmCreationFromJSONTyped(json, ignoreDiscriminator) {
         'subnetId': !(0, runtime_1.exists)(json, 'SubnetId') ? undefined : json['SubnetId'],
     };
 }
-exports.NicForVmCreationFromJSONTyped = NicForVmCreationFromJSONTyped;
 function NicForVmCreationToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -54,4 +54,3 @@ function NicForVmCreationToJSON(value) {
         'SubnetId': value.subnetId,
     };
 }
-exports.NicForVmCreationToJSON = NicForVmCreationToJSON;

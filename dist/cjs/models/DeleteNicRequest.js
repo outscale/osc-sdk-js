@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteNicRequestToJSON = exports.DeleteNicRequestFromJSONTyped = exports.DeleteNicRequestFromJSON = void 0;
+exports.DeleteNicRequestFromJSON = DeleteNicRequestFromJSON;
+exports.DeleteNicRequestFromJSONTyped = DeleteNicRequestFromJSONTyped;
+exports.DeleteNicRequestToJSON = DeleteNicRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteNicRequestFromJSON(json) {
     return DeleteNicRequestFromJSONTyped(json, false);
 }
-exports.DeleteNicRequestFromJSON = DeleteNicRequestFromJSON;
 function DeleteNicRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteNicRequestFromJSONTyped(json, ignoreDiscriminator) {
         'nicId': json['NicId'],
     };
 }
-exports.DeleteNicRequestFromJSONTyped = DeleteNicRequestFromJSONTyped;
 function DeleteNicRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteNicRequestToJSON(value) {
         'NicId': value.nicId,
     };
 }
-exports.DeleteNicRequestToJSON = DeleteNicRequestToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadUserPolicyResponseToJSON = exports.ReadUserPolicyResponseFromJSONTyped = exports.ReadUserPolicyResponseFromJSON = void 0;
+exports.ReadUserPolicyResponseFromJSON = ReadUserPolicyResponseFromJSON;
+exports.ReadUserPolicyResponseFromJSONTyped = ReadUserPolicyResponseFromJSONTyped;
+exports.ReadUserPolicyResponseToJSON = ReadUserPolicyResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadUserPolicyResponseFromJSON(json) {
     return ReadUserPolicyResponseFromJSONTyped(json, false);
 }
-exports.ReadUserPolicyResponseFromJSON = ReadUserPolicyResponseFromJSON;
 function ReadUserPolicyResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadUserPolicyResponseFromJSONTyped(json, ignoreDiscriminator) {
         'userName': !(0, runtime_1.exists)(json, 'UserName') ? undefined : json['UserName'],
     };
 }
-exports.ReadUserPolicyResponseFromJSONTyped = ReadUserPolicyResponseFromJSONTyped;
 function ReadUserPolicyResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadUserPolicyResponseToJSON(value) {
         'UserName': value.userName,
     };
 }
-exports.ReadUserPolicyResponseToJSON = ReadUserPolicyResponseToJSON;

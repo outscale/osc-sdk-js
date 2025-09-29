@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckAuthenticationResponseToJSON = exports.CheckAuthenticationResponseFromJSONTyped = exports.CheckAuthenticationResponseFromJSON = void 0;
+exports.CheckAuthenticationResponseFromJSON = CheckAuthenticationResponseFromJSON;
+exports.CheckAuthenticationResponseFromJSONTyped = CheckAuthenticationResponseFromJSONTyped;
+exports.CheckAuthenticationResponseToJSON = CheckAuthenticationResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function CheckAuthenticationResponseFromJSON(json) {
     return CheckAuthenticationResponseFromJSONTyped(json, false);
 }
-exports.CheckAuthenticationResponseFromJSON = CheckAuthenticationResponseFromJSON;
 function CheckAuthenticationResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function CheckAuthenticationResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CheckAuthenticationResponseFromJSONTyped = CheckAuthenticationResponseFromJSONTyped;
 function CheckAuthenticationResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function CheckAuthenticationResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CheckAuthenticationResponseToJSON = CheckAuthenticationResponseToJSON;

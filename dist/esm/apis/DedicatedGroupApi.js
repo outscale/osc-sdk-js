@@ -61,8 +61,8 @@ export class DedicatedGroupApi extends runtime.BaseAPI {
     /**
      * > [WARNING]<br /> > This feature is currently in beta.<br />  Creates a dedicated group for virtual machines (VMs).<br /><br /> For more information, see [About Dedicated Groups](https://docs.outscale.com/en/userguide/About-Dedicated-Groups.html).
      */
-    createDedicatedGroup(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createDedicatedGroup() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createDedicatedGroupRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -102,8 +102,8 @@ export class DedicatedGroupApi extends runtime.BaseAPI {
     /**
      * > [WARNING]<br /> > This feature is currently in beta.<br />  Deletes a specified dedicated group of virtual machines (VMs).<br />  **[WARNING]**<br /> A dedicated group can be deleted only if no VM or Net is in the dedicated group. Otherwise, you need to force the deletion.<br /> If you force the deletion:<br /> - all VMs are terminated.<br /> - all Nets are deleted, and all resources associated with Nets are detached.
      */
-    deleteDedicatedGroup(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteDedicatedGroup() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteDedicatedGroupRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -143,8 +143,8 @@ export class DedicatedGroupApi extends runtime.BaseAPI {
     /**
      * > [WARNING]<br /> > This feature is currently in beta.<br />  List one or more dedicated groups of virtual machines (VMs).
      */
-    readDedicatedGroups(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readDedicatedGroups() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readDedicatedGroupsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -184,8 +184,8 @@ export class DedicatedGroupApi extends runtime.BaseAPI {
     /**
      * > [WARNING]<br /> > This feature is currently in beta.<br />  Modifies the name of a specified dedicated group.<br />
      */
-    updateDedicatedGroup(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateDedicatedGroup() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateDedicatedGroupRaw(requestParameters, initOverrides);
             return yield response.value();
         });

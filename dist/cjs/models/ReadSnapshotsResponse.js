@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadSnapshotsResponseToJSON = exports.ReadSnapshotsResponseFromJSONTyped = exports.ReadSnapshotsResponseFromJSON = void 0;
+exports.ReadSnapshotsResponseFromJSON = ReadSnapshotsResponseFromJSON;
+exports.ReadSnapshotsResponseFromJSONTyped = ReadSnapshotsResponseFromJSONTyped;
+exports.ReadSnapshotsResponseToJSON = ReadSnapshotsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Snapshot_1 = require("./Snapshot");
 function ReadSnapshotsResponseFromJSON(json) {
     return ReadSnapshotsResponseFromJSONTyped(json, false);
 }
-exports.ReadSnapshotsResponseFromJSON = ReadSnapshotsResponseFromJSON;
 function ReadSnapshotsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadSnapshotsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'snapshots': !(0, runtime_1.exists)(json, 'Snapshots') ? undefined : (json['Snapshots'].map(Snapshot_1.SnapshotFromJSON)),
     };
 }
-exports.ReadSnapshotsResponseFromJSONTyped = ReadSnapshotsResponseFromJSONTyped;
 function ReadSnapshotsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadSnapshotsResponseToJSON(value) {
         'Snapshots': value.snapshots === undefined ? undefined : (value.snapshots.map(Snapshot_1.SnapshotToJSON)),
     };
 }
-exports.ReadSnapshotsResponseToJSON = ReadSnapshotsResponseToJSON;

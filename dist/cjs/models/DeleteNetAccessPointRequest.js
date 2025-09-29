@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteNetAccessPointRequestToJSON = exports.DeleteNetAccessPointRequestFromJSONTyped = exports.DeleteNetAccessPointRequestFromJSON = void 0;
+exports.DeleteNetAccessPointRequestFromJSON = DeleteNetAccessPointRequestFromJSON;
+exports.DeleteNetAccessPointRequestFromJSONTyped = DeleteNetAccessPointRequestFromJSONTyped;
+exports.DeleteNetAccessPointRequestToJSON = DeleteNetAccessPointRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteNetAccessPointRequestFromJSON(json) {
     return DeleteNetAccessPointRequestFromJSONTyped(json, false);
 }
-exports.DeleteNetAccessPointRequestFromJSON = DeleteNetAccessPointRequestFromJSON;
 function DeleteNetAccessPointRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteNetAccessPointRequestFromJSONTyped(json, ignoreDiscriminator) {
         'netAccessPointId': json['NetAccessPointId'],
     };
 }
-exports.DeleteNetAccessPointRequestFromJSONTyped = DeleteNetAccessPointRequestFromJSONTyped;
 function DeleteNetAccessPointRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteNetAccessPointRequestToJSON(value) {
         'NetAccessPointId': value.netAccessPointId,
     };
 }
-exports.DeleteNetAccessPointRequestToJSON = DeleteNetAccessPointRequestToJSON;

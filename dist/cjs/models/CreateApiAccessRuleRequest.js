@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateApiAccessRuleRequestToJSON = exports.CreateApiAccessRuleRequestFromJSONTyped = exports.CreateApiAccessRuleRequestFromJSON = void 0;
+exports.CreateApiAccessRuleRequestFromJSON = CreateApiAccessRuleRequestFromJSON;
+exports.CreateApiAccessRuleRequestFromJSONTyped = CreateApiAccessRuleRequestFromJSONTyped;
+exports.CreateApiAccessRuleRequestToJSON = CreateApiAccessRuleRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateApiAccessRuleRequestFromJSON(json) {
     return CreateApiAccessRuleRequestFromJSONTyped(json, false);
 }
-exports.CreateApiAccessRuleRequestFromJSON = CreateApiAccessRuleRequestFromJSON;
 function CreateApiAccessRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function CreateApiAccessRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
         'ipRanges': !(0, runtime_1.exists)(json, 'IpRanges') ? undefined : json['IpRanges'],
     };
 }
-exports.CreateApiAccessRuleRequestFromJSONTyped = CreateApiAccessRuleRequestFromJSONTyped;
 function CreateApiAccessRuleRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function CreateApiAccessRuleRequestToJSON(value) {
         'IpRanges': value.ipRanges,
     };
 }
-exports.CreateApiAccessRuleRequestToJSON = CreateApiAccessRuleRequestToJSON;

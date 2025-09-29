@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateAccountResponseToJSON = exports.UpdateAccountResponseFromJSONTyped = exports.UpdateAccountResponseFromJSON = void 0;
+exports.UpdateAccountResponseFromJSON = UpdateAccountResponseFromJSON;
+exports.UpdateAccountResponseFromJSONTyped = UpdateAccountResponseFromJSONTyped;
+exports.UpdateAccountResponseToJSON = UpdateAccountResponseToJSON;
 const runtime_1 = require("../runtime");
 const Account_1 = require("./Account");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function UpdateAccountResponseFromJSON(json) {
     return UpdateAccountResponseFromJSONTyped(json, false);
 }
-exports.UpdateAccountResponseFromJSON = UpdateAccountResponseFromJSON;
 function UpdateAccountResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function UpdateAccountResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.UpdateAccountResponseFromJSONTyped = UpdateAccountResponseFromJSONTyped;
 function UpdateAccountResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UpdateAccountResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.UpdateAccountResponseToJSON = UpdateAccountResponseToJSON;

@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateAccessKeyResponseToJSON = exports.UpdateAccessKeyResponseFromJSONTyped = exports.UpdateAccessKeyResponseFromJSON = void 0;
+exports.UpdateAccessKeyResponseFromJSON = UpdateAccessKeyResponseFromJSON;
+exports.UpdateAccessKeyResponseFromJSONTyped = UpdateAccessKeyResponseFromJSONTyped;
+exports.UpdateAccessKeyResponseToJSON = UpdateAccessKeyResponseToJSON;
 const runtime_1 = require("../runtime");
 const AccessKey_1 = require("./AccessKey");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function UpdateAccessKeyResponseFromJSON(json) {
     return UpdateAccessKeyResponseFromJSONTyped(json, false);
 }
-exports.UpdateAccessKeyResponseFromJSON = UpdateAccessKeyResponseFromJSON;
 function UpdateAccessKeyResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function UpdateAccessKeyResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.UpdateAccessKeyResponseFromJSONTyped = UpdateAccessKeyResponseFromJSONTyped;
 function UpdateAccessKeyResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UpdateAccessKeyResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.UpdateAccessKeyResponseToJSON = UpdateAccessKeyResponseToJSON;

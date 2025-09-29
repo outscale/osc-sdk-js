@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteApiAccessRuleRequestToJSON = exports.DeleteApiAccessRuleRequestFromJSONTyped = exports.DeleteApiAccessRuleRequestFromJSON = void 0;
+exports.DeleteApiAccessRuleRequestFromJSON = DeleteApiAccessRuleRequestFromJSON;
+exports.DeleteApiAccessRuleRequestFromJSONTyped = DeleteApiAccessRuleRequestFromJSONTyped;
+exports.DeleteApiAccessRuleRequestToJSON = DeleteApiAccessRuleRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteApiAccessRuleRequestFromJSON(json) {
     return DeleteApiAccessRuleRequestFromJSONTyped(json, false);
 }
-exports.DeleteApiAccessRuleRequestFromJSON = DeleteApiAccessRuleRequestFromJSON;
 function DeleteApiAccessRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteApiAccessRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
         'dryRun': !(0, runtime_1.exists)(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.DeleteApiAccessRuleRequestFromJSONTyped = DeleteApiAccessRuleRequestFromJSONTyped;
 function DeleteApiAccessRuleRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteApiAccessRuleRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.DeleteApiAccessRuleRequestToJSON = DeleteApiAccessRuleRequestToJSON;

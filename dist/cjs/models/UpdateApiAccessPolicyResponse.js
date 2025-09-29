@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateApiAccessPolicyResponseToJSON = exports.UpdateApiAccessPolicyResponseFromJSONTyped = exports.UpdateApiAccessPolicyResponseFromJSON = void 0;
+exports.UpdateApiAccessPolicyResponseFromJSON = UpdateApiAccessPolicyResponseFromJSON;
+exports.UpdateApiAccessPolicyResponseFromJSONTyped = UpdateApiAccessPolicyResponseFromJSONTyped;
+exports.UpdateApiAccessPolicyResponseToJSON = UpdateApiAccessPolicyResponseToJSON;
 const runtime_1 = require("../runtime");
 const ApiAccessPolicy_1 = require("./ApiAccessPolicy");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function UpdateApiAccessPolicyResponseFromJSON(json) {
     return UpdateApiAccessPolicyResponseFromJSONTyped(json, false);
 }
-exports.UpdateApiAccessPolicyResponseFromJSON = UpdateApiAccessPolicyResponseFromJSON;
 function UpdateApiAccessPolicyResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function UpdateApiAccessPolicyResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.UpdateApiAccessPolicyResponseFromJSONTyped = UpdateApiAccessPolicyResponseFromJSONTyped;
 function UpdateApiAccessPolicyResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UpdateApiAccessPolicyResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.UpdateApiAccessPolicyResponseToJSON = UpdateApiAccessPolicyResponseToJSON;

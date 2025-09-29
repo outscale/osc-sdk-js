@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteSnapshotRequestToJSON = exports.DeleteSnapshotRequestFromJSONTyped = exports.DeleteSnapshotRequestFromJSON = void 0;
+exports.DeleteSnapshotRequestFromJSON = DeleteSnapshotRequestFromJSON;
+exports.DeleteSnapshotRequestFromJSONTyped = DeleteSnapshotRequestFromJSONTyped;
+exports.DeleteSnapshotRequestToJSON = DeleteSnapshotRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteSnapshotRequestFromJSON(json) {
     return DeleteSnapshotRequestFromJSONTyped(json, false);
 }
-exports.DeleteSnapshotRequestFromJSON = DeleteSnapshotRequestFromJSON;
 function DeleteSnapshotRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteSnapshotRequestFromJSONTyped(json, ignoreDiscriminator) {
         'snapshotId': json['SnapshotId'],
     };
 }
-exports.DeleteSnapshotRequestFromJSONTyped = DeleteSnapshotRequestFromJSONTyped;
 function DeleteSnapshotRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteSnapshotRequestToJSON(value) {
         'SnapshotId': value.snapshotId,
     };
 }
-exports.DeleteSnapshotRequestToJSON = DeleteSnapshotRequestToJSON;

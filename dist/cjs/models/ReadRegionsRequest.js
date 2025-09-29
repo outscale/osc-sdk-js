@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadRegionsRequestToJSON = exports.ReadRegionsRequestFromJSONTyped = exports.ReadRegionsRequestFromJSON = void 0;
+exports.ReadRegionsRequestFromJSON = ReadRegionsRequestFromJSON;
+exports.ReadRegionsRequestFromJSONTyped = ReadRegionsRequestFromJSONTyped;
+exports.ReadRegionsRequestToJSON = ReadRegionsRequestToJSON;
 const runtime_1 = require("../runtime");
 function ReadRegionsRequestFromJSON(json) {
     return ReadRegionsRequestFromJSONTyped(json, false);
 }
-exports.ReadRegionsRequestFromJSON = ReadRegionsRequestFromJSON;
 function ReadRegionsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function ReadRegionsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'dryRun': !(0, runtime_1.exists)(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.ReadRegionsRequestFromJSONTyped = ReadRegionsRequestFromJSONTyped;
 function ReadRegionsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function ReadRegionsRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.ReadRegionsRequestToJSON = ReadRegionsRequestToJSON;

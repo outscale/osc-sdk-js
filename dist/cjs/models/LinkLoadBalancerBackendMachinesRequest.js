@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkLoadBalancerBackendMachinesRequestToJSON = exports.LinkLoadBalancerBackendMachinesRequestFromJSONTyped = exports.LinkLoadBalancerBackendMachinesRequestFromJSON = void 0;
+exports.LinkLoadBalancerBackendMachinesRequestFromJSON = LinkLoadBalancerBackendMachinesRequestFromJSON;
+exports.LinkLoadBalancerBackendMachinesRequestFromJSONTyped = LinkLoadBalancerBackendMachinesRequestFromJSONTyped;
+exports.LinkLoadBalancerBackendMachinesRequestToJSON = LinkLoadBalancerBackendMachinesRequestToJSON;
 const runtime_1 = require("../runtime");
 function LinkLoadBalancerBackendMachinesRequestFromJSON(json) {
     return LinkLoadBalancerBackendMachinesRequestFromJSONTyped(json, false);
 }
-exports.LinkLoadBalancerBackendMachinesRequestFromJSON = LinkLoadBalancerBackendMachinesRequestFromJSON;
 function LinkLoadBalancerBackendMachinesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function LinkLoadBalancerBackendMachinesRequestFromJSONTyped(json, ignoreDiscrim
         'loadBalancerName': json['LoadBalancerName'],
     };
 }
-exports.LinkLoadBalancerBackendMachinesRequestFromJSONTyped = LinkLoadBalancerBackendMachinesRequestFromJSONTyped;
 function LinkLoadBalancerBackendMachinesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function LinkLoadBalancerBackendMachinesRequestToJSON(value) {
         'LoadBalancerName': value.loadBalancerName,
     };
 }
-exports.LinkLoadBalancerBackendMachinesRequestToJSON = LinkLoadBalancerBackendMachinesRequestToJSON;

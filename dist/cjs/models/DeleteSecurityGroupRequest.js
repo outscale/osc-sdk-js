@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteSecurityGroupRequestToJSON = exports.DeleteSecurityGroupRequestFromJSONTyped = exports.DeleteSecurityGroupRequestFromJSON = void 0;
+exports.DeleteSecurityGroupRequestFromJSON = DeleteSecurityGroupRequestFromJSON;
+exports.DeleteSecurityGroupRequestFromJSONTyped = DeleteSecurityGroupRequestFromJSONTyped;
+exports.DeleteSecurityGroupRequestToJSON = DeleteSecurityGroupRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteSecurityGroupRequestFromJSON(json) {
     return DeleteSecurityGroupRequestFromJSONTyped(json, false);
 }
-exports.DeleteSecurityGroupRequestFromJSON = DeleteSecurityGroupRequestFromJSON;
 function DeleteSecurityGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function DeleteSecurityGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
         'securityGroupName': !(0, runtime_1.exists)(json, 'SecurityGroupName') ? undefined : json['SecurityGroupName'],
     };
 }
-exports.DeleteSecurityGroupRequestFromJSONTyped = DeleteSecurityGroupRequestFromJSONTyped;
 function DeleteSecurityGroupRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function DeleteSecurityGroupRequestToJSON(value) {
         'SecurityGroupName': value.securityGroupName,
     };
 }
-exports.DeleteSecurityGroupRequestToJSON = DeleteSecurityGroupRequestToJSON;

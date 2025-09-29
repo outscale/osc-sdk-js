@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadVirtualGatewaysRequestToJSON = exports.ReadVirtualGatewaysRequestFromJSONTyped = exports.ReadVirtualGatewaysRequestFromJSON = void 0;
+exports.ReadVirtualGatewaysRequestFromJSON = ReadVirtualGatewaysRequestFromJSON;
+exports.ReadVirtualGatewaysRequestFromJSONTyped = ReadVirtualGatewaysRequestFromJSONTyped;
+exports.ReadVirtualGatewaysRequestToJSON = ReadVirtualGatewaysRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersVirtualGateway_1 = require("./FiltersVirtualGateway");
 function ReadVirtualGatewaysRequestFromJSON(json) {
     return ReadVirtualGatewaysRequestFromJSONTyped(json, false);
 }
-exports.ReadVirtualGatewaysRequestFromJSON = ReadVirtualGatewaysRequestFromJSON;
 function ReadVirtualGatewaysRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadVirtualGatewaysRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadVirtualGatewaysRequestFromJSONTyped = ReadVirtualGatewaysRequestFromJSONTyped;
 function ReadVirtualGatewaysRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadVirtualGatewaysRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadVirtualGatewaysRequestToJSON = ReadVirtualGatewaysRequestToJSON;

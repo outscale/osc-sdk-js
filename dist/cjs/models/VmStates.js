@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VmStatesToJSON = exports.VmStatesFromJSONTyped = exports.VmStatesFromJSON = void 0;
+exports.VmStatesFromJSON = VmStatesFromJSON;
+exports.VmStatesFromJSONTyped = VmStatesFromJSONTyped;
+exports.VmStatesToJSON = VmStatesToJSON;
 const runtime_1 = require("../runtime");
 const MaintenanceEvent_1 = require("./MaintenanceEvent");
 function VmStatesFromJSON(json) {
     return VmStatesFromJSONTyped(json, false);
 }
-exports.VmStatesFromJSON = VmStatesFromJSON;
 function VmStatesFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function VmStatesFromJSONTyped(json, ignoreDiscriminator) {
         'vmState': !(0, runtime_1.exists)(json, 'VmState') ? undefined : json['VmState'],
     };
 }
-exports.VmStatesFromJSONTyped = VmStatesFromJSONTyped;
 function VmStatesToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function VmStatesToJSON(value) {
         'VmState': value.vmState,
     };
 }
-exports.VmStatesToJSON = VmStatesToJSON;

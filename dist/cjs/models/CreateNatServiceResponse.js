@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateNatServiceResponseToJSON = exports.CreateNatServiceResponseFromJSONTyped = exports.CreateNatServiceResponseFromJSON = void 0;
+exports.CreateNatServiceResponseFromJSON = CreateNatServiceResponseFromJSON;
+exports.CreateNatServiceResponseFromJSONTyped = CreateNatServiceResponseFromJSONTyped;
+exports.CreateNatServiceResponseToJSON = CreateNatServiceResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const NatService_1 = require("./NatService");
 function CreateNatServiceResponseFromJSON(json) {
     return CreateNatServiceResponseFromJSONTyped(json, false);
 }
-exports.CreateNatServiceResponseFromJSON = CreateNatServiceResponseFromJSON;
 function CreateNatServiceResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateNatServiceResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CreateNatServiceResponseFromJSONTyped = CreateNatServiceResponseFromJSONTyped;
 function CreateNatServiceResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateNatServiceResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CreateNatServiceResponseToJSON = CreateNatServiceResponseToJSON;

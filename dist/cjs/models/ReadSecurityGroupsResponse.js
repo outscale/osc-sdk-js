@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadSecurityGroupsResponseToJSON = exports.ReadSecurityGroupsResponseFromJSONTyped = exports.ReadSecurityGroupsResponseFromJSON = void 0;
+exports.ReadSecurityGroupsResponseFromJSON = ReadSecurityGroupsResponseFromJSON;
+exports.ReadSecurityGroupsResponseFromJSONTyped = ReadSecurityGroupsResponseFromJSONTyped;
+exports.ReadSecurityGroupsResponseToJSON = ReadSecurityGroupsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const SecurityGroup_1 = require("./SecurityGroup");
 function ReadSecurityGroupsResponseFromJSON(json) {
     return ReadSecurityGroupsResponseFromJSONTyped(json, false);
 }
-exports.ReadSecurityGroupsResponseFromJSON = ReadSecurityGroupsResponseFromJSON;
 function ReadSecurityGroupsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadSecurityGroupsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'securityGroups': !(0, runtime_1.exists)(json, 'SecurityGroups') ? undefined : (json['SecurityGroups'].map(SecurityGroup_1.SecurityGroupFromJSON)),
     };
 }
-exports.ReadSecurityGroupsResponseFromJSONTyped = ReadSecurityGroupsResponseFromJSONTyped;
 function ReadSecurityGroupsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadSecurityGroupsResponseToJSON(value) {
         'SecurityGroups': value.securityGroups === undefined ? undefined : (value.securityGroups.map(SecurityGroup_1.SecurityGroupToJSON)),
     };
 }
-exports.ReadSecurityGroupsResponseToJSON = ReadSecurityGroupsResponseToJSON;

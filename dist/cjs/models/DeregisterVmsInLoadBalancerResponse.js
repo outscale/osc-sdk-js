@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeregisterVmsInLoadBalancerResponseToJSON = exports.DeregisterVmsInLoadBalancerResponseFromJSONTyped = exports.DeregisterVmsInLoadBalancerResponseFromJSON = void 0;
+exports.DeregisterVmsInLoadBalancerResponseFromJSON = DeregisterVmsInLoadBalancerResponseFromJSON;
+exports.DeregisterVmsInLoadBalancerResponseFromJSONTyped = DeregisterVmsInLoadBalancerResponseFromJSONTyped;
+exports.DeregisterVmsInLoadBalancerResponseToJSON = DeregisterVmsInLoadBalancerResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeregisterVmsInLoadBalancerResponseFromJSON(json) {
     return DeregisterVmsInLoadBalancerResponseFromJSONTyped(json, false);
 }
-exports.DeregisterVmsInLoadBalancerResponseFromJSON = DeregisterVmsInLoadBalancerResponseFromJSON;
 function DeregisterVmsInLoadBalancerResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeregisterVmsInLoadBalancerResponseFromJSONTyped(json, ignoreDiscrimina
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeregisterVmsInLoadBalancerResponseFromJSONTyped = DeregisterVmsInLoadBalancerResponseFromJSONTyped;
 function DeregisterVmsInLoadBalancerResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeregisterVmsInLoadBalancerResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeregisterVmsInLoadBalancerResponseToJSON = DeregisterVmsInLoadBalancerResponseToJSON;

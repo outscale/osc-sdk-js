@@ -28,13 +28,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -87,8 +97,8 @@ class NetPeeringApi extends runtime.BaseAPI {
     /**
      * Accepts a Net peering request.<br /> To accept this request, you must be the owner of the peer Net. If you do not accept the request within 7 days, the state of the Net peering becomes `expired`.<br /><br />  **[NOTE]**<br /> A peering connection between two Nets works both ways. Therefore, when an A-to-B peering connection is accepted, any pending B-to-A peering connection is automatically rejected as redundant.
      */
-    acceptNetPeering(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    acceptNetPeering() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.acceptNetPeeringRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -128,8 +138,8 @@ class NetPeeringApi extends runtime.BaseAPI {
     /**
      * Requests a Net peering between a Net you own and a peer Net that belongs to you or another account.<br /> This action creates a Net peering that remains in the `pending-acceptance` state until it is accepted by the owner of the peer Net. If the owner of the peer Net does not accept the request within 7 days, the state of the Net peering becomes `expired`. For more information, see [AcceptNetPeering](#acceptnetpeering).<br /><br />  **[IMPORTANT]**<br /> * Peered Nets must contain at least one virtual machine (VM) each before the creation of the Net peering.<br /> * The two Nets must not have overlapping IP ranges. Otherwise, the Net peering is in the `failed` state.<br /> * A peering connection between two Nets works both ways. If an A-to-B connection is already created and accepted, creating a B-to-A connection is not necessary and would be automatically rejected.  For more information, see [About Net Peerings](https://docs.outscale.com/en/userguide/About-Net-Peerings.html).
      */
-    createNetPeering(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createNetPeering() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createNetPeeringRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -169,8 +179,8 @@ class NetPeeringApi extends runtime.BaseAPI {
     /**
      * Deletes a Net peering.<br /> If the Net peering is in the `active` state, it can be deleted either by the owner of the requester Net or the owner of the peer Net.<br /> If it is in the `pending-acceptance` state, it can be deleted only by the owner of the requester Net.<br /> If it is in the `rejected`, `failed`, or `expired` states, it cannot be deleted.
      */
-    deleteNetPeering(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteNetPeering() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteNetPeeringRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -210,8 +220,8 @@ class NetPeeringApi extends runtime.BaseAPI {
     /**
      * Lists one or more peering connections between two Nets.
      */
-    readNetPeerings(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readNetPeerings() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readNetPeeringsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -251,8 +261,8 @@ class NetPeeringApi extends runtime.BaseAPI {
     /**
      * Rejects a Net peering request.<br /> The Net peering must be in the `pending-acceptance` state to be rejected. The rejected Net peering is then in the `rejected` state.
      */
-    rejectNetPeering(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    rejectNetPeering() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.rejectNetPeeringRaw(requestParameters, initOverrides);
             return yield response.value();
         });

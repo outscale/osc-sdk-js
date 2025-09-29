@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateCaRequestToJSON = exports.UpdateCaRequestFromJSONTyped = exports.UpdateCaRequestFromJSON = void 0;
+exports.UpdateCaRequestFromJSON = UpdateCaRequestFromJSON;
+exports.UpdateCaRequestFromJSONTyped = UpdateCaRequestFromJSONTyped;
+exports.UpdateCaRequestToJSON = UpdateCaRequestToJSON;
 const runtime_1 = require("../runtime");
 function UpdateCaRequestFromJSON(json) {
     return UpdateCaRequestFromJSONTyped(json, false);
 }
-exports.UpdateCaRequestFromJSON = UpdateCaRequestFromJSON;
 function UpdateCaRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function UpdateCaRequestFromJSONTyped(json, ignoreDiscriminator) {
         'dryRun': !(0, runtime_1.exists)(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.UpdateCaRequestFromJSONTyped = UpdateCaRequestFromJSONTyped;
 function UpdateCaRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UpdateCaRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.UpdateCaRequestToJSON = UpdateCaRequestToJSON;

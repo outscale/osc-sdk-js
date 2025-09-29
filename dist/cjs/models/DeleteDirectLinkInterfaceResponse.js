@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteDirectLinkInterfaceResponseToJSON = exports.DeleteDirectLinkInterfaceResponseFromJSONTyped = exports.DeleteDirectLinkInterfaceResponseFromJSON = void 0;
+exports.DeleteDirectLinkInterfaceResponseFromJSON = DeleteDirectLinkInterfaceResponseFromJSON;
+exports.DeleteDirectLinkInterfaceResponseFromJSONTyped = DeleteDirectLinkInterfaceResponseFromJSONTyped;
+exports.DeleteDirectLinkInterfaceResponseToJSON = DeleteDirectLinkInterfaceResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteDirectLinkInterfaceResponseFromJSON(json) {
     return DeleteDirectLinkInterfaceResponseFromJSONTyped(json, false);
 }
-exports.DeleteDirectLinkInterfaceResponseFromJSON = DeleteDirectLinkInterfaceResponseFromJSON;
 function DeleteDirectLinkInterfaceResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteDirectLinkInterfaceResponseFromJSONTyped(json, ignoreDiscriminato
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteDirectLinkInterfaceResponseFromJSONTyped = DeleteDirectLinkInterfaceResponseFromJSONTyped;
 function DeleteDirectLinkInterfaceResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteDirectLinkInterfaceResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteDirectLinkInterfaceResponseToJSON = DeleteDirectLinkInterfaceResponseToJSON;

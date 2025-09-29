@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersExportTaskToJSON = exports.FiltersExportTaskFromJSONTyped = exports.FiltersExportTaskFromJSON = void 0;
+exports.FiltersExportTaskFromJSON = FiltersExportTaskFromJSON;
+exports.FiltersExportTaskFromJSONTyped = FiltersExportTaskFromJSONTyped;
+exports.FiltersExportTaskToJSON = FiltersExportTaskToJSON;
 const runtime_1 = require("../runtime");
 function FiltersExportTaskFromJSON(json) {
     return FiltersExportTaskFromJSONTyped(json, false);
 }
-exports.FiltersExportTaskFromJSON = FiltersExportTaskFromJSON;
 function FiltersExportTaskFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function FiltersExportTaskFromJSONTyped(json, ignoreDiscriminator) {
         'taskIds': !(0, runtime_1.exists)(json, 'TaskIds') ? undefined : json['TaskIds'],
     };
 }
-exports.FiltersExportTaskFromJSONTyped = FiltersExportTaskFromJSONTyped;
 function FiltersExportTaskToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function FiltersExportTaskToJSON(value) {
         'TaskIds': value.taskIds,
     };
 }
-exports.FiltersExportTaskToJSON = FiltersExportTaskToJSON;

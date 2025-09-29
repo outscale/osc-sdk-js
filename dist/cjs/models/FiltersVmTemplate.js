@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersVmTemplateToJSON = exports.FiltersVmTemplateFromJSONTyped = exports.FiltersVmTemplateFromJSON = void 0;
+exports.FiltersVmTemplateFromJSON = FiltersVmTemplateFromJSON;
+exports.FiltersVmTemplateFromJSONTyped = FiltersVmTemplateFromJSONTyped;
+exports.FiltersVmTemplateToJSON = FiltersVmTemplateToJSON;
 const runtime_1 = require("../runtime");
 function FiltersVmTemplateFromJSON(json) {
     return FiltersVmTemplateFromJSONTyped(json, false);
 }
-exports.FiltersVmTemplateFromJSON = FiltersVmTemplateFromJSON;
 function FiltersVmTemplateFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -38,7 +39,6 @@ function FiltersVmTemplateFromJSONTyped(json, ignoreDiscriminator) {
         'vmTemplateNames': !(0, runtime_1.exists)(json, 'VmTemplateNames') ? undefined : json['VmTemplateNames'],
     };
 }
-exports.FiltersVmTemplateFromJSONTyped = FiltersVmTemplateFromJSONTyped;
 function FiltersVmTemplateToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -61,4 +61,3 @@ function FiltersVmTemplateToJSON(value) {
         'VmTemplateNames': value.vmTemplateNames,
     };
 }
-exports.FiltersVmTemplateToJSON = FiltersVmTemplateToJSON;

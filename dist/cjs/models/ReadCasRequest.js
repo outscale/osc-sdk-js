@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadCasRequestToJSON = exports.ReadCasRequestFromJSONTyped = exports.ReadCasRequestFromJSON = void 0;
+exports.ReadCasRequestFromJSON = ReadCasRequestFromJSON;
+exports.ReadCasRequestFromJSONTyped = ReadCasRequestFromJSONTyped;
+exports.ReadCasRequestToJSON = ReadCasRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersCa_1 = require("./FiltersCa");
 function ReadCasRequestFromJSON(json) {
     return ReadCasRequestFromJSONTyped(json, false);
 }
-exports.ReadCasRequestFromJSON = ReadCasRequestFromJSON;
 function ReadCasRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function ReadCasRequestFromJSONTyped(json, ignoreDiscriminator) {
         'filters': !(0, runtime_1.exists)(json, 'Filters') ? undefined : (0, FiltersCa_1.FiltersCaFromJSON)(json['Filters']),
     };
 }
-exports.ReadCasRequestFromJSONTyped = ReadCasRequestFromJSONTyped;
 function ReadCasRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function ReadCasRequestToJSON(value) {
         'Filters': (0, FiltersCa_1.FiltersCaToJSON)(value.filters),
     };
 }
-exports.ReadCasRequestToJSON = ReadCasRequestToJSON;

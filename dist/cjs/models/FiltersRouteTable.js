@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersRouteTableToJSON = exports.FiltersRouteTableFromJSONTyped = exports.FiltersRouteTableFromJSON = void 0;
+exports.FiltersRouteTableFromJSON = FiltersRouteTableFromJSON;
+exports.FiltersRouteTableFromJSONTyped = FiltersRouteTableFromJSONTyped;
+exports.FiltersRouteTableToJSON = FiltersRouteTableToJSON;
 const runtime_1 = require("../runtime");
 function FiltersRouteTableFromJSON(json) {
     return FiltersRouteTableFromJSONTyped(json, false);
 }
-exports.FiltersRouteTableFromJSON = FiltersRouteTableFromJSON;
 function FiltersRouteTableFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -43,7 +44,6 @@ function FiltersRouteTableFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersRouteTableFromJSONTyped = FiltersRouteTableFromJSONTyped;
 function FiltersRouteTableToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -71,4 +71,3 @@ function FiltersRouteTableToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersRouteTableToJSON = FiltersRouteTableToJSON;

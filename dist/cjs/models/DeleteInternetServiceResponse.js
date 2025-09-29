@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteInternetServiceResponseToJSON = exports.DeleteInternetServiceResponseFromJSONTyped = exports.DeleteInternetServiceResponseFromJSON = void 0;
+exports.DeleteInternetServiceResponseFromJSON = DeleteInternetServiceResponseFromJSON;
+exports.DeleteInternetServiceResponseFromJSONTyped = DeleteInternetServiceResponseFromJSONTyped;
+exports.DeleteInternetServiceResponseToJSON = DeleteInternetServiceResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteInternetServiceResponseFromJSON(json) {
     return DeleteInternetServiceResponseFromJSONTyped(json, false);
 }
-exports.DeleteInternetServiceResponseFromJSON = DeleteInternetServiceResponseFromJSON;
 function DeleteInternetServiceResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteInternetServiceResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteInternetServiceResponseFromJSONTyped = DeleteInternetServiceResponseFromJSONTyped;
 function DeleteInternetServiceResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteInternetServiceResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteInternetServiceResponseToJSON = DeleteInternetServiceResponseToJSON;

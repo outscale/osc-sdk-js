@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WithToJSON = exports.WithFromJSONTyped = exports.WithFromJSON = void 0;
+exports.WithFromJSON = WithFromJSON;
+exports.WithFromJSONTyped = WithFromJSONTyped;
+exports.WithToJSON = WithToJSON;
 const runtime_1 = require("../runtime");
 function WithFromJSON(json) {
     return WithFromJSONTyped(json, false);
 }
-exports.WithFromJSON = WithFromJSON;
 function WithFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -42,7 +43,6 @@ function WithFromJSONTyped(json, ignoreDiscriminator) {
         'responseStatusCode': !(0, runtime_1.exists)(json, 'ResponseStatusCode') ? undefined : json['ResponseStatusCode'],
     };
 }
-exports.WithFromJSONTyped = WithFromJSONTyped;
 function WithToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -69,4 +69,3 @@ function WithToJSON(value) {
         'ResponseStatusCode': value.responseStatusCode,
     };
 }
-exports.WithToJSON = WithToJSON;

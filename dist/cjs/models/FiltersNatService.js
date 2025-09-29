@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersNatServiceToJSON = exports.FiltersNatServiceFromJSONTyped = exports.FiltersNatServiceFromJSON = void 0;
+exports.FiltersNatServiceFromJSON = FiltersNatServiceFromJSON;
+exports.FiltersNatServiceFromJSONTyped = FiltersNatServiceFromJSONTyped;
+exports.FiltersNatServiceToJSON = FiltersNatServiceToJSON;
 const runtime_1 = require("../runtime");
 function FiltersNatServiceFromJSON(json) {
     return FiltersNatServiceFromJSONTyped(json, false);
 }
-exports.FiltersNatServiceFromJSON = FiltersNatServiceFromJSON;
 function FiltersNatServiceFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -34,7 +35,6 @@ function FiltersNatServiceFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersNatServiceFromJSONTyped = FiltersNatServiceFromJSONTyped;
 function FiltersNatServiceToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +53,3 @@ function FiltersNatServiceToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersNatServiceToJSON = FiltersNatServiceToJSON;

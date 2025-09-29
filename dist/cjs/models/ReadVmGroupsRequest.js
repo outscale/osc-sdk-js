@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadVmGroupsRequestToJSON = exports.ReadVmGroupsRequestFromJSONTyped = exports.ReadVmGroupsRequestFromJSON = void 0;
+exports.ReadVmGroupsRequestFromJSON = ReadVmGroupsRequestFromJSON;
+exports.ReadVmGroupsRequestFromJSONTyped = ReadVmGroupsRequestFromJSONTyped;
+exports.ReadVmGroupsRequestToJSON = ReadVmGroupsRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersVmGroup_1 = require("./FiltersVmGroup");
 function ReadVmGroupsRequestFromJSON(json) {
     return ReadVmGroupsRequestFromJSONTyped(json, false);
 }
-exports.ReadVmGroupsRequestFromJSON = ReadVmGroupsRequestFromJSON;
 function ReadVmGroupsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function ReadVmGroupsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'filters': !(0, runtime_1.exists)(json, 'Filters') ? undefined : (0, FiltersVmGroup_1.FiltersVmGroupFromJSON)(json['Filters']),
     };
 }
-exports.ReadVmGroupsRequestFromJSONTyped = ReadVmGroupsRequestFromJSONTyped;
 function ReadVmGroupsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function ReadVmGroupsRequestToJSON(value) {
         'Filters': (0, FiltersVmGroup_1.FiltersVmGroupToJSON)(value.filters),
     };
 }
-exports.ReadVmGroupsRequestToJSON = ReadVmGroupsRequestToJSON;

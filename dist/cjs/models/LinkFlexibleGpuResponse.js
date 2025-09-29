@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkFlexibleGpuResponseToJSON = exports.LinkFlexibleGpuResponseFromJSONTyped = exports.LinkFlexibleGpuResponseFromJSON = void 0;
+exports.LinkFlexibleGpuResponseFromJSON = LinkFlexibleGpuResponseFromJSON;
+exports.LinkFlexibleGpuResponseFromJSONTyped = LinkFlexibleGpuResponseFromJSONTyped;
+exports.LinkFlexibleGpuResponseToJSON = LinkFlexibleGpuResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function LinkFlexibleGpuResponseFromJSON(json) {
     return LinkFlexibleGpuResponseFromJSONTyped(json, false);
 }
-exports.LinkFlexibleGpuResponseFromJSON = LinkFlexibleGpuResponseFromJSON;
 function LinkFlexibleGpuResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function LinkFlexibleGpuResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.LinkFlexibleGpuResponseFromJSONTyped = LinkFlexibleGpuResponseFromJSONTyped;
 function LinkFlexibleGpuResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function LinkFlexibleGpuResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.LinkFlexibleGpuResponseToJSON = LinkFlexibleGpuResponseToJSON;

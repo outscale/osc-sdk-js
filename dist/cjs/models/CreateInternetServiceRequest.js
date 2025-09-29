@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateInternetServiceRequestToJSON = exports.CreateInternetServiceRequestFromJSONTyped = exports.CreateInternetServiceRequestFromJSON = void 0;
+exports.CreateInternetServiceRequestFromJSON = CreateInternetServiceRequestFromJSON;
+exports.CreateInternetServiceRequestFromJSONTyped = CreateInternetServiceRequestFromJSONTyped;
+exports.CreateInternetServiceRequestToJSON = CreateInternetServiceRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateInternetServiceRequestFromJSON(json) {
     return CreateInternetServiceRequestFromJSONTyped(json, false);
 }
-exports.CreateInternetServiceRequestFromJSON = CreateInternetServiceRequestFromJSON;
 function CreateInternetServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function CreateInternetServiceRequestFromJSONTyped(json, ignoreDiscriminator) {
         'dryRun': !(0, runtime_1.exists)(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.CreateInternetServiceRequestFromJSONTyped = CreateInternetServiceRequestFromJSONTyped;
 function CreateInternetServiceRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function CreateInternetServiceRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.CreateInternetServiceRequestToJSON = CreateInternetServiceRequestToJSON;

@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SecurityGroupToJSON = exports.SecurityGroupFromJSONTyped = exports.SecurityGroupFromJSON = void 0;
+exports.SecurityGroupFromJSON = SecurityGroupFromJSON;
+exports.SecurityGroupFromJSONTyped = SecurityGroupFromJSONTyped;
+exports.SecurityGroupToJSON = SecurityGroupToJSON;
 const runtime_1 = require("../runtime");
 const ResourceTag_1 = require("./ResourceTag");
 const SecurityGroupRule_1 = require("./SecurityGroupRule");
 function SecurityGroupFromJSON(json) {
     return SecurityGroupFromJSONTyped(json, false);
 }
-exports.SecurityGroupFromJSON = SecurityGroupFromJSON;
 function SecurityGroupFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -36,7 +37,6 @@ function SecurityGroupFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
     };
 }
-exports.SecurityGroupFromJSONTyped = SecurityGroupFromJSONTyped;
 function SecurityGroupToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +55,3 @@ function SecurityGroupToJSON(value) {
         'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
     };
 }
-exports.SecurityGroupToJSON = SecurityGroupToJSON;

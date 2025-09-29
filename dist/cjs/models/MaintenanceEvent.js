@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MaintenanceEventToJSON = exports.MaintenanceEventFromJSONTyped = exports.MaintenanceEventFromJSON = void 0;
+exports.MaintenanceEventFromJSON = MaintenanceEventFromJSON;
+exports.MaintenanceEventFromJSONTyped = MaintenanceEventFromJSONTyped;
+exports.MaintenanceEventToJSON = MaintenanceEventToJSON;
 const runtime_1 = require("../runtime");
 function MaintenanceEventFromJSON(json) {
     return MaintenanceEventFromJSONTyped(json, false);
 }
-exports.MaintenanceEventFromJSON = MaintenanceEventFromJSON;
 function MaintenanceEventFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function MaintenanceEventFromJSONTyped(json, ignoreDiscriminator) {
         'notBefore': !(0, runtime_1.exists)(json, 'NotBefore') ? undefined : (new Date(json['NotBefore'])),
     };
 }
-exports.MaintenanceEventFromJSONTyped = MaintenanceEventFromJSONTyped;
 function MaintenanceEventToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function MaintenanceEventToJSON(value) {
         'NotBefore': value.notBefore === undefined ? undefined : (value.notBefore.toISOString().substr(0, 10)),
     };
 }
-exports.MaintenanceEventToJSON = MaintenanceEventToJSON;

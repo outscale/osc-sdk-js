@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnlinkFlexibleGpuRequestToJSON = exports.UnlinkFlexibleGpuRequestFromJSONTyped = exports.UnlinkFlexibleGpuRequestFromJSON = void 0;
+exports.UnlinkFlexibleGpuRequestFromJSON = UnlinkFlexibleGpuRequestFromJSON;
+exports.UnlinkFlexibleGpuRequestFromJSONTyped = UnlinkFlexibleGpuRequestFromJSONTyped;
+exports.UnlinkFlexibleGpuRequestToJSON = UnlinkFlexibleGpuRequestToJSON;
 const runtime_1 = require("../runtime");
 function UnlinkFlexibleGpuRequestFromJSON(json) {
     return UnlinkFlexibleGpuRequestFromJSONTyped(json, false);
 }
-exports.UnlinkFlexibleGpuRequestFromJSON = UnlinkFlexibleGpuRequestFromJSON;
 function UnlinkFlexibleGpuRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function UnlinkFlexibleGpuRequestFromJSONTyped(json, ignoreDiscriminator) {
         'flexibleGpuId': json['FlexibleGpuId'],
     };
 }
-exports.UnlinkFlexibleGpuRequestFromJSONTyped = UnlinkFlexibleGpuRequestFromJSONTyped;
 function UnlinkFlexibleGpuRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function UnlinkFlexibleGpuRequestToJSON(value) {
         'FlexibleGpuId': value.flexibleGpuId,
     };
 }
-exports.UnlinkFlexibleGpuRequestToJSON = UnlinkFlexibleGpuRequestToJSON;

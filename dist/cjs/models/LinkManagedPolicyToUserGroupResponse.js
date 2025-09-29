@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkManagedPolicyToUserGroupResponseToJSON = exports.LinkManagedPolicyToUserGroupResponseFromJSONTyped = exports.LinkManagedPolicyToUserGroupResponseFromJSON = void 0;
+exports.LinkManagedPolicyToUserGroupResponseFromJSON = LinkManagedPolicyToUserGroupResponseFromJSON;
+exports.LinkManagedPolicyToUserGroupResponseFromJSONTyped = LinkManagedPolicyToUserGroupResponseFromJSONTyped;
+exports.LinkManagedPolicyToUserGroupResponseToJSON = LinkManagedPolicyToUserGroupResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function LinkManagedPolicyToUserGroupResponseFromJSON(json) {
     return LinkManagedPolicyToUserGroupResponseFromJSONTyped(json, false);
 }
-exports.LinkManagedPolicyToUserGroupResponseFromJSON = LinkManagedPolicyToUserGroupResponseFromJSON;
 function LinkManagedPolicyToUserGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function LinkManagedPolicyToUserGroupResponseFromJSONTyped(json, ignoreDiscrimin
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.LinkManagedPolicyToUserGroupResponseFromJSONTyped = LinkManagedPolicyToUserGroupResponseFromJSONTyped;
 function LinkManagedPolicyToUserGroupResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function LinkManagedPolicyToUserGroupResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.LinkManagedPolicyToUserGroupResponseToJSON = LinkManagedPolicyToUserGroupResponseToJSON;

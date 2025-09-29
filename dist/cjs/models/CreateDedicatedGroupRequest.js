@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateDedicatedGroupRequestToJSON = exports.CreateDedicatedGroupRequestFromJSONTyped = exports.CreateDedicatedGroupRequestFromJSON = void 0;
+exports.CreateDedicatedGroupRequestFromJSON = CreateDedicatedGroupRequestFromJSON;
+exports.CreateDedicatedGroupRequestFromJSONTyped = CreateDedicatedGroupRequestFromJSONTyped;
+exports.CreateDedicatedGroupRequestToJSON = CreateDedicatedGroupRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateDedicatedGroupRequestFromJSON(json) {
     return CreateDedicatedGroupRequestFromJSONTyped(json, false);
 }
-exports.CreateDedicatedGroupRequestFromJSON = CreateDedicatedGroupRequestFromJSON;
 function CreateDedicatedGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateDedicatedGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
         'subregionName': json['SubregionName'],
     };
 }
-exports.CreateDedicatedGroupRequestFromJSONTyped = CreateDedicatedGroupRequestFromJSONTyped;
 function CreateDedicatedGroupRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function CreateDedicatedGroupRequestToJSON(value) {
         'SubregionName': value.subregionName,
     };
 }
-exports.CreateDedicatedGroupRequestToJSON = CreateDedicatedGroupRequestToJSON;

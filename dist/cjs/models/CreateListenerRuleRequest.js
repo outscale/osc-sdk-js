@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateListenerRuleRequestToJSON = exports.CreateListenerRuleRequestFromJSONTyped = exports.CreateListenerRuleRequestFromJSON = void 0;
+exports.CreateListenerRuleRequestFromJSON = CreateListenerRuleRequestFromJSON;
+exports.CreateListenerRuleRequestFromJSONTyped = CreateListenerRuleRequestFromJSONTyped;
+exports.CreateListenerRuleRequestToJSON = CreateListenerRuleRequestToJSON;
 const runtime_1 = require("../runtime");
 const ListenerRuleForCreation_1 = require("./ListenerRuleForCreation");
 const LoadBalancerLight_1 = require("./LoadBalancerLight");
 function CreateListenerRuleRequestFromJSON(json) {
     return CreateListenerRuleRequestFromJSONTyped(json, false);
 }
-exports.CreateListenerRuleRequestFromJSON = CreateListenerRuleRequestFromJSON;
 function CreateListenerRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -32,7 +33,6 @@ function CreateListenerRuleRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vmIds': json['VmIds'],
     };
 }
-exports.CreateListenerRuleRequestFromJSONTyped = CreateListenerRuleRequestFromJSONTyped;
 function CreateListenerRuleRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function CreateListenerRuleRequestToJSON(value) {
         'VmIds': value.vmIds,
     };
 }
-exports.CreateListenerRuleRequestToJSON = CreateListenerRuleRequestToJSON;

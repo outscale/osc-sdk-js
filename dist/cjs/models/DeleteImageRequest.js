@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteImageRequestToJSON = exports.DeleteImageRequestFromJSONTyped = exports.DeleteImageRequestFromJSON = void 0;
+exports.DeleteImageRequestFromJSON = DeleteImageRequestFromJSON;
+exports.DeleteImageRequestFromJSONTyped = DeleteImageRequestFromJSONTyped;
+exports.DeleteImageRequestToJSON = DeleteImageRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteImageRequestFromJSON(json) {
     return DeleteImageRequestFromJSONTyped(json, false);
 }
-exports.DeleteImageRequestFromJSON = DeleteImageRequestFromJSON;
 function DeleteImageRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteImageRequestFromJSONTyped(json, ignoreDiscriminator) {
         'imageId': json['ImageId'],
     };
 }
-exports.DeleteImageRequestFromJSONTyped = DeleteImageRequestFromJSONTyped;
 function DeleteImageRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteImageRequestToJSON(value) {
         'ImageId': value.imageId,
     };
 }
-exports.DeleteImageRequestToJSON = DeleteImageRequestToJSON;

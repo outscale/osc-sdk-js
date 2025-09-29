@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LoadBalancerStickyCookiePolicyToJSON = exports.LoadBalancerStickyCookiePolicyFromJSONTyped = exports.LoadBalancerStickyCookiePolicyFromJSON = void 0;
+exports.LoadBalancerStickyCookiePolicyFromJSON = LoadBalancerStickyCookiePolicyFromJSON;
+exports.LoadBalancerStickyCookiePolicyFromJSONTyped = LoadBalancerStickyCookiePolicyFromJSONTyped;
+exports.LoadBalancerStickyCookiePolicyToJSON = LoadBalancerStickyCookiePolicyToJSON;
 const runtime_1 = require("../runtime");
 function LoadBalancerStickyCookiePolicyFromJSON(json) {
     return LoadBalancerStickyCookiePolicyFromJSONTyped(json, false);
 }
-exports.LoadBalancerStickyCookiePolicyFromJSON = LoadBalancerStickyCookiePolicyFromJSON;
 function LoadBalancerStickyCookiePolicyFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function LoadBalancerStickyCookiePolicyFromJSONTyped(json, ignoreDiscriminator) 
         'policyName': !(0, runtime_1.exists)(json, 'PolicyName') ? undefined : json['PolicyName'],
     };
 }
-exports.LoadBalancerStickyCookiePolicyFromJSONTyped = LoadBalancerStickyCookiePolicyFromJSONTyped;
 function LoadBalancerStickyCookiePolicyToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function LoadBalancerStickyCookiePolicyToJSON(value) {
         'PolicyName': value.policyName,
     };
 }
-exports.LoadBalancerStickyCookiePolicyToJSON = LoadBalancerStickyCookiePolicyToJSON;

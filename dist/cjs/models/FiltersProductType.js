@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersProductTypeToJSON = exports.FiltersProductTypeFromJSONTyped = exports.FiltersProductTypeFromJSON = void 0;
+exports.FiltersProductTypeFromJSON = FiltersProductTypeFromJSON;
+exports.FiltersProductTypeFromJSONTyped = FiltersProductTypeFromJSONTyped;
+exports.FiltersProductTypeToJSON = FiltersProductTypeToJSON;
 const runtime_1 = require("../runtime");
 function FiltersProductTypeFromJSON(json) {
     return FiltersProductTypeFromJSONTyped(json, false);
 }
-exports.FiltersProductTypeFromJSON = FiltersProductTypeFromJSON;
 function FiltersProductTypeFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function FiltersProductTypeFromJSONTyped(json, ignoreDiscriminator) {
         'productTypeIds': !(0, runtime_1.exists)(json, 'ProductTypeIds') ? undefined : json['ProductTypeIds'],
     };
 }
-exports.FiltersProductTypeFromJSONTyped = FiltersProductTypeFromJSONTyped;
 function FiltersProductTypeToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function FiltersProductTypeToJSON(value) {
         'ProductTypeIds': value.productTypeIds,
     };
 }
-exports.FiltersProductTypeToJSON = FiltersProductTypeToJSON;

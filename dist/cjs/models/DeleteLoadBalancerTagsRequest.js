@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteLoadBalancerTagsRequestToJSON = exports.DeleteLoadBalancerTagsRequestFromJSONTyped = exports.DeleteLoadBalancerTagsRequestFromJSON = void 0;
+exports.DeleteLoadBalancerTagsRequestFromJSON = DeleteLoadBalancerTagsRequestFromJSON;
+exports.DeleteLoadBalancerTagsRequestFromJSONTyped = DeleteLoadBalancerTagsRequestFromJSONTyped;
+exports.DeleteLoadBalancerTagsRequestToJSON = DeleteLoadBalancerTagsRequestToJSON;
 const runtime_1 = require("../runtime");
 const ResourceLoadBalancerTag_1 = require("./ResourceLoadBalancerTag");
 function DeleteLoadBalancerTagsRequestFromJSON(json) {
     return DeleteLoadBalancerTagsRequestFromJSONTyped(json, false);
 }
-exports.DeleteLoadBalancerTagsRequestFromJSON = DeleteLoadBalancerTagsRequestFromJSON;
 function DeleteLoadBalancerTagsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function DeleteLoadBalancerTagsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'tags': (json['Tags'].map(ResourceLoadBalancerTag_1.ResourceLoadBalancerTagFromJSON)),
     };
 }
-exports.DeleteLoadBalancerTagsRequestFromJSONTyped = DeleteLoadBalancerTagsRequestFromJSONTyped;
 function DeleteLoadBalancerTagsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function DeleteLoadBalancerTagsRequestToJSON(value) {
         'Tags': (value.tags.map(ResourceLoadBalancerTag_1.ResourceLoadBalancerTagToJSON)),
     };
 }
-exports.DeleteLoadBalancerTagsRequestToJSON = DeleteLoadBalancerTagsRequestToJSON;

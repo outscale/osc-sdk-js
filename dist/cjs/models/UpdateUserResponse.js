@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateUserResponseToJSON = exports.UpdateUserResponseFromJSONTyped = exports.UpdateUserResponseFromJSON = void 0;
+exports.UpdateUserResponseFromJSON = UpdateUserResponseFromJSON;
+exports.UpdateUserResponseFromJSONTyped = UpdateUserResponseFromJSONTyped;
+exports.UpdateUserResponseToJSON = UpdateUserResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const User_1 = require("./User");
 function UpdateUserResponseFromJSON(json) {
     return UpdateUserResponseFromJSONTyped(json, false);
 }
-exports.UpdateUserResponseFromJSON = UpdateUserResponseFromJSON;
 function UpdateUserResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function UpdateUserResponseFromJSONTyped(json, ignoreDiscriminator) {
         'user': !(0, runtime_1.exists)(json, 'User') ? undefined : (0, User_1.UserFromJSON)(json['User']),
     };
 }
-exports.UpdateUserResponseFromJSONTyped = UpdateUserResponseFromJSONTyped;
 function UpdateUserResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UpdateUserResponseToJSON(value) {
         'User': (0, User_1.UserToJSON)(value.user),
     };
 }
-exports.UpdateUserResponseToJSON = UpdateUserResponseToJSON;

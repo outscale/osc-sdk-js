@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkVirtualGatewayRequestToJSON = exports.LinkVirtualGatewayRequestFromJSONTyped = exports.LinkVirtualGatewayRequestFromJSON = void 0;
+exports.LinkVirtualGatewayRequestFromJSON = LinkVirtualGatewayRequestFromJSON;
+exports.LinkVirtualGatewayRequestFromJSONTyped = LinkVirtualGatewayRequestFromJSONTyped;
+exports.LinkVirtualGatewayRequestToJSON = LinkVirtualGatewayRequestToJSON;
 const runtime_1 = require("../runtime");
 function LinkVirtualGatewayRequestFromJSON(json) {
     return LinkVirtualGatewayRequestFromJSONTyped(json, false);
 }
-exports.LinkVirtualGatewayRequestFromJSON = LinkVirtualGatewayRequestFromJSON;
 function LinkVirtualGatewayRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function LinkVirtualGatewayRequestFromJSONTyped(json, ignoreDiscriminator) {
         'virtualGatewayId': json['VirtualGatewayId'],
     };
 }
-exports.LinkVirtualGatewayRequestFromJSONTyped = LinkVirtualGatewayRequestFromJSONTyped;
 function LinkVirtualGatewayRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function LinkVirtualGatewayRequestToJSON(value) {
         'VirtualGatewayId': value.virtualGatewayId,
     };
 }
-exports.LinkVirtualGatewayRequestToJSON = LinkVirtualGatewayRequestToJSON;

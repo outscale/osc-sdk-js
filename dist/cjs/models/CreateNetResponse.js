@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateNetResponseToJSON = exports.CreateNetResponseFromJSONTyped = exports.CreateNetResponseFromJSON = void 0;
+exports.CreateNetResponseFromJSON = CreateNetResponseFromJSON;
+exports.CreateNetResponseFromJSONTyped = CreateNetResponseFromJSONTyped;
+exports.CreateNetResponseToJSON = CreateNetResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const Net_1 = require("./Net");
 function CreateNetResponseFromJSON(json) {
     return CreateNetResponseFromJSONTyped(json, false);
 }
-exports.CreateNetResponseFromJSON = CreateNetResponseFromJSON;
 function CreateNetResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateNetResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.CreateNetResponseFromJSONTyped = CreateNetResponseFromJSONTyped;
 function CreateNetResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateNetResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.CreateNetResponseToJSON = CreateNetResponseToJSON;

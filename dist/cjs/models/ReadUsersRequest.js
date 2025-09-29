@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadUsersRequestToJSON = exports.ReadUsersRequestFromJSONTyped = exports.ReadUsersRequestFromJSON = void 0;
+exports.ReadUsersRequestFromJSON = ReadUsersRequestFromJSON;
+exports.ReadUsersRequestFromJSONTyped = ReadUsersRequestFromJSONTyped;
+exports.ReadUsersRequestToJSON = ReadUsersRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersUsers_1 = require("./FiltersUsers");
 function ReadUsersRequestFromJSON(json) {
     return ReadUsersRequestFromJSONTyped(json, false);
 }
-exports.ReadUsersRequestFromJSON = ReadUsersRequestFromJSON;
 function ReadUsersRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadUsersRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadUsersRequestFromJSONTyped = ReadUsersRequestFromJSONTyped;
 function ReadUsersRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadUsersRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadUsersRequestToJSON = ReadUsersRequestToJSON;

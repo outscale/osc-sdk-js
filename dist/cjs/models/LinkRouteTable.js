@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkRouteTableToJSON = exports.LinkRouteTableFromJSONTyped = exports.LinkRouteTableFromJSON = void 0;
+exports.LinkRouteTableFromJSON = LinkRouteTableFromJSON;
+exports.LinkRouteTableFromJSONTyped = LinkRouteTableFromJSONTyped;
+exports.LinkRouteTableToJSON = LinkRouteTableToJSON;
 const runtime_1 = require("../runtime");
 function LinkRouteTableFromJSON(json) {
     return LinkRouteTableFromJSONTyped(json, false);
 }
-exports.LinkRouteTableFromJSON = LinkRouteTableFromJSON;
 function LinkRouteTableFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function LinkRouteTableFromJSONTyped(json, ignoreDiscriminator) {
         'subnetId': !(0, runtime_1.exists)(json, 'SubnetId') ? undefined : json['SubnetId'],
     };
 }
-exports.LinkRouteTableFromJSONTyped = LinkRouteTableFromJSONTyped;
 function LinkRouteTableToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function LinkRouteTableToJSON(value) {
         'SubnetId': value.subnetId,
     };
 }
-exports.LinkRouteTableToJSON = LinkRouteTableToJSON;

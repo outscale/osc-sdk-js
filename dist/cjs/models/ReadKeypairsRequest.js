@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadKeypairsRequestToJSON = exports.ReadKeypairsRequestFromJSONTyped = exports.ReadKeypairsRequestFromJSON = void 0;
+exports.ReadKeypairsRequestFromJSON = ReadKeypairsRequestFromJSON;
+exports.ReadKeypairsRequestFromJSONTyped = ReadKeypairsRequestFromJSONTyped;
+exports.ReadKeypairsRequestToJSON = ReadKeypairsRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersKeypair_1 = require("./FiltersKeypair");
 function ReadKeypairsRequestFromJSON(json) {
     return ReadKeypairsRequestFromJSONTyped(json, false);
 }
-exports.ReadKeypairsRequestFromJSON = ReadKeypairsRequestFromJSON;
 function ReadKeypairsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadKeypairsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadKeypairsRequestFromJSONTyped = ReadKeypairsRequestFromJSONTyped;
 function ReadKeypairsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadKeypairsRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadKeypairsRequestToJSON = ReadKeypairsRequestToJSON;

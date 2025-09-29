@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersVirtualGatewayToJSON = exports.FiltersVirtualGatewayFromJSONTyped = exports.FiltersVirtualGatewayFromJSON = void 0;
+exports.FiltersVirtualGatewayFromJSON = FiltersVirtualGatewayFromJSON;
+exports.FiltersVirtualGatewayFromJSONTyped = FiltersVirtualGatewayFromJSONTyped;
+exports.FiltersVirtualGatewayToJSON = FiltersVirtualGatewayToJSON;
 const runtime_1 = require("../runtime");
 function FiltersVirtualGatewayFromJSON(json) {
     return FiltersVirtualGatewayFromJSONTyped(json, false);
 }
-exports.FiltersVirtualGatewayFromJSON = FiltersVirtualGatewayFromJSON;
 function FiltersVirtualGatewayFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -34,7 +35,6 @@ function FiltersVirtualGatewayFromJSONTyped(json, ignoreDiscriminator) {
         'virtualGatewayIds': !(0, runtime_1.exists)(json, 'VirtualGatewayIds') ? undefined : json['VirtualGatewayIds'],
     };
 }
-exports.FiltersVirtualGatewayFromJSONTyped = FiltersVirtualGatewayFromJSONTyped;
 function FiltersVirtualGatewayToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +53,3 @@ function FiltersVirtualGatewayToJSON(value) {
         'VirtualGatewayIds': value.virtualGatewayIds,
     };
 }
-exports.FiltersVirtualGatewayToJSON = FiltersVirtualGatewayToJSON;

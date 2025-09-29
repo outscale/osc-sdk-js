@@ -64,8 +64,8 @@ export class ApiAccessPolicyApi extends runtime.BaseAPI {
     /**
      * Gets information about the API access policy of your account.<br /><br /> For more information, see [About Your API Access Policy](https://docs.outscale.com/en/userguide/About-Your-API-Access-Policy.html).
      */
-    readApiAccessPolicy(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readApiAccessPolicy() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readApiAccessPolicyRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -108,8 +108,8 @@ export class ApiAccessPolicyApi extends runtime.BaseAPI {
     /**
      * Updates the API access policy of your account.<br /><br />  **[IMPORTANT]**<br /> Only one API access policy can be associated with your account.
      */
-    updateApiAccessPolicy(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateApiAccessPolicy() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateApiAccessPolicyRaw(requestParameters, initOverrides);
             return yield response.value();
         });

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersImageToJSON = exports.FiltersImageFromJSONTyped = exports.FiltersImageFromJSON = void 0;
+exports.FiltersImageFromJSON = FiltersImageFromJSON;
+exports.FiltersImageFromJSONTyped = FiltersImageFromJSONTyped;
+exports.FiltersImageToJSON = FiltersImageToJSON;
 const runtime_1 = require("../runtime");
 const BootMode_1 = require("./BootMode");
 function FiltersImageFromJSON(json) {
     return FiltersImageFromJSONTyped(json, false);
 }
-exports.FiltersImageFromJSON = FiltersImageFromJSON;
 function FiltersImageFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -53,7 +54,6 @@ function FiltersImageFromJSONTyped(json, ignoreDiscriminator) {
         'virtualizationTypes': !(0, runtime_1.exists)(json, 'VirtualizationTypes') ? undefined : json['VirtualizationTypes'],
     };
 }
-exports.FiltersImageFromJSONTyped = FiltersImageFromJSONTyped;
 function FiltersImageToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -90,4 +90,3 @@ function FiltersImageToJSON(value) {
         'VirtualizationTypes': value.virtualizationTypes,
     };
 }
-exports.FiltersImageToJSON = FiltersImageToJSON;

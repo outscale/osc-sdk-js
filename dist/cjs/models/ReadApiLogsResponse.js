@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadApiLogsResponseToJSON = exports.ReadApiLogsResponseFromJSONTyped = exports.ReadApiLogsResponseFromJSON = void 0;
+exports.ReadApiLogsResponseFromJSON = ReadApiLogsResponseFromJSON;
+exports.ReadApiLogsResponseFromJSONTyped = ReadApiLogsResponseFromJSONTyped;
+exports.ReadApiLogsResponseToJSON = ReadApiLogsResponseToJSON;
 const runtime_1 = require("../runtime");
 const Log_1 = require("./Log");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadApiLogsResponseFromJSON(json) {
     return ReadApiLogsResponseFromJSONTyped(json, false);
 }
-exports.ReadApiLogsResponseFromJSON = ReadApiLogsResponseFromJSON;
 function ReadApiLogsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadApiLogsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadApiLogsResponseFromJSONTyped = ReadApiLogsResponseFromJSONTyped;
 function ReadApiLogsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadApiLogsResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadApiLogsResponseToJSON = ReadApiLogsResponseToJSON;

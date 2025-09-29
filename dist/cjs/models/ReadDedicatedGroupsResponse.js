@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadDedicatedGroupsResponseToJSON = exports.ReadDedicatedGroupsResponseFromJSONTyped = exports.ReadDedicatedGroupsResponseFromJSON = void 0;
+exports.ReadDedicatedGroupsResponseFromJSON = ReadDedicatedGroupsResponseFromJSON;
+exports.ReadDedicatedGroupsResponseFromJSONTyped = ReadDedicatedGroupsResponseFromJSONTyped;
+exports.ReadDedicatedGroupsResponseToJSON = ReadDedicatedGroupsResponseToJSON;
 const runtime_1 = require("../runtime");
 const DedicatedGroup_1 = require("./DedicatedGroup");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadDedicatedGroupsResponseFromJSON(json) {
     return ReadDedicatedGroupsResponseFromJSONTyped(json, false);
 }
-exports.ReadDedicatedGroupsResponseFromJSON = ReadDedicatedGroupsResponseFromJSON;
 function ReadDedicatedGroupsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadDedicatedGroupsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadDedicatedGroupsResponseFromJSONTyped = ReadDedicatedGroupsResponseFromJSONTyped;
 function ReadDedicatedGroupsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadDedicatedGroupsResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadDedicatedGroupsResponseToJSON = ReadDedicatedGroupsResponseToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersVpnConnectionToJSON = exports.FiltersVpnConnectionFromJSONTyped = exports.FiltersVpnConnectionFromJSON = void 0;
+exports.FiltersVpnConnectionFromJSON = FiltersVpnConnectionFromJSON;
+exports.FiltersVpnConnectionFromJSONTyped = FiltersVpnConnectionFromJSONTyped;
+exports.FiltersVpnConnectionToJSON = FiltersVpnConnectionToJSON;
 const runtime_1 = require("../runtime");
 function FiltersVpnConnectionFromJSON(json) {
     return FiltersVpnConnectionFromJSONTyped(json, false);
 }
-exports.FiltersVpnConnectionFromJSON = FiltersVpnConnectionFromJSON;
 function FiltersVpnConnectionFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -37,7 +38,6 @@ function FiltersVpnConnectionFromJSONTyped(json, ignoreDiscriminator) {
         'vpnConnectionIds': !(0, runtime_1.exists)(json, 'VpnConnectionIds') ? undefined : json['VpnConnectionIds'],
     };
 }
-exports.FiltersVpnConnectionFromJSONTyped = FiltersVpnConnectionFromJSONTyped;
 function FiltersVpnConnectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -59,4 +59,3 @@ function FiltersVpnConnectionToJSON(value) {
         'VpnConnectionIds': value.vpnConnectionIds,
     };
 }
-exports.FiltersVpnConnectionToJSON = FiltersVpnConnectionToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadCatalogsRequestToJSON = exports.ReadCatalogsRequestFromJSONTyped = exports.ReadCatalogsRequestFromJSON = void 0;
+exports.ReadCatalogsRequestFromJSON = ReadCatalogsRequestFromJSON;
+exports.ReadCatalogsRequestFromJSONTyped = ReadCatalogsRequestFromJSONTyped;
+exports.ReadCatalogsRequestToJSON = ReadCatalogsRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersCatalogs_1 = require("./FiltersCatalogs");
 function ReadCatalogsRequestFromJSON(json) {
     return ReadCatalogsRequestFromJSONTyped(json, false);
 }
-exports.ReadCatalogsRequestFromJSON = ReadCatalogsRequestFromJSON;
 function ReadCatalogsRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function ReadCatalogsRequestFromJSONTyped(json, ignoreDiscriminator) {
         'filters': !(0, runtime_1.exists)(json, 'Filters') ? undefined : (0, FiltersCatalogs_1.FiltersCatalogsFromJSON)(json['Filters']),
     };
 }
-exports.ReadCatalogsRequestFromJSONTyped = ReadCatalogsRequestFromJSONTyped;
 function ReadCatalogsRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function ReadCatalogsRequestToJSON(value) {
         'Filters': (0, FiltersCatalogs_1.FiltersCatalogsToJSON)(value.filters),
     };
 }
-exports.ReadCatalogsRequestToJSON = ReadCatalogsRequestToJSON;

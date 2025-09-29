@@ -28,13 +28,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -87,8 +97,8 @@ class VpnConnectionApi extends runtime.BaseAPI {
     /**
      * Creates a VPN connection between a specified virtual gateway and a specified client gateway.<br /> You can create only one VPN connection between a virtual gateway and a client gateway.<br /><br />  **[IMPORTANT]**<br /> This action can be done only if the virtual gateway is in the `available` state.<br /><br /> For more information, see [About VPN Connections](https://docs.outscale.com/en/userguide/About-VPN-Connections.html).
      */
-    createVpnConnection(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createVpnConnection() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createVpnConnectionRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -128,8 +138,8 @@ class VpnConnectionApi extends runtime.BaseAPI {
     /**
      * Creates a static route to a VPN connection.<br /> This enables you to select the network flows sent by the virtual gateway to the target VPN connection.<br /><br /> For more information, see [About Routing Configuration for VPN Connections](https://docs.outscale.com/en/userguide/About-Routing-Configuration-for-VPN-Connections.html).
      */
-    createVpnConnectionRoute(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createVpnConnectionRoute() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createVpnConnectionRouteRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -169,8 +179,8 @@ class VpnConnectionApi extends runtime.BaseAPI {
     /**
      * Deletes a specified VPN connection.<br /> If you want to delete a Net and all its dependencies, we recommend to detach the virtual gateway from the Net and delete the Net before deleting the VPN connection. This enables you to delete the Net without waiting for the VPN connection to be deleted.
      */
-    deleteVpnConnection(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteVpnConnection() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteVpnConnectionRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -210,8 +220,8 @@ class VpnConnectionApi extends runtime.BaseAPI {
     /**
      * Deletes a static route to a VPN connection previously created using the CreateVpnConnectionRoute method.
      */
-    deleteVpnConnectionRoute(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteVpnConnectionRoute() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteVpnConnectionRouteRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -251,8 +261,8 @@ class VpnConnectionApi extends runtime.BaseAPI {
     /**
      * Lists one or more VPN connections.
      */
-    readVpnConnections(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readVpnConnections() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readVpnConnectionsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -292,8 +302,8 @@ class VpnConnectionApi extends runtime.BaseAPI {
     /**
      * Modifies the specified attributes of a VPN connection.
      */
-    updateVpnConnection(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateVpnConnection() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateVpnConnectionRaw(requestParameters, initOverrides);
             return yield response.value();
         });

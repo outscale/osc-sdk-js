@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadInternetServicesRequestToJSON = exports.ReadInternetServicesRequestFromJSONTyped = exports.ReadInternetServicesRequestFromJSON = void 0;
+exports.ReadInternetServicesRequestFromJSON = ReadInternetServicesRequestFromJSON;
+exports.ReadInternetServicesRequestFromJSONTyped = ReadInternetServicesRequestFromJSONTyped;
+exports.ReadInternetServicesRequestToJSON = ReadInternetServicesRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersInternetService_1 = require("./FiltersInternetService");
 function ReadInternetServicesRequestFromJSON(json) {
     return ReadInternetServicesRequestFromJSONTyped(json, false);
 }
-exports.ReadInternetServicesRequestFromJSON = ReadInternetServicesRequestFromJSON;
 function ReadInternetServicesRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadInternetServicesRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadInternetServicesRequestFromJSONTyped = ReadInternetServicesRequestFromJSONTyped;
 function ReadInternetServicesRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadInternetServicesRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadInternetServicesRequestToJSON = ReadInternetServicesRequestToJSON;

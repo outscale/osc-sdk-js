@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadUnitPriceResponseToJSON = exports.ReadUnitPriceResponseFromJSONTyped = exports.ReadUnitPriceResponseFromJSON = void 0;
+exports.ReadUnitPriceResponseFromJSON = ReadUnitPriceResponseFromJSON;
+exports.ReadUnitPriceResponseFromJSONTyped = ReadUnitPriceResponseFromJSONTyped;
+exports.ReadUnitPriceResponseToJSON = ReadUnitPriceResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const UnitPriceEntry_1 = require("./UnitPriceEntry");
 function ReadUnitPriceResponseFromJSON(json) {
     return ReadUnitPriceResponseFromJSONTyped(json, false);
 }
-exports.ReadUnitPriceResponseFromJSON = ReadUnitPriceResponseFromJSON;
 function ReadUnitPriceResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function ReadUnitPriceResponseFromJSONTyped(json, ignoreDiscriminator) {
         'unitPriceEntry': !(0, runtime_1.exists)(json, 'UnitPriceEntry') ? undefined : (0, UnitPriceEntry_1.UnitPriceEntryFromJSON)(json['UnitPriceEntry']),
     };
 }
-exports.ReadUnitPriceResponseFromJSONTyped = ReadUnitPriceResponseFromJSONTyped;
 function ReadUnitPriceResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ReadUnitPriceResponseToJSON(value) {
         'UnitPriceEntry': (0, UnitPriceEntry_1.UnitPriceEntryToJSON)(value.unitPriceEntry),
     };
 }
-exports.ReadUnitPriceResponseToJSON = ReadUnitPriceResponseToJSON;

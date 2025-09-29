@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateVpnConnectionRequestToJSON = exports.CreateVpnConnectionRequestFromJSONTyped = exports.CreateVpnConnectionRequestFromJSON = void 0;
+exports.CreateVpnConnectionRequestFromJSON = CreateVpnConnectionRequestFromJSON;
+exports.CreateVpnConnectionRequestFromJSONTyped = CreateVpnConnectionRequestFromJSONTyped;
+exports.CreateVpnConnectionRequestToJSON = CreateVpnConnectionRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateVpnConnectionRequestFromJSON(json) {
     return CreateVpnConnectionRequestFromJSONTyped(json, false);
 }
-exports.CreateVpnConnectionRequestFromJSON = CreateVpnConnectionRequestFromJSON;
 function CreateVpnConnectionRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function CreateVpnConnectionRequestFromJSONTyped(json, ignoreDiscriminator) {
         'virtualGatewayId': json['VirtualGatewayId'],
     };
 }
-exports.CreateVpnConnectionRequestFromJSONTyped = CreateVpnConnectionRequestFromJSONTyped;
 function CreateVpnConnectionRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function CreateVpnConnectionRequestToJSON(value) {
         'VirtualGatewayId': value.virtualGatewayId,
     };
 }
-exports.CreateVpnConnectionRequestToJSON = CreateVpnConnectionRequestToJSON;

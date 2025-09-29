@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HealthCheckToJSON = exports.HealthCheckFromJSONTyped = exports.HealthCheckFromJSON = void 0;
+exports.HealthCheckFromJSON = HealthCheckFromJSON;
+exports.HealthCheckFromJSONTyped = HealthCheckFromJSONTyped;
+exports.HealthCheckToJSON = HealthCheckToJSON;
 const runtime_1 = require("../runtime");
 function HealthCheckFromJSON(json) {
     return HealthCheckFromJSONTyped(json, false);
 }
-exports.HealthCheckFromJSON = HealthCheckFromJSON;
 function HealthCheckFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function HealthCheckFromJSONTyped(json, ignoreDiscriminator) {
         'unhealthyThreshold': json['UnhealthyThreshold'],
     };
 }
-exports.HealthCheckFromJSONTyped = HealthCheckFromJSONTyped;
 function HealthCheckToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function HealthCheckToJSON(value) {
         'UnhealthyThreshold': value.unhealthyThreshold,
     };
 }
-exports.HealthCheckToJSON = HealthCheckToJSON;

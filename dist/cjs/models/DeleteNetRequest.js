@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteNetRequestToJSON = exports.DeleteNetRequestFromJSONTyped = exports.DeleteNetRequestFromJSON = void 0;
+exports.DeleteNetRequestFromJSON = DeleteNetRequestFromJSON;
+exports.DeleteNetRequestFromJSONTyped = DeleteNetRequestFromJSONTyped;
+exports.DeleteNetRequestToJSON = DeleteNetRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteNetRequestFromJSON(json) {
     return DeleteNetRequestFromJSONTyped(json, false);
 }
-exports.DeleteNetRequestFromJSON = DeleteNetRequestFromJSON;
 function DeleteNetRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteNetRequestFromJSONTyped(json, ignoreDiscriminator) {
         'netId': json['NetId'],
     };
 }
-exports.DeleteNetRequestFromJSONTyped = DeleteNetRequestFromJSONTyped;
 function DeleteNetRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteNetRequestToJSON(value) {
         'NetId': value.netId,
     };
 }
-exports.DeleteNetRequestToJSON = DeleteNetRequestToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteUserRequestToJSON = exports.DeleteUserRequestFromJSONTyped = exports.DeleteUserRequestFromJSON = void 0;
+exports.DeleteUserRequestFromJSON = DeleteUserRequestFromJSON;
+exports.DeleteUserRequestFromJSONTyped = DeleteUserRequestFromJSONTyped;
+exports.DeleteUserRequestToJSON = DeleteUserRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteUserRequestFromJSON(json) {
     return DeleteUserRequestFromJSONTyped(json, false);
 }
-exports.DeleteUserRequestFromJSON = DeleteUserRequestFromJSON;
 function DeleteUserRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteUserRequestFromJSONTyped(json, ignoreDiscriminator) {
         'userName': json['UserName'],
     };
 }
-exports.DeleteUserRequestFromJSONTyped = DeleteUserRequestFromJSONTyped;
 function DeleteUserRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteUserRequestToJSON(value) {
         'UserName': value.userName,
     };
 }
-exports.DeleteUserRequestToJSON = DeleteUserRequestToJSON;

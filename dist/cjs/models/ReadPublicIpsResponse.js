@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadPublicIpsResponseToJSON = exports.ReadPublicIpsResponseFromJSONTyped = exports.ReadPublicIpsResponseFromJSON = void 0;
+exports.ReadPublicIpsResponseFromJSON = ReadPublicIpsResponseFromJSON;
+exports.ReadPublicIpsResponseFromJSONTyped = ReadPublicIpsResponseFromJSONTyped;
+exports.ReadPublicIpsResponseToJSON = ReadPublicIpsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const PublicIp_1 = require("./PublicIp");
 function ReadPublicIpsResponseFromJSON(json) {
     return ReadPublicIpsResponseFromJSONTyped(json, false);
 }
-exports.ReadPublicIpsResponseFromJSON = ReadPublicIpsResponseFromJSON;
 function ReadPublicIpsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadPublicIpsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadPublicIpsResponseFromJSONTyped = ReadPublicIpsResponseFromJSONTyped;
 function ReadPublicIpsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadPublicIpsResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadPublicIpsResponseToJSON = ReadPublicIpsResponseToJSON;

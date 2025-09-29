@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersClientGatewayToJSON = exports.FiltersClientGatewayFromJSONTyped = exports.FiltersClientGatewayFromJSON = void 0;
+exports.FiltersClientGatewayFromJSON = FiltersClientGatewayFromJSON;
+exports.FiltersClientGatewayFromJSONTyped = FiltersClientGatewayFromJSONTyped;
+exports.FiltersClientGatewayToJSON = FiltersClientGatewayToJSON;
 const runtime_1 = require("../runtime");
 function FiltersClientGatewayFromJSON(json) {
     return FiltersClientGatewayFromJSONTyped(json, false);
 }
-exports.FiltersClientGatewayFromJSON = FiltersClientGatewayFromJSON;
 function FiltersClientGatewayFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -34,7 +35,6 @@ function FiltersClientGatewayFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersClientGatewayFromJSONTyped = FiltersClientGatewayFromJSONTyped;
 function FiltersClientGatewayToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +53,3 @@ function FiltersClientGatewayToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersClientGatewayToJSON = FiltersClientGatewayToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadClientGatewaysRequestToJSON = exports.ReadClientGatewaysRequestFromJSONTyped = exports.ReadClientGatewaysRequestFromJSON = void 0;
+exports.ReadClientGatewaysRequestFromJSON = ReadClientGatewaysRequestFromJSON;
+exports.ReadClientGatewaysRequestFromJSONTyped = ReadClientGatewaysRequestFromJSONTyped;
+exports.ReadClientGatewaysRequestToJSON = ReadClientGatewaysRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersClientGateway_1 = require("./FiltersClientGateway");
 function ReadClientGatewaysRequestFromJSON(json) {
     return ReadClientGatewaysRequestFromJSONTyped(json, false);
 }
-exports.ReadClientGatewaysRequestFromJSON = ReadClientGatewaysRequestFromJSON;
 function ReadClientGatewaysRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadClientGatewaysRequestFromJSONTyped(json, ignoreDiscriminator) {
         'resultsPerPage': !(0, runtime_1.exists)(json, 'ResultsPerPage') ? undefined : json['ResultsPerPage'],
     };
 }
-exports.ReadClientGatewaysRequestFromJSONTyped = ReadClientGatewaysRequestFromJSONTyped;
 function ReadClientGatewaysRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ReadClientGatewaysRequestToJSON(value) {
         'ResultsPerPage': value.resultsPerPage,
     };
 }
-exports.ReadClientGatewaysRequestToJSON = ReadClientGatewaysRequestToJSON;

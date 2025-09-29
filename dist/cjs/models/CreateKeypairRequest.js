@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateKeypairRequestToJSON = exports.CreateKeypairRequestFromJSONTyped = exports.CreateKeypairRequestFromJSON = void 0;
+exports.CreateKeypairRequestFromJSON = CreateKeypairRequestFromJSON;
+exports.CreateKeypairRequestFromJSONTyped = CreateKeypairRequestFromJSONTyped;
+exports.CreateKeypairRequestToJSON = CreateKeypairRequestToJSON;
 const runtime_1 = require("../runtime");
 function CreateKeypairRequestFromJSON(json) {
     return CreateKeypairRequestFromJSONTyped(json, false);
 }
-exports.CreateKeypairRequestFromJSON = CreateKeypairRequestFromJSON;
 function CreateKeypairRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function CreateKeypairRequestFromJSONTyped(json, ignoreDiscriminator) {
         'publicKey': !(0, runtime_1.exists)(json, 'PublicKey') ? undefined : json['PublicKey'],
     };
 }
-exports.CreateKeypairRequestFromJSONTyped = CreateKeypairRequestFromJSONTyped;
 function CreateKeypairRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CreateKeypairRequestToJSON(value) {
         'PublicKey': value.publicKey,
     };
 }
-exports.CreateKeypairRequestToJSON = CreateKeypairRequestToJSON;

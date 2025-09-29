@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnlinkPrivateIpsResponseToJSON = exports.UnlinkPrivateIpsResponseFromJSONTyped = exports.UnlinkPrivateIpsResponseFromJSON = void 0;
+exports.UnlinkPrivateIpsResponseFromJSON = UnlinkPrivateIpsResponseFromJSON;
+exports.UnlinkPrivateIpsResponseFromJSONTyped = UnlinkPrivateIpsResponseFromJSONTyped;
+exports.UnlinkPrivateIpsResponseToJSON = UnlinkPrivateIpsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function UnlinkPrivateIpsResponseFromJSON(json) {
     return UnlinkPrivateIpsResponseFromJSONTyped(json, false);
 }
-exports.UnlinkPrivateIpsResponseFromJSON = UnlinkPrivateIpsResponseFromJSON;
 function UnlinkPrivateIpsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function UnlinkPrivateIpsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.UnlinkPrivateIpsResponseFromJSONTyped = UnlinkPrivateIpsResponseFromJSONTyped;
 function UnlinkPrivateIpsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function UnlinkPrivateIpsResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.UnlinkPrivateIpsResponseToJSON = UnlinkPrivateIpsResponseToJSON;

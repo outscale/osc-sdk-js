@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteUserGroupPolicyRequestToJSON = exports.DeleteUserGroupPolicyRequestFromJSONTyped = exports.DeleteUserGroupPolicyRequestFromJSON = void 0;
+exports.DeleteUserGroupPolicyRequestFromJSON = DeleteUserGroupPolicyRequestFromJSON;
+exports.DeleteUserGroupPolicyRequestFromJSONTyped = DeleteUserGroupPolicyRequestFromJSONTyped;
+exports.DeleteUserGroupPolicyRequestToJSON = DeleteUserGroupPolicyRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteUserGroupPolicyRequestFromJSON(json) {
     return DeleteUserGroupPolicyRequestFromJSONTyped(json, false);
 }
-exports.DeleteUserGroupPolicyRequestFromJSON = DeleteUserGroupPolicyRequestFromJSON;
 function DeleteUserGroupPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function DeleteUserGroupPolicyRequestFromJSONTyped(json, ignoreDiscriminator) {
         'userGroupPath': !(0, runtime_1.exists)(json, 'UserGroupPath') ? undefined : json['UserGroupPath'],
     };
 }
-exports.DeleteUserGroupPolicyRequestFromJSONTyped = DeleteUserGroupPolicyRequestFromJSONTyped;
 function DeleteUserGroupPolicyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function DeleteUserGroupPolicyRequestToJSON(value) {
         'UserGroupPath': value.userGroupPath,
     };
 }
-exports.DeleteUserGroupPolicyRequestToJSON = DeleteUserGroupPolicyRequestToJSON;

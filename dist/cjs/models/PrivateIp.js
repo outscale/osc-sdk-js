@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PrivateIpToJSON = exports.PrivateIpFromJSONTyped = exports.PrivateIpFromJSON = void 0;
+exports.PrivateIpFromJSON = PrivateIpFromJSON;
+exports.PrivateIpFromJSONTyped = PrivateIpFromJSONTyped;
+exports.PrivateIpToJSON = PrivateIpToJSON;
 const runtime_1 = require("../runtime");
 const LinkPublicIp_1 = require("./LinkPublicIp");
 function PrivateIpFromJSON(json) {
     return PrivateIpFromJSONTyped(json, false);
 }
-exports.PrivateIpFromJSON = PrivateIpFromJSON;
 function PrivateIpFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function PrivateIpFromJSONTyped(json, ignoreDiscriminator) {
         'privateIp': !(0, runtime_1.exists)(json, 'PrivateIp') ? undefined : json['PrivateIp'],
     };
 }
-exports.PrivateIpFromJSONTyped = PrivateIpFromJSONTyped;
 function PrivateIpToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function PrivateIpToJSON(value) {
         'PrivateIp': value.privateIp,
     };
 }
-exports.PrivateIpToJSON = PrivateIpToJSON;

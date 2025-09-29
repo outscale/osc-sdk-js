@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteAccessKeyRequestToJSON = exports.DeleteAccessKeyRequestFromJSONTyped = exports.DeleteAccessKeyRequestFromJSON = void 0;
+exports.DeleteAccessKeyRequestFromJSON = DeleteAccessKeyRequestFromJSON;
+exports.DeleteAccessKeyRequestFromJSONTyped = DeleteAccessKeyRequestFromJSONTyped;
+exports.DeleteAccessKeyRequestToJSON = DeleteAccessKeyRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteAccessKeyRequestFromJSON(json) {
     return DeleteAccessKeyRequestFromJSONTyped(json, false);
 }
-exports.DeleteAccessKeyRequestFromJSON = DeleteAccessKeyRequestFromJSON;
 function DeleteAccessKeyRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function DeleteAccessKeyRequestFromJSONTyped(json, ignoreDiscriminator) {
         'userName': !(0, runtime_1.exists)(json, 'UserName') ? undefined : json['UserName'],
     };
 }
-exports.DeleteAccessKeyRequestFromJSONTyped = DeleteAccessKeyRequestFromJSONTyped;
 function DeleteAccessKeyRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function DeleteAccessKeyRequestToJSON(value) {
         'UserName': value.userName,
     };
 }
-exports.DeleteAccessKeyRequestToJSON = DeleteAccessKeyRequestToJSON;

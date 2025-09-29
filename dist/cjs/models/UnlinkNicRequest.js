@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnlinkNicRequestToJSON = exports.UnlinkNicRequestFromJSONTyped = exports.UnlinkNicRequestFromJSON = void 0;
+exports.UnlinkNicRequestFromJSON = UnlinkNicRequestFromJSON;
+exports.UnlinkNicRequestFromJSONTyped = UnlinkNicRequestFromJSONTyped;
+exports.UnlinkNicRequestToJSON = UnlinkNicRequestToJSON;
 const runtime_1 = require("../runtime");
 function UnlinkNicRequestFromJSON(json) {
     return UnlinkNicRequestFromJSONTyped(json, false);
 }
-exports.UnlinkNicRequestFromJSON = UnlinkNicRequestFromJSON;
 function UnlinkNicRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function UnlinkNicRequestFromJSONTyped(json, ignoreDiscriminator) {
         'linkNicId': json['LinkNicId'],
     };
 }
-exports.UnlinkNicRequestFromJSONTyped = UnlinkNicRequestFromJSONTyped;
 function UnlinkNicRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function UnlinkNicRequestToJSON(value) {
         'LinkNicId': value.linkNicId,
     };
 }
-exports.UnlinkNicRequestToJSON = UnlinkNicRequestToJSON;

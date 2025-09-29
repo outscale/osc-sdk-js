@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteDedicatedGroupRequestToJSON = exports.DeleteDedicatedGroupRequestFromJSONTyped = exports.DeleteDedicatedGroupRequestFromJSON = void 0;
+exports.DeleteDedicatedGroupRequestFromJSON = DeleteDedicatedGroupRequestFromJSON;
+exports.DeleteDedicatedGroupRequestFromJSONTyped = DeleteDedicatedGroupRequestFromJSONTyped;
+exports.DeleteDedicatedGroupRequestToJSON = DeleteDedicatedGroupRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteDedicatedGroupRequestFromJSON(json) {
     return DeleteDedicatedGroupRequestFromJSONTyped(json, false);
 }
-exports.DeleteDedicatedGroupRequestFromJSON = DeleteDedicatedGroupRequestFromJSON;
 function DeleteDedicatedGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function DeleteDedicatedGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
         'force': !(0, runtime_1.exists)(json, 'Force') ? undefined : json['Force'],
     };
 }
-exports.DeleteDedicatedGroupRequestFromJSONTyped = DeleteDedicatedGroupRequestFromJSONTyped;
 function DeleteDedicatedGroupRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function DeleteDedicatedGroupRequestToJSON(value) {
         'Force': value.force,
     };
 }
-exports.DeleteDedicatedGroupRequestToJSON = DeleteDedicatedGroupRequestToJSON;

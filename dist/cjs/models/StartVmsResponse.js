@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StartVmsResponseToJSON = exports.StartVmsResponseFromJSONTyped = exports.StartVmsResponseFromJSON = void 0;
+exports.StartVmsResponseFromJSON = StartVmsResponseFromJSON;
+exports.StartVmsResponseFromJSONTyped = StartVmsResponseFromJSONTyped;
+exports.StartVmsResponseToJSON = StartVmsResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 const VmState_1 = require("./VmState");
 function StartVmsResponseFromJSON(json) {
     return StartVmsResponseFromJSONTyped(json, false);
 }
-exports.StartVmsResponseFromJSON = StartVmsResponseFromJSON;
 function StartVmsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function StartVmsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'vms': !(0, runtime_1.exists)(json, 'Vms') ? undefined : (json['Vms'].map(VmState_1.VmStateFromJSON)),
     };
 }
-exports.StartVmsResponseFromJSONTyped = StartVmsResponseFromJSONTyped;
 function StartVmsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function StartVmsResponseToJSON(value) {
         'Vms': value.vms === undefined ? undefined : (value.vms.map(VmState_1.VmStateToJSON)),
     };
 }
-exports.StartVmsResponseToJSON = StartVmsResponseToJSON;

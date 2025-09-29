@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteFlexibleGpuRequestToJSON = exports.DeleteFlexibleGpuRequestFromJSONTyped = exports.DeleteFlexibleGpuRequestFromJSON = void 0;
+exports.DeleteFlexibleGpuRequestFromJSON = DeleteFlexibleGpuRequestFromJSON;
+exports.DeleteFlexibleGpuRequestFromJSONTyped = DeleteFlexibleGpuRequestFromJSONTyped;
+exports.DeleteFlexibleGpuRequestToJSON = DeleteFlexibleGpuRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteFlexibleGpuRequestFromJSON(json) {
     return DeleteFlexibleGpuRequestFromJSONTyped(json, false);
 }
-exports.DeleteFlexibleGpuRequestFromJSON = DeleteFlexibleGpuRequestFromJSON;
 function DeleteFlexibleGpuRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteFlexibleGpuRequestFromJSONTyped(json, ignoreDiscriminator) {
         'flexibleGpuId': json['FlexibleGpuId'],
     };
 }
-exports.DeleteFlexibleGpuRequestFromJSONTyped = DeleteFlexibleGpuRequestFromJSONTyped;
 function DeleteFlexibleGpuRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteFlexibleGpuRequestToJSON(value) {
         'FlexibleGpuId': value.flexibleGpuId,
     };
 }
-exports.DeleteFlexibleGpuRequestToJSON = DeleteFlexibleGpuRequestToJSON;

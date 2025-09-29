@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteNetPeeringResponseToJSON = exports.DeleteNetPeeringResponseFromJSONTyped = exports.DeleteNetPeeringResponseFromJSON = void 0;
+exports.DeleteNetPeeringResponseFromJSON = DeleteNetPeeringResponseFromJSON;
+exports.DeleteNetPeeringResponseFromJSONTyped = DeleteNetPeeringResponseFromJSONTyped;
+exports.DeleteNetPeeringResponseToJSON = DeleteNetPeeringResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function DeleteNetPeeringResponseFromJSON(json) {
     return DeleteNetPeeringResponseFromJSONTyped(json, false);
 }
-exports.DeleteNetPeeringResponseFromJSON = DeleteNetPeeringResponseFromJSON;
 function DeleteNetPeeringResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteNetPeeringResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.DeleteNetPeeringResponseFromJSONTyped = DeleteNetPeeringResponseFromJSONTyped;
 function DeleteNetPeeringResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteNetPeeringResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.DeleteNetPeeringResponseToJSON = DeleteNetPeeringResponseToJSON;

@@ -28,13 +28,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -87,8 +97,8 @@ class SubnetApi extends runtime.BaseAPI {
     /**
      * Creates a Subnet in an existing Net.<br /> To create a Subnet in a Net, you have to provide the ID of the Net and the IP range for the Subnet (its network range). Once the Subnet is created, you cannot modify its IP range.<br /><br /> For more information, see [About Nets](https://docs.outscale.com/en/userguide/About-Nets.html).
      */
-    createSubnet(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createSubnet() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createSubnetRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -128,8 +138,8 @@ class SubnetApi extends runtime.BaseAPI {
     /**
      * Deletes a specified Subnet.<br /> Before deleting the Subnet, you need to delete all resources associated with the Subnet:<br /><br />  * Virtual machines (VMs)<br /> * Network Interface Cards (NICs)<br /> * NAT services<br /> * Load balancers
      */
-    deleteSubnet(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteSubnet() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteSubnetRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -169,8 +179,8 @@ class SubnetApi extends runtime.BaseAPI {
     /**
      * Lists one or more of your Subnets.<br /> If you do not specify any Subnet ID, this action describes all of your Subnets.
      */
-    readSubnets(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readSubnets() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readSubnetsRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -210,8 +220,8 @@ class SubnetApi extends runtime.BaseAPI {
     /**
      * Modifies the specified attribute of a Subnet.
      */
-    updateSubnet(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateSubnet() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateSubnetRaw(requestParameters, initOverrides);
             return yield response.value();
         });

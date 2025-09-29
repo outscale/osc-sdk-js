@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateImageExportTaskRequestToJSON = exports.CreateImageExportTaskRequestFromJSONTyped = exports.CreateImageExportTaskRequestFromJSON = void 0;
+exports.CreateImageExportTaskRequestFromJSON = CreateImageExportTaskRequestFromJSON;
+exports.CreateImageExportTaskRequestFromJSONTyped = CreateImageExportTaskRequestFromJSONTyped;
+exports.CreateImageExportTaskRequestToJSON = CreateImageExportTaskRequestToJSON;
 const runtime_1 = require("../runtime");
 const OsuExportToCreate_1 = require("./OsuExportToCreate");
 function CreateImageExportTaskRequestFromJSON(json) {
     return CreateImageExportTaskRequestFromJSONTyped(json, false);
 }
-exports.CreateImageExportTaskRequestFromJSON = CreateImageExportTaskRequestFromJSON;
 function CreateImageExportTaskRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -30,7 +31,6 @@ function CreateImageExportTaskRequestFromJSONTyped(json, ignoreDiscriminator) {
         'osuExport': (0, OsuExportToCreate_1.OsuExportToCreateFromJSON)(json['OsuExport']),
     };
 }
-exports.CreateImageExportTaskRequestFromJSONTyped = CreateImageExportTaskRequestFromJSONTyped;
 function CreateImageExportTaskRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function CreateImageExportTaskRequestToJSON(value) {
         'OsuExport': (0, OsuExportToCreate_1.OsuExportToCreateToJSON)(value.osuExport),
     };
 }
-exports.CreateImageExportTaskRequestToJSON = CreateImageExportTaskRequestToJSON;

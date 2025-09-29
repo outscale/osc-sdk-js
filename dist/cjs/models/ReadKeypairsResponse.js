@@ -13,14 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadKeypairsResponseToJSON = exports.ReadKeypairsResponseFromJSONTyped = exports.ReadKeypairsResponseFromJSON = void 0;
+exports.ReadKeypairsResponseFromJSON = ReadKeypairsResponseFromJSON;
+exports.ReadKeypairsResponseFromJSONTyped = ReadKeypairsResponseFromJSONTyped;
+exports.ReadKeypairsResponseToJSON = ReadKeypairsResponseToJSON;
 const runtime_1 = require("../runtime");
 const Keypair_1 = require("./Keypair");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function ReadKeypairsResponseFromJSON(json) {
     return ReadKeypairsResponseFromJSONTyped(json, false);
 }
-exports.ReadKeypairsResponseFromJSON = ReadKeypairsResponseFromJSON;
 function ReadKeypairsResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -31,7 +32,6 @@ function ReadKeypairsResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.ReadKeypairsResponseFromJSONTyped = ReadKeypairsResponseFromJSONTyped;
 function ReadKeypairsResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ReadKeypairsResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.ReadKeypairsResponseToJSON = ReadKeypairsResponseToJSON;

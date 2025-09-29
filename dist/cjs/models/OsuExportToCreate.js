@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OsuExportToCreateToJSON = exports.OsuExportToCreateFromJSONTyped = exports.OsuExportToCreateFromJSON = void 0;
+exports.OsuExportToCreateFromJSON = OsuExportToCreateFromJSON;
+exports.OsuExportToCreateFromJSONTyped = OsuExportToCreateFromJSONTyped;
+exports.OsuExportToCreateToJSON = OsuExportToCreateToJSON;
 const runtime_1 = require("../runtime");
 const OsuApiKey_1 = require("./OsuApiKey");
 function OsuExportToCreateFromJSON(json) {
     return OsuExportToCreateFromJSONTyped(json, false);
 }
-exports.OsuExportToCreateFromJSON = OsuExportToCreateFromJSON;
 function OsuExportToCreateFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -32,7 +33,6 @@ function OsuExportToCreateFromJSONTyped(json, ignoreDiscriminator) {
         'osuPrefix': !(0, runtime_1.exists)(json, 'OsuPrefix') ? undefined : json['OsuPrefix'],
     };
 }
-exports.OsuExportToCreateFromJSONTyped = OsuExportToCreateFromJSONTyped;
 function OsuExportToCreateToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -48,4 +48,3 @@ function OsuExportToCreateToJSON(value) {
         'OsuPrefix': value.osuPrefix,
     };
 }
-exports.OsuExportToCreateToJSON = OsuExportToCreateToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ApiAccessPolicyToJSON = exports.ApiAccessPolicyFromJSONTyped = exports.ApiAccessPolicyFromJSON = void 0;
+exports.ApiAccessPolicyFromJSON = ApiAccessPolicyFromJSON;
+exports.ApiAccessPolicyFromJSONTyped = ApiAccessPolicyFromJSONTyped;
+exports.ApiAccessPolicyToJSON = ApiAccessPolicyToJSON;
 const runtime_1 = require("../runtime");
 function ApiAccessPolicyFromJSON(json) {
     return ApiAccessPolicyFromJSONTyped(json, false);
 }
-exports.ApiAccessPolicyFromJSON = ApiAccessPolicyFromJSON;
 function ApiAccessPolicyFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function ApiAccessPolicyFromJSONTyped(json, ignoreDiscriminator) {
         'requireTrustedEnv': !(0, runtime_1.exists)(json, 'RequireTrustedEnv') ? undefined : json['RequireTrustedEnv'],
     };
 }
-exports.ApiAccessPolicyFromJSONTyped = ApiAccessPolicyFromJSONTyped;
 function ApiAccessPolicyToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function ApiAccessPolicyToJSON(value) {
         'RequireTrustedEnv': value.requireTrustedEnv,
     };
 }
-exports.ApiAccessPolicyToJSON = ApiAccessPolicyToJSON;

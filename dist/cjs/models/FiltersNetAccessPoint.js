@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FiltersNetAccessPointToJSON = exports.FiltersNetAccessPointFromJSONTyped = exports.FiltersNetAccessPointFromJSON = void 0;
+exports.FiltersNetAccessPointFromJSON = FiltersNetAccessPointFromJSON;
+exports.FiltersNetAccessPointFromJSONTyped = FiltersNetAccessPointFromJSONTyped;
+exports.FiltersNetAccessPointToJSON = FiltersNetAccessPointToJSON;
 const runtime_1 = require("../runtime");
 function FiltersNetAccessPointFromJSON(json) {
     return FiltersNetAccessPointFromJSONTyped(json, false);
 }
-exports.FiltersNetAccessPointFromJSON = FiltersNetAccessPointFromJSON;
 function FiltersNetAccessPointFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function FiltersNetAccessPointFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-exports.FiltersNetAccessPointFromJSONTyped = FiltersNetAccessPointFromJSONTyped;
 function FiltersNetAccessPointToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function FiltersNetAccessPointToJSON(value) {
         'Tags': value.tags,
     };
 }
-exports.FiltersNetAccessPointToJSON = FiltersNetAccessPointToJSON;

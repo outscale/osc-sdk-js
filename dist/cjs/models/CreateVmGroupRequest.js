@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateVmGroupRequestToJSON = exports.CreateVmGroupRequestFromJSONTyped = exports.CreateVmGroupRequestFromJSON = exports.CreateVmGroupRequestPositioningStrategyEnum = void 0;
+exports.CreateVmGroupRequestPositioningStrategyEnum = void 0;
+exports.CreateVmGroupRequestFromJSON = CreateVmGroupRequestFromJSON;
+exports.CreateVmGroupRequestFromJSONTyped = CreateVmGroupRequestFromJSONTyped;
+exports.CreateVmGroupRequestToJSON = CreateVmGroupRequestToJSON;
 const runtime_1 = require("../runtime");
 const ResourceTag_1 = require("./ResourceTag");
 /**
@@ -27,7 +30,6 @@ exports.CreateVmGroupRequestPositioningStrategyEnum = {
 function CreateVmGroupRequestFromJSON(json) {
     return CreateVmGroupRequestFromJSONTyped(json, false);
 }
-exports.CreateVmGroupRequestFromJSON = CreateVmGroupRequestFromJSON;
 function CreateVmGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -44,7 +46,6 @@ function CreateVmGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vmTemplateId': json['VmTemplateId'],
     };
 }
-exports.CreateVmGroupRequestFromJSONTyped = CreateVmGroupRequestFromJSONTyped;
 function CreateVmGroupRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -64,4 +65,3 @@ function CreateVmGroupRequestToJSON(value) {
         'VmTemplateId': value.vmTemplateId,
     };
 }
-exports.CreateVmGroupRequestToJSON = CreateVmGroupRequestToJSON;

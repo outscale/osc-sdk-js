@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteRouteTableRequestToJSON = exports.DeleteRouteTableRequestFromJSONTyped = exports.DeleteRouteTableRequestFromJSON = void 0;
+exports.DeleteRouteTableRequestFromJSON = DeleteRouteTableRequestFromJSON;
+exports.DeleteRouteTableRequestFromJSONTyped = DeleteRouteTableRequestFromJSONTyped;
+exports.DeleteRouteTableRequestToJSON = DeleteRouteTableRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteRouteTableRequestFromJSON(json) {
     return DeleteRouteTableRequestFromJSONTyped(json, false);
 }
-exports.DeleteRouteTableRequestFromJSON = DeleteRouteTableRequestFromJSON;
 function DeleteRouteTableRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteRouteTableRequestFromJSONTyped(json, ignoreDiscriminator) {
         'routeTableId': json['RouteTableId'],
     };
 }
-exports.DeleteRouteTableRequestFromJSONTyped = DeleteRouteTableRequestFromJSONTyped;
 function DeleteRouteTableRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteRouteTableRequestToJSON(value) {
         'RouteTableId': value.routeTableId,
     };
 }
-exports.DeleteRouteTableRequestToJSON = DeleteRouteTableRequestToJSON;

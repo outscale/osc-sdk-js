@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteClientGatewayRequestToJSON = exports.DeleteClientGatewayRequestFromJSONTyped = exports.DeleteClientGatewayRequestFromJSON = void 0;
+exports.DeleteClientGatewayRequestFromJSON = DeleteClientGatewayRequestFromJSON;
+exports.DeleteClientGatewayRequestFromJSONTyped = DeleteClientGatewayRequestFromJSONTyped;
+exports.DeleteClientGatewayRequestToJSON = DeleteClientGatewayRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteClientGatewayRequestFromJSON(json) {
     return DeleteClientGatewayRequestFromJSONTyped(json, false);
 }
-exports.DeleteClientGatewayRequestFromJSON = DeleteClientGatewayRequestFromJSON;
 function DeleteClientGatewayRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteClientGatewayRequestFromJSONTyped(json, ignoreDiscriminator) {
         'dryRun': !(0, runtime_1.exists)(json, 'DryRun') ? undefined : json['DryRun'],
     };
 }
-exports.DeleteClientGatewayRequestFromJSONTyped = DeleteClientGatewayRequestFromJSONTyped;
 function DeleteClientGatewayRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteClientGatewayRequestToJSON(value) {
         'DryRun': value.dryRun,
     };
 }
-exports.DeleteClientGatewayRequestToJSON = DeleteClientGatewayRequestToJSON;

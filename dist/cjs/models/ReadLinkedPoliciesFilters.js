@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadLinkedPoliciesFiltersToJSON = exports.ReadLinkedPoliciesFiltersFromJSONTyped = exports.ReadLinkedPoliciesFiltersFromJSON = void 0;
+exports.ReadLinkedPoliciesFiltersFromJSON = ReadLinkedPoliciesFiltersFromJSON;
+exports.ReadLinkedPoliciesFiltersFromJSONTyped = ReadLinkedPoliciesFiltersFromJSONTyped;
+exports.ReadLinkedPoliciesFiltersToJSON = ReadLinkedPoliciesFiltersToJSON;
 const runtime_1 = require("../runtime");
 function ReadLinkedPoliciesFiltersFromJSON(json) {
     return ReadLinkedPoliciesFiltersFromJSONTyped(json, false);
 }
-exports.ReadLinkedPoliciesFiltersFromJSON = ReadLinkedPoliciesFiltersFromJSON;
 function ReadLinkedPoliciesFiltersFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -27,7 +28,6 @@ function ReadLinkedPoliciesFiltersFromJSONTyped(json, ignoreDiscriminator) {
         'pathPrefix': !(0, runtime_1.exists)(json, 'PathPrefix') ? undefined : json['PathPrefix'],
     };
 }
-exports.ReadLinkedPoliciesFiltersFromJSONTyped = ReadLinkedPoliciesFiltersFromJSONTyped;
 function ReadLinkedPoliciesFiltersToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function ReadLinkedPoliciesFiltersToJSON(value) {
         'PathPrefix': value.pathPrefix,
     };
 }
-exports.ReadLinkedPoliciesFiltersToJSON = ReadLinkedPoliciesFiltersToJSON;

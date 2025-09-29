@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadPoliciesFiltersToJSON = exports.ReadPoliciesFiltersFromJSONTyped = exports.ReadPoliciesFiltersFromJSON = exports.ReadPoliciesFiltersScopeEnum = void 0;
+exports.ReadPoliciesFiltersScopeEnum = void 0;
+exports.ReadPoliciesFiltersFromJSON = ReadPoliciesFiltersFromJSON;
+exports.ReadPoliciesFiltersFromJSONTyped = ReadPoliciesFiltersFromJSONTyped;
+exports.ReadPoliciesFiltersToJSON = ReadPoliciesFiltersToJSON;
 const runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,7 +28,6 @@ exports.ReadPoliciesFiltersScopeEnum = {
 function ReadPoliciesFiltersFromJSON(json) {
     return ReadPoliciesFiltersFromJSONTyped(json, false);
 }
-exports.ReadPoliciesFiltersFromJSON = ReadPoliciesFiltersFromJSON;
 function ReadPoliciesFiltersFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -36,7 +38,6 @@ function ReadPoliciesFiltersFromJSONTyped(json, ignoreDiscriminator) {
         'scope': !(0, runtime_1.exists)(json, 'Scope') ? undefined : json['Scope'],
     };
 }
-exports.ReadPoliciesFiltersFromJSONTyped = ReadPoliciesFiltersFromJSONTyped;
 function ReadPoliciesFiltersToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -50,4 +51,3 @@ function ReadPoliciesFiltersToJSON(value) {
         'Scope': value.scope,
     };
 }
-exports.ReadPoliciesFiltersToJSON = ReadPoliciesFiltersToJSON;

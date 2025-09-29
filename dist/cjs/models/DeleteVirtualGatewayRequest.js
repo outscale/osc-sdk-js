@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteVirtualGatewayRequestToJSON = exports.DeleteVirtualGatewayRequestFromJSONTyped = exports.DeleteVirtualGatewayRequestFromJSON = void 0;
+exports.DeleteVirtualGatewayRequestFromJSON = DeleteVirtualGatewayRequestFromJSON;
+exports.DeleteVirtualGatewayRequestFromJSONTyped = DeleteVirtualGatewayRequestFromJSONTyped;
+exports.DeleteVirtualGatewayRequestToJSON = DeleteVirtualGatewayRequestToJSON;
 const runtime_1 = require("../runtime");
 function DeleteVirtualGatewayRequestFromJSON(json) {
     return DeleteVirtualGatewayRequestFromJSONTyped(json, false);
 }
-exports.DeleteVirtualGatewayRequestFromJSON = DeleteVirtualGatewayRequestFromJSON;
 function DeleteVirtualGatewayRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function DeleteVirtualGatewayRequestFromJSONTyped(json, ignoreDiscriminator) {
         'virtualGatewayId': json['VirtualGatewayId'],
     };
 }
-exports.DeleteVirtualGatewayRequestFromJSONTyped = DeleteVirtualGatewayRequestFromJSONTyped;
 function DeleteVirtualGatewayRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeleteVirtualGatewayRequestToJSON(value) {
         'VirtualGatewayId': value.virtualGatewayId,
     };
 }
-exports.DeleteVirtualGatewayRequestToJSON = DeleteVirtualGatewayRequestToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.KeypairCreatedToJSON = exports.KeypairCreatedFromJSONTyped = exports.KeypairCreatedFromJSON = void 0;
+exports.KeypairCreatedFromJSON = KeypairCreatedFromJSON;
+exports.KeypairCreatedFromJSONTyped = KeypairCreatedFromJSONTyped;
+exports.KeypairCreatedToJSON = KeypairCreatedToJSON;
 const runtime_1 = require("../runtime");
 const ResourceTag_1 = require("./ResourceTag");
 function KeypairCreatedFromJSON(json) {
     return KeypairCreatedFromJSONTyped(json, false);
 }
-exports.KeypairCreatedFromJSON = KeypairCreatedFromJSON;
 function KeypairCreatedFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -33,7 +34,6 @@ function KeypairCreatedFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
     };
 }
-exports.KeypairCreatedFromJSONTyped = KeypairCreatedFromJSONTyped;
 function KeypairCreatedToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -50,4 +50,3 @@ function KeypairCreatedToJSON(value) {
         'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
     };
 }
-exports.KeypairCreatedToJSON = KeypairCreatedToJSON;

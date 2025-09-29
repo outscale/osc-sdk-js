@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadManagedPoliciesLinkedToUserGroupRequestToJSON = exports.ReadManagedPoliciesLinkedToUserGroupRequestFromJSONTyped = exports.ReadManagedPoliciesLinkedToUserGroupRequestFromJSON = void 0;
+exports.ReadManagedPoliciesLinkedToUserGroupRequestFromJSON = ReadManagedPoliciesLinkedToUserGroupRequestFromJSON;
+exports.ReadManagedPoliciesLinkedToUserGroupRequestFromJSONTyped = ReadManagedPoliciesLinkedToUserGroupRequestFromJSONTyped;
+exports.ReadManagedPoliciesLinkedToUserGroupRequestToJSON = ReadManagedPoliciesLinkedToUserGroupRequestToJSON;
 const runtime_1 = require("../runtime");
 const FiltersUserGroup_1 = require("./FiltersUserGroup");
 function ReadManagedPoliciesLinkedToUserGroupRequestFromJSON(json) {
     return ReadManagedPoliciesLinkedToUserGroupRequestFromJSONTyped(json, false);
 }
-exports.ReadManagedPoliciesLinkedToUserGroupRequestFromJSON = ReadManagedPoliciesLinkedToUserGroupRequestFromJSON;
 function ReadManagedPoliciesLinkedToUserGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -32,7 +33,6 @@ function ReadManagedPoliciesLinkedToUserGroupRequestFromJSONTyped(json, ignoreDi
         'userGroupName': json['UserGroupName'],
     };
 }
-exports.ReadManagedPoliciesLinkedToUserGroupRequestFromJSONTyped = ReadManagedPoliciesLinkedToUserGroupRequestFromJSONTyped;
 function ReadManagedPoliciesLinkedToUserGroupRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -48,4 +48,3 @@ function ReadManagedPoliciesLinkedToUserGroupRequestToJSON(value) {
         'UserGroupName': value.userGroupName,
     };
 }
-exports.ReadManagedPoliciesLinkedToUserGroupRequestToJSON = ReadManagedPoliciesLinkedToUserGroupRequestToJSON;

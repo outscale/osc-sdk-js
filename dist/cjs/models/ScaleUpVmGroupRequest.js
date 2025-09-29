@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScaleUpVmGroupRequestToJSON = exports.ScaleUpVmGroupRequestFromJSONTyped = exports.ScaleUpVmGroupRequestFromJSON = void 0;
+exports.ScaleUpVmGroupRequestFromJSON = ScaleUpVmGroupRequestFromJSON;
+exports.ScaleUpVmGroupRequestFromJSONTyped = ScaleUpVmGroupRequestFromJSONTyped;
+exports.ScaleUpVmGroupRequestToJSON = ScaleUpVmGroupRequestToJSON;
 const runtime_1 = require("../runtime");
 function ScaleUpVmGroupRequestFromJSON(json) {
     return ScaleUpVmGroupRequestFromJSONTyped(json, false);
 }
-exports.ScaleUpVmGroupRequestFromJSON = ScaleUpVmGroupRequestFromJSON;
 function ScaleUpVmGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function ScaleUpVmGroupRequestFromJSONTyped(json, ignoreDiscriminator) {
         'vmGroupId': json['VmGroupId'],
     };
 }
-exports.ScaleUpVmGroupRequestFromJSONTyped = ScaleUpVmGroupRequestFromJSONTyped;
 function ScaleUpVmGroupRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ScaleUpVmGroupRequestToJSON(value) {
         'VmGroupId': value.vmGroupId,
     };
 }
-exports.ScaleUpVmGroupRequestToJSON = ScaleUpVmGroupRequestToJSON;

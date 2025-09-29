@@ -61,8 +61,8 @@ export class SubregionApi extends runtime.BaseAPI {
     /**
      * Lists one or more of the enabled Subregions that you can access in the current Region.<br /><br />  For more information, see [About Regions and Subregions](https://docs.outscale.com/en/userguide/About-Regions-and-Subregions.html).
      */
-    readSubregions(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readSubregions() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readSubregionsRaw(requestParameters, initOverrides);
             return yield response.value();
         });

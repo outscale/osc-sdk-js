@@ -13,7 +13,9 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImageToJSON = exports.ImageFromJSONTyped = exports.ImageFromJSON = void 0;
+exports.ImageFromJSON = ImageFromJSON;
+exports.ImageFromJSONTyped = ImageFromJSONTyped;
+exports.ImageToJSON = ImageToJSON;
 const runtime_1 = require("../runtime");
 const BlockDeviceMappingImage_1 = require("./BlockDeviceMappingImage");
 const BootMode_1 = require("./BootMode");
@@ -23,7 +25,6 @@ const StateComment_1 = require("./StateComment");
 function ImageFromJSON(json) {
     return ImageFromJSONTyped(json, false);
 }
-exports.ImageFromJSON = ImageFromJSON;
 function ImageFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -50,7 +51,6 @@ function ImageFromJSONTyped(json, ignoreDiscriminator) {
         'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : (json['Tags'].map(ResourceTag_1.ResourceTagFromJSON)),
     };
 }
-exports.ImageFromJSONTyped = ImageFromJSONTyped;
 function ImageToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -80,4 +80,3 @@ function ImageToJSON(value) {
         'Tags': value.tags === undefined ? undefined : (value.tags.map(ResourceTag_1.ResourceTagToJSON)),
     };
 }
-exports.ImageToJSON = ImageToJSON;

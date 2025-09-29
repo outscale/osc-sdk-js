@@ -64,8 +64,8 @@ export class ApiAccessRuleApi extends runtime.BaseAPI {
     /**
      * Creates a rule to allow access to the API from your account.<br /> You need to specify at least the `CaIds` or the `IpRanges` parameter.<br /><br />  **[NOTE]**<br /> By default, your account has a set of rules allowing global access, that you can delete.<br /><br /> For more information, see [About API Access Rules](https://docs.outscale.com/en/userguide/About-API-Access-Rules.html).
      */
-    createApiAccessRule(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    createApiAccessRule() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.createApiAccessRuleRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -108,8 +108,8 @@ export class ApiAccessRuleApi extends runtime.BaseAPI {
     /**
      * Deletes a specified API access rule.<br /><br />  **[IMPORTANT]**<br /> You cannot delete the last remaining API access rule. However, if you delete all the API access rules that allow you to access the APIs, you need to contact the Support team to regain access. For more information, see [Technical Support](https://docs.outscale.com/en/userguide/Technical-Support.html).
      */
-    deleteApiAccessRule(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    deleteApiAccessRule() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.deleteApiAccessRuleRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -152,8 +152,8 @@ export class ApiAccessRuleApi extends runtime.BaseAPI {
     /**
      * Lists one or more API access rules.
      */
-    readApiAccessRules(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    readApiAccessRules() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.readApiAccessRulesRaw(requestParameters, initOverrides);
             return yield response.value();
         });
@@ -196,8 +196,8 @@ export class ApiAccessRuleApi extends runtime.BaseAPI {
     /**
      * Modifies a specified API access rule.<br /><br />  **[WARNING]**<br /> - The new rule you specify fully replaces the old rule. Therefore, for a parameter that is not specified, any previously set value is deleted.<br /> - If, as result of your modification, you no longer have access to the APIs, you will need to contact the Support team to regain access. For more information, see [Technical Support](https://docs.outscale.com/en/userguide/Technical-Support.html).
      */
-    updateApiAccessRule(requestParameters = {}, initOverrides) {
-        return __awaiter(this, void 0, void 0, function* () {
+    updateApiAccessRule() {
+        return __awaiter(this, arguments, void 0, function* (requestParameters = {}, initOverrides) {
             const response = yield this.updateApiAccessRuleRaw(requestParameters, initOverrides);
             return yield response.value();
         });

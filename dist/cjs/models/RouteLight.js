@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RouteLightToJSON = exports.RouteLightFromJSONTyped = exports.RouteLightFromJSON = void 0;
+exports.RouteLightFromJSON = RouteLightFromJSON;
+exports.RouteLightFromJSONTyped = RouteLightFromJSONTyped;
+exports.RouteLightToJSON = RouteLightToJSON;
 const runtime_1 = require("../runtime");
 function RouteLightFromJSON(json) {
     return RouteLightFromJSONTyped(json, false);
 }
-exports.RouteLightFromJSON = RouteLightFromJSON;
 function RouteLightFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -29,7 +30,6 @@ function RouteLightFromJSONTyped(json, ignoreDiscriminator) {
         'state': !(0, runtime_1.exists)(json, 'State') ? undefined : json['State'],
     };
 }
-exports.RouteLightFromJSONTyped = RouteLightFromJSONTyped;
 function RouteLightToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function RouteLightToJSON(value) {
         'State': value.state,
     };
 }
-exports.RouteLightToJSON = RouteLightToJSON;

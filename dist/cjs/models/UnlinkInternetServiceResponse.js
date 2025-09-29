@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnlinkInternetServiceResponseToJSON = exports.UnlinkInternetServiceResponseFromJSONTyped = exports.UnlinkInternetServiceResponseFromJSON = void 0;
+exports.UnlinkInternetServiceResponseFromJSON = UnlinkInternetServiceResponseFromJSON;
+exports.UnlinkInternetServiceResponseFromJSONTyped = UnlinkInternetServiceResponseFromJSONTyped;
+exports.UnlinkInternetServiceResponseToJSON = UnlinkInternetServiceResponseToJSON;
 const runtime_1 = require("../runtime");
 const ModelResponseContext_1 = require("./ModelResponseContext");
 function UnlinkInternetServiceResponseFromJSON(json) {
     return UnlinkInternetServiceResponseFromJSONTyped(json, false);
 }
-exports.UnlinkInternetServiceResponseFromJSON = UnlinkInternetServiceResponseFromJSON;
 function UnlinkInternetServiceResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -28,7 +29,6 @@ function UnlinkInternetServiceResponseFromJSONTyped(json, ignoreDiscriminator) {
         'responseContext': !(0, runtime_1.exists)(json, 'ResponseContext') ? undefined : (0, ModelResponseContext_1.ModelResponseContextFromJSON)(json['ResponseContext']),
     };
 }
-exports.UnlinkInternetServiceResponseFromJSONTyped = UnlinkInternetServiceResponseFromJSONTyped;
 function UnlinkInternetServiceResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function UnlinkInternetServiceResponseToJSON(value) {
         'ResponseContext': (0, ModelResponseContext_1.ModelResponseContextToJSON)(value.responseContext),
     };
 }
-exports.UnlinkInternetServiceResponseToJSON = UnlinkInternetServiceResponseToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CatalogsToJSON = exports.CatalogsFromJSONTyped = exports.CatalogsFromJSON = exports.CatalogsStateEnum = void 0;
+exports.CatalogsStateEnum = void 0;
+exports.CatalogsFromJSON = CatalogsFromJSON;
+exports.CatalogsFromJSONTyped = CatalogsFromJSONTyped;
+exports.CatalogsToJSON = CatalogsToJSON;
 const runtime_1 = require("../runtime");
 const CatalogEntry_1 = require("./CatalogEntry");
 /**
@@ -26,7 +29,6 @@ exports.CatalogsStateEnum = {
 function CatalogsFromJSON(json) {
     return CatalogsFromJSONTyped(json, false);
 }
-exports.CatalogsFromJSON = CatalogsFromJSON;
 function CatalogsFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
@@ -38,7 +40,6 @@ function CatalogsFromJSONTyped(json, ignoreDiscriminator) {
         'toDate': !(0, runtime_1.exists)(json, 'ToDate') ? undefined : (new Date(json['ToDate'])),
     };
 }
-exports.CatalogsFromJSONTyped = CatalogsFromJSONTyped;
 function CatalogsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +54,3 @@ function CatalogsToJSON(value) {
         'ToDate': value.toDate === undefined ? undefined : (value.toDate.toISOString()),
     };
 }
-exports.CatalogsToJSON = CatalogsToJSON;
