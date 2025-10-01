@@ -3,6 +3,9 @@
   "version": "0.22.0",
   "description": "OpenAPI client for outscale-api",
   "author": "Outscale SAS",
+  "repository": {
+    "url": "https://github.com/outscale/osc-sdk-js"
+  },
   "license": "BSD-3-Clause",
   "module": "./dist/esm/index.js",
   "typings": "./dist/esm/index.d.ts",
