@@ -37,6 +37,48 @@ export declare class AwsV4Signer {
         headers: HTTPHeaders;
     }>;
 }
+export interface RetryOptions {
+    maxRetries?: number;
+    initialDelayMs?: number;
+    maxDelayMs?: number;
+    jitterMs?: number;
+    backoffMultiplier?: number;
+    retryableStatuses?: number[];
+    shouldRetry?: (response: Response, attempt: number) => boolean;
+}
+export declare class RetryMiddleware implements Middleware {
+    private readonly maxRetries;
+    private readonly initialDelayMs;
+    private readonly maxDelayMs;
+    private readonly backoffMultiplier;
+    private readonly retryableStatuses;
+    private readonly shouldRetry?;
+    private readonly jitterMs;
+    private attemptMap;
+    constructor(options?: RetryOptions);
+    post(context: ResponseContext): Promise<Response | void>;
+    private sleep;
+}
+export interface RateLimiterOptions {
+    maxRequests: number;
+    perMilliseconds: number;
+    maxConcurrent?: number;
+}
+export declare class RateLimiterMiddleware implements Middleware {
+    private readonly maxRequests;
+    private readonly perMilliseconds;
+    private readonly maxConcurrent;
+    private requestTimestamps;
+    private currentConcurrent;
+    private queue;
+    constructor(options: RateLimiterOptions);
+    pre(context: RequestContext): Promise<FetchParams | void>;
+    post(context: ResponseContext): Promise<Response | void>;
+    private waitForConcurrencySlot;
+    private waitForRateLimitSlot;
+    private processQueue;
+    private sleep;
+}
 export declare class Configuration {
     private configuration;
     constructor(configuration?: ConfigurationParameters);

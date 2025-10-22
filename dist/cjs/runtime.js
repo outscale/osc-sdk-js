@@ -22,7 +22,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TextApiResponse = exports.BlobApiResponse = exports.VoidApiResponse = exports.JSONApiResponse = exports.COLLECTION_FORMATS = exports.RequiredError = exports.ResponseError = exports.BaseAPI = exports.DefaultConfig = exports.Configuration = exports.AwsV4Signer = exports.BASE_PATH = void 0;
+exports.TextApiResponse = exports.BlobApiResponse = exports.VoidApiResponse = exports.JSONApiResponse = exports.COLLECTION_FORMATS = exports.RequiredError = exports.ResponseError = exports.BaseAPI = exports.DefaultConfig = exports.Configuration = exports.RateLimiterMiddleware = exports.RetryMiddleware = exports.AwsV4Signer = exports.BASE_PATH = void 0;
 exports.exists = exists;
 exports.querystring = querystring;
 exports.mapValues = mapValues;
@@ -56,6 +56,135 @@ class AwsV4Signer {
     }
 }
 exports.AwsV4Signer = AwsV4Signer;
+class RetryMiddleware {
+    constructor(options = {}) {
+        var _a, _b, _c, _d, _e, _f;
+        this.attemptMap = new WeakMap();
+        this.maxRetries = (_a = options.maxRetries) !== null && _a !== void 0 ? _a : 3;
+        this.initialDelayMs = (_b = options.initialDelayMs) !== null && _b !== void 0 ? _b : 1000;
+        this.maxDelayMs = (_c = options.maxDelayMs) !== null && _c !== void 0 ? _c : 30000;
+        this.backoffMultiplier = (_d = options.backoffMultiplier) !== null && _d !== void 0 ? _d : 2;
+        this.retryableStatuses = new Set((_e = options.retryableStatuses) !== null && _e !== void 0 ? _e : [408, 429, 500, 502, 503, 504]);
+        this.shouldRetry = options.shouldRetry;
+        this.jitterMs = (_f = options.jitterMs) !== null && _f !== void 0 ? _f : 1000;
+    }
+    post(context) {
+        return __awaiter(this, void 0, void 0, function* () {
+            var _a;
+            const { response, url, init, fetch } = context;
+            // Get current attempt count
+            const request = new Request(url, init);
+            const currentAttempt = (_a = this.attemptMap.get(request)) !== null && _a !== void 0 ? _a : 0;
+            // Check if we should retry
+            const shouldRetry = this.shouldRetry
+                ? this.shouldRetry(response, currentAttempt)
+                : this.retryableStatuses.has(response.status);
+            if (!shouldRetry || currentAttempt >= this.maxRetries) {
+                this.attemptMap.delete(request);
+                return response;
+            }
+            // Calculate delay with exponential backoff
+            const delay = Math.min(this.initialDelayMs * Math.pow(this.backoffMultiplier, currentAttempt), this.maxDelayMs);
+            // Add jitter to prevent thundering herd
+            const jitter = Math.random() * this.jitterMs + delay;
+            yield this.sleep(delay + jitter);
+            // Increment attempt counter
+            this.attemptMap.set(request, currentAttempt + 1);
+            // Retry the request
+            const newResponse = yield fetch(url, init);
+            // Recursively handle the retry response
+            return this.post({
+                fetch,
+                url,
+                init,
+                response: newResponse
+            });
+        });
+    }
+    sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+}
+exports.RetryMiddleware = RetryMiddleware;
+class RateLimiterMiddleware {
+    constructor(options) {
+        var _a;
+        this.requestTimestamps = [];
+        this.currentConcurrent = 0;
+        this.queue = [];
+        this.maxRequests = options.maxRequests;
+        this.perMilliseconds = options.perMilliseconds;
+        this.maxConcurrent = (_a = options.maxConcurrent) !== null && _a !== void 0 ? _a : Infinity;
+    }
+    pre(context) {
+        return __awaiter(this, void 0, void 0, function* () {
+            // Wait for concurrency slot
+            yield this.waitForConcurrencySlot();
+            // Wait for rate limit slot
+            yield this.waitForRateLimitSlot();
+            // Record this request timestamp
+            this.requestTimestamps.push(Date.now());
+            this.currentConcurrent++;
+        });
+    }
+    post(context) {
+        return __awaiter(this, void 0, void 0, function* () {
+            // Release concurrency slot
+            this.currentConcurrent--;
+            this.processQueue();
+            return context.response;
+        });
+    }
+    waitForConcurrencySlot() {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (this.currentConcurrent < this.maxConcurrent) {
+                return;
+            }
+            return new Promise(resolve => {
+                this.queue.push(resolve);
+            });
+        });
+    }
+    waitForRateLimitSlot() {
+        return __awaiter(this, void 0, void 0, function* () {
+            while (true) {
+                const now = Date.now();
+                const windowStart = now - this.perMilliseconds;
+                // Remove timestamps outside the current window
+                this.requestTimestamps = this.requestTimestamps.filter(timestamp => timestamp > windowStart);
+                // Check if we're under the limit
+                if (this.requestTimestamps.length < this.maxRequests) {
+                    return;
+                }
+                // Calculate how long to wait
+                const oldestTimestamp = this.requestTimestamps[0];
+                const waitTime = oldestTimestamp + this.perMilliseconds - now;
+                if (waitTime > 0) {
+                    yield this.sleep(waitTime);
+                }
+            }
+        });
+    }
+    processQueue() {
+        if (this.queue.length > 0 && this.currentConcurrent < this.maxConcurrent) {
+            const resolve = this.queue.shift();
+            resolve === null || resolve === void 0 ? void 0 : resolve();
+        }
+    }
+    sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+}
+exports.RateLimiterMiddleware = RateLimiterMiddleware;
+const retryMiddleware = new RetryMiddleware({
+    maxRetries: 3,
+    initialDelayMs: 1000,
+});
+const rateLimiter = new RateLimiterMiddleware({
+    maxRequests: 5,
+    perMilliseconds: 1000,
+    maxConcurrent: 3
+});
 class Configuration {
     constructor(configuration = {}) {
         this.configuration = configuration;
@@ -65,6 +194,9 @@ class Configuration {
         const headers = this.configuration.headers;
         if (!("User-Agent" in headers)) {
             headers["User-Agent"] = "osc-sdk-js/0.22.0";
+        }
+        if (typeof this.configuration.middleware === "undefined") {
+            this.configuration.middleware = [retryMiddleware, rateLimiter];
         }
     }
     set config(configuration) {

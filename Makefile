@@ -25,26 +25,13 @@ osc-generate: osc-api/outscale.yaml
 	@echo start generating SDK...
 	rm -rf .sdk || true
 	mkdir .sdk
-	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) generate -i /sdk/osc-api/outscale.yaml -g typescript-fetch -c /sdk/gen.yml -o /sdk/.sdk --additional-properties=npmVersion=$(SDK_VERSION)
+	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) generate -i /sdk/osc-api/outscale.yaml -g typescript-fetch -c /sdk/gen.yml -t /sdk/templates -o /sdk/.sdk --additional-properties=npmVersion=$(SDK_VERSION)
 	# Set sdk version using reproductible sed.
 	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) sed -i "s/\"version\".*/\"version\": \"$(SDK_VERSION)\",/" /sdk/package.json
 	docker run -v $(PWD):/sdk --rm $(OPENAPI_IMG) chown -R $(USER_ID).$(GROUP_ID) /sdk/.sdk
 	mv .sdk/src ./
-	(cd src && git apply ../.osc-patches/*)
-	# Set User-agent version
-	sed -i "s/##SDK_VERSION##/$(SDK_VERSION)/" src/runtime.ts
 	@echo SDK generated
 	@echo testing SDK build...
-	@source ~/.nvm/nvm.sh; \
-	echo "nvm --version:"; \
-	nvm --version; \
-	echo "nvm install..."; \
-	nvm install; \
-	echo "nvm use..."; \
-	nvm use; \
-	echo "npm version..."; \
-	npm version; \
-	echo "npm install..."; \
 	npm install --local
 
 osc-api/outscale.yaml:
