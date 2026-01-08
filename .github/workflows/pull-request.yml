@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
       - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6
         with:
-          node-version: 20.5.1
+          node-version: 24.12.0
       - name: make nvm available
         run: |
           sudo cp ~/.nvm/nvm.sh /usr/local/bin/nvm
@@ -41,7 +41,7 @@ jobs:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
       - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6
         with:
-          node-version: 20.5.1
+          node-version: 24.12.0
       - name: make nvm available
         run: |
           sudo cp ~/.nvm/nvm.sh /usr/local/bin/nvm
