@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          node-version: 20.5.1
+          node-version: 24.12.0
       - name: make nvm available
         run: |
           sudo cp ~/.nvm/nvm.sh /usr/local/bin/nvm
@@ -41,7 +41,7 @@ jobs:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          node-version: 20.5.1
+          node-version: 24.12.0
       - name: make nvm available
         run: |
           sudo cp ~/.nvm/nvm.sh /usr/local/bin/nvm
