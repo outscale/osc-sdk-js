@@ -16,7 +16,7 @@ jobs:
           ref: main
       - uses: actions/setup-node@v6
         with:
-          node-version: 20.5.1
+          node-version: 20.19.6
       - name: make nvm available
         run: |
           sudo cp ~/.nvm/nvm.sh /usr/local/bin/nvm
