@@ -1,4 +1,5 @@
 name: osc-sdk-js release build
+
 on:
   workflow_dispatch:
     inputs:
@@ -6,34 +7,50 @@ on:
         description: 'Outscale API version'
         required: true
 
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
 jobs:
   auto-build:
     environment: auto-build
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
-        with:
-          ref: main
+      - uses: chainguard-dev/actions/setup-gitsign@main
+
       - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
         with:
           node-version: 24.13.0
+
       - name: make nvm available
         run: |
           sudo cp ~/.nvm/nvm.sh /usr/local/bin/nvm
           sudo chmod +x /usr/local/bin/nvm
+
       - name: Write Outscale API version to use
         run: echo "${{ github.event.inputs.api_version }}" > api_version
-      - name: check for release duplicate
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: make release-check-duplicate
+
       - name: auto-generate release
         run: make release-build
-      - name: push release branch
-        run: make release-push
+
+      - name: Get SDK version
+        id: get-sdk-version
+        run: |
+          echo "sdk_version=$(cat ./sdk_version)" >> "$GITHUB_OUTPUT"
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v8.1.0
+        with:
+          committer: "Outscale Bot <opensource+bot@outscale.com>"
+          author: "Outscale Bot <opensource+bot@outscale.com>"
+          commit-message: "🔖 release: osc-sdk-js v${{ env.sdk_version }}"
+          body: |
+            Automatic build of SDK v${{ env.sdk_version }} version based on Outscale API ${{ env.api_version }}.
+          title: "SDK v${{ env.sdk_version }}"
+          token: "${{ env.token }}"
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      - name: create pull request
-        run: make release-pr
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          sdk_version: ${{ steps.get-sdk-version.outputs.sdk_version }}
+          api_version: ${{ github.event.inputs.api_version }}
+          token: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
