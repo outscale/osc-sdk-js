@@ -5,6 +5,9 @@ on:
     branches:
     - main
 
+permissions:
+  contents: read
+
 jobs:
   cred-scan:
     runs-on: ubuntu-latest
