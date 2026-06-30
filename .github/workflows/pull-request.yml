@@ -7,6 +7,7 @@ on:
 permissions:
   pull-requests: write
   contents: write
+  id-token: write
 
 jobs:
   reuse-test:
@@ -16,25 +17,26 @@ jobs:
       - name: Reuse specification test
         run: make reuse-test
   examples-test:
-    runs-on: ubuntu-22.04
+    runs-on: [authenticated, Linux]
     steps:
+      - name: 🔒🧹 Setup Vault & Frieza
+        id: secrets
+        uses: outscale/.github/vault-frieza-clean@eb7bd1e0360703d0ad355bce46029ae8d49bac04
+        with:
+          vault_role: outscale-osc-sdk-js
+          osc_account: oak
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
         with:
           node-version: 24.14.0
-      - name: make nvm available
-        run: |
-          sudo cp ~/.nvm/nvm.sh /usr/local/bin/nvm
-          sudo chmod +x /usr/local/bin/nvm
-      - name: Local Tests
-        run: |
-          ./local_tests.sh
+      - name: Install dependencies
+        run: npm ci
       - name: Example tests
         if: "! contains(github.event.pull_request.labels.*.name, 'dependencies')"
         env:
-          OSC_ACCESS_KEY: ${{ secrets.OSC_ACCESS_KEY }}
-          OSC_SECRET_KEY: ${{ secrets.OSC_SECRET_KEY }}
-          OSC_REGION: ${{ secrets.OSC_REGION }}
+          OSC_ACCESS_KEY: ${{ steps.secrets.outputs.access_key }}
+          OSC_SECRET_KEY: ${{ steps.secrets.outputs.secret_key }}
+          OSC_REGION: ${{ steps.secrets.outputs.region }}
         run: make examples-test
   regeneration-test:
     runs-on: ubuntu-22.04
