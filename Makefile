@@ -61,33 +61,13 @@ examples-test: example-web-vms example-node-create-volumes example-node-volumes
 .PHONY: example-web-vms
 example-web-vms:
 	@echo testing examples/web-vms example...
-	@source ~/.nvm/nvm.sh; \
 	cd examples/web-vms; \
-	echo "nvm --version:"; \
-	nvm --version; \
-	echo "nvm install..."; \
-	nvm install 20.5.1; \
-	echo "nvm use..."; \
-	nvm use 20.5.1; \
-	echo "npm version:"; \
-	npm version; \
-	echo "npm install..."; \
 	npm install --local --install-links
 
 .PHONY: example-node-create-volumes
 example-node-create-volumes:
 	@echo testing examples/node-create-volume example...
-	@source ~/.nvm/nvm.sh; \
 	cd examples/node-create-volume; \
-	echo "nvm version:"; \
-	nvm --version; \
-	echo "nvm install..."; \
-	nvm install 20.5.1; \
-	echo "nvm use..."; \
-	nvm use 20.5.1; \
-	echo "npm version:"; \
-	npm version; \
-	echo "npm install..."; \
 	npm install --local --install-links; \
 	echo "running node example..."; \
 	node --trace-warnings ./src/index.js > /dev/null
@@ -95,17 +75,7 @@ example-node-create-volumes:
 .PHONY: example-node-volumes
 example-node-volumes:
 	@echo testing examples/node-volumes example...
-	@source ~/.nvm/nvm.sh; \
 	cd examples/node-volumes; \
-	echo "nvm version:"; \
-	nvm --version; \
-	echo "nvm install..."; \
-	nvm install 20.5.1; \
-	echo "nvm use..."; \
-	nvm use 20.5.1; \
-	echo "npm version:"; \
-	npm version; \
-	echo "npm install..."; \
 	npm install --local --install-links; \
 	echo "running node example..."; \
 	node ./src/index.js > /dev/null
