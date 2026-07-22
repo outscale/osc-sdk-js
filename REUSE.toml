@@ -1,0 +1,16 @@
+version = 1
+SPDX-PackageName = "osc-sdk-js"
+SPDX-PackageSupplier = "Outscale support <support@outscale.com>"
+SPDX-PackageDownloadLocation = "https://gitlab.com/outscale/osc-sdk-js/"
+
+[[annotations]]
+path = "**.md"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2019 Outscale SAS <support@outscale.com>"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["Makefile", "sdk_version", "api_version", "**.go", ".git**", "src/**", "dist/**", "**.yml", "**.yaml", ".patch/**.patch", "**.sum", "**.mod", "**.patch", "examples/**", "**.mustache", "**.json", ".npmignore", ".nvmrc", "templates/gitignore"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2019 Outscale SAS <support@outscale.com>"
+SPDX-License-Identifier = "BSD-3-Clause"
