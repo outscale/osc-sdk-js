@@ -544,6 +544,7 @@ __exportStar(require("./RejectNetPeeringRequest"), exports);
 __exportStar(require("./RejectNetPeeringResponse"), exports);
 __exportStar(require("./RemoveUserFromUserGroupRequest"), exports);
 __exportStar(require("./RemoveUserFromUserGroupResponse"), exports);
+__exportStar(require("./RequestedSnapshotMode"), exports);
 __exportStar(require("./ResourceLoadBalancerTag"), exports);
 __exportStar(require("./ResourceTag"), exports);
 __exportStar(require("./Route"), exports);
