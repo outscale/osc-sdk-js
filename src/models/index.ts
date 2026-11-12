@@ -528,6 +528,7 @@ export * from './RejectNetPeeringRequest';
 export * from './RejectNetPeeringResponse';
 export * from './RemoveUserFromUserGroupRequest';
 export * from './RemoveUserFromUserGroupResponse';
+export * from './RequestedSnapshotMode';
 export * from './ResourceLoadBalancerTag';
 export * from './ResourceTag';
 export * from './Route';
